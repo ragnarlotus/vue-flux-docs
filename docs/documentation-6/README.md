@@ -21,7 +21,7 @@ You can view a [demo here](../demos/).
 ## Quickstart
 
 ``` bash
-npm install --save vue-flux@stable
+npm install --save vue-flux
 ```
 
 ``` html
@@ -59,7 +59,7 @@ export default {
 
 ## Performance
 
-Weight is just 111KB so is pretty light having only the essential CSS. It also does not require a high end computer as animations are performed with CSS3 hardware acceleration.
+Weight is just 97KB so is pretty light having only the essential CSS. It also does not require a high end computer as animations are performed with CSS3 hardware acceleration.
 
 ## Included transitions
 
@@ -97,15 +97,15 @@ Weight is just 111KB so is pretty light having only the essential CSS. It also d
 
 ## Troubleshooting
 
-If you find yourself running into issues during installation or running the slider, please check our [documentation](https://deulos.github.io/vue-flux-docs/). If still needs help open an [issue](https://github.com/deulos/vue-flux/issues/new). We would be happy to discuss how they can be solved.
+If you find yourself running into issues during installation or running the slider, please check our [Documentation](https://deulos.github.io/vue-flux-docs/). If still needs help open an [issue](https://github.com/deulos/vue-flux/issues/new). We would be happy to discuss how they can be solved.
 
 ## Documentation
 
-You can view the full documentation at the project's [documentation](https://deulos.github.io/vue-flux-docs/) with examples and detailed information.
+You can view the full documentation at the project's [Documentation](https://deulos.github.io/vue-flux-docs/) with examples and detailed information.
 
 ## Changelog
 
-Check the [changelog](Changelog) for update info.
+Check the [Changelog](Changelog) for update info.
 
 ## Inspiration
 

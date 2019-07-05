@@ -1,3 +1,6 @@
+---
+---
+
 VueFlux comes with nice 20 transitions.
 
 | Name | Component | Description |

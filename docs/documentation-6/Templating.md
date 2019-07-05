@@ -10,17 +10,6 @@ To use custom spinner you can do it using spinner slot like this:
 </vue-flux>
 ```
 
-``` javascript
-import CustomSpinner from 'CustomSpinner.vue';
-
-export default {
-   components: {
-      CustomSpinner,
-   },
-}
-```
-
-
 ## Caption
 To use custom caption you can do it using caption slot like this:
 
@@ -35,16 +24,16 @@ import CustomCaption from 'CustomCaption.vue';
 
 export default {
    components: {
-      CustomCaption,
+      CustomCaption
    },
 
    data: () => ({
-      mounted: false,
+      mounted: false
    }),
 
    mounted() {
       this.mounted = true;
-   },
+   }
 }
 ```
 
@@ -62,16 +51,16 @@ import CustomPagination from 'CustomPagination.vue';
 
 export default {
    components: {
-      CustomPagination,
+      CustomPagination
    },
 
    data: () => ({
-      mounted: false,
+      mounted: false
    }),
 
    mounted() {
       this.mounted = true;
-   },
+   }
 }
 ```
 
@@ -89,16 +78,16 @@ import CustomControls from 'CustomControls.vue';
 
 export default {
    components: {
-      CustomControls,
+      CustomControls
    },
 
    data: () => ({
-      mounted: false,
+      mounted: false
    }),
 
    mounted() {
       this.mounted = true;
-   },
+   }
 }
 ```
 
@@ -116,15 +105,15 @@ import CustomIndex from 'CustomIndex.vue';
 
 export default {
    components: {
-      CustomIndex,
+      CustomIndex
    },
 
    data: () => ({
-      mounted: false,
+      mounted: false
    }),
 
    mounted() {
       this.mounted = true;
-   },
+   }
 }
 ```

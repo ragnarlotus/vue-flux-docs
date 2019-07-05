@@ -71,7 +71,7 @@ The transitions have a direction being 'right' by default and using 'left' when 
 
 Slider will ignore any interaction while a transition is running.
 
-Refer to [Transitions](../Transitions/) to know more about included transitions.
+Refer to [Transitions](../Transitions) to know more about included transitions.
 
 Example:
 ``` javascript
