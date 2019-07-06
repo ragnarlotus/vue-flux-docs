@@ -27,29 +27,17 @@ Then wrap the `<vue-flux>` component with `<no-ssr>` to indicate nuxt what not t
 
 ```js
 let VueFlux;
-let Transitions;
 
 if (process.browser) {
-   const VF = require('vue-flux');
-   VueFlux = VF.VueFlux;
-   Transitions = VF.Transitions;
+   const vf = require('vue-flux');
+   VueFlux = vf.VueFlux;
 }
 
 export default {
    components: {
-      VueFlux
+      VueFlux,
    },
 
-   data: () => ({
-      fluxOptions: {
-         autoplay: false
-      },
-      fluxImages: [
-         'https://source.unsplash.com/random',
-         'https://source.unsplash.com/random',
-         'https://source.unsplash.com/random'
-      ],
-      fluxTransitions: Transitions
-   })
+   ...
 }
 ```
