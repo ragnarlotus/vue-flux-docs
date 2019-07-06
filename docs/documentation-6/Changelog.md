@@ -7,6 +7,7 @@ This new version comes with a lot of improvements, in code, functionality and pe
 Bugs fixed:
 * Parallax holder fixed (in progress)
 * Support for parallax type stataic in mobile (in progress)
+* Spinner will remain at 0% when there is only one source
 
 New features:
 * **Size reduced**
@@ -18,6 +19,7 @@ New features:
 * **Added events**
 * **Improved reactivity**
 * **Captions are now themable**
+* **Pagination items are now themable**
 * Added an option to skip transitions
 * Added images base path option
 * Added lazyLoad and lazyLoadAfter options
@@ -29,3 +31,8 @@ New features:
 * Improved documentation
 * Update syntax to vue 2.6 version
 * Some transitions have been adjusted and look better
+
+Other changes:
+* Option `fullscreen` has been renamed to `allowFullscreen`
+* Options `width`and `height` have been removed
+* Removed `direction` from transitions. I felt like not many people carying about, but if requested enough I will implement them again.
