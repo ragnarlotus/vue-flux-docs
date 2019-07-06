@@ -1,119 +1,160 @@
 ---
 ---
 
+This sections describes how to use custom components or custom structure, but if what you want is to change a bit the design or the colors, you only need to overwirte the CSS styles.
+
 ## Spinner
-To use custom spinner you can do it using spinner slot like this:
+
+Spinner is located inside the [FluxPreloader](Components/Complements/FluxPreloader) complement, so to use custom spinner you will have to use the spinner slot of the [FluxPreloader](Components/Complements/FluxPreloader) component.
+
+#### Custom component
 
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions" ref="slider">
-   <custom-spinner slot="spinner"></custom-spinner>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:preloader>
+      <flux-preloader>
+         <template v-slot:spinner>
+            <custom-spinner></custom-spinner>
+         </template>
+      </flux-preloader>
+   </template>
+</vue-flux>
+```
+
+#### Custom structure
+
+This is an example with [Font Awesome](https://fontawesome.com/) spinner.
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:preloader>
+      <flux-preloader>
+         <template v-slot:spinner>
+            <div class="fa-3x">
+               <i class="fas fa-spinner fa-spin"></i>
+            </div>
+         </template>
+      </flux-preloader>
+   </template>
 </vue-flux>
 ```
 
 ## Caption
-To use custom caption you can do it using caption slot like this:
+
+To use custom caption you can do it using caption slot of [VueFlux](Components/VueFlux) component. Check [FluxCaption](Components/Complements/FluxCaption) documentation for further information about `captionProp` element.
+
+#### Custom component
 
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions" ref="slider">
-   <custom-caption v-if="mounted" slot="caption" :slider="$refs.slider"></custom-caption>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:caption>
+      <flux-caption v-slot="captionProps">
+         <custom-caption caption="captionProps"></custom-caption>
+      </flux-caption>
+   </template>
 </vue-flux>
 ```
 
-``` javascript
-import CustomCaption from 'CustomCaption.vue';
+#### Custom structure
 
-export default {
-   components: {
-      CustomCaption
-   },
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
 
-   data: () => ({
-      mounted: false
-   }),
-
-   mounted() {
-      this.mounted = true;
-   }
-}
+   <template v-slot:caption>
+      <flux-caption v-slot="captionProps">
+         <a href="captionProps.url" class="flux-caption">{{ captionProps.text }}</a>
+      </flux-caption>
+   </template>
+</vue-flux>
 ```
 
 ## Pagination
-To use custom pagination you can do it using pagination slot like this:
+
+To use custom pagination you can do it using pagination slot of [VueFlux](Components/VueFlux) component. Check [FluxPagination](Components/Complements/FluxPagination) documentation for further information about `itemProp` element.
+
+#### Custom component
 
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions" ref="slider">
-   <custom-pagination v-if="mounted" slot="pagination" :slider="$refs.slider"></custom-pagination>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:pagination>
+      <flux-pagination v-slot="itemProps">
+         <custom-pagination item="itemProps"></custom-pagination>
+      </flux-pagination>
+   </template>
 </vue-flux>
 ```
 
-``` javascript
-import CustomPagination from 'CustomPagination.vue';
+#### Custom structure
 
-export default {
-   components: {
-      CustomPagination
-   },
+This is an example with [Font Awesome](https://fontawesome.com/) icons.
 
-   data: () => ({
-      mounted: false
-   }),
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
 
-   mounted() {
-      this.mounted = true;
-   }
-}
+   <template v-slot:pagination>
+      <flux-pagination v-slot="itemProps">
+         <i class="fas"
+            :class="itemProps.active? 'fa-check-square' : 'fa-square'"
+            @click="itemProps.onClick(itemProps.index)">
+         </i>
+      </flux-pagination>
+   </template>
+</vue-flux>
 ```
+
 
 ## Controls
-To use custom controls you can do it like this:
+
+To use custom controls you can do it using controls slot of [VueFlux](Components/VueFlux) component. Check [FluxControls](Components/Complements/FluxControls) documentation for further information.
 
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions" ref="slider">
-   <custom-controls v-if="mounted" slot="controls" :slider="$refs.slider"></custom-controls>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:controls>
+      <custom-controls></custom-controls>
+   </template>
 </vue-flux>
-```
-
-``` javascript
-import CustomControls from 'CustomControls.vue';
-
-export default {
-   components: {
-      CustomControls
-   },
-
-   data: () => ({
-      mounted: false
-   }),
-
-   mounted() {
-      this.mounted = true;
-   }
-}
 ```
 
 ## Index
-To use custom index you can do it like this:
+
+To use custom index you can do it using index slot of [VueFlux](Components/VueFlux) component. Check [FluxIndex](Components/Complements/FluxIndex) documentation for further information.
 
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions" ref="slider">
-   <custom-index v-if="mounted" slot="index" :slider="$refs.slider"></custom-index>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:index>
+      <custom-index></custom-index>
+   </template>
 </vue-flux>
-```
-
-``` javascript
-import CustomIndex from 'CustomIndex.vue';
-
-export default {
-   components: {
-      CustomIndex
-   },
-
-   data: () => ({
-      mounted: false
-   }),
-
-   mounted() {
-      this.mounted = true;
-   }
-}
 ```
