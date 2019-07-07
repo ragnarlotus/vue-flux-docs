@@ -13,7 +13,7 @@
   "scripts": {
     "serve": "vuepress dev docs",
     "build": "vuepress build docs",
-    "info": "vuepress view-info docs",
+    "info": "vuepress info",
     "help": "vuepress --help"
   },
   "devDependencies": {
