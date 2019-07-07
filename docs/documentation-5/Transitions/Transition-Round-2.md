@@ -7,8 +7,8 @@ Panels start to round vertically revealing the next image in upper arrow form le
 ### Options
 | Name | Type | Default |
 |------|------|---------|
-| numRows | Numeric |  |
-| numCols | Numeric |  |
+| rows | Numeric |  |
+| cols | Numeric |  |
 | tileDuration | Numeric | 800 |
 | tileDelay | Numeric | 100 |
 | easing | String | linear |

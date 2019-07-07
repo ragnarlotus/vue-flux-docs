@@ -96,8 +96,8 @@ let transitionOptions: {
       easing: 'ease'
    },
    transitionBlocks2d2: {
-      numRows: 5,
-      numCols: 5,
+      rows: 5,
+      cols: 5,
       tileDelay: 150
    }
 }

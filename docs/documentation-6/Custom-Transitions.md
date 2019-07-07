@@ -16,7 +16,7 @@ You can also set the destroyed() method to be run when transition ends.
 ## Example 1 - Waterfall
 
 ``` html
-<flux-grid :slider="slider" :num-rows="numRows" :num-cols="numCols" :index="index" ref="grid"></flux-grid>
+<flux-grid :slider="slider" :rows="rows" :cols="cols" :index="index" ref="grid"></flux-grid>
 ```
 
 ``` javascript
@@ -33,8 +33,8 @@ export default {
       currentImage: undefined,
       nextImage: undefined,
       index: {},
-      numRows: 1,
-      numCols: 0,
+      rows: 1,
+      cols: 0,
       tileDuration: 600,
       totalDuration: 0,
       easing: 'ease-in',
@@ -100,7 +100,7 @@ export default {
 ## Example 2 - Wave
 
 ``` html
-<flux-grid :slider="slider" :num-rows="numRows" :num-cols="numCols" :index="index" ref="grid"></flux-grid>
+<flux-grid :slider="slider" :rows="rows" :cols="cols" :index="index" ref="grid"></flux-grid>
 ```
 
 ``` javascript
@@ -117,8 +117,8 @@ export default {
       currentImage: undefined,
       nextImage: undefined,
       index: {},
-      numRows: 1,
-      numCols: 0,
+      rows: 1,
+      cols: 0,
       tileDuration: 800,
       totalDuration: 0,
       easing: 'ease-out',

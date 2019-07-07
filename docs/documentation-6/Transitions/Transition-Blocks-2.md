@@ -7,8 +7,8 @@ The image is splited in blocks that shrink and fade out in wave from a corner to
 ### Options
 | Name | Type | Default |
 |------|------|---------|
-| numRows | Numeric |  |
-| numCols | Numeric |  |
+| rows | Numeric | 8 |
+| cols | Numeric | 8 |
 | tileDuration | Numeric | 800 |
 | tileDelay | Numeric | 80 |
 | easing | String | ease |

@@ -9,3 +9,4 @@ Turns the image to a side like if place in a cube.
 |------|------|---------|
 | totalDuration | Numeric | 1400 |
 | easing | String | ease-out |
+| perspective | String | 1600px |
