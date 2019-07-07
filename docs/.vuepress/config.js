@@ -1,6 +1,8 @@
 module.exports = {
 	title: 'VueFlux',
 	description: 'Documentation and demos of vue slider VueFlux',
+	base: '/vue-flux-docs/',
+	dest: '../dist/',
 	themeConfig: {
 		search: false,
 		nav: [
