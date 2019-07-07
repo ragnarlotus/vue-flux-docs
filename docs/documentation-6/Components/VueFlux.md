@@ -5,7 +5,7 @@
 
 This is the main component of the slider and will be the frame that displays the images.
 
-## Tag attributes
+## Attributes
 
 All the following attributes are reactive, so if you change their value at any moment, the slider will be updated automatically.
 
@@ -50,7 +50,7 @@ This is the default options schema:
 }
 ```
 
-## Transitions
+### Transitions
 
 This is an array that will own the transition names or custom transitions to be used between images.
 
@@ -63,7 +63,7 @@ If a transition is not found, an error will be thrown.
 Refer to [Transitions](../Transitions) to know more about included transitions.
 
 ``` html
-<vue-flux images="vfImages" transitions="vfTransitions"></vue-flux>
+<vue-flux :images="vfImages" :transitions="vfTransitions"></vue-flux>
 ```
 
 ``` js
@@ -89,7 +89,7 @@ To use a custom transition, we need to import it and include it in the transitio
 Refer to [Custom transitions](../Custom-Transitions) to know more about how to create custom transitions.
 
 ``` html
-<vue-flux images="vfImages" transitions="vfTransitions"></vue-flux>
+<vue-flux :images="vfImages" :transitions="vfTransitions"></vue-flux>
 ```
 
 ``` js
@@ -128,7 +128,7 @@ To know which options the included transions have, go to the transition document
 Following is an example of customizing an included transition and a custom transition.
 
 ``` html
-<vue-flux images="vfImages" transitions="vfTransitions"></vue-flux>
+<vue-flux :images="vfImages" :transitions="vfTransitions"></vue-flux>
 ```
 
 ``` js
@@ -156,19 +156,19 @@ export default {
 }
 ```
 
-## Images
+### Images
 
 The array containing the image URLs to be displayed.
 
 If an image can not be loaded will be omitted displaying a console warning message.
 
-## Captions
+### Captions
 
 Captions are the texts that will be displayed when its image is showed.
 
-Also will be displayed as popover in the components FluxIndex and FluxPagination when you stop the mouse over an element.
+Also will be displayed as popover in the components `FluxIndex` and `FluxPagination` when you stop the mouse over an element.
 
-Each caption can be a simple string or an object with the property text in it. Here it is a Caption example:
+Each caption can be defined as simple string or an object with any data you want **and the property** `text` in it as plain text. Here it is an extended caption example:
 
 ``` js
 {
@@ -178,9 +178,9 @@ Each caption can be a simple string or an object with the property text in it. H
 }
 ```
 
-This way you can customize considerably the caption's slot with any data you need.
+This way you can customize considerably the [caption's slot](Complements/FluxCaption/#templating) with any data you need and reach it easily.
 
-## Size
+### Size
 
 The slider size is defined the following way.
 
@@ -188,7 +188,7 @@ By default the width will be the parent's width and height.
 
 If no height defined, will calculate the height using the width as per 16:9 ratio.
 
-## Component properties
+## Properties
 
 This are the component properties that you can access programatically.
 
@@ -204,7 +204,7 @@ This are the component properties that you can access programatically.
 | Touches | TouchesController | Is the controller that manages the touch screens functionality |
 | Images | ImagesController | The controller in charge of loading and image displaying |
 
-## Component methods
+## Methods
 
 | Method | Parameters | Description |
 |--------|------------|-------------|
@@ -217,7 +217,7 @@ This are the component properties that you can access programatically.
 | toggleAutoplay |  | Toggles auto play |
 | showImage | index, transition | Displays the image specified by image index (or 'next' or 'previous') and using the specified transition. If no index specified will display next and if no transition specified will use the next defined in transitions |
 
-## Component events
+## Events
 
 | Name | Description |
 |------|-------------|
@@ -240,7 +240,7 @@ This are the component properties that you can access programatically.
 | transition-cancel | Fired when transion is running and is being cancelled |
 | transition-end | Fired when transition finish |
 
-## Component references
+## References
 
 | Name | Component | Description |
 |------|-----------|-------------|

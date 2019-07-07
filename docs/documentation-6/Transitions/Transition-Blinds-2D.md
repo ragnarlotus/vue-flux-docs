@@ -7,7 +7,7 @@ Divides the image in vertical bars that blinds and fades out.
 ### Options
 | Name | Type | Default |
 |------|------|---------|
-| numCols | Numeric | 10 |
+| cols | Numeric | 10 |
 | tileDuration | Numeric | 800 |
 | tileDelay | Numeric | 100 |
 | easing | String | linear |
