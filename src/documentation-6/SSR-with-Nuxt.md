@@ -8,10 +8,14 @@ Edit the nuxt config to let it know not to SSR and to add it as vendor.
 ```js
    ...
    plugins: [{
-      src: '~/node_modules/vue-flux', ssr: false
+      src: '~/node_modules/vue-flux',
+      ssr: false,
    }],
+
    build: {
-      vendor : ['vue-flux'],
+      vendor : [
+         'vue-flux'
+      ],
    ...
 ```
 

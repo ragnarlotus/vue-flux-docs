@@ -1,9 +1,14 @@
 ---
 ---
 
-## Structure
+## Schema
 
-Must receive the slider.
+Transitions use a mixin to perform basic and shared logics, like properties.
+
+This are the mixin tag attributes:
+
+
+## Structure
 
 Must have a totalDuration attribute to know how long the transition lasts.
 
@@ -61,7 +66,7 @@ export default {
          numCols: Math.floor(this.slider.size.width / divider)
       });
 
-      this.totalDuration = this.tileDelay * this.numCols + this.tileDuration;
+      this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
 
       this.index = {
          front: this.slider.currentImage.index
@@ -89,7 +94,7 @@ export default {
          let delay = i;
 
          if (this.direction === 'left')
-            delay = this.numCols - i - 1;
+            delay = this.cols - i - 1;
 
          return delay * this.tileDelay;
       }
@@ -143,10 +148,10 @@ export default {
       let divider = this.slider.size.width / 8;
 
       this.slider.setTransitionOptions(this, {
-         numCols: Math.floor(this.slider.size.width / divider)
+         cols: Math.floor(this.slider.size.width / divider)
       });
 
-      this.totalDuration = this.tileDelay * this.numCols + this.tileDuration;
+      this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
 
       this.index = {
          front: this.currentImage.index,
@@ -183,7 +188,7 @@ export default {
          let delay = i;
 
          if (this.direction === 'left')
-            delay = this.numCols - i - 1;
+            delay = this.cols - i - 1;
 
          return delay * this.tileDelay;
       }

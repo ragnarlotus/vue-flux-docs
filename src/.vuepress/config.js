@@ -1,16 +1,18 @@
+const basePath = '/vue-flux-docs';
+
 module.exports = {
 	title: 'VueFlux',
 	description: 'Documentation and demos of vue slider VueFlux',
-	base: '/vue-flux-docs/',
-	dest: '../dist/',
+	base: basePath,
+	dest: '../docs/',
 	themeConfig: {
 		search: false,
 		nav: [
 			{ text: 'Home', link: '/' },
 			{ text: 'Documentation',
 				items: [
-					{ text: '6.X', link: '/documentation-6/' },
 					{ text: '5.X', link: '/documentation-5/' },
+					{ text: '6.X', link: '/documentation-6/' },
 				],
 			},
 			{ text: 'Demos', link: '/demos/' },
@@ -125,7 +127,7 @@ module.exports = {
 						['/documentation-6/Transitions/Transition-Zip', 'Zip'],
 					],
 				},
-				['/documentation-5/Custom-Transitions', 'Custom transitions'],
+				['/documentation-6/Custom-Transitions', 'Custom transitions'],
 			],
 		},
 	},
