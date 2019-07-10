@@ -1,9 +1,9 @@
 
 <ClientOnly>
-   <demos-slider-1 />
+   <demos-index />
 </ClientOnly>
 
-## Clarification
+## Clarifications
 
 In this documentation you can find tag `attibutes` and component `properties`. I have done this differentiation to indicate which are input parameters and component own parameters. This is basically based because in HTML they are mostly called attributes, meanwhile in javascript they are called properties and I needed to difference them, so **pay attention when I reference to <u>attibutes</u> and <u>properties</u>**.
 
@@ -11,13 +11,46 @@ In this documentation you can find tag `attibutes` and component `properties`. I
 
 This refers to attributes the component tag receives (aka input props).
 
+``` html
+<vue-flux
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions">
+</vue-flux>
+```
+
 #### Properties
 
-This refers to component properties that can read (aka output props).
+This refers to data and computed properties (aka output props).
+
+``` js
+export default {
+   ...
+   data: () => ({
+      ...
+   }),
+
+   computed: {
+      ...
+   },
+   ...
+}
+```
 
 #### Methods
 
 This refers to component methods.
+
+``` js
+export default {
+   ...
+   methods() {
+      ...
+   },
+   ...
+}
+```
 
 #### Events
 
@@ -27,8 +60,7 @@ Check the following `VueFlux` component example.
 
 ``` html
 <vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
+   ...
    @play="runPlayEvent()"
    @stop="runStopEvent()"
    @transition-start="runTransitionStart()"
@@ -36,35 +68,13 @@ Check the following `VueFlux` component example.
 </vue-flux>
 ```
 
-``` js
-export default {
-   ...
-   data: () => ({
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'cube', 'book', 'wave' ],
-   }),
-
-   methods() {
-      runPlayEvent() {
-         console.log('Slider has started playing');
-      },
-
-      runStopEvent() {
-         console.log('Slider has stopped playing');
-      },
-
-      runTransitionStart() {
-         console.log('Transition started');
-      },
-
-      runTransitionEnd() {
-         console.log('Transition finished');
-      },
-   },
-   ...
-}
-```
-
 #### References
 
 This will be the components or tags referenced in the component, able to be reached throught `$refs` vue property of the component.
+
+``` html
+<vue-flux
+   ...
+   ref="slider">
+</vue-flux>
+```

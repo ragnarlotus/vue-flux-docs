@@ -70,14 +70,14 @@ Add the component to the template. This one has all the complements, so you can 
 Add it to the component, and like before you can remove the complements you don't use.
 
 ``` javascript
-import VueFlux from 'vue-flux';
 import {
+   VueFlux,
    FluxCaption,
    FluxControls,
    FluxIndex,
    FluxPagination,
    FluxPreloader
-} from 'vue-flux/complements';
+} from 'vue-flux';
 
 export default {
    components: {

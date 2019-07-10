@@ -22,7 +22,7 @@ All the following attributes are reactive, so if you change their value at any m
 |--------|------|---------|-------------|
 | allowFullscreen | Boolean | false | Allows the slider to be displayed in full screen |
 | allowToSkipTransition | Boolean | true | If enabled you will be able to skip the running transition, otherwise you need to wait to interact again |
-| autohideTime | Number | 1500 | The time in ms that the controls and index button will stay until disappear. If set to 0 they will never disappear |
+| autohideTime | Number | 1000 | The time in ms that the controls and index button will stay until disappear. If set to 0 they will never disappear |
 | autoplay | Boolean | false | Autoplay images when loaded |
 | bindKeys | Boolean | false | Binds the arrow keys to show next or previous |
 | delay | Number | 5000 | The time in ms that an image will be displayed before changing to next |
@@ -38,7 +38,7 @@ This is the default options schema:
 {
    allowFullscreen: false,
    allowToSkipTransition: true,
-   autohideTime: 1500,
+   autohideTime: 1000,
    autoplay: false,
    bindKeys: false,
    delay: 5000,

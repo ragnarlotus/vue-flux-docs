@@ -24,12 +24,13 @@
 </template>
 
 <script>
-	import { VueFlux, complements } from 'vue-flux';
-
-	const FluxPreloader = complements.FluxPreloader;
-	const FluxCaption = complements.FluxCaption;
-	const FluxControls = complements.FluxControls;
-	const FluxPagination = complements.FluxPagination;
+	import {
+		VueFlux,
+		FluxPreloader,
+		FluxCaption,
+		FluxControls,
+		FluxPagination,
+	} from 'vue-flux';
 
 	export default {
 		components: {
