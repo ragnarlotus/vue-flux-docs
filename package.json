@@ -17,6 +17,6 @@
     "help": "vuepress --help"
   },
   "devDependencies": {
-    "vue-flux": "^6.0.0-beta.0"
+    "vue-flux": "^6.0.0-beta.3"
   }
 }

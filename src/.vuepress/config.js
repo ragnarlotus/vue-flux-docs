@@ -75,7 +75,6 @@ module.exports = {
 				['/documentation-6/', 'Overview'],
 				['/documentation-6/Changelog', 'Changelog'],
 				['/documentation-6/Installation-and-usage', 'Installation and usage'],
-				['/documentation-6/Templating', 'Templating'],
 				['/documentation-6/SSR-with-Nuxt', 'SSR with Nuxt'],
 				{
 					title: 'Components',

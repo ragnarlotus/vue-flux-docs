@@ -5,7 +5,30 @@
 
 Transitions use a mixin to perform basic and shared logics, like properties.
 
-This are the mixin tag attributes:
+#### Attributes
+
+| Attribute | Type | Required | Description |
+|-----------|------|----------|-------------|
+| size | Object | false | An object with properties width and height in pixels |
+| from | String, Object | true | Origin image to start transition with |
+| to | String, Object | false | Final image to end transition with |
+| options | Object | false | Transition options to apply over predefined in transition |
+
+The attributes `from` and `to` can reference a simple image URL as `String` or an `Object` with the following structure:
+
+``` js
+[from | to] : {
+   src: URL(String),
+   size: {
+      width: 800,
+      height: 600,
+   },
+}
+```
+
+#### Properties
+
+
 
 
 ## Structure

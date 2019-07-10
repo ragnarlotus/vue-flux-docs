@@ -13,21 +13,21 @@ Edit the nuxt config to let it know not to SSR and to add it as vendor.
    }],
 
    build: {
-      vendor : [
-         'vue-flux'
-      ],
+      vendor : [ 'vue-flux' ],
    ...
 ```
 
-Then wrap the `<vue-flux>` component with `<no-ssr>` to indicate nuxt what not to SSR in template and import vue-flux when its run in the browser.
+Then wrap the `<vue-flux>` component with `<no-ssr>` to indicate nuxt what not to SSR in template.
 
-> gallery.vue
+> component.vue
 
 ``` html
 <no-ssr>
    <vue-flux>...</vue-flux>
 </no-ssr>
 ```
+
+Import vue-flux component only when its run in the browser.
 
 ```js
 let VueFlux;
@@ -38,10 +38,10 @@ if (process.browser) {
 }
 
 export default {
+   ...
    components: {
       VueFlux,
    },
-
    ...
 }
 ```
