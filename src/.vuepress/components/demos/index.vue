@@ -1,86 +1,39 @@
 <template>
-  <vue-flux
-    :options="options"
-    :images="images"
-    :transitions="transitions"
-    :captions="captions"
-    style="width: 480px; height: 360px;">
-
-    <template v-slot:preloader>
-      <flux-preloader></flux-preloader>
-    </template>
-
-    <template v-slot:caption>
-      <flux-caption></flux-caption>
-    </template>
-
-    <template v-slot:controls>
-      <flux-controls></flux-controls>
-    </template>
-
-    <template v-slot:pagination>
-      <flux-pagination></flux-pagination>
-    </template>
-  </vue-flux>
+	<demo
+		:options="options"
+		:transitions="transitions"
+		captions="fortune"
+		:complements="complements"
+		:numImages="8">
+	</demo>
 </template>
 
 <script>
-  import {
-    VueFlux,
-    FluxPreloader,
-    FluxCaption,
-    FluxControls,
-    FluxPagination,
-  } from 'vue-flux';
+	import Demo from '../Demo.vue';
 
-  export default {
-    components: {
-      VueFlux,
-      FluxPreloader,
-      FluxCaption,
-      FluxControls,
-      FluxPagination,
-    },
+	export default {
+		name: 'demos-index',
 
-    data: () => ({
-      options: {
-        allowFullscreen: true,
-        autoplay: true,
-        lazyLoadAfter: 5,
-        path: 'img/slides/',
-      },
-      images: [],
-      transitions: [
-        'fade', 'cube', 'book', 'wave', 'round2',
-      ],
-      captions: [],
-    }),
+		components: {
+			Demo,
+		},
 
-    created() {
-      this.loadImages();
-    },
-
-    methods: {
-      loadImages() {
-        let srcs = [];
-
-        for (let i = 1; i <= 60; i++) {
-          srcs.push(i.toString().padStart(2, '0') +'.jpg');
-        }
-
-        this.images = [];
-        this.captions = [];
-
-        let index, src;
-
-        for (let i = 1; i <= 16; i++) {
-          index = Math.floor(Math.random() * srcs.length);
-          src = srcs.splice(index, 1)[0];
-
-          this.captions.push(`This is the image number ${i}`);
-          this.images.push(src);
-        }
-      },
-    }
-  };
+		data: () => ({
+			options: {
+				allowFullscreen: true,
+				autoplay: true,
+				lazyLoadAfter: 5,
+				path: 'img/slides/',
+			},
+			transitions: [
+				'fade', 'cube', 'book', 'wave', 'round2',
+			],
+			complements: {
+				preloader: true,
+				caption: true,
+				controls: true,
+				pagination: true,
+			},
+		}),
+	};
 </script>
