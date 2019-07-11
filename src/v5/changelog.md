@@ -25,7 +25,7 @@ Now when an image could not be loaded the slider will omit it displaying a conso
 
 ## 5.1.3
 Updated height calculation when set to auto.  
-More info can be found in [VueFlux](v5/Components/VueFlux.html) under **Size** section.
+More info can be found in [VueFlux](components/vue-flux) under **Size** section.
 
 ## 5.1.0
 Added an option to enable gestures (disabled by default).  

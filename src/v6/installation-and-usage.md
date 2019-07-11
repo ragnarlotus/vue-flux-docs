@@ -6,7 +6,7 @@
 Installation is very simple, just use your favourite package manager:
 
 ``` bash
-npm install --save vue-flux@latest
+npm install --save vue-flux@beta
 ```
 
 ## Usage
@@ -82,4 +82,4 @@ export default {
 }
 ```
 
-If you want to see more details about options, check the [VueFlux](Components/VueFlux) component documentation.
+If you want to see more details about options, check the [VueFlux](components/vue-flux) component documentation.

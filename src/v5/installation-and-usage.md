@@ -52,4 +52,4 @@ export default {
 }
 ```
 
-If you want to see more details about configuration check the [VueFlux](Components/VueFlux) component documentation.
+If you want to see more details about configuration check the [VueFlux](components/vue-flux) component documentation.

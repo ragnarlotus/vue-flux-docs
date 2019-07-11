@@ -154,7 +154,7 @@ You can view the full documentation at the project's [documentation](https://deu
 
 ## Changelog
 
-Check the [changelog](Changelog) for update info.
+Check the [changelog](changelog) for update info.
 
 ## Inspiration
 

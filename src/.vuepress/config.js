@@ -77,7 +77,7 @@ module.exports = {
 				['/v6/ssr-with-nuxt', 'SSR with Nuxt'],
 				{
 					title: 'Components',
-					path: '/v6/components/vue-flux',
+					path: '/v6/components/',
 					children: [
 						['/v6/components/vue-flux', 'VueFlux'],
 						['/v6/components/flux-cube', 'FluxCube'],
@@ -90,7 +90,7 @@ module.exports = {
 						['/v6/components/flux-wrapper', 'FluxWrapper'],
 						{
 							title: 'Complements',
-							path: '/v6/components/complements/flux-caption',
+							path: '/v6/components/complements/',
 							children: [
 								['/v6/components/complements/flux-caption', 'FluxCaption'],
 								['/v6/components/complements/flux-controls', 'FluxControls'],

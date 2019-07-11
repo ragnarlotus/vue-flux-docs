@@ -5,7 +5,7 @@ This sections describes how to use custom components or custom structure, but if
 
 ## Spinner
 
-Spinner is located inside the [FluxPreloader](Components/Complements/FluxPreloader) complement, so to use custom spinner you will have to use the spinner slot of the [FluxPreloader](Components/Complements/FluxPreloader) component.
+Spinner is located inside the [FluxPreloader](components/complements/flux-preloader) complement, so to use custom spinner you will have to use the spinner slot of the [FluxPreloader](components/complements/flux-preloader) component.
 
 #### Custom component
 
@@ -49,7 +49,7 @@ This is an example with [Font Awesome](https://fontawesome.com/) spinner.
 
 ## Caption
 
-To use custom caption you can do it using caption slot of [VueFlux](Components/VueFlux) component. Check [FluxCaption](Components/Complements/FluxCaption) documentation for further information about `captionProp` element.
+To use custom caption you can do it using caption slot of [VueFlux](components/vue-flux) component. Check [FluxCaption](components/complements/flux-caption) documentation for further information about `captionProp` element.
 
 #### Custom component
 
@@ -87,7 +87,7 @@ To use custom caption you can do it using caption slot of [VueFlux](Components/V
 
 ## Pagination
 
-To use custom pagination you can do it using pagination slot of [VueFlux](Components/VueFlux) component. Check [FluxPagination](Components/Complements/FluxPagination) documentation for further information about `itemProp` element.
+To use custom pagination you can do it using pagination slot of [VueFlux](components/vue-flux) component. Check [FluxPagination](components/complements/flux-pagination) documentation for further information about `itemProp` element.
 
 #### Custom component
 
@@ -129,7 +129,7 @@ This is an example with [Font Awesome](https://fontawesome.com/) icons.
 
 ## Controls
 
-To use custom controls you can do it using controls slot of [VueFlux](Components/VueFlux) component. Check [FluxControls](Components/Complements/FluxControls) documentation for further information.
+To use custom controls you can do it using controls slot of [VueFlux](components/vue-flux) component. Check [FluxControls](components/complements/flux-controls) documentation for further information.
 
 ``` html
 <vue-flux
@@ -145,7 +145,7 @@ To use custom controls you can do it using controls slot of [VueFlux](Components
 
 ## Index
 
-To use custom index you can do it using index slot of [VueFlux](Components/VueFlux) component. Check [FluxIndex](Components/Complements/FluxIndex) documentation for further information.
+To use custom index you can do it using index slot of [VueFlux](components/vue-flux) component. Check [FluxIndex](components/complements/flux-index) documentation for further information.
 
 ``` html
 <vue-flux

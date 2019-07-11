@@ -14,19 +14,19 @@ All the following attributes are reactive, so if you change their value at any m
 | options | Object | false | An object containing the slider [options](#options) |
 | transitions | Array | true | An array with [transitions](#transitions) |
 | images | Array | false | An array with the images URL |
-| captions | Array | false | An array with captions to be displayed on each image |
+| captions | Array | false | An array with text to be displayed on each image |
 
-## Options
+### Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | allowFullscreen | Boolean | false | Allows the slider to be displayed in full screen |
 | allowToSkipTransition | Boolean | true | If enabled you will be able to skip the running transition, otherwise you need to wait to interact again |
-| autohideTime | Number | 1000 | The time in ms that the controls and index button will stay until disappear. If set to 0 they will never disappear |
-| autoplay | Boolean | false | Autoplay images when loaded |
-| bindKeys | Boolean | false | Binds the arrow keys to show next or previous |
-| delay | Number | 5000 | The time in ms that an image will be displayed before changing to next |
-| enableGestures | Boolean | false | Define if in touchable screens should show control and index icons or use gestures |
+| autohideTime | Number | 1000 | The time in *ms* that the controls and index buttons remain visible. If set to `0` they will never disappear |
+| autoplay | Boolean | false | Autoplay images when preload finished |
+| bindKeys | Boolean | false | Binds the arrow keys of keyboard to show next or previous |
+| delay | Number | 5000 | The time in *ms* that an image will be displayed before changing to next |
+| enableGestures | Boolean | false | Define if in touchable screens should use gestures instead of showing control and index buttons |
 | infinite | Boolean | true | The slider will start over when reaches the last image, otherwise will stop |
 | lazyLoad | Boolean | true | Enables or disables lazy loading of images. If disabled, transitions will not begin until all images have been loaded |
 | lazyLoadAfter | Number | 3 | Indicates how many images have to be loaded before starting to load the rest in background |
@@ -60,19 +60,20 @@ If a transition is not found, an error will be thrown.
 
 #### Included transitions
 
-Refer to [Transitions](../Transitions) to know more about included transitions.
+Refer to [Transitions](../transitions/) to know more about included transitions.
 
 ``` html
-<vue-flux :images="vfImages" :transitions="vfTransitions"></vue-flux>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions">
+</vue-flux>
 ```
 
 ``` js
-export default {
-   data: () => ({
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'cube', 'book', 'wave' ],
-   }),
-}
+data: () => ({
+   vfImages: [ 'URL1', 'URL2', 'URL3' ],
+   vfTransitions: [ 'fade', 'cube', 'book', 'wave' ],
+}),
 ```
 
 #### Custom transitions
@@ -81,15 +82,18 @@ To use a custom transition, we need to import it and include it in the transitio
 
 ``` js
 {
-   name: 'custom-component',
-   component: CustomComponent,
+   name: 'CustomTransition',
+   component: CustomTransition,
 }
 ```
 
-Refer to [Custom transitions](../Custom-Transitions) to know more about how to create custom transitions.
+Refer to [Custom transitions](../custom-transitions) to know more about how to create custom transitions.
 
 ``` html
-<vue-flux :images="vfImages" :transitions="vfTransitions"></vue-flux>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions">
+</vue-flux>
 ```
 
 ``` js
@@ -99,6 +103,7 @@ import CustomTransition2 from 'CustomTransition2.vue';
 export default {
    data: () => ({
       vfImages: [ 'URL1', 'URL2', 'URL3' ],
+
       vfTransitions: [{
          name: 'CustomTransition1',
          component: CustomTransition1,
@@ -128,7 +133,10 @@ To know which options the included transions have, go to the transition document
 Following is an example of customizing an included transition and a custom transition.
 
 ``` html
-<vue-flux :images="vfImages" :transitions="vfTransitions"></vue-flux>
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions">
+</vue-flux>
 ```
 
 ``` js
@@ -137,12 +145,14 @@ import CustomTransition from 'CustomTransition.vue';
 export default {
    data: () => ({
       vfImages: [ 'URL1', 'URL2', 'URL3' ],
+
       vfTransitions: [{
          name: 'blinds2',
          options: {
             tileDuration: 1000,
             easing: 'ease-in-out',
          },
+
       }, {
          name: 'CustomTransition',
          component: CustomTransition,
@@ -178,7 +188,7 @@ Each caption can be defined as simple string or an object with any data you want
 }
 ```
 
-This way you can customize considerably the [caption's slot](Complements/FluxCaption/#templating) with any data you need and reach it easily.
+This way you can customize considerably the [caption's slot](complements/flux-caption/#templating) with any data you need and reach it easily.
 
 ### Size
 
@@ -188,7 +198,7 @@ By default the width will be the parent's width and height.
 
 If no height defined, will calculate the height using a 16:9 ratio.
 
-If you want to define a size, avoid using `width` and `height` in the style attibte as those values will be applied always, even in full screen. So better use a class in `vue-flux` component to set the `style` attribute in the parent to set a specific size.
+If you want to define a size, avoid using `width` and `height` in the style attibute as those values will be applied always, even in full screen. So better use a class in `vue-flux` component or set the `style` attribute in the parent to set a specific size.
 
 ## Properties
 
