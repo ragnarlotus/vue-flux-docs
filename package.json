@@ -7,6 +7,14 @@
     "type": "git",
     "url": "git+https://github.com/deulos/vue-flux-docs.git"
   },
+  "keywords": [
+    "vue",
+    "image",
+    "slider",
+    "parallax",
+    "vue-flux",
+    "documentation"
+  ],
   "license": "MIT",
   "bugs": "https://github.com/deulos/vue-flux-docs/issues",
   "homepage": "https://deulos.github.io/vue-flux-docs/",
