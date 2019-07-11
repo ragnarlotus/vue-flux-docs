@@ -186,7 +186,9 @@ The slider size is defined the following way.
 
 By default the width will be the parent's width and height.
 
-If no height defined, will calculate the height using the width as per 16:9 ratio.
+If no height defined, will calculate the height using a 16:9 ratio.
+
+If you want to define a size, avoid using `width` and `height` in the style attibte as those values will be applied always, even in full screen. So better use a class in `vue-flux` component to set the `style` attribute in the parent to set a specific size.
 
 ## Properties
 
