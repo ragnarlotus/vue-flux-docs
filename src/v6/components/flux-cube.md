@@ -6,12 +6,12 @@
 Component composed by up to 6 [FluxImage](flux-image) that forms a cube.
 
 Sides:
-- front
-- back
-- top
-- bottom
-- left
-- right
+- front\<String>
+- back\<String>
+- top\<String>
+- bottom\<String>
+- left\<String>
+- right\<String>
 
 ## Attributes
 
@@ -141,14 +141,38 @@ let offset = {
 
 ## Methods
 
-| Method | Parameters | Description |
-|--------|------------|-------------|
-| getSide | side | Returns the the FluxImage dyspalying requested side |
-| setCss | css | Object with the style to be applied to the cube |
-| transform | css | Object with the style used to perform the transitions |
-| turn | side | Turns the cube to specified side (top, back, bottom, left, right) with to side (left or right) |
-| turnTop | | Turns the cube to top |
-| turnBack | to | Turns the cube back side, to left or to right |
-| turnBottom | | Turns the cube to bottom |
-| turnLeft | | Turns the cube to left |
-| turnRight | | Turns the cube to right |
+### getSide(side\<side>)
+
+Returns the the FluxImage dyspalying requested side.
+
+### setCss(css\<Object>)
+
+Object with the style to be applied to the cube.
+
+### transform(css\<Object>)
+
+Object with the style used to perform the transitions.
+
+### turn(css\<Side>)
+
+Turns the cube to specified side (top, back, bottom, left, right) with to side (left or right).
+
+### turnTop
+
+Turns the cube to top.
+
+### turnBack
+
+Turns the cube back side.
+
+### turnBottom
+
+Turns the cube to bottom.
+
+### turnLeft
+
+Turns the cube to left.
+
+### turnRight
+
+Turns the cube to right.
