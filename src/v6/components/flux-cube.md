@@ -3,36 +3,150 @@
 
 ## Description
 
-Component composed by FluxImages that form a cube.
+Component composed by up to 6 [FluxImage](flux-image) that forms a cube.
 
-## Component
+Sides:
+- front
+- back
+- top
+- bottom
+- left
+- right
 
-Represents a set of images that renders as a 6 sides cube.
+## Attributes
 
-The component can have the following attributes.
+### size
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | true | The VueFlux component responsible of this cube |
-| index | Object | true | An object containing the sides indexes |
-| css | Object | false | Initial CSS style, by default sets top 0 and left 0 |
+This size is the width and height the cube will have.
 
-Example:
-``` html
-<flux-cube
-   :slider="slider"
-   :index="{front: 1, top: 2, left: '#ccc', right: '#ccc'}"
-   :css="{width: '300px', height: '300px'}">
-</flux-cube>
+- **Type:** `Object`
+- **Required:** `true`
+- **Schema:**
+``` js
+let size = {
+   width: Number,
+   height: Number,
+};
+```
+
+### images
+
+Object with images per side.
+
+Check the [FluxImage image](flux-image#image) for the parameter schema.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+let images = {
+   front: frontImage,
+   back: backImage,
+   top: topImage,
+   bottom: bottomImage,
+   left: leftImage,
+   right: rightImage,
+};
+```
+
+### color
+
+This attibute sets the background color in case there is no image set or image does not fill the side.
+
+If the color is a string, the color will be applied to all sides.
+
+Check the [FluxImage color](flux-image#color) for the parameter format.
+
+- **Type:** `String | Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+// Applied to all sides
+let color = 'rgba(50, 100, 150, 0.5)';
+
+// Applied color by side
+let color = {
+   front: '#012345',
+   back: '#6789ab',
+   top: '#cdef01',
+   bottom: '#234567',
+   left: '#89abcd',
+   right: '#ef0123',
+};
+```
+
+### depth
+
+Size in pixels for cube depth.
+
+If not defined the depth will be determined by the width and height defined in [size](#size).
+
+- **Type:** `Number`
+- **Required:** `false`
+- **Schema:**
+``` js
+let depth = 800;
+```
+
+### css
+
+Object with cube CSS styles.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+let css = {
+   box-shadow: 5px 10px #888,
+};
+```
+
+### sidesCss
+
+Object with CSS styles per side.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+let sideCss = {
+   ...,
+   front: {
+      ...,
+   },
+   right: {
+      ...,
+   },
+   ...,
+};
+```
+
+### offset
+
+Its and adjustment of the image in pixels.
+
+Check the [FluxImage offset](flux-image#offset) for the parameter details.
+
+- **Type:** `Number | String | Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+let offset = {
+   ...,
+   front: '50',
+   right: '-50',
+   ...,
+};
 ```
 
 ## Methods
 
 | Method | Parameters | Description |
 |--------|------------|-------------|
-| setCss | css | Object with the style to be applied directly |
-| transform | css | Object with the style to be applied rendering, used to perform the transitions |
-| turn | direction, to | Turns the cube to specified direction (top, back, bottom, left, right) with to side (left or right) |
+| getSide | side | Returns the the FluxImage dyspalying requested side |
+| setCss | css | Object with the style to be applied to the cube |
+| transform | css | Object with the style used to perform the transitions |
+| turn | side | Turns the cube to specified side (top, back, bottom, left, right) with to side (left or right) |
 | turnTop | | Turns the cube to top |
 | turnBack | to | Turns the cube back side, to left or to right |
 | turnBottom | | Turns the cube to bottom |
