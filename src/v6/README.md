@@ -12,7 +12,7 @@ This is an image slider developed with [vue](https://vuejs.org/) 2 which comes w
 
 ## Demo
 
-You can view a [demo here](../demos/).
+You can view some [demos here](../demos/) (WIP).
 
 ## Features
 | Feature | Description |
@@ -106,7 +106,7 @@ export default {
 
 ## Performance
 
-Weight is just 102KB so is pretty light having only the essential CSS. It also does not require a high end computer as animations are performed with CSS3 hardware acceleration.
+Weight is about 100 KB so is pretty light having only the essential CSS. It also does not require a high end computer as animations are performed with CSS3 hardware acceleration.
 
 ## Included transitions
 

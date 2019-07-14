@@ -1,6 +1,18 @@
+---
+---
+
 <ClientOnly>
    <demos-index />
 </ClientOnly>
+
+## Documentation status
+
+[Version 5](/v5/) of slider documentation is completed as it is imported from the wiki.
+
+[Version 6](/v6/) is about 60% completed:
+- Main pages
+- Transitions
+- Components: VueFlux and FluxCube
 
 ## Clarifications
 

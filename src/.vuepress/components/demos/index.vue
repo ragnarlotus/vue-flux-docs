@@ -4,7 +4,7 @@
 		:transitions="transitions"
 		captions="fortune"
 		:complements="complements"
-		:numImages="8">
+		:numImages="60">
 	</demo>
 </template>
 
@@ -22,7 +22,7 @@
 			options: {
 				allowFullscreen: true,
 				autoplay: true,
-				lazyLoadAfter: 5,
+				lazyLoad: false,
 				path: 'img/slides/',
 			},
 			transitions: [

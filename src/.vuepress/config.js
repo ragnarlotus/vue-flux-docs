@@ -13,7 +13,7 @@ module.exports = {
 					{ text: 'v6', link: '/v6/' },
 				],
 			},
-			{ text: 'Demos', link: 'demos/' },
+			{ text: 'Demos', link: '/demos/' },
 			{ text: 'Github', link: 'https://github.com/deulos/vue-flux' },
 		],
 		sidebar: {

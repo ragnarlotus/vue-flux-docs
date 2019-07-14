@@ -5,13 +5,13 @@
 
 Component composed by up to 6 [FluxImage](flux-image) that forms a cube.
 
-Sides:
-- front\<String>
-- back\<String>
-- top\<String>
-- bottom\<String>
-- left\<String>
-- right\<String>
+**Sides**:
+- front: `String`
+- back: `String`
+- top: `String`
+- bottom: `String`
+- left: `String`
+- right: `String`
 
 ## Attributes
 
@@ -24,8 +24,8 @@ This size is the width and height the cube will have.
 - **Schema:**
 ``` js
 let size = {
-   width: Number,
-   height: Number,
+   width: Number | String,
+   height: Number | String,
 };
 ```
 
@@ -141,38 +141,52 @@ let offset = {
 
 ## Methods
 
-### getSide(side\<side>)
+### getSide(side: `String`)
 
-Returns the the FluxImage dyspalying requested side.
+Gets the image by side.
 
-### setCss(css\<Object>)
+- **Arguments:**
+   - side: `'front' | 'back' | 'top' | 'bottom' | 'left' | 'right'`
 
-Object with the style to be applied to the cube.
+- **Returns:** the [FluxImage](flux-image) dispalying requested side.
 
-### transform(css\<Object>)
+### setCss(css: `Object`)
 
-Object with the style used to perform the transitions.
+Set a CSS rules to the cube.
 
-### turn(css\<Side>)
+- **Arguments:** 
+   - css: `{...}`
+
+### transform(css: `Object`)
+
+Sets the CSS style to be transformed to within a transition.
+
+- **Arguments:** 
+   - css: `{...}`
+
+### turn(side: `String`)
 
 Turns the cube to specified side (top, back, bottom, left, right) with to side (left or right).
 
-### turnTop
+- **Arguments:**
+   - side: `'front' | 'back' | 'top' | 'bottom' | 'left' | 'right'`
+
+### turnTop()
 
 Turns the cube to top.
 
-### turnBack
+### turnBack()
 
-Turns the cube back side.
+Turns the cube to back side.
 
-### turnBottom
+### turnBottom()
 
 Turns the cube to bottom.
 
-### turnLeft
+### turnLeft()
 
 Turns the cube to left.
 
-### turnRight
+### turnRight()
 
 Turns the cube to right.
