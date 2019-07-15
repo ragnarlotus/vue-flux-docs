@@ -307,7 +307,7 @@ Leaves the full screen mode.
 
 Toggles full screen mode.
 
-### play([number], [delay])
+### play(number: `Number | String`, delay: `Number`)
 
 Starts displaying the images by the interval specified with [delay](#options) option.
 
@@ -315,23 +315,23 @@ Starts displaying the images by the interval specified with [delay](#options) op
 
 The number is the image number to start with, and can also be 'previous' and 'next'.
 
-* type: Number | 'previous' | 'next'
-* required: false
-* default: 'next'
+* type: `Number | 'previous' | 'next'`
+* required: `false`
+* default: `'next'`
 
 #### delay
 
 The delay is the time in *ms* to start. If not ime specified, the one set in config as `delay` will be used.
 
-* type: Number
-* required: false
+* type: `Number`
+* required: `false`
 * default: [config.delay](#options)
 
 ### stop()
 
 Stops playing images and remains in the current.
 
-### showImage([number], [transition])
+### showImage(number: `Number`, transition: `String`)
 
 Displays the image specified by image number (or 'next' or 'previous') and using the specified transition.
 
@@ -351,77 +351,24 @@ If no number, the next transition will be run.
 
 ## Events
 
-### created
-
-Fired when the slider component is created.
-
-### mounted
-
-Fired when the slider component is mounted.
-
-### destroyed
-
-Fired when the slider component is destroyed.
-
-### options-updated
-
-Fired when the options have been updated.
-
-### ready
-
-Fired when the slider is ready and will start to display images.
-
-### play
-
-Fired when auto playing images.
-
-### stop
-
-Fired when stopped to auto play images.
-
-### show
-
-Fired when requested to show an image.
-
-### fullscreen-enter
-
-Fired when entered in full screen mode.
-
-### fullscreen-exit
-
-Fired when exit from full screen.
-
-### images-preload-start
-
-Fired when started to preload images.
-
-### images-preload-end
-
-Fired when finished to preoload images.
-
-### images-lazyload-start
-
-Fired when start to lazy loading images.
-
-### images-lazyload-end
-
-Fired when finished to lay loading images.
-
-### transitions-updated
-
-Fired when transitions updated.
-
-### transition-start
-
-Fired when transition begin.
-
-### transition-cancel
-
-Fired when transion is running and is being cancelled.
-
-### transition-end
-
-Fired when transition finish.
+* `created`: fired when the slider component is created.
+* `mounted`: fired when the slider component is mounted.
+* `destroyed`: fired when the slider component is destroyed.
+* `options-updated`: fired when the options have been updated.
+* `ready`: fired when the slider is ready and will start to display images.
+* `play`: fired when auto playing images.
+* `stop`: fired when stopped to auto play images.
+* `show`: fired when requested to show an image.
+* `fullscreen-enter`: fired when entered in full screen mode.
+* `fullscreen-exit`: fired when exit from full screen.
+* `images-preload-start`: fired when started to preload images.
+* `images-preload-end`: fired when finished to preoload images.
+* `images-lazyload-start`: fired when start to lazy loading images.
+* `images-lazyload-end`: fired when finished to lay loading images.
+* `transitions-updated`: fired when transitions updated.
+* `transition-start`: fired when transition begin.
+* `transition-cancel`: fired when transion is running and is being cancelled.
+* `transition-end`: fired when transition finish.
 
 ## References
 
@@ -429,10 +376,10 @@ Fired when transition finish.
 
 The component that shows the image between transitions.
 
-* Type: FluxImage
+* Type: `FluxImage`
 
 ### transition
 
 The component that runs the transition between images.
 
-* Type: FluxTransition
+* Type: `FluxTransition`
