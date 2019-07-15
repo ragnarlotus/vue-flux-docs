@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Camera
+
 From outside to inside the image is being cropped like in a camera lens.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | circles | Numeric | 7 |

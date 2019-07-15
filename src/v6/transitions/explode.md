@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Explode
+
 The image starts to explode from the center to outside.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | rows | Numeric | 9 |

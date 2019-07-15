@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Round 2
+
 Panels start to round vertically revealing the next image in upper arrow form leaving trail.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | rows | Numeric | 9 |

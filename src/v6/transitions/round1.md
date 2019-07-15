@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Round 1
+
 The image is splited in blocks that turn 180 deg horizontally to form next image.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | rows | Numeric | 8 |

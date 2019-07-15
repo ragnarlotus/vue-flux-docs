@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Slide
+
 Slides the image horizontally revealing the next.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | totalDuration | Numeric | 1400 |

@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Swipe
+
 Swipes the image to display next like uncovered with a curtain.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | totalDuration | Numeric | 1400 |

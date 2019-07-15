@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Blocks 1
+
 The image is splited in blocks that shrink and fade out randomly.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | rows | Numeric | 8 |

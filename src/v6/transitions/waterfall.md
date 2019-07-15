@@ -1,10 +1,12 @@
 ---
 ---
 
-### Description
+## Waterfall
+
 Divides the image in bars and drops them down in turns.
 
 ### Options
+
 | Name | Type | Default |
 |------|------|---------|
 | cols | Number | 10 |
