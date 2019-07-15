@@ -31,6 +31,7 @@ New features:
 * Improved documentation
 * Update syntax to vue 2.6 version
 * Some transitions have been adjusted and look better
+* Rmoeved `toggleAutoplay` method
 
 Other changes:
 * Option `fullscreen` has been renamed to `allowFullscreen`
