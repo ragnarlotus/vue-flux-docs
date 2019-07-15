@@ -5,14 +5,6 @@
 
 Component composed by up to 6 [FluxImage](flux-image) that forms a cube.
 
-**Sides**:
-- front: `String`
-- back: `String`
-- top: `String`
-- bottom: `String`
-- left: `String`
-- right: `String`
-
 ## Attributes
 
 ### size
@@ -145,31 +137,39 @@ let offset = {
 
 Gets the image by side.
 
-- **Arguments:**
-   - side: `'front' | 'back' | 'top' | 'bottom' | 'left' | 'right'`
+#### side
 
-- **Returns:** the [FluxImage](flux-image) dispalying requested side.
+* **Type:** `'front' | 'back' | 'top' | 'bottom' | 'left' | 'right'`
+* **Returns:** the [FluxImage](flux-image) dispalying requested side.
 
 ### setCss(css: `Object`)
 
-Set a CSS rules to the cube.
+Set CSS styles to the cube.
 
-- **Arguments:** 
-   - css: `{...}`
+#### css
+
+An object with the CSS attributes in **camel case** and values.
+
+* **Type:** `Object`
 
 ### transform(css: `Object`)
 
-Sets the CSS style to be transformed to within a transition.
+Sets the CSS styles to be transformed to within a transition.
 
-- **Arguments:** 
-   - css: `{...}`
+#### css
+
+An object with the CSS attributes in **camel case** and values.
+
+* **Type:** `Object`
 
 ### turn(side: `String`)
 
-Turns the cube to specified side (top, back, bottom, left, right) with to side (left or right).
+Turns the cube to specified side (top, back, bottom, left, right).
 
-- **Arguments:**
-   - side: `'front' | 'back' | 'top' | 'bottom' | 'left' | 'right'`
+#### side
+
+* **Type:** `String`
+* **Values:** `'back' | 'top' | 'bottom' | 'left' | 'right'`
 
 ### turnTop()
 
