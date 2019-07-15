@@ -6,23 +6,23 @@
 		:captions="finalCaptions">
 
 		<template v-if="complements.preloader" v-slot:preloader>
-			<flux-preloader></flux-preloader>
+			<flux-preloader />
 		</template>
 
 		<template v-if="complements.caption" v-slot:caption>
-			<flux-caption></flux-caption>
+			<flux-caption />
 		</template>
 
 		<template v-if="complements.controls" v-slot:controls>
-			<flux-controls></flux-controls>
+			<flux-controls />
 		</template>
 
 		<template v-if="complements.pagination" v-slot:pagination>
-			<flux-pagination></flux-pagination>
+			<flux-pagination />
 		</template>
 
 		<template v-if="complements.index" v-slot:index>
-			<flux-index></flux-index>
+			<flux-index />
 		</template>
 	</vue-flux>
 </template>
