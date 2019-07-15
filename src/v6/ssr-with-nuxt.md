@@ -1,9 +1,9 @@
 ---
 ---
 
-Edit the nuxt config to let it know not to SSR and to add it as vendor.
-
 > nuxt.config.js
+
+Edit the nuxt config to let it know not to SSR and to add it as vendor.
 
 ```js
    ...
@@ -17,9 +17,9 @@ Edit the nuxt config to let it know not to SSR and to add it as vendor.
    ...
 ```
 
-Then wrap the `<vue-flux>` component with `<no-ssr>` to indicate nuxt what not to SSR in template.
-
 > component.vue
+
+Then wrap the `<vue-flux>` component with `<no-ssr>` to indicate nuxt what not to SSR in template.
 
 ``` html
 <no-ssr>
