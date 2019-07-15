@@ -315,17 +315,17 @@ Starts displaying the images by the interval specified with [delay](#options) op
 
 The number is the image number to start with, and can also be 'previous' and 'next'.
 
-* type: `Number | 'previous' | 'next'`
-* required: `false`
-* default: `'next'`
+* **Type**: `Number | 'previous' | 'next'`
+* **Required**: `false`
+* **Default**: `'next'`
 
 #### delay
 
 The delay is the time in *ms* to start. If not ime specified, the one set in config as `delay` will be used.
 
-* type: `Number`
-* required: `false`
-* default: [config.delay](#options)
+* **Type**: `Number`
+* **Required**: `false`
+* **Default**: [config.delay](#options)
 
 ### stop()
 
@@ -339,15 +339,15 @@ Displays the image specified by image number (or 'next' or 'previous') and using
 
 If no number, the next image will be showed.
 
-* type: Number
-* required: false
+* **Type**: Number
+* **Required**: false
 
 #### transition
 
 If no number, the next transition will be run.
 
-* type: Number
-* required: false
+* **Type**: Number
+* **Required**: false
 
 ## Events
 
@@ -376,10 +376,10 @@ If no number, the next transition will be run.
 
 The component that shows the image between transitions.
 
-* Type: `FluxImage`
+* **Type**: `FluxImage`
 
 ### transition
 
 The component that runs the transition between images.
 
-* Type: `FluxTransition`
+* **Type**: `FluxTransition`
