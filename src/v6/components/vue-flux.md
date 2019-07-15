@@ -7,16 +7,16 @@ This is the main component of the slider and will be the frame that displays the
 
 ## Attributes
 
-All the following attributes are reactive, so if you change their value at any moment, the slider will be updated automatically.
+All the attributes are reactive, so if you change their value at any moment, the slider will be updated automatically.
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| options | Object | false | An object containing the slider [options](#options) |
-| transitions | Array | true | An array with [transitions](#transitions) |
-| images | Array | false | An array with the images URL |
-| captions | Array | false | An array with text to be displayed on each image |
+### options
 
-### Options
+An object containing the slider options.
+
+- **Type:** `Object`
+- **Required:** `false`
+
+This are the available options.
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
@@ -50,7 +50,7 @@ This is the default options schema:
 }
 ```
 
-### Transitions
+### transitions
 
 This is an array that will own the transition names or custom transitions to be used between images.
 
@@ -58,9 +58,14 @@ The transitions will be run in the order defined and then will begin again from 
 
 If a transition is not found, an error will be thrown.
 
+- **Type:** `Array`
+- **Required:** `true`
+
 #### Included transitions
 
-Refer to [Transitions](../transitions/) to know more about included transitions.
+Included transitions are passed to the array by name. That name has no spaces, no caps, nor the *transition* word.
+
+In this version there are 20 transitions included.
 
 ``` html
 <vue-flux
@@ -76,18 +81,24 @@ data: () => ({
 }),
 ```
 
+::: tip
+
+Check [transitions](../transitions/) to see a list and their names.
+
+:::
+
 #### Custom transitions
 
 To use a custom transition, we need to import it and include it in the transitions array with the following schema:
 
 ``` js
 {
-   name: 'CustomTransition',
-   component: CustomTransition,
+   name: String,
+   component: Object<VueComponent>,
 }
 ```
 
-Refer to [Custom transitions](../custom-transitions) to know more about how to create custom transitions.
+Example:
 
 ``` html
 <vue-flux
@@ -114,6 +125,12 @@ export default {
    }),
 }
 ```
+
+::: tip
+
+Check [custom transitions](../custom-transitions) to know more about how to create custom transitions.
+
+:::
 
 #### Transition options
 
@@ -166,95 +183,256 @@ export default {
 }
 ```
 
-### Images
+
+### images
 
 The array containing the image URLs to be displayed.
 
+- **Type:** `Array`
+- **Required:** `false`
+
+::: tip
+
 If an image can not be loaded will be omitted displaying a console warning message.
 
-### Captions
+:::
+
+### captions
 
 Captions are the texts that will be displayed when its image is showed.
 
 Also will be displayed as popover in the components `FluxIndex` and `FluxPagination` when you stop the mouse over an element.
 
-Each caption can be defined as simple string or an object with any data you want **and the property** `text` in it as plain text. Here it is an extended caption example:
+Each caption can be defined as simple string or an object with any data you want **and the property** `text` in it as plain text. Here it is the caption schema as object:
 
 ``` js
 {
-   text: 'This is a caption',
-   url: 'url',
-   color: '#abc',
+   text: String,
+   prop1: Any,
+   prop2: Any,
 }
 ```
 
 This way you can customize considerably the [caption's slot](complements/flux-caption/#templating) with any data you need and reach it easily.
 
-### Size
+## Size
 
-The slider size is defined the following way.
+The slider size is defined the following way:
+- By default the width will be the parent's width and height.
+- If no height defined, will calculate the height using a 16:9 ratio.
 
-By default the width will be the parent's width and height.
+::: danger
 
-If no height defined, will calculate the height using a 16:9 ratio.
+If you want to define a size, avoid using `width` and `height` directly in the style attibute, as those values will be applied always, even in full screen, not letting the slider reisze itself. So better use a class for `vue-flux` component or set the `style` attribute in the parent.
 
-If you want to define a size, avoid using `width` and `height` in the style attibute as those values will be applied always, even in full screen. So better use a class in `vue-flux` component or set the `style` attribute in the parent to set a specific size.
+:::
 
 ## Properties
 
-This are the component properties that you can access programatically.
+### config
 
-| Name | Type | Description |
-|------|------|-------------|
-| config | Object | Set of slider options |
-| size | Object | Size in pixels having width and height |
-| loaded | Boolean | Determines if the images have been loaded and slider is initialized |
-| mouseOver | Boolean | Indicates wether the mouse has moved recently over the slider |
-| Display | DisplayController | Is the display controller in charge of full screen mostly |
-| Timers | TimersController | Is the timers' controller and basically manages the image, transition and mouse over timers |
-| Transitions | TransitionsController | Is the transitions' controller that will run them and fire the events |
-| Touches | TouchesController | Is the controller that manages the touch screens functionality |
-| Images | ImagesController | The controller in charge of loading and image displaying |
+Is the set of slider options that will be applied.
+
+- **Type:** `Object`
+
+::: warning
+
+Do not modify this values directly, instead use the [options](#options) attribute.
+
+:::
+
+### size
+
+Size in pixels having width and height.
+
+- **Type:** `Object`
+
+### loaded
+
+Indicates if the images have been preloaded and slider is initialized.
+
+- **Type:** `Boolean`
+
+### mouseOver
+
+Indicates whether the mouse has moved recently over the slider. After moving the mouse, the time that this value will remain `true` is defined through the [autohideTime](#options) option.
+
+- **Type:** `Boolean`
+
+### Display
+
+Is the display controller in charge of full screen mostly.
+
+- **Type:** `DisplayController`
+
+### Timers
+
+Is the timers' controller and basically manages the image, transition and mouse over timers.
+
+- **Type:** `TimersController`
+
+### Transitions
+
+Is the transitions' controller that will run them and fire the events.
+
+- **Type:** `TransitionsController`
+
+### Touches
+
+Is the controller that manages the touch screens functionality.
+
+- **Type:** `TouchesController`
+
+### Images
+
+The controller in charge of loading and image displaying.
+
+- **Type:** `ImagesController`
 
 ## Methods
 
-| Method | Parameters | Description |
-|--------|------------|-------------|
-| resize |  | Call to recalculate the sizes of the slider |
-| enterFullscreen | | Sets the slider in full screen |
-| exitFullscreen | | Leaves the full screen mode |
-| toggleFullscreen | | Toggles full screen mode |
-| play | index | Will start displaying the images by the interval specified in config. The index is the image number to start with, and can also be 'previous' and 'next' |
-| stop | | Stops playing images and remains in the current |
-| toggleAutoplay |  | Toggles auto play |
-| showImage | index, transition | Displays the image specified by image index (or 'next' or 'previous') and using the specified transition. If no index specified will display next and if no transition specified will use the next defined in transitions |
+### resize()
+
+Call to recalculate the sizes of the slider.
+
+### enterFullscreen()
+
+Sets the slider in full screen.
+
+### exitFullscreen()
+
+Leaves the full screen mode.
+
+### toggleFullscreen()
+
+Toggles full screen mode.
+
+### play([number], [delay])
+
+Starts displaying the images by the interval specified with [delay](#options) option.
+
+#### number
+
+The number is the image number to start with, and can also be 'previous' and 'next'.
+
+* type: Number | 'previous' | 'next'
+* required: false
+* default: 'next'
+
+#### delay
+
+The delay is the time in *ms* to start. If not ime specified, the one set in config as `delay` will be used.
+
+* type: Number
+* required: false
+* default: [config.delay](#options)
+
+### stop()
+
+Stops playing images and remains in the current.
+
+### showImage([number], [transition])
+
+Displays the image specified by image number (or 'next' or 'previous') and using the specified transition.
+
+#### number
+
+If no number, the next image will be showed.
+
+* type: Number
+* required: false
+
+#### transition
+
+If no number, the next transition will be run.
+
+* type: Number
+* required: false
 
 ## Events
 
-| Name | Description |
-|------|-------------|
-| created | Fired when the slider component is created |
-| mounted | Fired when the slider component is mounted |
-| destroyed | Fired when the slider component is destroyed |
-| options-updated | Fired when the options have been updated |
-| ready | Fired when the slider is ready and will start to display images |
-| play | Fired when auto playing images |
-| stop | Fired when stopped to auto play images |
-| show | Fired when requested to show an image |
-| fullscreen-enter | Fired when entered in full screen mode |
-| fullscreen-exit | Fired when exit from full screen |
-| images-preload-start | Fired when started to preload images |
-| images-preload-end | Fired when finished to preoload images |
-| images-lazyload-start | Fired when start to lazy loading images |
-| images-lazyload-end | Fired when finished to lay loading images |
-| transitions-updated | Fired when transitions updated |
-| transition-start | Fired when transition begin |
-| transition-cancel | Fired when transion is running and is being cancelled |
-| transition-end | Fired when transition finish |
+### created
+
+Fired when the slider component is created.
+
+### mounted
+
+Fired when the slider component is mounted.
+
+### destroyed
+
+Fired when the slider component is destroyed.
+
+### options-updated
+
+Fired when the options have been updated.
+
+### ready
+
+Fired when the slider is ready and will start to display images.
+
+### play
+
+Fired when auto playing images.
+
+### stop
+
+Fired when stopped to auto play images.
+
+### show
+
+Fired when requested to show an image.
+
+### fullscreen-enter
+
+Fired when entered in full screen mode.
+
+### fullscreen-exit
+
+Fired when exit from full screen.
+
+### images-preload-start
+
+Fired when started to preload images.
+
+### images-preload-end
+
+Fired when finished to preoload images.
+
+### images-lazyload-start
+
+Fired when start to lazy loading images.
+
+### images-lazyload-end
+
+Fired when finished to lay loading images.
+
+### transitions-updated
+
+Fired when transitions updated.
+
+### transition-start
+
+Fired when transition begin.
+
+### transition-cancel
+
+Fired when transion is running and is being cancelled.
+
+### transition-end
+
+Fired when transition finish.
 
 ## References
 
-| Name | Component | Description |
-|------|-----------|-------------|
-| image | FluxImage | Displays the current image |
-| transition | FluxTransition | Runs the transition between images |
+### image
+
+The component that shows the image between transitions.
+
+* Type: FluxImage
+
+### transition
+
+The component that runs the transition between images.
+
+* Type: FluxTransition
