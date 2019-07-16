@@ -1,4 +1,6 @@
 ---
+prev: ../flux-wrapper
+next: flux-caption
 ---
 
 # Complements

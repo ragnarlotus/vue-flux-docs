@@ -1,5 +1,8 @@
 ---
+next: components/
 ---
+
+# SSR with Nuxt
 
 > nuxt.config.js
 

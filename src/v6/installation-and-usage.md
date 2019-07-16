@@ -1,6 +1,8 @@
 ---
 ---
 
+# Installation and usage
+
 ## Installation
 
 Installation is very simple, just use your favourite package manager:

@@ -1,6 +1,8 @@
 ---
 ---
 
+# OVerview
+
 This is an image slider developed with [vue](https://vuejs.org/) 2 which comes with 20 cool transitions out of the box.
 
 ![npm](https://img.shields.io/npm/v/vue-flux/beta.svg?style=flat-square)

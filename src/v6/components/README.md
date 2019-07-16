@@ -1,4 +1,6 @@
 ---
+prev: ../ssr-with-nuxt
+next: ./vue-flux
 ---
 
 # Components

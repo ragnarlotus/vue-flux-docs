@@ -1,6 +1,8 @@
 ---
 ---
 
+# Templating
+
 This sections describes how to use custom components or custom structure, but if what you want is to change a bit the design or the colors, you only need to overwirte the CSS styles.
 
 ## Spinner

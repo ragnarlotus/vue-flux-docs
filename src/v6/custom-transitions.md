@@ -1,6 +1,8 @@
 ---
 ---
 
+# Custom transitions
+
 ## Schema
 
 Transitions use a mixin to perform basic and shared logics, like properties.

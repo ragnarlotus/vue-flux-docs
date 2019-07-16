@@ -1,6 +1,8 @@
 ---
 ---
 
+# Changelog
+
 ## 6.0.0
 This new version comes with a lot of improvements, in code, functionality and performance.
 
@@ -31,7 +33,8 @@ New features:
 * Improved documentation
 * Update syntax to vue 2.6 version
 * Some transitions have been adjusted and look better
-* Rmoeved `toggleAutoplay` method
+* Removed `toggleAutoplay` method
+* Adapted to vue 2.6 syntax
 
 Other changes:
 * Option `fullscreen` has been renamed to `allowFullscreen`
