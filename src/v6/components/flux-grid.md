@@ -3,22 +3,34 @@
 
 ## Description
 
-Component to make an image grid.
+Component to make grid of image or cube.
 
 ## Attributes
 
 ### rows
 
+The number of rows the grid will be made of.
+
+- **Type:** `Number`
+- **Required:** `false`
+- **Default:** `1`
+
 ### cols
+
+The number of cols the grid will be made of.
+
+- **Type:** `Number`
+- **Required:** `false`
+- **Default:** `1`
 
 ### size
 
 This size is the width and height the cube will have.
 
-If passed as numbers the unit will be pixels, but if passed as string you must append the unit like in CSS.
+If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
 
 - **Type:** `Object`
-- **Required:** `true`
+- **Required:** `false`
 - **Schema:**
 ``` js
 let size = {
@@ -27,15 +39,47 @@ let size = {
 };
 ```
 
+If not defined, the size will be automatically detected from the parent element.
+
 ### depth
 
+Size in pixels for cube depth.
+
+If not defined the depth will be the width set in [size](#size).
+
+- **Type:** `Number`
+- **Required:** `false`
 
 ### image
 
+This attribute will define the image to be divided into cells.
+
+- **Type:** `String | Object`
+- **Required:** `false`
+
+The value can be one of the following:
+* A simple string of the URL.
+* An object having the URL and image original size in pixels like the following
+
+``` js
+let image = {
+   url: String,
+   size: {
+      width: Number,
+      height: Number,
+   },
+};
+```
+
+::: warning
+
+If you use this attribute but the `images` is also defined, the `images` will have preference and this will have no effect.
+
+:::
 
 ### images
 
-Object with images in case you want the grid to be composed of cubes.
+This attribute will define each cell as a cube, so you can define the images that will be displayed per side.
 
 - **Type:** `Object`
 - **Required:** `false`
@@ -75,50 +119,50 @@ let image = {
 
 This attibute sets the background color in case there is no image set or image does not fill the side.
 
-If the color is a string, the color will be applied to the image or to all images if composed of cubes.
+If the color is passed as single value, will be applied to all images or all sides of cubes.
 
-The values can be any valid CSS color value.
+If the color is passed as object, you can specify the colors individually per side in case using cubes.
+
+The values can be any valid CSS color.
 
 - **Type:** `String | Object`
 - **Required:** `false`
-- **Schema:**
+- **Single Schema:**
 ``` js
-// Applied to the image or to all side images
-let color = 'rgba(50, 100, 150, 0.5)';
-
-// Applied color by side
+let color = String;
+```
+- **Object Schema:**
+``` js
 let color = {
-   front: '#012345',
-   back: '#6789ab',
-   top: '#cdef01',
-   bottom: '#234567',
-   left: '#89abcd',
-   right: '#ef0123',
+   front: String,
+   back: String,
+   top: String,
+   bottom: String,
+   left: String,
+   right: String,
 };
 ```
 
 ### css
 
+Object with cube CSS styles in camel case.
+
+- **Type:** `Object`
+- **Required:** `false`
+
 ### tileCss
 
+Object with CSS styles in camel case so be applied to all tiles.
 
-
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | true | The VueFlux component responsible of this cube |
-| rows | Number | true | The number of rows |
-| cols | Number | true | The number of cols |
-| index | Object | true | An object containing the indexes of images to apply to the tile cubes |
-| tileCss | Object | false | Initial tile CSS style |
-
-Example:
-``` html
-<flux-grid :slider="slider" :num-rows="5" :num-cols="5" :index="2"></flux-grid>
-```
+- **Type:** `Object`
+- **Required:** `false`
 
 ## Methods
 
-| Method | Parameters | Description |
-|--------|------------|-------------|
-| setCss | css | Object with the style to be applied to grid container |
-| transform | func | Runs a transform function for each tile, receiving as parameter the cube and number |
+### setCss(css: `Object`)
+
+Set CSS styles to the cube.
+
+### transform(function: `Function`)
+
+A function to be run per tile receiving the tile element and the number.
