@@ -1,11 +1,15 @@
 ---
+prev: ./
+sidebarDepth: 0
 ---
 
-## Blinds 2D
+# Blinds 2D
+
+## Description
 
 Divides the image in vertical bars that blinds and fades out.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

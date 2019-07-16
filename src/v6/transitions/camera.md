@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Camera
+# Camera
+
+## Description
 
 From outside to inside the image is being cropped like in a camera lens.
 

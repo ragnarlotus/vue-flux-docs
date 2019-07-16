@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxGrid
+
 ## Description
 
 Component to make grid of image or cube.

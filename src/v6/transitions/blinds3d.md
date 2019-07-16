@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Blinds 3D
+# Blinds 3D
+
+## Description
 
 Divides the image in vertical bars that blinds 180 deg to form the next image.
 

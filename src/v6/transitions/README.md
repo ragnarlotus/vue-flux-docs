@@ -1,5 +1,10 @@
 ---
+prev: ../components/
+next: blinds2d
+sidebarDepth: 0
 ---
+
+# Transitions
 
 VueFlux comes with nice 20 transitions.
 

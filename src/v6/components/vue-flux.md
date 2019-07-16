@@ -1,6 +1,8 @@
 ---
 ---
 
+# VueFlux
+
 ## Description
 
 This is the main component of the slider and will be the frame that displays the images.

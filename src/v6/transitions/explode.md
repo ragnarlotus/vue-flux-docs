@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Explode
+# Explode
+
+## Description
 
 The image starts to explode from the center to outside.
 

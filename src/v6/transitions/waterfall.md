@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Waterfall
+# Waterfall
+
+## Description
 
 Divides the image in bars and drops them down in turns.
 

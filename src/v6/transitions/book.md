@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Book
+# Book
+
+## Description
 
 Dakes the effect of turning a page to display next image.
 

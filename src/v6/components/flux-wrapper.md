@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxWrapper
+
 ## Description
 
 A wrapper component used in some transitions to contain single or multiple images.

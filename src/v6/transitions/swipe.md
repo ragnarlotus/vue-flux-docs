@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Swipe
+# Swipe
+
+## Description
 
 Swipes the image to display next like uncovered with a curtain.
 

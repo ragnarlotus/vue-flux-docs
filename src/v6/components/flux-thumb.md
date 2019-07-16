@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxThumb
+
 ## Description
 
 Component to display a miniature of an image.

@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Blocks 2
+# Blocks 2
+
+## Description
 
 The image is splited in blocks that shrink and fade out in wave from a corner to the opposite.
 

@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Round 2
+# Round 2
+
+## Description
 
 Panels start to round vertically revealing the next image in upper arrow form leaving trail.
 

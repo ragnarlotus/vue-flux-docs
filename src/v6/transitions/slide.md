@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Slide
+# Slide
+
+## Description
 
 Slides the image horizontally revealing the next.
 

@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Fade
+# Fade
+
+## Description
 
 Fades from one image to next.
 

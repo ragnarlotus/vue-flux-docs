@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxCube
+
 ## Description
 
 Component composed by up to 6 [FluxImage](flux-image) that forms a cube.

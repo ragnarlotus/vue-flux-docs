@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Blocks 1
+# Blocks 1
+
+## Description
 
 The image is splited in blocks that shrink and fade out randomly.
 

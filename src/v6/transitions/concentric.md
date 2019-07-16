@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Concentric
+# Concentric
+
+## Description
 
 A concentric effect is performed by rotating the image converted into circles.
 

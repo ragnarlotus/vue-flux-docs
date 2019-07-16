@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Zip
+# Zip
+
+## Description
 
 Divides the image in bars and slides them up and down alternately like a zip.
 

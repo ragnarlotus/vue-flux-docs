@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxParallax
+
 ## Description
 
 Creates a parallax effect given an image. It can recreate 3 types, relative, fixed and static.

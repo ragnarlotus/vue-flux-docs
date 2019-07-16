@@ -1,10 +1,14 @@
 ---
+sidebarDepth: 0
 ---
 
-### Description
+# Kenburn
+
+## Description
+
 Fades, zoom and moves current image to next.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

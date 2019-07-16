@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Cube
+# Cube
+
+## Description
 
 Turns the image to a side like if place in a cube.
 

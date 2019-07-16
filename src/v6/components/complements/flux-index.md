@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxIndex
+
 ## Description
 
 It is a default component to diplay an index of all images so it is a good resource when the slider contains many images.

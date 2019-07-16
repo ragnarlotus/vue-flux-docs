@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxControls
+
 ## Description
 
 It is a default component to diplay controls with buttons to display previous, next, play and pause.

@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxPreloader
+
 ## Description
 
 It is a default component to diplay a pagination of the images, good when it does not contain too many images.

@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxImage
+
 ## Description
 
 The FluxImage component represents the smallest part of the slider and displays an image, part of it or a color.

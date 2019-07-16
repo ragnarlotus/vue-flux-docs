@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Round 1
+# Round 1
+
+## Description
 
 The image is splited in blocks that turn 180 deg horizontally to form next image.
 

@@ -1,7 +1,7 @@
 ---
 ---
 
-## Components
+# Components
 
 | Name | Description |
 |------|-------------|

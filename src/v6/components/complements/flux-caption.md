@@ -1,6 +1,8 @@
 ---
 ---
 
+# FluxCaption
+
 ## Description
 
 It is a default component to diplay image caption.

@@ -1,7 +1,10 @@
 ---
+sidebarDepth: 0
 ---
 
-## Warp
+# Warp
+
+## Description
 
 A concentric effect is performed by rotating the image converted into circles in alternate direction.
 
