@@ -6,23 +6,19 @@ next: false
 
 ## Description
 
-A wrapper component used in some transitions to contain single or multiple images.
+A wrapper component for special needs like in some transitions. Sets `overwrite` as `false` by default.
 
-## Component
+## Attibutes
 
-Just renders the content wrapped into this component so it is easier to manage and operate some transitions.
+### css
 
-Example:
-``` html
-<flux-wrapper ref="wrapper">
-   <flux-image :slider="slider" :index="0" ref="image0"></flux-image>
-   <flux-image :slider="slider" :index="1" ref="image1"></flux-image>
-</flux-wrapper>
-```
+Object with CSS styles in camel case.
 
-## Methods
+- **Type:** `Object`
+- **Required:** `false`
 
-| Method | Parameters | Description |
-|--------|------------|-------------|
-| setCss | css | Object with the style to be applied directly |
-| transform | css | Object with the style to be applied rendering, used to perform the transitions |
+## Slots
+
+### default
+
+This component has a default slot to place anything you need withtin.
