@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Slides the image horizontally revealing the next.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

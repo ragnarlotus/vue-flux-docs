@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 From outside to inside the image is being cropped like in a camera lens.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

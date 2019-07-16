@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 The image falls in front displaying next image.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

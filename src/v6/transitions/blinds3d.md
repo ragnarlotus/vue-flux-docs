@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Divides the image in vertical bars that blinds 180 deg to form the next image.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

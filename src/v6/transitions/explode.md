@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 The image starts to explode from the center to outside.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 The image is splited in blocks that turn 180 deg horizontally to form next image.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

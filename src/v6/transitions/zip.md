@@ -9,7 +9,7 @@ sidebarDepth: 0
 
 Divides the image in bars and slides them up and down alternately like a zip.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

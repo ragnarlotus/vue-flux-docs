@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 A concentric effect is performed by rotating the image converted into circles in alternate direction.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

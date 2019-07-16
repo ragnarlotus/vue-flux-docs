@@ -61,7 +61,7 @@ This attribute will define the image to be divided into cells.
 
 The value can be one of the following:
 * A simple string of the URL.
-* An object having the URL and image original size in pixels like the following
+* An object having the URL and image original size in pixels like the following.
 
 ``` js
 let image = {
@@ -165,6 +165,18 @@ Object with CSS styles in camel case so be applied to all tiles.
 
 Set CSS styles to the cube.
 
-### transform(function: `Function`)
+#### css
 
-A function to be run per tile receiving the tile element and the number.
+An object with the CSS attributes in **camel case** and values.
+
+* **Type:** `Object`
+
+### transform(function: `Function(FluxTile, Number)`)
+
+A function to be run per tile receiving the tile element and the number of tile.
+
+#### css
+
+An object with the CSS attributes in **camel case** and values.
+
+* **Type:** `Object`

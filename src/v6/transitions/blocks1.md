@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 The image is splited in blocks that shrink and fade out randomly.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

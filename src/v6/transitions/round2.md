@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Panels start to round vertically revealing the next image in upper arrow form leaving trail.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

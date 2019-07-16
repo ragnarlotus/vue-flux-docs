@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Fades from one image to next.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

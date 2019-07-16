@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Makes the image 3D and divides it in slices that turn vertically to display the next image.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

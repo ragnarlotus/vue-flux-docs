@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Divides the image in bars and drops them down in turns.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

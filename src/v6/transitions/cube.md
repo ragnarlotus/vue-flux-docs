@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Turns the image to a side like if place in a cube.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

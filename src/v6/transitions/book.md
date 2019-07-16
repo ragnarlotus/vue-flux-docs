@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Dakes the effect of turning a page to display next image.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|

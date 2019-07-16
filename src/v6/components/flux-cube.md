@@ -47,13 +47,13 @@ let images = {
 
 The `image` value can be one of the following:
 
-* A simple string of the URL
+* A simple string of the URL.
 
 ``` js
 let image = String;
 ```
 
-* An object having the URL and image original size in pixels
+* An object having the URL and image original size in pixels.
 
 ``` js
 let image = {
@@ -102,31 +102,6 @@ If not defined the depth will be the width set in [size](#size).
 - **Type:** `Number`
 - **Required:** `false`
 
-### css
-
-Object with cube CSS styles in camel case.
-
-- **Type:** `Object`
-- **Required:** `false`
-
-### sidesCss
-
-Object with CSS styles in camel case per side.
-
-- **Type:** `Object`
-- **Required:** `false`
-- **Schema:**
-``` js
-let sideCss = {
-   front: Object,
-   back: Object,
-   top: Object,
-   bottom: Object,
-   left: Object,
-   right: Object,
-};
-```
-
 ### offset
 
 Its and adjustment of the image in pixels based on the top and left position.
@@ -152,6 +127,31 @@ let offset = {
 If value is `Number`, the image will be adjusted for that value in pixels.
 
 If value is `'auto'`, the value will be determined from the `top` and `left` CSS styles.
+
+### css
+
+Object with cube CSS styles in camel case.
+
+- **Type:** `Object`
+- **Required:** `false`
+
+### sidesCss
+
+Object with CSS styles in camel case per side.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+let sideCss = {
+   front: Object,
+   back: Object,
+   top: Object,
+   bottom: Object,
+   left: Object,
+   right: Object,
+};
+```
 
 ## Methods
 

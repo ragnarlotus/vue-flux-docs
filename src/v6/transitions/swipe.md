@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 Swipes the image to display next like uncovered with a curtain.
 
-### Options
+## Options
 
 | Name | Type | Default |
 |------|------|---------|
