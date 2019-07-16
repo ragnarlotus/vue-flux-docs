@@ -27,28 +27,32 @@ export default {
     // matches
     const active = item.type === 'auto'
       ? selfActive || item.children.some(c => isActive($route, item.basePath + '#' + c.slug))
-      : selfActive
+      : selfActive;
+
     const link = item.type === 'external'
       ? renderExternal(h, item.path, item.title || item.path)
-      : renderLink(h, item.path, item.title || item.path, active)
+      : renderLink(h, item.path, item.title || item.path, active);
 
-    const configDepth = $page.frontmatter.sidebarDepth
-      || sidebarDepth
-      || $themeLocaleConfig.sidebarDepth
-      || $themeConfig.sidebarDepth
-
-    const maxDepth = configDepth == null ? 1 : configDepth
+    const maxDepth = [
+      $page.frontmatter.sidebarDepth,
+      sidebarDepth,
+      $themeLocaleConfig.sidebarDepth,
+      $themeConfig.sidebarDepth,
+      1
+    ].find(depth => depth !== undefined);
 
     const displayAllHeaders = $themeLocaleConfig.displayAllHeaders
-      || $themeConfig.displayAllHeaders
+      || $themeConfig.displayAllHeaders;
 
     if (item.type === 'auto') {
-      return [link, renderChildren(h, item.children, item.basePath, $route, maxDepth)]
+      return [link, renderChildren(h, item.children, item.basePath, $route, maxDepth)];
+
     } else if ((active || displayAllHeaders) && item.headers && !hashRE.test(item.path)) {
       const children = groupHeaders(item.headers)
-      return [link, renderChildren(h, children, item.path, $route, maxDepth)]
+      return [link, renderChildren(h, children, item.path, $route, maxDepth)];
+
     } else {
-      return link
+      return link;
     }
   }
 }
