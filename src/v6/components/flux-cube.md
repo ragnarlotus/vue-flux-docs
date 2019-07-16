@@ -11,8 +11,10 @@ Component composed by up to 6 [FluxImage](flux-image) that forms a cube.
 
 This size is the width and height the cube will have.
 
+If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
+
 - **Type:** `Object`
-- **Required:** `true`
+- **Required:** `false`
 - **Schema:**
 ``` js
 let size = {
@@ -21,23 +23,43 @@ let size = {
 };
 ```
 
+If not defined, the size will be automatically detected from the parent element.
+
 ### images
 
 Object with images per side.
-
-Check the [FluxImage image](flux-image#image) for the parameter schema.
 
 - **Type:** `Object`
 - **Required:** `false`
 - **Schema:**
 ``` js
 let images = {
-   front: frontImage,
-   back: backImage,
-   top: topImage,
-   bottom: bottomImage,
-   left: leftImage,
-   right: rightImage,
+   front: image,
+   back: image,
+   top: image,
+   bottom: image,
+   left: image,
+   right: image,
+};
+```
+
+The `image` value can be one of the following:
+
+* A simple string of the URL
+
+``` js
+let image = String;
+```
+
+* An object having the URL and image original size in pixels
+
+``` js
+let image = {
+   url: String,
+   size: {
+      width: Number,
+      height: Number,
+   },
 };
 ```
 
@@ -45,25 +67,27 @@ let images = {
 
 This attibute sets the background color in case there is no image set or image does not fill the side.
 
-If the color is a string, the color will be applied to all sides.
+If the color is passed as single value, the color will be applied to all sides.
 
-Check the [FluxImage color](flux-image#color) for the parameter format.
+If the color is passed as object, you can specify the colors individually per side.
+
+The values can be any valid CSS color.
 
 - **Type:** `String | Object`
 - **Required:** `false`
-- **Schema:**
+- **Single Schema:**
 ``` js
-// Applied to all sides
-let color = 'rgba(50, 100, 150, 0.5)';
-
-// Applied color by side
+let color = String;
+```
+- **Object Schema:**
+``` js
 let color = {
-   front: '#012345',
-   back: '#6789ab',
-   top: '#cdef01',
-   bottom: '#234567',
-   left: '#89abcd',
-   right: '#ef0123',
+   front: String,
+   back: String,
+   top: String,
+   bottom: String,
+   left: String,
+   right: String,
 };
 ```
 
@@ -71,65 +95,61 @@ let color = {
 
 Size in pixels for cube depth.
 
-If not defined the depth will be determined by the width and height defined in [size](#size).
+If not defined the depth will be the width set in [size](#size).
 
 - **Type:** `Number`
 - **Required:** `false`
-- **Schema:**
-``` js
-let depth = 800;
-```
 
 ### css
 
-Object with cube CSS styles.
+Object with cube CSS styles in camel case.
 
 - **Type:** `Object`
 - **Required:** `false`
-- **Schema:**
-``` js
-let css = {
-   box-shadow: 5px 10px #888,
-};
-```
 
 ### sidesCss
 
-Object with CSS styles per side.
+Object with CSS styles in camel case per side.
 
 - **Type:** `Object`
 - **Required:** `false`
 - **Schema:**
 ``` js
 let sideCss = {
-   ...,
-   front: {
-      ...,
-   },
-   right: {
-      ...,
-   },
-   ...,
+   front: Object,
+   back: Object,
+   top: Object,
+   bottom: Object,
+   left: Object,
+   right: Object,
 };
 ```
 
 ### offset
 
-Its and adjustment of the image in pixels.
+Its and adjustment of the image in pixels based on the top and left position.
 
-Check the [FluxImage offset](flux-image#offset) for the parameter details.
+If the offset is passed as single value, the offset will be applied to `top` and `left`.
 
-- **Type:** `Number | String | Object`
+If the offset is passed as object, you can specify the offsets `top` and `left` individually. In case you do not set one of them will default to `0`.
+
+- **Type:** `Number | 'auto' | Object`
 - **Required:** `false`
-- **Schema:**
+- **Single Schema:**
+``` js
+let offset = Number | 'auto';
+```
+- **Object Schema:**
 ``` js
 let offset = {
-   ...,
-   front: '50',
-   right: '-50',
-   ...,
+   top: Number | 'auto',
+   left: Number | 'auto',
 };
 ```
+
+If value is `Number`, the image will be adjusted for that value in pixels.
+
+If value is `'auto'`, the value will be determined from the `top` and `left` CSS styles.
 
 ## Methods
 

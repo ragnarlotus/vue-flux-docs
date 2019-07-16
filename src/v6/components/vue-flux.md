@@ -138,7 +138,7 @@ In order to modify the parameters of transitions, you need to do it using an obj
 
 ``` js
 {
-   name: 'blinds2d',
+   name: String,
    options: {
       ...
    },
