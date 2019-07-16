@@ -1,6 +1,6 @@
 ---
-prev: ../components/complements/flux-preloader
-next: blinds2d
+prev: ../components/complements/
+next: ../custom-transitions
 sidebarDepth: 0
 ---
 

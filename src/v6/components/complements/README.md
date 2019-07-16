@@ -1,6 +1,6 @@
 ---
-prev: ../flux-wrapper
-next: flux-caption
+prev: ../
+next: ../../transitions/
 ---
 
 # Complements

@@ -1,5 +1,5 @@
 ---
-prev: ./
+prev: false
 sidebarDepth: 0
 ---
 

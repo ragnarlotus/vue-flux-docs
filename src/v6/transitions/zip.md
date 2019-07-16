@@ -1,4 +1,5 @@
 ---
+next: false
 sidebarDepth: 0
 ---
 

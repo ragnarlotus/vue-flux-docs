@@ -1,5 +1,5 @@
 ---
-next: ../../transitions/
+next: false
 ---
 
 # FluxPreloader
