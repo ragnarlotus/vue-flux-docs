@@ -129,7 +129,7 @@ The values can be any valid CSS color.
 
 - **Type:** `String | Object`
 - **Required:** `false`
-- **Single Schema:**
+- **String Schema:**
 ``` js
 let color = String;
 ```

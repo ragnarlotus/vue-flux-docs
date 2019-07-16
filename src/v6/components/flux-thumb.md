@@ -7,23 +7,71 @@
 
 Component to display a miniature of an image.
 
-## Component
+## Attributes
 
-The component can have the following attributes.
+### size
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | true | The VueFlux component responsible of this cube |
-| index | Number, String | true | If a number represents the image index of slider and if string of hexadecimal will just paint it with the defined color |
-| css | Object | false | Style rules to be applied |
+This size is the width and height the image **view** will have.
 
-Example:
-``` html
-<flux-thumb :slider="slider" :index="1"></flux-thumb>
+If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+let size = {
+   width: Number | String,
+   height: Number | String,
+};
 ```
 
-## Methods
+If not defined, the size will be automatically detected from the parent element.
 
-| Method | Parameters | Description |
-|--------|------------|-------------|
-| setCss | css | Object with the style to be applied to the thumb |
+::: tip
+
+This size represents the frame / window / view size and must not be confused with image original size nor image final size after resized to fit this size.
+
+:::
+
+### image
+
+This attribute will define the image to be displayed.
+
+- **Type:** `String | Object`
+- **Required:** `false`
+
+The value can be one of the following:
+* A simple string of the URL.
+* An object having the URL and image original size in pixels like the following.
+
+``` js
+let image = {
+   url: String,
+   size: {
+      width: Number,
+      height: Number,
+   },
+};
+```
+
+### caption
+
+The caption will be displayed as a small text when moused placed over.
+
+- **Type:** `String | Object`
+- **Required:** `false`
+- **String schema:**
+``` js
+let caption = String;
+```
+
+If the caption is an object it must have the `text` property with the caption in plain text.
+
+- **Object Schema:**
+``` js
+let caption = {
+	...,
+	text: String,
+	...,
+};
+```
