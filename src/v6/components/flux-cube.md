@@ -162,7 +162,7 @@ Gets the image by side.
 #### side
 
 * **Type:** `'front' | 'back' | 'top' | 'bottom' | 'left' | 'right'`
-* **Returns:** the [FluxImage](flux-image) dispalying requested side.
+* **Returns:** the [FluxImage](flux-image) side component.
 
 ### setCss(css: `Object`)
 

@@ -6,9 +6,9 @@ next: false
 
 ## Description
 
-A wrapper component for special needs like in some transitions. Sets `overwrite` as `false` by default.
+A wrapper component for special needs like in some transitions. Sets CSS style `overflow` as `hidden` by default.
 
-## Attibutes
+## Attributes
 
 ### css
 
