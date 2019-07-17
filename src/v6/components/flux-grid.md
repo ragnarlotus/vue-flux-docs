@@ -163,7 +163,7 @@ Object with CSS styles in camel case so be applied to all tiles.
 
 ### setCss(css: `Object`)
 
-Set CSS styles to the cube.
+Sets CSS styles to the cube.
 
 #### css
 
@@ -171,12 +171,6 @@ An object with the CSS attributes in **camel case** and values.
 
 * **Type:** `Object`
 
-### transform(function: `Function(FluxTile, Number)`)
+### transform(function: `Function(FluxImage | FluxCube, Number)`)
 
 A function to be run per tile receiving the tile element and the number of tile.
-
-#### css
-
-An object with the CSS attributes in **camel case** and values.
-
-* **Type:** `Object`

@@ -64,10 +64,6 @@ The values can be any valid CSS color.
 
 - **Type:** `String`
 - **Required:** `false`
-- **Schema:**
-``` js
-let color = String;
-```
 
 ### offset
 
