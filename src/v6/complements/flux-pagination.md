@@ -7,7 +7,7 @@
 
 It is a default component to diplay a pagination of the images, good when it does not contain too many images.
 
-## Component
+## Attributes
 
 The component can have the following attributes.
 
@@ -75,4 +75,45 @@ export default {
       this.mounted = true;
    }
 }
+```
+
+## Templating
+
+To use custom pagination you can do it using pagination slot of [VueFlux](components/vue-flux) component. Check [FluxPagination](complements/flux-pagination) documentation for further information about `itemProp` element.
+
+#### Custom component
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:pagination>
+      <flux-pagination v-slot="itemProps">
+         <custom-pagination item="itemProps"></custom-pagination>
+      </flux-pagination>
+   </template>
+</vue-flux>
+```
+
+#### Custom structure
+
+This is an example with [Font Awesome](https://fontawesome.com/) icons.
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:pagination>
+      <flux-pagination v-slot="itemProps">
+         <i class="fas"
+            :class="itemProps.active? 'fa-check-square' : 'fa-square'"
+            @click="itemProps.onClick(itemProps.index)">
+         </i>
+      </flux-pagination>
+   </template>
+</vue-flux>
 ```

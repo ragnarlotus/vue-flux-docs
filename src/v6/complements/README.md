@@ -1,11 +1,11 @@
 ---
-prev: ../
-next: ../../transitions/
+prev: ../components/
+next: ../transitions/
 ---
 
 # Complements
 
-This components are complements because extend the functionlity of `VueFlux` component, so they depend on it and can not be used alone.
+This components are complements because extend the functionlity of `VueFlux` component, so they depend on it and can not be used without it.
 
 | Name | Description |
 |------|-------------|

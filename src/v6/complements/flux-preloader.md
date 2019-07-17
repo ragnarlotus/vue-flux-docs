@@ -8,7 +8,7 @@ next: false
 
 It is a default component to diplay a pagination of the images, good when it does not contain too many images.
 
-## Component
+## Attributes
 
 The component can have the following attributes.
 
@@ -76,4 +76,48 @@ export default {
       this.mounted = true;
    }
 }
+```
+
+## Templating
+
+Spinner is located inside the [FluxPreloader](complements/flux-preloader) complement, so to use custom spinner you will have to use the spinner slot of the [FluxPreloader](components/complements/flux-preloader) component.
+
+#### Custom component
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:preloader>
+      <flux-preloader>
+         <template v-slot:spinner>
+            <custom-spinner></custom-spinner>
+         </template>
+      </flux-preloader>
+   </template>
+</vue-flux>
+```
+
+#### Custom structure
+
+This is an example with [Font Awesome](https://fontawesome.com/) spinner.
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:preloader>
+      <flux-preloader>
+         <template v-slot:spinner>
+            <div class="fa-3x">
+               <i class="fas fa-spinner fa-spin"></i>
+            </div>
+         </template>
+      </flux-preloader>
+   </template>
+</vue-flux>
 ```

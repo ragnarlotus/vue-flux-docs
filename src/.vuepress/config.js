@@ -88,20 +88,18 @@ module.exports = {
 						['/v6/components/flux-transition', 'FluxTransition'],
 						['/v6/components/flux-vortex', 'FluxVortex'],
 						['/v6/components/flux-wrapper', 'FluxWrapper'],
-						{
-							title: 'Complements',
-							path: '/v6/components/complements/',
-							children: [
-								['/v6/components/complements/flux-caption', 'FluxCaption'],
-								['/v6/components/complements/flux-controls', 'FluxControls'],
-								['/v6/components/complements/flux-index', 'FluxIndex'],
-								['/v6/components/complements/flux-pagination', 'FluxPagination'],
-								['/v6/components/complements/flux-preloader', 'FluxPreloader'],
-							],
-						},
-					]
-				},
-				{
+					],
+				}, {
+					title: 'Complements',
+					path: '/v6/complements/',
+					children: [
+						['/v6/complements/flux-caption', 'FluxCaption'],
+						['/v6/complements/flux-controls', 'FluxControls'],
+						['/v6/complements/flux-index', 'FluxIndex'],
+						['/v6/complements/flux-pagination', 'FluxPagination'],
+						['/v6/complements/flux-preloader', 'FluxPreloader'],
+					],
+				}, {
 					title: 'Transitions',
 					path: '/v6/transitions/',
 					children: [

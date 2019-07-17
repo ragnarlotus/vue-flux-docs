@@ -1,5 +1,5 @@
 ---
-prev: ../components/complements/
+prev: ../complements/
 next: ../custom-transitions
 sidebarDepth: 0
 ---

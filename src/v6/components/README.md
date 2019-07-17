@@ -1,6 +1,6 @@
 ---
 prev: ../ssr-with-nuxt
-next: complements/
+next: ../complements/
 ---
 
 # Components

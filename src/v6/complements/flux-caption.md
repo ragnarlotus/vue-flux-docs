@@ -12,7 +12,7 @@ The slot can be overwritten with custom caption.
 
 **Captions are passed to vue-flux component instead of this because they are used in multiple components and will be available even if this component is not used**
 
-## Component
+## Attributes
 
 It will display the caption when no transition is active and is defined for current image.
 
@@ -106,4 +106,42 @@ export default {
       this.mounted = true;
    }
 }
+```
+
+## Templating
+
+To use custom caption you can do it using caption slot of [VueFlux](components/vue-flux) component. Check [FluxCaption](complements/flux-caption) documentation for further information about `captionProp` element.
+
+#### Custom component
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:caption>
+      <flux-caption v-slot="captionProps">
+         <custom-caption caption="captionProps"></custom-caption>
+      </flux-caption>
+   </template>
+</vue-flux>
+```
+
+#### Custom structure
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:caption>
+      <flux-caption v-slot="captionProps">
+         <a href="captionProps.url" class="flux-caption">{{ captionProps.text }}</a>
+      </flux-caption>
+   </template>
+</vue-flux>
 ```

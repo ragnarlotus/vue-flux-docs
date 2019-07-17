@@ -11,7 +11,7 @@ You can place it inside the vue-flux component or outside and give it any style 
 
 The slot can be used with custom index component.
 
-## Component
+## Attributes
 
 It will display a button when no transition is active and mouse over. Will not be displayed in touchable screens but will appear dragging up inside the slider.
 
@@ -87,4 +87,20 @@ export default {
       this.mounted = true;
    }
 }
+```
+
+## Templating
+
+To use custom index you can do it using index slot of [VueFlux](components/vue-flux) component. Check [FluxIndex](complements/flux-index) documentation for further information.
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:index>
+      <custom-index></custom-index>
+   </template>
+</vue-flux>
 ```

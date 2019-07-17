@@ -9,7 +9,7 @@ It is a default component to diplay controls with buttons to display previous, n
 
 The slot can be overwritten with custom controls.
 
-## Component
+## Attributes
 
 It will display the buttons when no transition is active and mouse over. Will not be displayed in touchable screens.
 
@@ -79,4 +79,20 @@ export default {
       this.mounted = true;
    }
 }
+```
+
+## Templating
+
+To use custom controls you can do it using controls slot of [VueFlux](components/vue-flux) component. Check [FluxControls](complements/flux-controls) documentation for further information.
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   ref="slider">
+
+   <template v-slot:controls>
+      <custom-controls></custom-controls>
+   </template>
+</vue-flux>
 ```
