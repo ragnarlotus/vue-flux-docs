@@ -2,7 +2,7 @@
 ---
 
 <ClientOnly>
-   <demos-index />
+   <demos-home />
 </ClientOnly>
 
 ## Documentation status
