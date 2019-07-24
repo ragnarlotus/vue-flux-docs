@@ -91,7 +91,7 @@ You can customize the spinner element using the slot.
 
 You can get the progress through the `Images` controller, like `vf.Images.progress` where `vf` is the slider instance component.
 
-The progress will be returned always percentage. But you can access other variables like de following:
+The progress will be returned always as percentage. But you can access other Images controller variables like de following:
 * loaded: `Number`
 * progress: `Number`
 * preloading: `Boolean`
