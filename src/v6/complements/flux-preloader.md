@@ -6,81 +6,99 @@ next: false
 
 ## Description
 
-It is a default component to diplay a pagination of the images, good when it does not contain too many images.
+The included component in charge of showing the spinner and run transition when the images array change.
 
 ## Attributes
 
-The component can have the following attributes.
+### slider
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | false | The VueFlux component |
+Is the VueFlux instance component from which to read the captions.
 
-#### Example of pagination inside vue-flux
-``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions">
-    <flux-pagination slot="pagination"></flux-pagination>
-</vue-flux>
-```
+If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
 
-``` javascript
-import { VueFlux, FluxPagination, Transitions } from 'vue-flux';
+- **Type:** `VueFlux`
+- **Required:** `false`
 
-export default {
-   components: {
-      VueFlux,
-      FluxPagination
-   },
+### spinner
 
-   data: () => ({
-      fluxOptions: {
-         autoplay: true
-      },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
-   })
-}
-```
+Define if you want to display the spinner.
 
-#### Example of pagination outside vue-flux
-``` html
-<vue-flux
-   :options="fluxOptions"
-   :images="fluxImages"
-   :transitions="fluxTransitions"
-   ref="slider">
-</vue-flux>
+- **Type:** `Boolean`
+- **Required:** `false`
+- **Default:** `true`
 
-<flux-pagination v-if="mounted" :slider="$refs.slider"></flux-pagination>
-```
+### transition
 
-``` javascript
-import { VueFlux, FluxPagination, Transitions } from 'vue-flux';
+Is the transition name that you want to run when the images array change.
 
-export default {
-   components: {
-      VueFlux,
-      FluxPagination
-   },
+If no transition defined, the transition run will be the next of the transitions array.
 
-   data: () => ({
-      mounted: false,
-      fluxOptions: {
-         autoplay: true
-      },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
-   }),
+- **Type:** `String`
+- **Required:** `false`
 
-   mounted() {
-      this.mounted = true;
-   }
-}
-```
+## Properties
+
+### vf
+
+The `VueFlux` instance component.
+
+- **Type:** `VueFlux`
+
+### captions
+
+The array of captions passed originally to the VueFlux component.
+
+- **Type:** `Array`
+
+### currentTransition
+
+Is the transition component name being run.
+
+When no transition running the value is `undefined`.
+
+- **Type:** `String`
+
+### previousImageIndex
+
+The previous image number of the images array.
+
+- **Type:** `Number`
+
+### currentImageIndex
+
+The current image number of the images array.
+
+- **Type:** `Number`
+
+### nextImageIndex
+
+The next image number of the images array.
+
+- **Type:** `Number`
+
+## Methods
+
+### showImage(number: `Number`)
+
+The slider will show the image in that position of the current images array.
+
+* **Type:** `Number`
+* **Required:** `true`
 
 ## Templating
 
-Spinner is located inside the [FluxPreloader](complements/flux-preloader) complement, so to use custom spinner you will have to use the spinner slot of the [FluxPreloader](components/complements/flux-preloader) component.
+You can customize the spinner element using the slot.
+
+You can get the progress through the `Images` controller, like `vf.Images.progress` where `vf` is the slider instance component.
+
+The progress will be returned always percentage. But you can access other variables like de following:
+* loaded: `Number`
+* progress: `Number`
+* preloading: `Boolean`
+* lazyloading: `Boolean`
+* loading: `Array`
+
+Feel free to take a look at the [Images controller](https://github.com/deulos/vue-flux/blob/dev/src/controllers/Images.js).
 
 #### Custom component
 
@@ -93,7 +111,7 @@ Spinner is located inside the [FluxPreloader](complements/flux-preloader) comple
    <template v-slot:preloader>
       <flux-preloader>
          <template v-slot:spinner>
-            <custom-spinner></custom-spinner>
+            <custom-spinner />
          </template>
       </flux-preloader>
    </template>

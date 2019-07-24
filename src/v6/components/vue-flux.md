@@ -249,6 +249,13 @@ Do not modify this values directly, instead use the [options](#options) attribut
 Size in pixels having width and height.
 
 - **Type:** `Object`
+- **Schema:**
+``` js
+let size = {
+   width: Number,
+   height: Number,
+};
+```
 
 ### loaded
 
@@ -351,6 +358,113 @@ If no number, the next transition will be run.
 
 * **Type:** Number
 * **Required:** false
+
+## Slots
+
+### preloader
+
+Defined to hold the preloading functionality, which includes the spinner and transition when images change.
+
+You can use the included [FluxPreloader](../complements/flux-preloader) complement.
+
+#### Example
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:preloader>
+      <flux-preloader />
+   </template>
+</vue-flux>
+```
+
+### caption
+
+Defined to display the images captions.
+
+You can use the included [FluxCaption](../complements/flux-caption) complement.
+
+#### Example
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:caption>
+      <flux-caption />
+   </template>
+</vue-flux>
+```
+
+### controls
+
+Defined to display the slider controls.
+
+You can use the included [FluxControls](../complements/flux-controls) complement.
+
+#### Example
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:controls>
+      <flux-controls />
+   </template>
+</vue-flux>
+```
+
+### index
+
+Defined to display an images index.
+
+You can use the included [FluxIndex](../complements/flux-index) complement.
+
+#### Example
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:index>
+      <flux-index />
+   </template>
+</vue-flux>
+```
+
+### pagination
+
+Defined to display the an images pagination.
+
+You can use the included [FluxPagination](../complements/flux-pagination) complement.
+
+#### Example
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:pagination>
+      <flux-pagination />
+   </template>
+</vue-flux>
+```
 
 ## Events
 

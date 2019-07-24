@@ -5,81 +5,174 @@
 
 ## Description
 
-It is a default component to diplay a pagination of the images, good when it does not contain too many images.
+The included component to diplay a pagination of the images, good when it does not contain too many images.
 
 ## Attributes
 
-The component can have the following attributes.
+### slider
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | false | The VueFlux component |
+Is the VueFlux instance component from which to read the captions.
+
+If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
+
+- **Type:** `VueFlux`
+- **Required:** `false`
 
 #### Example of pagination inside vue-flux
+
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions">
-    <flux-pagination slot="pagination"></flux-pagination>
+<vue-flux
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions">
+
+   <template v-slot:pagination>
+      <flux-pagination />
+   </template>
 </vue-flux>
 ```
 
 ``` javascript
-import { VueFlux, FluxPagination, Transitions } from 'vue-flux';
+import {
+   VueFlux,
+   FluxPagination,
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxPagination
+      FluxPagination,
    },
 
    data: () => ({
-      fluxOptions: {
-         autoplay: true
+      vfOptions: {
+         autoplay: true,
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
-   })
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
+   }),
 }
 ```
 
 #### Example of pagination outside vue-flux
+
 ``` html
 <vue-flux
-   :options="fluxOptions"
-   :images="fluxImages"
-   :transitions="fluxTransitions"
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions"
    ref="slider">
 </vue-flux>
 
-<flux-pagination v-if="mounted" :slider="$refs.slider"></flux-pagination>
+<flux-pagination v-if="mounted" :slider="$refs.slider" />
 ```
 
 ``` javascript
-import { VueFlux, FluxPagination, Transitions } from 'vue-flux';
+import {
+   VueFlux,
+   FluxPagination,
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxPagination
+      FluxPagination,
    },
 
    data: () => ({
       mounted: false,
-      fluxOptions: {
-         autoplay: true
+      vfOptions: {
+         autoplay: true,
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
    }),
 
    mounted() {
       this.mounted = true;
-   }
+   },
 }
 ```
 
+## Properties
+
+### vf
+
+The `VueFlux` instance component.
+
+- **Type:** `VueFlux`
+
+### captions
+
+The array of captions passed originally to the VueFlux component.
+
+- **Type:** `Array`
+
+### currentTransition
+
+Is the transition component name being run.
+
+When no transition running the value is `undefined`.
+
+- **Type:** `String`
+
+### previousImageIndex
+
+The previous image number of the images array.
+
+- **Type:** `Number`
+
+### currentImageIndex
+
+The current image number of the images array.
+
+- **Type:** `Number`
+
+### nextImageIndex
+
+The next image number of the images array.
+
+- **Type:** `Number`
+
+## Methods
+
+### showImage(number: `Number`)
+
+The slider will show the image in that position of the current images array.
+
+* **Type:** `Number`
+* **Required:** `true`
+
 ## Templating
 
-To use custom pagination you can do it using pagination slot of [VueFlux](components/vue-flux) component. Check [FluxPagination](complements/flux-pagination) documentation for further information about `itemProp` element.
+You can customize how the pagination items are displayed. That is because this component has a default slot, so you can pass a custom component or template code.
+
+This slot will receive an object having the following schema:
+
+``` js
+captionProps = {
+   index: Number,
+   title: String,
+   onClick: Function,
+   active: Boolean,
+}
+```
+
+### index
+
+The item number.
+
+### title
+
+The text taken from caption.
+
+### onClick
+
+The showImage() function.
+
+### active
+
+Returns if the item is the active one.
 
 #### Custom component
 
@@ -91,7 +184,7 @@ To use custom pagination you can do it using pagination slot of [VueFlux](compon
 
    <template v-slot:pagination>
       <flux-pagination v-slot="itemProps">
-         <custom-pagination item="itemProps"></custom-pagination>
+         <custom-pagination item="itemProps" />
       </flux-pagination>
    </template>
 </vue-flux>

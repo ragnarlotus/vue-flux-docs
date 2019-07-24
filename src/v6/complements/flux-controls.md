@@ -5,47 +5,57 @@
 
 ## Description
 
-It is a default component to diplay controls with buttons to display previous, next, play and pause.
-
-The slot can be overwritten with custom controls.
+The included component to diplay controls with the buttons previous, next, play and pause.
 
 ## Attributes
 
-It will display the buttons when no transition is active and mouse over. Will not be displayed in touchable screens.
+### slider
 
-The component can have the following attributes.
+Is the VueFlux instance component from which to read the captions.
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | false | The VueFlux component |
+If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
+
+- **Type:** `VueFlux`
+- **Required:** `false`
 
 #### Example of controls inside vue-flux
+
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions">
-    <flux-controls slot="controls"></flux-controls>
+<vue-flux
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions">
+
+   <template v-slot:controls>
+      <flux-controls />
+   </template>
 </vue-flux>
 ```
 
-``` javascript
-import { VueFlux, FluxControls, Transitions } from 'vue-flux';
+``` js
+import {
+   VueFlux,
+   FluxControls
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxControls
+      FluxControls,
    },
 
    data: () => ({
-      fluxOptions: {
+      vfOptions: {
          autoplay: true
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
-   })
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
+   }),
 }
 ```
 
 #### Example of controls outside vue-flux
+
 ``` html
 <vue-flux
    :options="fluxOptions"
@@ -54,45 +64,98 @@ export default {
    ref="slider">
 </vue-flux>
 
-<flux-controls v-if="mounted" :slider="$refs.slider"></flux-controls>
+<flux-controls v-if="mounted" :slider="$refs.slider" />
 ```
 
-``` javascript
-import { VueFlux, FluxControls, Transitions } from 'vue-flux';
+``` js
+import {
+   VueFlux,
+   FluxControls,
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxControls
+      FluxControls,
    },
 
    data: () => ({
       mounted: false,
-      fluxOptions: {
-         autoplay: true
+      vfOptions: {
+         autoplay: true,
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
    }),
 
    mounted() {
       this.mounted = true;
-   }
+   },
 }
 ```
 
-## Templating
+## Properties
 
-To use custom controls you can do it using controls slot of [VueFlux](components/vue-flux) component. Check [FluxControls](complements/flux-controls) documentation for further information.
+### vf
 
-``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   ref="slider">
+The `VueFlux` instance component.
 
-   <template v-slot:controls>
-      <custom-controls></custom-controls>
-   </template>
-</vue-flux>
-```
+- **Type:** `VueFlux`
+
+### display
+
+Will return `true` if the slider is loaded and mouse moved over.
+
+- **Type:** `Boolean`
+
+### captions
+
+The array of captions passed originally to the VueFlux component.
+
+- **Type:** `Array`
+
+### currentTransition
+
+Is the transition component name being run.
+
+When no transition running the value is `undefined`.
+
+- **Type:** `String`
+
+### previousImageIndex
+
+The previous image number of the images array.
+
+- **Type:** `Number`
+
+### currentImageIndex
+
+The current image number of the images array.
+
+- **Type:** `Number`
+
+### nextImageIndex
+
+The next image number of the images array.
+
+- **Type:** `Number`
+
+## Methods
+
+### getCaption(number: `Number`)
+
+Gets the caption element corresponding to the number captions array.
+
+If no number defined will return the one of current image.
+
+* **Type:** `Number`
+* **Required:** `false`
+
+### getCaptionText(number: `Number`)
+
+Gets the caption text corresponding to the number captions array.
+
+If no number defined will return the one of current image.
+
+* **Type:** `Number`
+* **Required:** `false`

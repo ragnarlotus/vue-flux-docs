@@ -6,113 +6,203 @@ prev: false
 
 ## Description
 
-It is a default component to diplay image caption.
+The included component to display image captions.
 
-The slot can be overwritten with custom caption.
+::: tip
 
-**Captions are passed to vue-flux component instead of this because they are used in multiple components and will be available even if this component is not used**
+Captions are passed to vue-flux component instead of this because they are used in multiple complements and will be available even if this component is not used.
+
+:::
 
 ## Attributes
 
-It will display the caption when no transition is active and is defined for current image.
+### slider
 
-The component can have the following attributes.
+Is the VueFlux instance component from which to read the captions.
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | false | The VueFlux component |
+If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
 
-## Properties
-
-This are the component properties that you can access programatically.
-
-| Name | Type | Description |
-|------|------|-------------|
-| captions | Array | Array of strings for image captions |
-| caption | String | Returns the current image caption or empty string |
+- **Type:** `VueFlux`
+- **Required:** `false`
 
 #### Example of caption inside vue-flux
+
 ``` html
 <vue-flux
-   :options="fluxOptions"
-   :images="fluxImages"
-   :transitions="fluxTransitions"
-   :captions="fluxCaptions">
-   <flux-caption slot="caption"></flux-caption>
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions">
+
+   <template v-slot:caption>
+      <flux-caption />
+   </template>
 </vue-flux>
 ```
 
-``` javascript
-import { VueFlux, FluxCaption, Transitions } from 'vue-flux';
+``` js
+import {
+   VueFlux,
+   FluxCaption
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxCaption
+      FluxCaption,
    },
 
    data: () => ({
-      fluxOptions: {
+      vfOptions: {
          autoplay: true
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions,
-      fluxCaptions: [
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
+      vfCaptions: [
          'Image URL1 caption',
          'Image URL2 caption',
          'Image URL3 caption'
-      ]
-   })
+      ],
+   }),
 }
 ```
 
 #### Example of caption outside vue-flux
+
 ``` html
 <vue-flux
-   :options="fluxOptions"
-   :images="fluxImages"
-   :transitions="fluxTransitions"
-   :captions="fluxCaptions"
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
    ref="slider">
 </vue-flux>
 
-<flux-caption v-if="mounted" :slider="$refs.slider"></flux-caption>
+<flux-caption v-if="mounted" :slider="$refs.slider" />
 ```
 
-``` javascript
-import { VueFlux, FluxCaption, Transitions } from 'vue-flux';
+``` js
+import {
+   VueFlux,
+   FluxCaption,
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxCaption
+      FluxCaption,
    },
 
    data: () => ({
       mounted: false,
-      fluxOptions: {
-         autoplay: true
+      vfOptions: {
+         autoplay: true,
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions,
-      fluxCaptions: [
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
+      vfCaptions: [
          'Image URL1 caption',
          'Image URL2 caption',
-         'Image URL3 caption'
-      ]
+         'Image URL3 caption',
+      ],
    }),
 
    mounted() {
       this.mounted = true;
-   }
+   },
 }
 ```
 
+## Properties
+
+### vf
+
+The `VueFlux` instance component.
+
+- **Type:** `VueFlux`
+
+### caption
+
+Is the caption corresponding to the image being displayed at the moment.
+
+This value will be empty string while preloading and while there is a transition running.
+
+- **Type:** `String`
+
+### captions
+
+The array of captions passed originally to the VueFlux component.
+
+- **Type:** `Array`
+
+### currentTransition
+
+Is the transition component name being run.
+
+When no transition running the value is `undefined`.
+
+- **Type:** `String`
+
+### previousImageIndex
+
+The previous image number of the images array.
+
+- **Type:** `Number`
+
+### currentImageIndex
+
+The current image number of the images array.
+
+- **Type:** `Number`
+
+### nextImageIndex
+
+The next image number of the images array.
+
+- **Type:** `Number`
+
+## Methods
+
+### getCaption(number: `Number`)
+
+Gets the caption element corresponding to the number captions array.
+
+If no number defined will return the one of current image.
+
+* **Type:** `Number`
+* **Required:** `false`
+
+### getCaptionText(number: `Number`)
+
+Gets the caption text corresponding to the number captions array.
+
+If no number defined will return the one of current image.
+
+* **Type:** `Number`
+* **Required:** `false`
+
 ## Templating
 
-To use custom caption you can do it using caption slot of [VueFlux](components/vue-flux) component. Check [FluxCaption](complements/flux-caption) documentation for further information about `captionProp` element.
+You can customize how the captions are displayed. That is because this component has a default slot, so you can pass a custom component or template code.
 
-#### Custom component
+This slot will receive an object having the following schema:
+
+``` js
+captionProps = {
+   caption: String | Object,
+   text: String,
+}
+```
+
+### caption
+
+Is the element of the captions array corresponding to the current image.
+
+### text
+
+Is the caption as text. This is specially useful if you mix captions as `String` and as `Object`.
+
+#### Example using custom component
 
 ``` html
 <vue-flux
@@ -123,13 +213,13 @@ To use custom caption you can do it using caption slot of [VueFlux](components/v
 
    <template v-slot:caption>
       <flux-caption v-slot="captionProps">
-         <custom-caption caption="captionProps"></custom-caption>
+         <custom-caption caption="captionProps" />
       </flux-caption>
    </template>
 </vue-flux>
 ```
 
-#### Custom structure
+#### Example using custom structure
 
 ``` html
 <vue-flux
@@ -140,7 +230,9 @@ To use custom caption you can do it using caption slot of [VueFlux](components/v
 
    <template v-slot:caption>
       <flux-caption v-slot="captionProps">
-         <a href="captionProps.url" class="flux-caption">{{ captionProps.text }}</a>
+         <a :href="captionProps.caption.url" class="flux-caption">
+            {{ captionProps.text }}
+         </a>
       </flux-caption>
    </template>
 </vue-flux>

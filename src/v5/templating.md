@@ -2,6 +2,7 @@
 ---
 
 ## Spinner
+
 To use custom spinner you can do it using spinner slot like this:
 
 ``` html
@@ -22,6 +23,7 @@ export default {
 
 
 ## Caption
+
 To use custom caption you can do it using caption slot like this:
 
 ``` html
@@ -49,6 +51,7 @@ export default {
 ```
 
 ## Pagination
+
 To use custom pagination you can do it using pagination slot like this:
 
 ``` html
@@ -76,6 +79,7 @@ export default {
 ```
 
 ## Controls
+
 To use custom controls you can do it like this:
 
 ``` html
@@ -103,6 +107,7 @@ export default {
 ```
 
 ## Index
+
 To use custom index you can do it like this:
 
 ``` html

@@ -5,102 +5,179 @@
 
 ## Description
 
-It is a default component to diplay an index of all images so it is a good resource when the slider contains many images.
+The included component to diplay an index of all images so it is a good resource when the slider contains many images.
 
 You can place it inside the vue-flux component or outside and give it any style you want, meaning horizontal, vertical, with arrows, with scroll, etc. The default style is only applied if located inside and can be easily overwritten.
 
-The slot can be used with custom index component.
-
-## Attributes
-
-It will display a button when no transition is active and mouse over. Will not be displayed in touchable screens but will appear dragging up inside the slider.
+It will display a button when no transition is active nor mouse over. Will not be displayed in touchable screens but will appear dragging up inside the slider if `enableGestures` option enabled.
 
 The index will auto hide after choosing an image with default styles.
 
-The current image will have class current.
+The current image will have class `current`.
 
 Placing the mouse over will display de caption if defined.
 
-The component can have the following attributes.
+## Attributes
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| slider | Object | false | The VueFlux component |
+### slider
+
+Is the VueFlux instance component from which to read the captions.
+
+If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
+
+- **Type:** `VueFlux`
+- **Required:** `false`
 
 #### Example of index inside vue-flux
+
 ``` html
-<vue-flux :options="fluxOptions" :images="fluxImages" :transitions="fluxTransitions">
-    <flux-index slot="index"></flux-index>
+<vue-flux
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions">
+
+   <template v-slot:index>
+      <flux-index />
+   </template>
 </vue-flux>
 ```
 
 ``` javascript
-import { VueFlux, FluxIndex, Transitions } from 'vue-flux';
+import {
+   VueFlux,
+   FluxIndex,
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxIndex
+      FluxIndex,
    },
 
    data: () => ({
-      fluxOptions: {
-         autoplay: true
+      vfOptions: {
+         autoplay: true,
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
-   })
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
+   }),
 }
 ```
 
 #### Example of index outside vue-flux
+
 ``` html
 <vue-flux
-   :options="fluxOptions"
-   :images="fluxImages"
-   :transitions="fluxTransitions"
+   :options="vfOptions"
+   :images="vfImages"
+   :transitions="vfTransitions"
    ref="slider">
 </vue-flux>
 
-<flux-index v-if="mounted" :slider="$refs.slider"></flux-index>
+<flux-index v-if="mounted" :slider="$refs.slider" />
 ```
 
 ``` javascript
-import { VueFlux, FluxIndex, Transitions } from 'vue-flux';
+import {
+   VueFlux,
+   FluxIndex,
+} from 'vue-flux';
 
 export default {
    components: {
       VueFlux,
-      FluxIndex
+      FluxIndex,
    },
 
    data: () => ({
       mounted: false,
-      fluxOptions: {
-         autoplay: true
+      vfOptions: {
+         autoplay: true,
       },
-      fluxImages: [ 'URL1', 'URL2', 'URL3' ],
-      fluxTransitions: Transitions
+      vfImages: [ 'URL1', 'URL2', 'URL3' ],
+      vfTransitions: [ 'fade', 'slide' ],
    }),
 
    mounted() {
       this.mounted = true;
-   }
+   },
 }
 ```
 
-## Templating
+## Properties
 
-To use custom index you can do it using index slot of [VueFlux](components/vue-flux) component. Check [FluxIndex](complements/flux-index) documentation for further information.
+### vf
 
-``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   ref="slider">
+The `VueFlux` instance component.
 
-   <template v-slot:index>
-      <custom-index></custom-index>
-   </template>
-</vue-flux>
-```
+- **Type:** `VueFlux`
+
+### display
+
+Will return `true` if the slider is loaded.
+
+- **Type:** `Boolean`
+
+### displayButton
+
+Will return `true` if the mouse moved over.
+
+- **Type:** `Boolean`
+
+### captions
+
+The array of captions passed originally to the VueFlux component.
+
+- **Type:** `Array`
+
+### currentTransition
+
+Is the transition component name being run.
+
+When no transition running the value is `undefined`.
+
+- **Type:** `String`
+
+### previousImageIndex
+
+The previous image number of the images array.
+
+- **Type:** `Number`
+
+### currentImageIndex
+
+The current image number of the images array.
+
+- **Type:** `Number`
+
+### nextImageIndex
+
+The next image number of the images array.
+
+- **Type:** `Number`
+
+## Methods
+
+### toggle()
+
+Toggles displaying the index of images.
+
+### show()
+
+Shows the images index.
+
+### hide(number: `Number`)
+
+Hides the images index.
+
+If number specified, the slider will show the image in that position of the current images array.
+
+* **Type:** `Number`
+* **Required:** `false`
+
+### showImage(number: `Number`)
+
+The slider will show the image in that position of the current images array.
+
+* **Type:** `Number`
+* **Required:** `true`
