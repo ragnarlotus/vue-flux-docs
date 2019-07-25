@@ -1,7 +1,7 @@
 ---
 ---
 
-# OVerview
+# Overview
 
 This is an image slider developed with [vue](https://vuejs.org/) 2 which comes with 20 cool transitions out of the box.
 

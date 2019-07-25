@@ -4,7 +4,7 @@
 		:transitions="transitions"
 		captions="fortune"
 		:complements="complements"
-		:numImages="8">
+		:numImages="12">
 	</demo>
 </template>
 
@@ -12,18 +12,27 @@
 	import Demo from '../Demo.vue';
 
 	export default {
-		name: 'demos-slider-1',
+		name: 'demos-index-2',
+
+		components: {
+			Demo,
+		},
 
 		data: () => ({
 			options: {
+				allowFullscreen: true,
 				autoplay: true,
-				lazyLoadAfter: 5,
-				path: 'img/slides/',
+				path: '../img/slides/',
 			},
 			transitions: [
 				'fade', 'cube', 'book', 'wave', 'round2',
 			],
-			complements: {},
+			complements: {
+				preloader: true,
+				caption: true,
+				controls: true,
+				pagination: true,
+			},
 		}),
 	};
 </script>

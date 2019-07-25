@@ -25,6 +25,12 @@ Represents the object that should be watched for scrolling.
 - **Required:** `false`
 - **Default:** `window`
 
+::: tip
+
+This parameter has no effect when the effect type set to `fixed`
+
+:::
+
 ### type
 
 Depending on the type the effect will differ.
@@ -33,15 +39,15 @@ Depending on the type the effect will differ.
 - **Required:** `false`
 - **Default:** `relative`
 
-#### Relative
+#### relative
 
 This type is the default and moves the image with the defined offset when scrolling until reaches the edge.
 
-#### Visible
+#### visible
 
 This works pretty like the relative except because the image will not start moving until the whole image is visible.
 
-#### Fixed
+#### fixed
 
 Makes the parallax element like a window through you can view the defined image, and you see the part of the image where the parallax position.
 
@@ -57,11 +63,17 @@ The height the image should have in pixels, by default is auto which means that 
 
 Is the amount of image hidden that will be displayed when scrolling.
 
-If set in percentage the amount of pixels will be calculated in reference of height.
+If set in percentage the amount of pixels will be calculated in reference of height. So if the height is `300px`, and the offse is set to `100%` then the image will displace for `300px`.
 
 - **Type:** `Number | String`
 - **Required:** `false`
-- **Default:** `60%`
+- **Default:** `100%`
+
+::: tip
+
+This parameter has no effect when the effect type set to `fixed`
+
+:::
 
 ## Methods
 
