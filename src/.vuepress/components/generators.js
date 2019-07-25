@@ -3,7 +3,7 @@ const maxImages = 60;
 
 export class imagesGenerator {
 
-	static generate(numImages) {
+	static generate(numImages = 1) {
 		let srcs = [];
 
 		for (let i = 1; i <= maxImages; i++) {
@@ -19,7 +19,7 @@ export class imagesGenerator {
 			images.push(src);
 		}
 
-		return images;
+		return images.length > 1? images : images[0];
 	}
 
 }

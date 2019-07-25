@@ -3,7 +3,10 @@
 		:options="options"
 		:images="finalImages"
 		:transitions="transitions"
-		:captions="finalCaptions">
+		:captions="finalCaptions"
+		@transition-start="transitionStart"
+		@transition-cancel="transitionCancel"
+		@transition-end="transitionEnd">
 
 		<template v-if="complements.preloader" v-slot:preloader>
 			<flux-preloader />
@@ -51,6 +54,7 @@
 			FluxCaption,
 			FluxControls,
 			FluxPagination,
+			FluxIndex,
 		},
 
 		props: {
@@ -93,6 +97,20 @@
 				}
 
 				return [];
+			},
+		},
+
+		methods: {
+			transitionStart(transition) {
+				this.$emit('transition-start', transition);
+			},
+
+			transitionCancel() {
+				this.$emit('transition-cancel');
+			},
+
+			transitionEnd() {
+				this.$emit('transition-end');
 			},
 		},
 	};

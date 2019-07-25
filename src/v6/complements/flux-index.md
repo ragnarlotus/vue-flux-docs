@@ -3,6 +3,12 @@
 
 # FluxIndex
 
+::: warning
+
+I am using here the latest 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
+
+:::
+
 ## Description
 
 The included component to diplay an index of all images so it is a good resource when the slider contains many images.

@@ -16,7 +16,6 @@ The image URL to be displayed.
 - **Type:** `String`
 - **Required:** `true`
 
-
 ### holder
 
 Represents the object that should be watched for scrolling.

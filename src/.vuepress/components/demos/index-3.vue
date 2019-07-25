@@ -4,15 +4,14 @@
 		:transitions="transitions"
 		captions="fortune"
 		:complements="complements"
-		:numImages="12">
-	</demo>
+		:numImages="12" />
 </template>
 
 <script>
 	import Demo from '../Demo.vue';
 
 	export default {
-		name: 'demos-index-3',
+		name: 'demos-index-2',
 
 		components: {
 			Demo,
@@ -20,8 +19,6 @@
 
 		data: () => ({
 			options: {
-				allowFullscreen: true,
-				autoplay: true,
 				path: '../img/slides/',
 			},
 			transitions: [
@@ -32,6 +29,7 @@
 				caption: true,
 				controls: true,
 				pagination: true,
+				index: true,
 			},
 		}),
 	};
