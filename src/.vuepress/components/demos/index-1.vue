@@ -87,8 +87,12 @@
 		border 1px solid #333
 		border-radius 5px
 		margin 0 12px 12px 0
+		cursor pointer
 
 		&.active
 			color: yellow
 			background-color #333
+
+	p
+		margin-bottom -12px
 </style>
