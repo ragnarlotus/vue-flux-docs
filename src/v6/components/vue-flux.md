@@ -221,12 +221,13 @@ This way you can customize considerably the [caption's slot](complements/flux-ca
 ## Size
 
 The slider size is defined the following way:
-- By default the width will be the parent's width and height.
-- If no height defined, will calculate the height using a 16:9 ratio.
+1. If defined by CSS that will be the size
+2. If no width defined, will be parent's width
+3. If no height defined, will calculate the height using a 16:9 ratio.
 
 ::: danger
 
-If you want to define a size, avoid using `width` and `height` directly in the style attibute, as those values will be applied always, even in full screen, not letting the slider reisze itself. So better use a class for `vue-flux` component or set the `style` attribute in the parent.
+If you want to define a size, avoid using `width` and `height` directly in the style attibute, as those values will be applied always, even in full screen, not letting the slider resize itself. So better use a class for `vue-flux` component or set the `style` attribute in the parent.
 
 :::
 
