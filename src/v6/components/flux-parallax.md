@@ -7,6 +7,12 @@
 
 Creates a parallax effect given an image. It can recreate 3 types, relative, visible and fixed.
 
+::: tip
+
+Do not forget to set the height with CSS if has no content, otherwise you will not see anything.
+
+:::
+
 ## Attributes
 
 ### src
@@ -50,14 +56,6 @@ This works pretty like the relative except because the image will not start movi
 
 Makes the parallax element like a window through you can view the defined image, and you see the part of the image where the parallax position.
 
-### height
-
-The height the image should have in pixels, by default is auto which means that will auto detect size by content or defined by CSS.
-
-- **Type:** `String`
-- **Required:** `false`
-- **Default:** `auto`
-
 ### offset
 
 Is the amount of image hidden that will be displayed when scrolling.
@@ -82,7 +80,7 @@ Recalculates the sizes.
 
 ### setCss(css: `Object`)
 
-Set CSS styles to the cube.
+Set CSS styles to the parallax.
 
 #### css
 
