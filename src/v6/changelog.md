@@ -7,9 +7,8 @@
 This new version comes with a lot of improvements, in code, functionality and performance.
 
 Bugs fixed:
-* Parallax holder fixed (in progress)
-* Support for parallax type stataic in mobile (in progress)
-* Spinner will remain at 0% when there is only one source
+* Parallax holder fixed
+* Support for parallax type stataic in mobile
 
 New features:
 * **Size reduced**

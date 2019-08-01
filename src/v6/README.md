@@ -141,7 +141,7 @@ Weight is about 100 KB so is pretty light having only the essential CSS. It also
 As simple as this.
 
 ``` html
-<flux-parallax src="url" height="300px" offset="80%">
+<flux-parallax src="url" style="height: 300px;">
    <div>CONTENT</div>
 </flux-parallax>
 ```
