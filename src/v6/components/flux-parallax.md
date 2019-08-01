@@ -9,7 +9,7 @@ Creates a parallax effect given an image. It can recreate 3 types, relative, vis
 
 ::: tip
 
-Do not forget to set the height with CSS if has no content, otherwise you will not see anything.
+Do not forget to set the height with CSS if has no content, otherwise you probably will not see anything.
 
 :::
 
