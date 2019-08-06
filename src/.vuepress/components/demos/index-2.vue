@@ -1,5 +1,5 @@
 <template>
-	<flux-parallax :src="'../img/slides/'+ src" height="200px" offset="200%" />
+	<flux-parallax :src="src" type="fixed" style="height: 250px;" />
 </template>
 
 <script>
@@ -7,18 +7,18 @@
 	import { FluxParallax } from 'vue-flux';
 
 	export default {
-		name: 'demos-index-3',
+		name: 'demos-index-2',
 
 		components: {
 			FluxParallax,
 		},
 
 		data: () => ({
-			src: '',
+			src: '../img/slides/',
 		}),
 
 		created() {
-			this.src = imagesGenerator.generate();
+			this.src += imagesGenerator.generate();
 		},
 	};
 </script>

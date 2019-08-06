@@ -11,7 +11,7 @@
 	import Demo from '../Demo.vue';
 
 	export default {
-		name: 'demos-index-2',
+		name: 'demos-index-3',
 
 		components: {
 			Demo,
