@@ -35,7 +35,7 @@ If passed as number the unit will be pixel, but if passed as string you must app
 - **Required:** `false`
 - **Schema:**
 ``` js
-let size = {
+{
    width: Number | String,
    height: Number | String,
 };
@@ -64,7 +64,7 @@ The value can be one of the following:
 * An object having the URL and image original size in pixels like the following.
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,
@@ -87,7 +87,7 @@ This attribute will define each cell as a cube, so you can define the images tha
 - **Required:** `false`
 - **Schema:**
 ``` js
-let images = {
+{
    front: image,
    back: image,
    top: image,
@@ -102,13 +102,13 @@ The `image` value can be one of the following:
 * A simple string of the URL
 
 ``` js
-let image = String;
+String;
 ```
 
 * An object having the URL and image original size in pixels
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,
@@ -131,11 +131,11 @@ The values can be any valid CSS color.
 - **Required:** `false`
 - **String Schema:**
 ``` js
-let color = String;
+String;
 ```
 - **Object Schema:**
 ``` js
-let color = {
+{
    front: String,
    back: String,
    top: String,

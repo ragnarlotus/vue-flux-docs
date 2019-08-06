@@ -4,220 +4,281 @@ prev: transitions/
 
 # Custom transitions
 
-## Schema
+Transitions use the mixin `BaseTransition` to perform basic and shared logic.
 
-Transitions use a mixin to perform basic and shared logics, like properties.
+## Data
 
-#### Attributes
+### totalDuration
 
-| Attribute | Type | Required | Description |
-|-----------|------|----------|-------------|
-| size | Object | false | An object with properties width and height in pixels |
-| from | String, Object | true | Origin image to start transition with |
-| to | String, Object | false | Final image to end transition with |
-| options | Object | false | Transition options to apply over predefined in transition |
+Represents the transition duration in ms.
 
-The attributes `from` and `to` can reference a simple image URL as `String` or an `Object` with the following structure:
+- **Type:** `Number`
+- **Required:** `true`
 
+::: warning
+
+You must specify this in data to let the slider know when transition ends.
+
+:::
+
+::: tip
+
+If the duration depends on transition options, you can set its value in the `created` hook, but don't forget to initialize it.
+
+:::
+
+## Properties
+
+### size
+
+This size is the width and height of the slider.
+
+- **Type:** `Object`
+- **Schema:**
 ``` js
-[from | to] : {
-   src: URL(String),
-   size: {
-      width: 800,
-      height: 600,
-   },
-}
+{
+   width: Number,
+   height: Number,
+};
 ```
 
-#### Properties
+### from
 
+The origin image which is currently being displayed.
 
+- **Type:** `String | Object`
 
+The value can be one of the following:
+* A simple string of the URL.
+* An object having the URL and image original size in pixels like the following.
 
-## Structure
+``` js
+{
+   url: String,
+   size: {
+      width: Number,
+      height: Number,
+   },
+};
+```
 
-Must have a totalDuration attribute to know how long the transition lasts.
+### to
 
-You can initialize data and values on component created() method.
+The destination image to be displayed.
 
-On mounted() method will run the transition.
+- **Type:** `String | Object`
 
-You can also set the destroyed() method to be run when transition ends.
+The value can be one of the following:
+* A simple string of the URL.
+* An object having the URL and image original size in pixels like the following.
+
+``` js
+{
+   url: String,
+   size: {
+      width: Number,
+      height: Number,
+   },
+};
+```
+
+### options
+
+Is an object with attributes and values that will be assigned to the transition data.
+
+- **Type:** `Object`
+
+### mask
+
+Is the mask CSS that wraps the transitions. This way you can control whether hide overflow, perspective, or any other relevant style.
+
+- **Type:** `Object`
+
+::: tip
+
+Remeber that all the properties of this object are and must be canel case.
+
+:::
+
+### current
+
+Refers to the image that is being displayed.
+
+- **Type:** `FluxImage`
+
+## Hooks
+
+### created
+
+You can initialize data, modify mask or any other preparative task on component in the `created` hook.
+
+### mounted
+
+The transition will run on `mounted` hook.
+
+### beforeDestroy
+
+You can also use the `beforeDestroy` hook to run anything you need when transition ends.
+
+## Using it
+
+To know how to add your custom transition to the slider read the [VueFlux custom transitions section](/v6/components/vue-flux#custom-transitions).
 
 ## Example 1 - Waterfall
 
 ``` html
-<flux-grid :slider="slider" :rows="rows" :cols="cols" :index="index" ref="grid"></flux-grid>
+<flux-grid
+   :rows="rows"
+   :cols="cols"
+   :size="size"
+   :image="from"
+   ref="grid">
+</flux-grid>
 ```
 
-``` javascript
-import FluxGrid from 'vue-flux';
+``` js
+import {
+   BaseTransition,
+   FluxGrid,
+} from 'vue-flux';
 
 export default {
-   name: 'transitionWaterfall',
+   name: 'TransitionWaterfall',
 
    components: {
-      FluxGrid
+      FluxGrid,
    },
+
+   mixins: [
+      BaseTransition,
+   ],
 
    data: () => ({
-      currentImage: undefined,
-      nextImage: undefined,
-      index: {},
       rows: 1,
-      cols: 0,
+      cols: 10,
       tileDuration: 600,
       totalDuration: 0,
-      easing: 'ease-in',
-      tileDelay: 80,
+      easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+      tileDelay: 90,
    }),
 
-   props: {
-      slider: Object
-   },
-
-   computed: {
-      grid: function() {
-         return this.$refs.grid;
-      }
-   },
-
    created() {
-      this.currentImage = this.slider.currentImage();
-      this.nextImage = this.slider.nextImage();
-
-      let divider = this.slider.size.width / 10;
-
-      this.slider.setTransitionOptions(this, {
-         numCols: Math.floor(this.slider.size.width / divider)
-      });
-
       this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
-
-      this.index = {
-         front: this.slider.currentImage.index
-      };
    },
 
    mounted() {
-      this.currentImage.hide();
-
-      this.grid.setCss({
-         overflow: 'hidden'
-      });
-
-      this.grid.transform((tile, i) => {
+      this.$refs.grid.transform((tile, i) => {
          tile.transform({
-            transition: 'all '+ this.tileDuration +'ms '+ this.easing +' '+ this.getDelay(i) +'ms',
+            transition: `all ${this.tileDuration}ms ${this.easing} ${this.getDelay(i)}ms`,
             opacity: '0.1',
-            transform: 'translateY('+ this.slider.size.height +'px)'
+            transform: `translateY(${this.size.height}px)`,
          });
       });
    },
 
    methods: {
       getDelay(i) {
-         let delay = i;
-
-         if (this.direction === 'left')
-            delay = this.cols - i - 1;
-
-         return delay * this.tileDelay;
-      }
-   }
+         return i * this.tileDelay;
+      },
+   },
 };
 ```
 
 ## Example 2 - Wave
 
 ``` html
-<flux-grid :slider="slider" :rows="rows" :cols="cols" :index="index" ref="grid"></flux-grid>
+<flux-grid
+   :rows="rows"
+   :cols="cols"
+   :size="size"
+   :images="images"
+   :color="color"
+   :depth="size.height"
+   :css="gridCss"
+   ref="grid">
+</flux-grid>
 ```
 
-``` javascript
-import FluxGrid from 'vue-flux';
+``` js
+import {
+   BaseTransition,
+   FluxGrid,
+} from 'vue-flux';
 
 export default {
-   name: 'transitionWave',
+   name: 'TransitionWave',
 
    components: {
-      FluxGrid
+      FluxGrid,
    },
+
+   mixins: [
+      BaseTransition,
+   ],
 
    data: () => ({
-      currentImage: undefined,
-      nextImage: undefined,
-      index: {},
       rows: 1,
-      cols: 0,
-      tileDuration: 800,
+      cols: 8,
+      tileDuration: 900,
       totalDuration: 0,
-      easing: 'ease-out',
-      tileDelay: 150,
-      sideColor: '#333'
+      perspective: '1200px',
+      easing: 'cubic-bezier(0.3, -0.3, 0.735, 0.285)',
+      tileDelay: 110,
+      sideColor: '#333',
+      images: {},
+      color: {},
    }),
 
-   props: {
-      slider: Object
-   },
-
    computed: {
-      grid: function() {
-         return this.$refs.grid;
+      gridCss() {
+         return {
+            perspective: this.perspective,
+         };
       }
    },
 
    created() {
-      this.currentImage = this.slider.currentImage();
-      this.nextImage = this.slider.nextImage();
-
-      let divider = this.slider.size.width / 8;
-
-      this.slider.setTransitionOptions(this, {
-         cols: Math.floor(this.slider.size.width / divider)
-      });
-
       this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
 
-      this.index = {
-         front: this.currentImage.index,
-         top: this.nextImage.index,
-         bottom: this.nextImage.index,
+      this.images = {
+         front: this.from,
+         top: this.to,
+      };
+
+      this.color = {
          left: this.sideColor,
-         right: this.sideColor
+         right: this.sideColor,
       };
    },
 
    mounted() {
-      this.currentImage.hide();
-      this.nextImage.hide();
+      this.mask.overflow = 'visible';
 
-      this.grid.setCss({
-         perspective: '1200px'
-      });
+      this.current.hide();
 
-      this.grid.transform((tile, i) => {
+      this.$refs.grid.transform((tile, i) => {
          tile.setCss({
-            transition: 'all '+ this.tileDuration +'ms '+ this.easing +' '+ this.getDelay(i) +'ms'
+            transition: `all ${this.tileDuration}ms ${this.easing} ${this.getDelay(i)}ms`,
          });
 
-         tile.turn(this.direction === 'right'? 'bottom' : 'top');
+         tile.turnBottom();
       });
    },
 
-   destroyed() {
-      this.nextImage.show();
+   beforeDestroy() {
+      this.current.show();
    },
 
    methods: {
       getDelay(i) {
-         let delay = i;
-
-         if (this.direction === 'left')
-            delay = this.cols - i - 1;
-
-         return delay * this.tileDelay;
-      }
-   }
+         return i * this.tileDelay;
+      },
+   },
 };
 ```
+
+::: tip
+
+You can see the [transitions source code](https://github.com/deulos/vue-flux/tree/dev/src/transitions) to get more ideas or examples.
+
+:::

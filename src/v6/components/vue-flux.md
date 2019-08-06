@@ -252,7 +252,7 @@ Size in pixels having width and height.
 - **Type:** `Object`
 - **Schema:**
 ``` js
-let size = {
+{
    width: Number,
    height: Number,
 };

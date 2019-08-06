@@ -19,7 +19,7 @@ If passed as number the unit will be pixel, but if passed as string you must app
 - **Required:** `false`
 - **Schema:**
 ``` js
-let size = {
+{
    width: Number | String,
    height: Number | String,
 };
@@ -35,14 +35,14 @@ Transition name to be played. Can be a `String` with the name of one of the 20 i
 - **Required:** `true`
 - **Included transition schema:**
 ``` js
-let transition = String;
+String;
 ```
 
 - **Custom transition schema:**
 ``` js
-let transition = {
-	name: String,
-	component: Object<VueComponent>,
+{
+   name: String,
+   component: Object<VueComponent>,
 };
 ```
 
@@ -70,7 +70,7 @@ The value can be one of the following:
 * An object having the URL and image original size in pixels like the following.
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,
@@ -91,7 +91,7 @@ The value can be one of the following:
 * An object having the URL and image original size in pixels like the following.
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,

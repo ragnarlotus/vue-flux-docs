@@ -19,7 +19,7 @@ If passed as number the unit will be pixel, but if passed as string you must app
 - **Required:** `false`
 - **Schema:**
 ``` js
-let size = {
+{
    width: Number | String,
    height: Number | String,
 };
@@ -45,7 +45,7 @@ The value can be one of the following:
 * An object having the URL and image original size in pixels like the following.
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,
@@ -69,9 +69,9 @@ If the caption is an object it must have the `text` property with the caption in
 
 - **Object Schema:**
 ``` js
-let caption = {
-	...,
-	text: String,
-	...,
+{
+   ...,
+   text: String,
+   ...,
 };
 ```

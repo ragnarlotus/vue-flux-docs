@@ -21,7 +21,7 @@ If passed as number the unit will be pixel, but if passed as string you must app
 - **Required:** `false`
 - **Schema:**
 ``` js
-let size = {
+{
    width: Number | String,
    height: Number | String,
 };
@@ -47,7 +47,7 @@ The value can be one of the following:
 * An object having the URL and image original size in pixels like the following.
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,
@@ -77,11 +77,11 @@ If the offset is passed as object, you can specify the offsets `top` and `left` 
 - **Required:** `false`
 - **Single Schema:**
 ``` js
-let offset = Number | 'auto';
+Number | 'auto';
 ```
 - **Object Schema:**
 ``` js
-let offset = {
+{
    top: Number | 'auto',
    left: Number | 'auto',
 };

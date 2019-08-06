@@ -19,7 +19,7 @@ If passed as number the unit will be pixel, but if passed as string you must app
 - **Required:** `false`
 - **Schema:**
 ``` js
-let size = {
+{
    width: Number | String,
    height: Number | String,
 };
@@ -35,7 +35,7 @@ Object with images per side.
 - **Required:** `false`
 - **Schema:**
 ``` js
-let images = {
+{
    front: image,
    back: image,
    top: image,
@@ -50,13 +50,13 @@ The `image` value can be one of the following:
 * A simple string of the URL.
 
 ``` js
-let image = String;
+String;
 ```
 
 * An object having the URL and image original size in pixels.
 
 ``` js
-let image = {
+{
    url: String,
    size: {
       width: Number,
@@ -79,11 +79,11 @@ The values can be any valid CSS color.
 - **Required:** `false`
 - **String Schema:**
 ``` js
-let color = String;
+String;
 ```
 - **Object Schema:**
 ``` js
-let color = {
+{
    front: String,
    back: String,
    top: String,
@@ -114,11 +114,11 @@ If the offset is passed as object, you can specify the offsets `top` and `left` 
 - **Required:** `false`
 - **Single Schema:**
 ``` js
-let offset = Number | 'auto';
+Number | 'auto';
 ```
 - **Object Schema:**
 ``` js
-let offset = {
+{
    top: Number | 'auto',
    left: Number | 'auto',
 };
@@ -143,7 +143,7 @@ Object with CSS styles in camel case per side.
 - **Required:** `false`
 - **Schema:**
 ``` js
-let sideCss = {
+{
    front: Object,
    back: Object,
    top: Object,
