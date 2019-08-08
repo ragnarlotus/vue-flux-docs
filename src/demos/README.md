@@ -11,6 +11,10 @@ Here you can find useful demos with their source code and playgrounds.
    <demos-index-1 />
 </ClientOnly>
 
+<ClientOnly>
+   <vue-cosk mode="fill" />
+</ClientOnly>
+
 ## FluxParallax fixed
 
 <ClientOnly>
