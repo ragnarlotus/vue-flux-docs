@@ -34,7 +34,7 @@ Example:
    ref="slider">
 </vue-flux>
 
-<button @click="$refs.slider.showImage('next')">NEXT</button>
+<button @click="$refs.slider.show('next')">NEXT</button>
 ```
 
 ## Options
@@ -162,4 +162,4 @@ This are the component properties that you can access programatically.
 | stop | | Stops playing images and remains in the current |
 | toggleAutoplay |  | Toggles auto play |
 | getIndex | index | Will return the position in the array given a number or a string ('next' or 'previous') |
-| showImage | index, transition | Displays the image specified by image index (or 'next' or 'previous') and using the specified transition. If no index specified will display next and if no transition specified will use the next defined in transitions |
+| show | index, transition | Displays the image specified by image index (or 'next' or 'previous') and using the specified transition. If no index specified will display next and if no transition specified will use the next defined in transitions |

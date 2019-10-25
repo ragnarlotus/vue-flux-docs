@@ -22,7 +22,7 @@ In your code just add the component in the template.
       <flux-pagination slot="pagination"></flux-pagination>
 </vue-flux>
 
-<button @click="$refs.slider.showImage('next')">NEXT</button>
+<button @click="$refs.slider.show('next')">NEXT</button>
 ```
 
 And the data that will be used in the template.

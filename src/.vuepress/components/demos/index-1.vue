@@ -71,7 +71,7 @@
 			},
 
 			runTransition(transition) {
-				this.slider.showImage('next', transition);
+				this.slider.show('next', transition);
 			},
 
 			updateCurrentTransition(transition = '') {

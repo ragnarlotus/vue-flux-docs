@@ -12,13 +12,21 @@ Here you can find useful demos with their source code and playgrounds.
 </ClientOnly>
 
 <ClientOnly>
-   <vue-cosk mode="fill" />
+   <vc-paragraph mode="fill" style="margin-top: 24px;" />
+   <vc-paragraph mode="fill" style="margin-top: 24px;" />
+   <vc-paragraph mode="fill" style="margin-top: 24px;" />
 </ClientOnly>
 
 ## FluxParallax fixed
 
 <ClientOnly>
    <demos-index-2 />
+</ClientOnly>
+
+<ClientOnly>
+   <vc-paragraph mode="fill" style="margin-top: 24px;" />
+   <vc-paragraph mode="fill" style="margin-top: 24px;" />
+   <vc-paragraph mode="fill" style="margin-top: 24px;" />
 </ClientOnly>
 
 ## VueFlux complements

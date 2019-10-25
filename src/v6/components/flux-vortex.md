@@ -17,80 +17,67 @@ The number of circles the vortex will be made of.
 - **Required:** `false`
 - **Default:** `1`
 
-### size
-
-This size is the width and height the vortex will have.
-
-If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
-
-- **Type:** `Object`
-- **Required:** `false`
-- **Schema:**
-``` js
-{
-   width: Number | String,
-   height: Number | String,
-};
-```
-
-If not defined, the size will be automatically detected from the parent element.
-
 ### image
 
-This attribute will define the image to be divided into cells.
+The URL of the image to be displayed.
 
-- **Type:** `String | Object`
-- **Required:** `false`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-};
-```
-
-### color
-
-This attibute sets the background color in case there is no image set or image does not fill the size.
-
-The values can be any valid CSS color.
+Use this attribute if you want the grid be made of images.
 
 - **Type:** `String`
 - **Required:** `false`
 
+### size
+
+This size is the width and height in pixels that the component will have.
+
+The images received will be scaled and positioned to cover this size.
+
+- **Type:** `Object`
+- **Required:** `true`
+- **Schema:**
+``` js
+{
+   width: Number,
+   height: Number,
+}
+```
+
 ### css
 
-Object with CSS styles in camel case.
+Object with CSS styles in camel case to apply to component.
 
 - **Type:** `Object`
 - **Required:** `false`
 
-### tileCss
+### tile-css
 
-Object with CSS styles in camel case so be applied to all tiles.
+Object with CSS styles in camel case to be applied to all tiles.
 
 - **Type:** `Object`
 - **Required:** `false`
 
 ## Methods
 
-### setCss(css: `Object`)
+### setCss(css)
 
-Sets CSS styles to the cube.
+Set CSS styles to the image.
 
-#### css
+- css
+   - Description: an object with the CSS attributes in **camel case** and values.
+   - Type: `Object`
 
-An object with the CSS attributes in **camel case** and values.
+### transform(css)
 
-* **Type:** `Object`
+Sets the CSS styles to be transformed to within a transition.
 
-### transform(function: `Function(FluxImage, Number)`)
+- css
+   - Description: an object with the CSS attributes in **camel case** and values.
+   - Type: `Object`
 
-A function to be run per tile receiving the tile element and the number of tile.
+### show()
+
+Show the image, setting `visibility` to `visible`.
+
+### hide()
+
+Hide the image, setting `visibility` to `hidden`.

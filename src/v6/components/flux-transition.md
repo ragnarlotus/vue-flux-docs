@@ -11,39 +11,32 @@ Component to display a transition between two images.
 
 ### size
 
-This size is the width and height the transition will have.
+This size is the width and height in pixels that the component will have.
 
-If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
+The transition images will be scaled and positioned to cover this size.
 
 - **Type:** `Object`
-- **Required:** `false`
+- **Required:** `true`
 - **Schema:**
 ``` js
 {
-   width: Number | String,
-   height: Number | String,
-};
+   width: Number,
+   height: Number,
+}
 ```
-
-If not defined, the size will be automatically detected from the parent element.
 
 ### transition
 
-Transition name to be played. Can be a `String` with the name of one of the 20 included transitions, an `Object` with options, or an `Object` with custom transition.
+Can be a `String` with the name of one of the 20 included transitions, an `Object` with included transition name and options, or an `Object` of custom transition with name, options and component.
 
 - **Type:** `String | Object`
 - **Required:** `true`
-- **Included transition schema:**
-``` js
-String;
-```
-
-- **Custom transition schema:**
+- **Object schema:**
 ``` js
 {
    name: String,
-   component: Object<VueComponent>,
-};
+   component: Component,
+}
 ```
 
 ::: warning
@@ -62,43 +55,15 @@ Check [included transitions](../transitions/) or [custom transitions](../custom-
 
 This attribute will define transition starting image.
 
-- **Type:** `String | Object`
+- **Type:** `String`
 - **Required:** `true`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-};
-```
 
 ### to
 
 This attribute will define transition ending image.
 
-- **Type:** `String | Object`
+- **Type:** `String`
 - **Required:** `true`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-};
-```
 
 ### options
 
@@ -113,6 +78,16 @@ For custom transitions, will apply the same.
 
 ## Methods
 
+### start()
+
+This method will call the method `played`of the transition component, starting the transition.
+
 ### getDuration()
 
-* **Returns:** the Number in *ms* the transition will last.
+- Returns: the number in *ms* the transition will last.
+
+## Events
+
+- `ready`: will be fired when the transition is ready to play because the components are rendered.
+- `start`: will let know when transition has started.
+- `end`: fired when transition ended.

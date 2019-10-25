@@ -40,7 +40,7 @@ npm install --save vue-flux@stable
       <flux-pagination slot="pagination"></flux-pagination>
 </vue-flux>
 
-<button @click="$refs.slider.showImage('next')">NEXT</button>
+<button @click="$refs.slider.show('next')">NEXT</button>
 ```
 
 ``` javascript

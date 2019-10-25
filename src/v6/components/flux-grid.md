@@ -25,115 +25,24 @@ The number of cols the grid will be made of.
 - **Required:** `false`
 - **Default:** `1`
 
-### size
-
-This size is the width and height the cube will have.
-
-If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
-
-- **Type:** `Object`
-- **Required:** `false`
-- **Schema:**
-``` js
-{
-   width: Number | String,
-   height: Number | String,
-};
-```
-
-If not defined, the size will be automatically detected from the parent element.
-
-### depth
-
-Size in pixels for cube depth.
-
-If not defined the depth will be the width set in [size](#size).
-
-- **Type:** `Number`
-- **Required:** `false`
-
-### image
-
-This attribute will define the image to be divided into cells.
-
-- **Type:** `String | Object`
-- **Required:** `false`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-};
-```
-
-::: warning
-
-If you use this attribute but the `images` is also defined, the `images` will have preference and this will have no effect.
-
-:::
-
-### images
-
-This attribute will define each cell as a cube, so you can define the images that will be displayed per side.
-
-- **Type:** `Object`
-- **Required:** `false`
-- **Schema:**
-``` js
-{
-   front: image,
-   back: image,
-   top: image,
-   bottom: image,
-   left: image,
-   right: image,
-};
-```
-
-The `image` value can be one of the following:
-
-* A simple string of the URL
-
-``` js
-String;
-```
-
-* An object having the URL and image original size in pixels
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-};
-```
-
 ### color
 
-This attibute sets the background color in case there is no image set or image does not fill the side.
-
-If the color is passed as single value, will be applied to all images or all sides of cubes.
-
-If the color is passed as object, you can specify the colors individually per side in case using cubes.
+Sets the background color.
 
 The values can be any valid CSS color.
 
-- **Type:** `String | Object`
+- **Type:** `String`
 - **Required:** `false`
-- **String Schema:**
-``` js
-String;
-```
-- **Object Schema:**
+
+### colors
+
+Sets the background color to defined sides in case grid is made of cubes.
+
+The values can be any valid CSS color.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
 ``` js
 {
    front: String,
@@ -142,35 +51,129 @@ String;
    bottom: String,
    left: String,
    right: String,
-};
+}
 ```
+
+### image
+
+The URL of the image to be displayed.
+
+Use this attribute if you want the grid be made of images.
+
+- **Type:** `String`
+- **Required:** `false`
+
+::: warning
+
+If you use this attribute but the `images` is also defined, `images` will have preference and this will have no effect.
+
+:::
+
+### images
+
+The object having the image URLs of defined sides.
+
+Use this attribute if you want the grid to be made of cubes.
+
+- **Type:** `Object`
+- **Required:** `true`
+- **Schema:**
+``` js
+{
+   front: String,
+   back: String,
+   top: String,
+   bottom: String,
+   left: String,
+   right: String,
+}
+```
+
+### size
+
+This size is the width and height in pixels that the component will have.
+
+The images received will be scaled and positioned to cover this size.
+
+- **Type:** `Object`
+- **Required:** `true`
+- **Schema:**
+``` js
+{
+   width: Number,
+   height: Number,
+}
+```
+
+### view-size
+
+When received, the component will overwrite the `size` attribute, but maintain the image scaled and position values.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+{
+   width: Number,
+   height: Number,
+}
+```
+
+### depth
+
+Size in pixels for cubes' depth in case the grid is made of cubes
+
+If not defined the depth will be the width set in [size](#size).
+
+- **Type:** `Number`
+- **Required:** `false`
 
 ### css
 
-Object with cube CSS styles in camel case.
+Object with CSS styles in camel case to apply to component.
 
 - **Type:** `Object`
 - **Required:** `false`
 
-### tileCss
+### tile-css
 
-Object with CSS styles in camel case so be applied to all tiles.
+Object with CSS styles in camel case to be applied to all tiles.
 
 - **Type:** `Object`
 - **Required:** `false`
 
 ## Methods
 
-### setCss(css: `Object`)
+### setCss(css)
 
-Sets CSS styles to the cube.
+Set CSS styles to the grid.
 
-#### css
+- css
+   - Description: an object with the CSS attributes in **camel case** and values.
+   - Type: `Object`
 
-An object with the CSS attributes in **camel case** and values.
+### transform(function)
 
-* **Type:** `Object`
+Runs a function transform to each tile.
 
-### transform(function: `Function(FluxImage | FluxCube, Number)`)
+- function
+   - Description: function to be run per tile.
+   - Type: `Function`
+   - Parameters: the function receives `component` and `index` as parameters.
+   - Example:
+``` js
+grid.transform((tile, i) => {
+   tile.transform({
+      transition: `all 300ms ease ${i * 100}`,
+      opacity: 0,
+   });
+});
+```
 
-A function to be run per tile receiving the tile element and the number of tile.
+### show()
+
+Show the grid, setting `visibility` to `visible`.
+
+### hide()
+
+Hide the grid, setting `visibility` to `hidden`.

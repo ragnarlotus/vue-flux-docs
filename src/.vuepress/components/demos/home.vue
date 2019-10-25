@@ -20,6 +20,7 @@
 
 		data: () => ({
 			options: {
+				autohideTime: 0,
 				allowFullscreen: true,
 				autoplay: true,
 				path: 'img/slides/',

@@ -94,7 +94,7 @@ export default {
          return delay * this.tileDelay;
       }
    }
-};
+}
 ```
 
 ## Example 2 - Wave
@@ -188,5 +188,5 @@ export default {
          return delay * this.tileDelay;
       }
    }
-};
+}
 ```

@@ -39,7 +39,7 @@ This size is the width and height of the slider.
 {
    width: Number,
    height: Number,
-};
+}
 ```
 
 ### from
@@ -59,7 +59,7 @@ The value can be one of the following:
       width: Number,
       height: Number,
    },
-};
+}
 ```
 
 ### to
@@ -79,7 +79,7 @@ The value can be one of the following:
       width: Number,
       height: Number,
    },
-};
+}
 ```
 
 ### options
@@ -181,7 +181,7 @@ export default {
          return i * this.tileDelay;
       },
    },
-};
+}
 ```
 
 ## Example 2 - Wave
@@ -274,7 +274,7 @@ export default {
          return i * this.tileDelay;
       },
    },
-};
+}
 ```
 
 ::: tip

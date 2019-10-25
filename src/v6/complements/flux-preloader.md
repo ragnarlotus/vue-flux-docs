@@ -82,15 +82,6 @@ The next image number of the images array.
 
 - **Type:** `Number`
 
-## Methods
-
-### showImage(number: `Number`)
-
-The slider will show the image in that position of the current images array.
-
-* **Type:** `Number`
-* **Required:** `true`
-
 ## Templating
 
 You can customize the spinner element using the slot.

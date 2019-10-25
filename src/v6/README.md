@@ -17,6 +17,7 @@ This is an image slider developed with [vue](https://vuejs.org/) 2 which comes w
 You can view some [demos here](../demos/) (WIP).
 
 ## Features
+
 | Feature | Description |
 |---------|-------------|
 | Responsive | The slider and the images are adapted to container to fill it always |
@@ -66,7 +67,7 @@ Add the component to the template. This one has all the complements, so you can 
    </template>
 </vue-flux>
 
-<button @click="$refs.slider.showImage('next')">NEXT</button>
+<button @click="$refs.slider.show('next')">NEXT</button>
 ```
 
 Add it to the component, and like before you can remove the complements you don't use.
@@ -108,11 +109,12 @@ export default {
 
 ## Performance
 
-Weight is about 100 KB so is pretty light having only the essential CSS. It also does not require a high end computer as animations are performed with CSS3 hardware acceleration.
+Weight is about 130 KB so is pretty light having only the essential CSS. It also does not require a high end computer as animations are performed with CSS3 hardware acceleration.
 
 ## Included transitions
 
 #### 2D transitions
+
 * Fade: fades from one image to next.
 * Kenburn: fades, zoom and moves current image to next.
 * Swipe: swipes the image to display next like uncovered with a curtain.
@@ -124,9 +126,10 @@ Weight is about 100 KB so is pretty light having only the essential CSS. It also
 * Blocks 2: the image is splited in blocks that shrink and fade out in wave from a corner to the opposite.
 * Concentric: a concentric effect is performed by rotating the image converted into circles.
 * Warp: a concentric effect is performed by rotating the image converted into circles in alternate direction.
-* Camera: from outside to inside the image is being cropped like in a camera lens.
+* Camera: from outside to inside the image is being circled in black like a camera.
 
 #### 3D transitions
+
 * Cube: turns the image to a side like if place in a cube.
 * Book: makes the effect of turning a page to display next image.
 * Fall: the image falls in front displaying next image.
@@ -156,7 +159,7 @@ You can view the full documentation at the project's [documentation](https://deu
 
 ## Changelog
 
-Check the [changelog](changelog) for update info.
+Check the [changelog](https://deulos.github.io/vue-flux-docs/v6/changelog) for update info.
 
 ## Inspiration
 

@@ -5,125 +5,101 @@
 
 ## Description
 
-The FluxImage component represents the last part of the slider and displays an image, part of it or a color.
-
-It renders what have to be displayed calculating its size and position automatically.
+The FluxImage component represents the lowest component of library and displays an image, part of it or a color.
 
 ## Attributes
 
-### size
-
-This size is the width and height the image **view** will have.
-
-If passed as number the unit will be pixel, but if passed as string you must append the unit like in CSS.
-
-- **Type:** `Object`
-- **Required:** `false`
-- **Schema:**
-``` js
-{
-   width: Number | String,
-   height: Number | String,
-};
-```
-
-If not defined, the size will be automatically detected from the parent element.
-
-::: tip
-
-This size represents the frame / window / view size and must not be confused with image original size nor image final size after resized to fit this size.
-
-:::
-
-### image
-
-This attribute will define the image to be displayed.
-
-- **Type:** `String | Object`
-- **Required:** `false`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-};
-```
-
 ### color
 
-This attibute sets the background color in case there is no image set or image does not fill the size.
+Sets the background color.
 
 The values can be any valid CSS color.
 
 - **Type:** `String`
 - **Required:** `false`
 
-### offset
+### image
 
-Its and adjustment of the image in pixels based on the top and left position.
+The URL of the image to be displayed.
 
-If the offset is passed as single value, the offset will be applied to `top` and `left`.
-
-If the offset is passed as object, you can specify the offsets `top` and `left` individually. In case you do not set one of them will default to `0`.
-
-- **Type:** `Number | 'auto' | Object`
+- **Type:** `String`
 - **Required:** `false`
-- **Single Schema:**
-``` js
-Number | 'auto';
-```
-- **Object Schema:**
+
+### size
+
+This size is the width and height in pixels that the component will have.
+
+If receives an image, the image will be scaled and positioned to cover this size.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
 ``` js
 {
-   top: Number | 'auto',
-   left: Number | 'auto',
-};
+   width: Number,
+   height: Number,
+}
 ```
 
-If value is `Number`, the image will be adjusted for that value in pixels.
+### view-size
 
-If value is `'auto'`, the value will be determined from the `top` and `left` CSS styles.
+When received, the component will overwrite the `size` attribute, but maintain the image scaled and position values.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+{
+   width: Number,
+   height: Number,
+}
+```
+
+### offset
+
+It's an adjustment of the image position in pixels based on the top and left.
+
+In case you do not set one of them, will default to `0`.
+
+- **Type:** `Object`
+- **Required:** `false`
+- **Schema:**
+``` js
+{
+   top: Number,
+   left: Number,
+}
+```
 
 ### css
 
-Object with cube CSS styles in camel case.
+Object with CSS styles in camel case to apply to component.
 
 - **Type:** `Object`
 - **Required:** `false`
 
 ## Methods
 
-### setCss(css: `Object`)
+### setCss(css)
 
 Set CSS styles to the image.
 
-#### css
+- css
+   - Description: an object with the CSS attributes in **camel case** and values.
+   - Type: `Object`
 
-An object with the CSS attributes in **camel case** and values.
-
-* **Type:** `Object`
-
-### transform(css: `Object`)
+### transform(css)
 
 Sets the CSS styles to be transformed to within a transition.
 
-#### css
-
-An object with the CSS attributes in **camel case** and values.
-
-* **Type:** `Object`
+- css
+   - Description: an object with the CSS attributes in **camel case** and values.
+   - Type: `Object`
 
 ### show()
 
-Hides the image setting `visibility`to `visible`.
+Show the image, setting `visibility` to `visible`.
 
 ### hide()
 
-Hides the image setting `visibility`to `hidden`.
+Hide the image, setting `visibility` to `hidden`.

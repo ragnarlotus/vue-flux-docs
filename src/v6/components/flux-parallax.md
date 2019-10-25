@@ -60,7 +60,7 @@ Makes the parallax element like a window through you can view the defined image,
 
 Is the amount of image hidden that will be displayed when scrolling.
 
-If set in percentage the amount of pixels will be calculated in reference of height. So if the height is `300px`, and the offse is set to `100%` then the image will displace for `300px`.
+If set in percentage the amount of pixels will be calculated in reference of height. So if the height is `300px`, and the offset is set to `100%` then the image will displace for `300px`.
 
 - **Type:** `Number | String`
 - **Required:** `false`
@@ -78,12 +78,10 @@ This parameter has no effect when the effect type set to `fixed`
 
 Recalculates the sizes.
 
-### setCss(css: `Object`)
+### setCss(css)
 
 Set CSS styles to the parallax.
 
-#### css
-
-An object with the CSS attributes in **camel case** and values.
-
-* **Type:** `Object`
+- css
+   - Description: an object with the CSS attributes in **camel case** and values.
+   - Type: `Object`

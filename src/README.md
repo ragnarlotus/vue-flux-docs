@@ -20,7 +20,7 @@ In this documentation you can find tag `attibutes` and component `properties`. I
 
 #### Attributes
 
-This refers to attributes the component tag receives (aka input props).
+This refers to attributes the component tag receives.
 
 ``` html
 <vue-flux
@@ -33,7 +33,7 @@ This refers to attributes the component tag receives (aka input props).
 
 #### Properties
 
-This refers to data and computed properties (aka output props).
+This refers to data and computed properties.
 
 ``` js
 export default {

@@ -142,7 +142,7 @@ The next image number of the images array.
 
 ## Methods
 
-### showImage(number: `Number`)
+### show(number: `Number`)
 
 The slider will show the image in that position of the current images array.
 
@@ -174,7 +174,7 @@ The text taken from caption.
 
 ### onClick
 
-The showImage() function.
+The show() function.
 
 ### active
 

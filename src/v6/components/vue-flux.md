@@ -25,7 +25,7 @@ This are the available options.
 |--------|------|---------|-------------|
 | allowFullscreen | Boolean | false | Allows the slider to be displayed in full screen |
 | allowToSkipTransition | Boolean | true | If enabled you will be able to skip the running transition, otherwise you need to wait to interact again |
-| autohideTime | Number | 1000 | The time in *ms* that the controls and index buttons remain visible. If set to `0` they will never disappear |
+| autohideTime | Number | 2500 | The time in *ms* that the controls and index buttons remain visible. If set to `0` they will never disappear |
 | autoplay | Boolean | false | Autoplay images when preload finished |
 | bindKeys | Boolean | false | Binds the arrow keys of keyboard to show next or previous |
 | delay | Number | 5000 | The time in *ms* that an image will be displayed before changing to next |
@@ -41,7 +41,7 @@ This is the default options schema:
 {
    allowFullscreen: false,
    allowToSkipTransition: true,
-   autohideTime: 1000,
+   autohideTime: 2500,
    autoplay: false,
    bindKeys: false,
    delay: 5000,
@@ -172,7 +172,6 @@ export default {
             tileDuration: 1000,
             easing: 'ease-in-out',
          },
-
       }, {
          name: 'CustomTransition',
          component: CustomTransition,
@@ -227,36 +226,11 @@ The slider size is defined the following way:
 
 ::: danger
 
-If you want to define a size, avoid using `width` and `height` directly in the style attibute, as those values will be applied always, even in full screen, not letting the slider resize itself. So better use a class for `vue-flux` component or set the `style` attribute in the parent.
+If you want to define a size, avoid using `width` and `height` directly in the style attibute, as those values will be applied always, even in full screen, not letting the slider resize itself. So better use a class for `.vue-flux` component or set the `style` attribute in the parent.
 
 :::
 
 ## Properties
-
-### config
-
-Is the set of slider options that will be applied.
-
-- **Type:** `Object`
-
-::: warning
-
-Do not modify this values directly, instead use the [options](#options) attribute.
-
-:::
-
-### size
-
-Size in pixels having width and height.
-
-- **Type:** `Object`
-- **Schema:**
-``` js
-{
-   width: Number,
-   height: Number,
-};
-```
 
 ### loaded
 
@@ -270,53 +244,11 @@ Indicates whether the mouse has moved recently over the slider. After moving the
 
 - **Type:** `Boolean`
 
-### Display
-
-Is the display controller in charge of full screen mostly.
-
-- **Type:** `DisplayController`
-
-### Timers
-
-Is the timers' controller and basically manages the image, transition and mouse over timers.
-
-- **Type:** `TimersController`
-
-### Transitions
-
-Is the transitions' controller that will run them and fire the events.
-
-- **Type:** `TransitionsController`
-
-### Touches
-
-Is the controller that manages the touch screens functionality.
-
-- **Type:** `TouchesController`
-
-### Images
-
-The controller in charge of loading and image displaying.
-
-- **Type:** `ImagesController`
-
 ## Methods
 
 ### resize()
 
 Call to recalculate the sizes of the slider.
-
-### enterFullscreen()
-
-Sets the slider in full screen.
-
-### exitFullscreen()
-
-Leaves the full screen mode.
-
-### toggleFullscreen()
-
-Toggles full screen mode.
 
 ### play(number: `Number | String`, delay: `Number`)
 
@@ -342,7 +274,7 @@ The delay is the time in *ms* to start. If not ime specified, the one set in con
 
 Stops playing images and remains in the current.
 
-### showImage(number: `Number`, transition: `String`)
+### show(number: `Number`, transition: `String`)
 
 Displays the image specified by image number (or 'next' or 'previous') and using the specified transition.
 
@@ -364,13 +296,13 @@ If no number, the next transition will be run.
 
 ::: warning
 
-I am using here the latest 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
+I am using the 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
 
 :::
 
 ### preloader
 
-Defined to hold the preloading functionality, which includes the spinner and transition when images change.
+Defined to hold the preloading functionality, which includes the spinner and transition when `images` attribute change.
 
 You can use the included [FluxPreloader](../complements/flux-preloader) complement.
 
@@ -495,6 +427,12 @@ You can use the included [FluxPagination](../complements/flux-pagination) comple
 * `transition-end`: fired when transition finish.
 
 ## References
+
+### container
+
+The slider container that wraps everything
+
+* **Type:** `<div>`
 
 ### image
 

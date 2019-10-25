@@ -181,7 +181,7 @@ If number specified, the slider will show the image in that position of the curr
 * **Type:** `Number`
 * **Required:** `false`
 
-### showImage(number: `Number`)
+### show(number: `Number`)
 
 The slider will show the image in that position of the current images array.
 
