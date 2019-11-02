@@ -21,16 +21,14 @@ The number of circles the vortex will be made of.
 
 The URL of the image to be displayed.
 
-Use this attribute if you want the grid be made of images.
-
 - **Type:** `String`
-- **Required:** `false`
+- **Required:** `true`
 
 ### size
 
 This size is the width and height in pixels that the component will have.
 
-The images received will be scaled and positioned to cover this size.
+The image will be scaled and positioned to cover this size.
 
 - **Type:** `Object`
 - **Required:** `true`

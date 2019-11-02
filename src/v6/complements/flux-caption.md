@@ -148,6 +148,7 @@ The array of captions passed originally to the VueFlux component.
 Gets the caption element corresponding to the index captions array.
 
 If no index defined will return the one of current image.
+
 - index
    - Type: `Number`
    - Required: `false`

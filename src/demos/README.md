@@ -12,9 +12,7 @@ Here you can find useful demos with their source code and playgrounds.
 </ClientOnly>
 
 <ClientOnly>
-   <vc-paragraph mode="fill" style="margin-top: 24px;" />
-   <vc-paragraph mode="fill" style="margin-top: 24px;" />
-   <vc-paragraph mode="fill" style="margin-top: 24px;" />
+   <lines />
 </ClientOnly>
 
 ## FluxParallax fixed
@@ -24,9 +22,7 @@ Here you can find useful demos with their source code and playgrounds.
 </ClientOnly>
 
 <ClientOnly>
-   <vc-paragraph mode="fill" style="margin-top: 24px;" />
-   <vc-paragraph mode="fill" style="margin-top: 24px;" />
-   <vc-paragraph mode="fill" style="margin-top: 24px;" />
+   <lines />
 </ClientOnly>
 
 ## VueFlux complements

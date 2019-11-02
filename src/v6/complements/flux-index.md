@@ -11,17 +11,17 @@ I am using here the latest 2.6 vue syntax for slots, but if your Vue version is 
 
 ## Description
 
-The included component to diplay an index of all images so it is a good resource when the slider contains many images.
+The included component to display an index of all images so it is a good resource when the slider contains many images.
 
 You can place it inside the vue-flux component or outside and give it any style you want, meaning horizontal, vertical, with arrows, with scroll, etc. The default style is only applied if located inside and can be easily overwritten.
 
-It will display a button when no transition is active nor mouse over. Will not be displayed in touchable screens but will appear dragging up inside the slider if `enableGestures` option enabled.
+It will display a button when no transition is active nor mouse over.
 
 The index will auto hide after choosing an image with default styles.
 
 The current image will have class `current`.
 
-Placing the mouse over will display de caption if defined.
+Placing the mouse over will display the caption if defined.
 
 ## Attributes
 
@@ -136,32 +136,6 @@ The array of captions passed originally to the VueFlux component.
 
 - **Type:** `Array`
 
-### currentTransition
-
-Is the transition component name being run.
-
-When no transition running the value is `undefined`.
-
-- **Type:** `String`
-
-### previousImageIndex
-
-The previous image number of the images array.
-
-- **Type:** `Number`
-
-### currentImageIndex
-
-The current image number of the images array.
-
-- **Type:** `Number`
-
-### nextImageIndex
-
-The next image number of the images array.
-
-- **Type:** `Number`
-
 ## Methods
 
 ### toggle()
@@ -172,18 +146,20 @@ Toggles displaying the index of images.
 
 Shows the images index.
 
-### hide(number: `Number`)
+### hide(number)
 
 Hides the images index.
 
 If number specified, the slider will show the image in that position of the current images array.
 
-* **Type:** `Number`
-* **Required:** `false`
+- number
+   - Type: `Number`
+   - Required: `false`
 
-### show(number: `Number`)
+### show(number)
 
 The slider will show the image in that position of the current images array.
 
-* **Type:** `Number`
-* **Required:** `true`
+- number
+   - Type: `Number`
+   - Required: `true`

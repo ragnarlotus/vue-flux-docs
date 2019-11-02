@@ -17,5 +17,4 @@ Panels start to round vertically revealing the next image in upper arrow form le
 | tileDuration | Numeric | 800 |
 | tileDelay | Numeric | 100 |
 | easing | String | linear |
-| perspective | String | 1200px |
 | rotateX | String | -540 |

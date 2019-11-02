@@ -56,44 +56,17 @@ The array of captions passed originally to the VueFlux component.
 
 - **Type:** `Array`
 
-### currentTransition
-
-Is the transition component name being run.
-
-When no transition running the value is `undefined`.
-
-- **Type:** `String`
-
-### previousImageIndex
-
-The previous image number of the images array.
-
-- **Type:** `Number`
-
-### currentImageIndex
-
-The current image number of the images array.
-
-- **Type:** `Number`
-
-### nextImageIndex
-
-The next image number of the images array.
-
-- **Type:** `Number`
-
 ## Templating
 
 You can customize the spinner element using the slot.
 
 You can get the progress through the `Images` controller, like `vf.Images.progress` where `vf` is the slider instance component.
 
-The progress will be returned always as percentage. But you can access other Images controller variables like de following:
+The progress will be returned always as percentage. But you can access other Images controller variables like the following:
 * loaded: `Number`
 * progress: `Number`
 * preloading: `Boolean`
 * lazyloading: `Boolean`
-* loading: `Array`
 
 Feel free to take a look at the [Images controller](https://github.com/deulos/vue-flux/blob/dev/src/controllers/Images.js).
 

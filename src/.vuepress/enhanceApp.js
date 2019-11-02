@@ -1,4 +1,4 @@
-import { VueCosk } from 'vue-cosk';
+// import { VcParagraph } from 'vue-cosk';
 
 export default ({
 	Vue, // the version of Vue being used in the VuePress app
@@ -6,5 +6,5 @@ export default ({
 	router, // the router instance for the app
 	siteData // site metadata
 }) => {
-//	Vue.component('VueCosk', VueCosk);
+	// Vue.component('VcParagraph', VcParagraph);
 };

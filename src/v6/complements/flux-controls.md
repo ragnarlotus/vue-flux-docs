@@ -11,7 +11,7 @@ I am using here the latest 2.6 vue syntax for slots, but if your Vue version is 
 
 ## Description
 
-The included component to diplay controls with the buttons previous, next, play and pause.
+The included component to display controls with the buttons previous, next, play and pause.
 
 ## Attributes
 
@@ -120,48 +120,23 @@ The array of captions passed originally to the VueFlux component.
 
 - **Type:** `Array`
 
-### currentTransition
-
-Is the transition component name being run.
-
-When no transition running the value is `undefined`.
-
-- **Type:** `String`
-
-### previousImageIndex
-
-The previous image number of the images array.
-
-- **Type:** `Number`
-
-### currentImageIndex
-
-The current image number of the images array.
-
-- **Type:** `Number`
-
-### nextImageIndex
-
-The next image number of the images array.
-
-- **Type:** `Number`
-
 ## Methods
 
-### getCaption(number: `Number`)
+### getCaption(index)
 
-Gets the caption element corresponding to the number captions array.
+Gets the caption element corresponding to the index captions array.
 
-If no number defined will return the one of current image.
+If no index defined will return the one of current image.
+- index
+   - Type: `Number`
+   - Required: `false`
 
-* **Type:** `Number`
-* **Required:** `false`
+### getCaptionText(index)
 
-### getCaptionText(number: `Number`)
+Gets the caption text corresponding to the index captions array.
 
-Gets the caption text corresponding to the number captions array.
+If no index defined will return the one of current image.
 
-If no number defined will return the one of current image.
-
-* **Type:** `Number`
-* **Required:** `false`
+- index
+   - Type: `Number`
+   - Required: `false`

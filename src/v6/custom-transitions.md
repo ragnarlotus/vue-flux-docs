@@ -46,41 +46,14 @@ This size is the width and height of the slider.
 
 The origin image which is currently being displayed.
 
-- **Type:** `String | Object`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-}
-```
+- **Type:** `String`
+- **Required:** `true`
 
 ### to
 
 The destination image to be displayed.
 
-- **Type:** `String | Object`
-
-The value can be one of the following:
-* A simple string of the URL.
-* An object having the URL and image original size in pixels like the following.
-
-``` js
-{
-   url: String,
-   size: {
-      width: Number,
-      height: Number,
-   },
-}
-```
+- **Type:** `String`
 
 ### options
 
@@ -116,6 +89,10 @@ You can initialize data, modify mask or any other preparative task on component 
 
 The transition will run on `mounted` hook.
 
+### played
+
+Run when transition is called to play
+
 ### beforeDestroy
 
 You can also use the `beforeDestroy` hook to run anything you need when transition ends.
@@ -128,19 +105,17 @@ To know how to add your custom transition to the slider read the [VueFlux custom
 
 ``` html
 <flux-grid
+   ref="grid"
    :rows="rows"
    :cols="cols"
    :size="size"
    :image="from"
-   ref="grid">
-</flux-grid>
+/>
 ```
 
 ``` js
-import {
-   BaseTransition,
-   FluxGrid,
-} from 'vue-flux';
+import BaseTransition from '@/mixins/BaseTransition.js';
+import FluxGrid from '@/components/FluxGrid.vue';
 
 export default {
    name: 'TransitionWaterfall',
@@ -166,44 +141,46 @@ export default {
       this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
    },
 
-   mounted() {
+   played() {
       this.$refs.grid.transform((tile, i) => {
          tile.transform({
             transition: `all ${this.tileDuration}ms ${this.easing} ${this.getDelay(i)}ms`,
             opacity: '0.1',
-            transform: `translateY(${this.size.height}px)`,
+            transform: `translateY(100%)`,
          });
       });
    },
 
    methods: {
-      getDelay(i) {
+      getDelayPrev(i) {
+         return (this.cols - i - 1) * this.tileDelay;
+      },
+
+      getDelayNext(i) {
          return i * this.tileDelay;
       },
    },
-}
+};
 ```
 
 ## Example 2 - Wave
 
 ``` html
 <flux-grid
+   ref="grid"
    :rows="rows"
    :cols="cols"
    :size="size"
    :images="images"
-   :color="color"
+   :colors="colors"
    :depth="size.height"
    :css="gridCss"
-   ref="grid">
-</flux-grid>
+/>
 ```
 
 ``` js
-import {
-   BaseTransition,
-   FluxGrid,
-} from 'vue-flux';
+import BaseTransition from '@/mixins/BaseTransition.js';
+import FluxGrid from '@/components/FluxGrid.vue';
 
 export default {
    name: 'TransitionWave',
@@ -221,40 +198,36 @@ export default {
       cols: 8,
       tileDuration: 900,
       totalDuration: 0,
-      perspective: '1200px',
       easing: 'cubic-bezier(0.3, -0.3, 0.735, 0.285)',
       tileDelay: 110,
       sideColor: '#333',
+      gridCss: {
+         overflow: 'visible',
+         perspective: '1200px',
+      },
       images: {},
-      color: {},
+      colors: {},
    }),
 
-   computed: {
-      gridCss() {
-         return {
-            perspective: this.perspective,
-         };
-      }
-   },
-
    created() {
+      this.mask.overflow = 'visible';
+
       this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
 
       this.images = {
          front: this.from,
          top: this.to,
       };
+   },
 
-      this.color = {
+   played() {
+      if (this.current)
+         this.current.hide();
+
+      this.colors = {
          left: this.sideColor,
          right: this.sideColor,
       };
-   },
-
-   mounted() {
-      this.mask.overflow = 'visible';
-
-      this.current.hide();
 
       this.$refs.grid.transform((tile, i) => {
          tile.setCss({
@@ -266,15 +239,20 @@ export default {
    },
 
    beforeDestroy() {
-      this.current.show();
+      if (this.current)
+         this.current.show();
    },
 
    methods: {
-      getDelay(i) {
+      getDelayPrev(i) {
+         return (this.cols - i - 1) * this.tileDelay;
+      },
+
+      getDelayNext(i) {
          return i * this.tileDelay;
       },
    },
-}
+};
 ```
 
 ::: tip

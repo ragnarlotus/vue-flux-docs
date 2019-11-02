@@ -11,7 +11,7 @@ I am using here the latest 2.6 vue syntax for slots, but if your Vue version is 
 
 ## Description
 
-The included component to diplay a pagination of the images, good when it does not contain too many images.
+The included component to display a pagination of the images, good when it does not contain too many images.
 
 ## Attributes
 
@@ -114,40 +114,15 @@ The array of captions passed originally to the VueFlux component.
 
 - **Type:** `Array`
 
-### currentTransition
-
-Is the transition component name being run.
-
-When no transition running the value is `undefined`.
-
-- **Type:** `String`
-
-### previousImageIndex
-
-The previous image number of the images array.
-
-- **Type:** `Number`
-
-### currentImageIndex
-
-The current image number of the images array.
-
-- **Type:** `Number`
-
-### nextImageIndex
-
-The next image number of the images array.
-
-- **Type:** `Number`
-
 ## Methods
 
-### show(number: `Number`)
+### show(number)
 
 The slider will show the image in that position of the current images array.
 
-* **Type:** `Number`
-* **Required:** `true`
+- number
+   - Type: `Number`
+   - Required: `true`
 
 ## Templating
 
@@ -156,7 +131,7 @@ You can customize how the pagination items are displayed. That is because this c
 This slot will receive an object having the following schema:
 
 ``` js
-captionProps = {
+itemProps = {
    index: Number,
    title: String,
    onClick: Function,

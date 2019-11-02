@@ -6,7 +6,7 @@ sidebarDepth: 0
 
 ## Description
 
-Dakes the effect of turning a page to display next image.
+Makes the effect of turning a page to display next image.
 
 ## Options
 
@@ -14,4 +14,3 @@ Dakes the effect of turning a page to display next image.
 |------|------|---------|
 | totalDuration | Numeric | 1200 |
 | easing | String | ease-out |
-| perspective | String | 1600px |

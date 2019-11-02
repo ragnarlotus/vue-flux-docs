@@ -12,7 +12,6 @@ From outside to inside the image is being cropped like in a camera lens.
 
 | Name | Type | Default |
 |------|------|---------|
-| circles | Numeric | 7 |
-| tileDuration | Numeric | 400 |
-| tileDelay | Numeric | 80 |
-| easing | String | ease |
+| totalDuration | Numeric | 900 |
+| backgroundColor | String | #111 |
+| easing | String | cubic-bezier(0.385, 0, 0.795, 0.560) |
