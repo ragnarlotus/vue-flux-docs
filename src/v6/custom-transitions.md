@@ -97,6 +97,34 @@ Run when transition is called to play
 
 You can also use the `beforeDestroy` hook to run anything you need when transition ends.
 
+## Methods
+
+The `BaseTransition` mixin implements a couple of method helpers for the case the transition has different effect the going to prev or next.
+
+### setupPrev()
+
+If defined, this method will be run after the component have been created and the direction is `prev`.
+
+### setupNext()
+
+If defined, this method will be run after the component have been created and the direction is `next`.
+
+### playPrev()
+
+If defined, this method will be run after the component have been played and the direction is `prev`.
+
+### playNext()
+
+If defined, this method will be run after the component have been played and the direction is `next`.
+
+## getDelay(data)
+
+This method will call the defined methods `getDelayPrev` or `getDelayNext` depending on the direction.
+
+Those methods will receive the same data parameter that you pass.
+
+This is just a handy shortcut to get delay. If case the effect doesn't change by direction you can just define you method `getDelay` overwriting the mixin method.
+
 ## Using it
 
 To know how to add your custom transition to the slider read the [VueFlux custom transitions section](/v6/components/vue-flux#custom-transitions).

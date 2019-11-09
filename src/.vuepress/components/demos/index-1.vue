@@ -74,8 +74,8 @@
 				this.slider.show('next', transition);
 			},
 
-			updateCurrentTransition(transition = '') {
-				this.currentTransition = transition;
+			updateCurrentTransition(transition = {}) {
+				this.currentTransition = transition.name;
 			},
 		},
 	};
