@@ -16,7 +16,7 @@
 
 <script>
 	const Prism = require('prismjs');
-	import { FluxButton } from 'vue-flux';
+	import { FluxButton } from 'vue-flux/dist-ssr/vue-flux.umd.min.js';
 
 	export default {
 		name: 'demos-flux-button',

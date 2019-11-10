@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import { VcParagraph } from 'vue-cosk';
+	import { VcParagraph } from 'vue-cosk/dist-ssr/vue-cosk.umd.min.js';
 
 	export default {
 		name: 'Lines',

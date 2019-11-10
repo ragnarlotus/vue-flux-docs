@@ -4,7 +4,7 @@
 
 <script>
 	import { imagesGenerator } from '../generators.js';
-	import { FluxParallax } from 'vue-flux';
+	import { FluxParallax } from 'vue-flux/dist-ssr/vue-flux.umd.min.js';
 
 	export default {
 		name: 'demos-index-2',

@@ -4,5 +4,5 @@
 # FluxCaption
 
 <ClientOnly>
-   <demos-demo />
+   <demos-vue-flux-flux-caption />
 </ClientOnly>

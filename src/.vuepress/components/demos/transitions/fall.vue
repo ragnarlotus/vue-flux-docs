@@ -28,8 +28,7 @@
 <script>
 	const Prism = require('prismjs');
 	import Demo from '../../Demo.vue';
-	import VueSlider from 'vue-slider-component';
-	import 'vue-slider-component/theme/default.css';
+	import VueSlider from 'vue-slider-component/dist-css/vue-slider-component.umd.min.js';
 	import * as constants from '../../constants';
 
 	export default {

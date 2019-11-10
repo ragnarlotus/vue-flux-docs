@@ -43,7 +43,7 @@
 		FluxControls,
 		FluxPagination,
 		FluxIndex,
-	} from 'vue-flux';
+	} from 'vue-flux/dist-ssr/vue-flux.umd.min.js';
 
 	export default {
 		name: 'Demo',

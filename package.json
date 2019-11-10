@@ -27,7 +27,7 @@
   "devDependencies": {
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
-    "vue-cosk": "^0.2.2",
+    "vue-cosk": "^0.2.3",
     "vue-flux": "^6.0.0-beta.27",
     "vue-slider-component": "^3.0.42",
     "vuepress": "^1.2.0"

@@ -4,46 +4,37 @@ next: components/
 
 # SSR with Nuxt
 
-> nuxt.config.js
-
-Edit the nuxt config to let it know not to SSR and to add it as vendor.
-
-```js
-   ...
-   plugins: [{
-      src: '~/node_modules/vue-flux',
-      ssr: false,
-   }],
-
-   build: {
-      vendor : [ 'vue-flux' ],
-   ...
-```
+This version is friendlier to SSR because now, the package comes with an SSR version ready.
 
 > component.vue
 
-Then wrap the `<vue-flux>` component with `<no-ssr>` to indicate nuxt what not to SSR in template.
+Wrap the `<vue-flux>` where you want to use it with `<client-only>` tags.
 
 ``` html
-<no-ssr>
+<client-only>
    <vue-flux>...</vue-flux>
-</no-ssr>
+</client-only>
 ```
 
-Import vue-flux component only when its run in the browser.
+Import vue-flux components from the SSR version package.
+
+Because the SSR version does not allow to include CSS in the package, you will have to import it also.
+
+You can import the CSS in the component where you will use the slider, or in any preprocessed CSS file like SASS or Stylus
 
 ```js
-let VueFlux;
+import {
+  VueFlux,
+  FluxControls,
+} from 'vue-flux/dist-ssr/vue-flux.umd.min.js';
 
-if (process.browser) {
-   const vf = require('vue-flux');
-   VueFlux = vf.VueFlux;
-}
+import 'vue-flux/dist-ssr/vue-flux.css';
 
 export default {
    ...
    components: {
       VueFlux,
+      FluxControls,
    },
    ...
 }
