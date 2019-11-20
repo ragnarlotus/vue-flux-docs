@@ -27,6 +27,7 @@
 			:images="images"
 			:transitions="transitions"
 			:captions="captions"
+			class=""
 		>
 			<template v-slot:preloader>
 				<flux-preloader />
@@ -34,10 +35,10 @@
 
 			<template v-slot:pagination>
 				<flux-pagination v-slot="itemProps">
-					<i class="fas"
-						:class="itemProps.active? 'fa-check-square' : 'fa-square'"
-						@click="itemProps.onClick(itemProps.index)"
-					/>
+					<div
+						:class="itemProps.item.active? 'current' : ''"
+						@click="itemProps.item.onClick(itemProps.item.index)"
+					>{{ itemProps.item.index + 1 }}</div>
 				</flux-pagination>
 			</template>
 
@@ -76,7 +77,7 @@
 	import Demo from '../../Demo.vue';
 
 	export default {
-		name: 'demos-vue-flux-flux-caption',
+		name: 'demos-vue-flux-flux-pagination',
 
 		components: {
 			Demo,
