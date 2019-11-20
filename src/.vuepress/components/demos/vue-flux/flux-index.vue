@@ -5,7 +5,7 @@
 			:transitions="transitions"
 			:complements="complements"
 			captions="fortune"
-			:numImages="12"
+			:numImages="6"
 			ref="demo" />
 
 		<h3>Source</h3>

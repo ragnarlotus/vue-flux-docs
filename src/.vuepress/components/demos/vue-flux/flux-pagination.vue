@@ -27,7 +27,7 @@
 			:images="images"
 			:transitions="transitions"
 			:captions="captions"
-			class=""
+			class="flux-pagination-custom"
 		>
 			<template v-slot:preloader>
 				<flux-preloader />
@@ -38,6 +38,7 @@
 					<div
 						:class="itemProps.item.active? 'current' : ''"
 						@click="itemProps.item.onClick(itemProps.item.index)"
+						:title="itemProps.item.title"
 					>{{ itemProps.item.index + 1 }}</div>
 				</flux-pagination>
 			</template>
@@ -55,6 +56,10 @@
 
 		<div class="language-js extra-class">
 			<pre v-html="sourceJs2" class="language-js" />
+		</div>
+
+		<div class="language-scss extra-class">
+			<pre v-html="sourceScss2" class="language-scss" />
 		</div>
 	</div>
 </template>
@@ -90,7 +95,7 @@
 		data: () => ({
 			numImages: 3,
 			options: {
-				autoplay: true,
+				autohideTime: 0,
 				path: '../../img/slides/',
 			},
 			transitions: [
@@ -132,7 +137,7 @@
 				code += '   </template>\n';
 				code += '</vue-flux>';
 
-				return Prism.highlight(code, Prism.languages.html, 'html');
+				return Prism.highlight(code, Prism.languages.html);
 			},
 
 			sourceJs1() {
@@ -149,7 +154,7 @@
 				code += '}),\n';
 				code += '...\n';
 
-				return Prism.highlight(code, Prism.languages.javascript, 'javascript');
+				return Prism.highlight(code, Prism.languages.javascript);
 			},
 
 			sourceHtml2() {
@@ -164,10 +169,11 @@
 				code += '   </template>\n\n';
 				code += '   <template v-slot:pagination>\n';
 				code += '      <flux-pagination v-slot="itemProps">\n';
-				code += '         <i class="fas"\n';
-				code += '            :class="itemProps.active? \'fa-check-square\' : \'fa-square\'"\n';
-				code += '            @click="itemProps.onClick(itemProps.index)"\n';
-				code += '         />\n';
+				code += '         <div"\n';
+				code += '            :class="itemProps.active? \'current\' : \'\'"\n';
+				code += '            @click="itemProps.onClick(itemProps.item.index)"\n';
+				code += '            :title="itemProps.item.title"\n';
+				code += '         />{{ itemProps.item.index + 1 }}</div>\n';
 				code += '      </flux-pagination>\n';
 				code += '   </template>\n\n';
 				code += '   <template v-slot:controls>\n';
@@ -175,7 +181,7 @@
 				code += '   </template>\n';
 				code += '</vue-flux>';
 
-				return Prism.highlight(code, Prism.languages.html, 'html');
+				return Prism.highlight(code, Prism.languages.html);
 			},
 
 			sourceJs2() {
@@ -192,8 +198,41 @@
 				code += '}),\n';
 				code += '...\n';
 
-				return Prism.highlight(code, Prism.languages.javascript, 'javascript');
+				return Prism.highlight(code, Prism.languages.javascript);
 			},
+
+			sourceScss2() {
+				let code = '';
+				code += '.flux-pagination li {\n';
+				code += '   color: white;\n';
+				code += '   background-color: rgba(0, 0, 0, 0.8);\n';
+				code += '   padding: 0 8px 2px 8px;\n';
+				code += '   width: auto;\n';
+				code += '   height: auto;\n';
+				code += '   border-radius: 6px;\n';
+				code += '\n';
+				code += '   .current {\n';
+				code += '      color: yellow;\n';
+				code += '   }\n';
+				code += '}\n';
+
+				return Prism.highlight(code, Prism.languages.css);
+			}
 		},
 	};
 </script>
+
+<style lang="scss">
+	.flux-pagination-custom .flux-pagination li {
+		color: white;
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 0 8px 2px 8px;
+		width: auto;
+		height: auto;
+		border-radius: 6px;
+
+		.current {
+			color: yellow;
+		}
+	}
+</style>
