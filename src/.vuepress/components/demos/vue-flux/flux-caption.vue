@@ -88,7 +88,6 @@
 		data: () => ({
 			numImages: 3,
 			options: {
-				autoplay: true,
 				path: '../../img/slides/',
 			},
 			transitions: [

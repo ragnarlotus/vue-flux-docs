@@ -34,7 +34,6 @@
 		data: () => ({
 			options: {
 				autohideTime: 0,
-				autoplay: true,
 				path: '../../img/slides/',
 			},
 			transitions: [
