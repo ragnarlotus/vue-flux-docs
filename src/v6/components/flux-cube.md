@@ -76,10 +76,9 @@ The images received will be scaled and positioned to cover this size.
 
 Size in pixels for cube depth.
 
-If not defined the depth will be the width set in [size](#size).
-
 - **Type:** `Number`
 - **Required:** `false`
+- **Default:** `0`
 
 ### css
 

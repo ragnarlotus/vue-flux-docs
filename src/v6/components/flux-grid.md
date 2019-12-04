@@ -123,10 +123,9 @@ When received, the component will overwrite the `size` attribute, but maintain t
 
 Size in pixels for cubes' depth in case the grid is made of cubes
 
-If not defined the depth will be the width set in [size](#size).
-
 - **Type:** `Number`
 - **Required:** `false`
+- **Default:** `0`
 
 ### css
 

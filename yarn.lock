@@ -1775,9 +1775,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001012:
-  version "1.0.30001013"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001013.tgz#da2440d4d266a17d40eb79bd19c0c8cc1d029c72"
-  integrity sha512-hOAXaWKuq/UVFgYawxIOdPdyMQdYcwOCDOjnZcKn7wCgFUrhP7smuNZjGLuJlPSgE6aRA4cRJ+bGSrhtEt7ZAg==
+  version "1.0.30001015"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001015.tgz#15a7ddf66aba786a71d99626bc8f2b91c6f0f5f0"
+  integrity sha512-/xL2AbW/XWHNu1gnIrO8UitBGoFthcsDgU9VLK1/dpsoxbaD5LscHozKze05R6WLsBvLhqv78dAPozMFQBYLbQ==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -4908,9 +4908,9 @@ node-pre-gyp@^0.12.0:
     tar "^4"
 
 node-releases@^1.1.41:
-  version "1.1.41"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.41.tgz#57674a82a37f812d18e3b26118aefaf53a00afed"
-  integrity sha512-+IctMa7wIs8Cfsa8iYzeaLTFwv5Y4r5jZud+4AnfymzeEXKBCavFX0KBgzVaPVqf0ywa6PrO8/b+bPqdwjGBSg==
+  version "1.1.42"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.42.tgz#a999f6a62f8746981f6da90627a8d2fc090bbad7"
+  integrity sha512-OQ/ESmUqGawI2PRX+XIRao44qWYBBfN54ImQYdWVTQqUckuejOg76ysSqDBK8NG3zwySRVnX36JwDQ6x+9GxzA==
   dependencies:
     semver "^6.3.0"
 
@@ -7442,9 +7442,9 @@ vue-cosk@^0.2.3:
   integrity sha512-/FoE65K68vTo6Xgl4dx/rIZ/zT5THbaNIpLTrtLt1/UFf3I64JXV1kFeVpUwKUMnVT2QaSaugD2lkZthkmjIbw==
 
 vue-flux@^6.0.0-beta.27:
-  version "6.0.0-beta.32"
-  resolved "https://registry.yarnpkg.com/vue-flux/-/vue-flux-6.0.0-beta.32.tgz#9279e6c7368c66588dab87b3b0359aafe54db252"
-  integrity sha512-Ha5EWysmPkElkKArcQ0P2qjNXlI/EYDCyDzkgd5HrNWB0Hkp//3/Es4yZFDAIdD4sVqB2qUP8S9ixRX22eSSnQ==
+  version "6.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/vue-flux/-/vue-flux-6.0.0-beta.34.tgz#3c0a59b3b62fa86499c101a595ad73c116222b7c"
+  integrity sha512-Q+nqteC60CLoBcXKaNGiGXAp5joZNXs2eNiLhXS3znFwzvRzEPI2ZDb8bnQEG9v5ONZDlS4xqT0OWZR0olIv1g==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
