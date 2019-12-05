@@ -73,13 +73,13 @@
 			color: '#333333',
 			image: undefined,
 			size: {
-				width: '640',
-				height: '360',
+				width: 640,
+				height: 360,
 			},
 			viewSizeEnabled: false,
 			viewSize: {
-				width: '640',
-				height: '360',
+				width: 640,
+				height: 360,
 			},
 			offsetEnabled: false,
 			offset: {
@@ -93,15 +93,15 @@
 				let code = '';
 
 				code += '<flux-image\n';
-				code += `   :color="${this.color}"\n`;
-				code += '   :image="url"\n';
+				code += `   color="${this.color}"\n`;
+				code += '   image="url"\n';
 				code += `   :size="{ width: ${this.size.width}, height: ${this.size.height} }"\n`;
 
 				if (this.viewSizeEnabled)
 					code += `   :view-size="{ width: ${this.viewSize.width}, height: ${this.viewSize.height} }"\n`;
 
 				if (this.offsetEnabled)
-					code += `   :offset="{ width: ${this.offset.top}, height: ${this.offset.left} }"\n`;
+					code += `   :offset="{ top: ${this.offset.top}, left: ${this.offset.left} }"\n`;
 
 				code += '/>\n';
 

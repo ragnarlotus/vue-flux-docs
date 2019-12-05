@@ -32,7 +32,7 @@
 	import * as constants from '../../constants';
 
 	export default {
-		name: 'demos-transitions-blinds-2d',
+		name: 'demos-transitions-camera',
 
 		components: {
 			Demo,

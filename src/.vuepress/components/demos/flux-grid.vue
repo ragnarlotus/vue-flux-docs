@@ -1,18 +1,32 @@
 <template>
 	<div class="demo demo-flux-grid">
 		<flux-grid
-			:color="color"
 			:image="image"
 			:size="size"
-			:view-size="viewSizeEnabled? viewSize : undefined"
-			:offset="offsetEnabled? offset : undefined"
+			:rows="rows"
+			:cols="cols"
 		/>
 
 		<h3>Playground</h3>
 
 		<label>
-			<span>Size width:</span>
+			<span>Width:</span>
 			<vue-slider v-model.number="size.width" :min="100" :max="640" tooltip="always" />
+		</label>
+
+		<label>
+			<span>Height:</span>
+			<vue-slider v-model.number="size.height" :min="100" :max="640" tooltip="always" />
+		</label>
+
+		<label>
+			<span>Rows:</span>
+			<vue-slider v-model.number="rows" :min="1" :max="20" tooltip="always" />
+		</label>
+
+		<label>
+			<span>Cols:</span>
+			<vue-slider v-model.number="cols" :min="1" :max="20" tooltip="always" />
 		</label>
 
 		<h3>Source</h3>
@@ -37,8 +51,13 @@
 		},
 
 		data: () => ({
-			color: '#333333',
 			image: undefined,
+			size: {
+				width: 640,
+				height: 360,
+			},
+			rows: 10,
+			cols: 10,
 		}),
 
 		computed: {
@@ -46,16 +65,10 @@
 				let code = '';
 
 				code += '<flux-grid\n';
-				code += `   :color="${this.color}"\n`;
-				code += '   :image="url"\n';
+				code += '   image="url"\n';
 				code += `   :size="{ width: ${this.size.width}, height: ${this.size.height} }"\n`;
-
-				if (this.viewSizeEnabled)
-					code += `   :view-size="{ width: ${this.viewSize.width}, height: ${this.viewSize.height} }"\n`;
-
-				if (this.offsetEnabled)
-					code += `   :offset="{ width: ${this.offset.top}, height: ${this.offset.left} }"\n`;
-
+				code += `   :rows="${this.rows}"\n`;
+				code += `   :cols="${this.cols}"\n`;
 				code += '/>\n';
 
 				return Prism.highlight(code, Prism.languages.html, 'html');
@@ -67,3 +80,13 @@
 		}
 	};
 </script>
+
+<style lang="scss">
+	.demo-flux-grid {
+		.flux-image {
+			box-sizing: border-box;
+			border-right: 1px solid white;
+			border-bottom: 1px solid white;
+		}
+	}
+</style>
