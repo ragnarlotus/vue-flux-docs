@@ -8,7 +8,7 @@
 Installation is very simple, just use your favourite package manager:
 
 ``` bash
-npm install --save vue-flux@beta
+npm install --save vue-flux
 ```
 
 ## Usage
