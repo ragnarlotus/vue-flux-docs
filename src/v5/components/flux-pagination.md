@@ -20,7 +20,7 @@ The component can have the following attributes.
 </vue-flux>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxPagination, Transitions } from 'vue-flux';
 
 export default {
@@ -51,7 +51,7 @@ export default {
 <flux-pagination v-if="mounted" :slider="$refs.slider"></flux-pagination>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxPagination, Transitions } from 'vue-flux';
 
 export default {

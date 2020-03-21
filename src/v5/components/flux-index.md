@@ -32,7 +32,7 @@ The component can have the following attributes.
 </vue-flux>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxIndex, Transitions } from 'vue-flux';
 
 export default {
@@ -63,7 +63,7 @@ export default {
 <flux-index v-if="mounted" :slider="$refs.slider"></flux-index>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxIndex, Transitions } from 'vue-flux';
 
 export default {

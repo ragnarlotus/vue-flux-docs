@@ -24,7 +24,7 @@ The component can have the following attributes.
 </vue-flux>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxControls, Transitions } from 'vue-flux';
 
 export default {
@@ -55,7 +55,7 @@ export default {
 <flux-controls v-if="mounted" :slider="$refs.slider"></flux-controls>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxControls, Transitions } from 'vue-flux';
 
 export default {

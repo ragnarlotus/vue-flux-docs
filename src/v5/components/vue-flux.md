@@ -74,7 +74,7 @@ Slider will ignore any interaction while a transition is running.
 Refer to [Transitions](../transitions/) to know more about included transitions.
 
 Example:
-``` javascript
+``` js
 import { VueFlux, Transitions } from 'vue-flux';
 
 let fluxTransitions: {
@@ -89,7 +89,7 @@ let fluxTransitions: {
 This is an object with the options that will overwrite the default of transitions.
 
 Example:
-``` javascript
+``` js
 let transitionOptions: {
    transitionFade: {
       totalDuration: 500,

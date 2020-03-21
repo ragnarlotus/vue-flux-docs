@@ -1,11 +1,16 @@
 <template>
-	<demo
-		:options="options"
-		:transitions="transitions"
-		captions="fortune"
-		:complements="complements"
-		:numImages="12">
-	</demo>
+	<div>
+		<demo
+			ref="slider"
+			:options="options"
+			:transitions="transitions"
+			captions="fortune"
+			:complements="complements"
+			:numImages="12">
+		</demo>
+
+		<button @click="toggle()">toggle FS</button>
+	</div>
 </template>
 
 <script>
@@ -35,5 +40,12 @@
 				pagination: true,
 			},
 		}),
+
+		methods: {
+			toggle() {
+				console.log(this.$refs.slider.$children[0].Display.toggleFullScreen());
+				this.$refs.slider.$children[0].Display.toggleFullScreen();
+			}
+		}
 	};
 </script>

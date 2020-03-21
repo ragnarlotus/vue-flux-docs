@@ -3,16 +3,16 @@
 
 This is an image slider developed with [vue](https://vuejs.org/) 2 which comes with 20 cool transitions out of the box.
 
-![npm](https://img.shields.io/npm/v/vue-flux/stable.svg?style=flat-square)
+![npm](https://img.shields.io/npm/v/vue-flux/previous.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/vue-flux.svg?style=flat-square)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/vue-flux/stable.svg?style=flat-square)
-![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-flux/stable.svg?style=flat-square)
+![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/vue-flux/previous.svg?style=flat-square)
+![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-flux/previous.svg?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues-raw/deulos/vue-flux.svg?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)
 
 ## Demo
 
-You can view a [demo here](../demos/).
+You can view a [demo here](https://deulos.github.io/vue-flux/).
 
 ## Features
 | Feature | Description |
@@ -28,7 +28,7 @@ You can view a [demo here](../demos/).
 ## Quickstart
 
 ``` bash
-npm install --save vue-flux@stable
+npm install --save vue-flux@5.1.9
 ```
 
 ``` html

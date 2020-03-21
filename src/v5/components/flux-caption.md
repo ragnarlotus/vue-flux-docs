@@ -76,7 +76,7 @@ export default {
 <flux-caption v-if="mounted" :slider="$refs.slider"></flux-caption>
 ```
 
-``` javascript
+``` js
 import { VueFlux, FluxCaption, Transitions } from 'vue-flux';
 
 export default {
