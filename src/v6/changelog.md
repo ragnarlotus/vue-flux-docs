@@ -3,7 +3,36 @@
 
 # Changelog
 
+## 6.1.1
+
+Fixes missing CSS for SSR version, due to changes in latest node for setting ENV vars
+
+## 6.1.0
+
+Added the option `aspectRatio` to allow to define a default.
+
+The option has to be defined as string with two numbers separated by colon.
+
+The default remains as `'16:9'`
+
+## 6.0.4
+
+Fix some minor issues on image load error.
+
+## 6.0.3
+
+Fix index of images loaded with.
+
+## 6.0.2
+
+Fix FluxControls complement classes
+
+## 6.0.1
+
+Fix Transitions controller to stop autoplaying when option `infinite` set to false under certain circumstances.
+
 ## 6.0.0
+
 This new version comes with a lot of improvements, in code, functionality and performance.
 
 Bugs fixed:

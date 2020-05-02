@@ -25,6 +25,7 @@ This are the available options.
 |--------|------|---------|-------------|
 | allowFullscreen | Boolean | false | Allows the slider to be displayed in full screen |
 | allowToSkipTransition | Boolean | true | If enabled you will be able to skip the running transition, otherwise you need to wait to interact again |
+| aspectRatio | String | 16:9 | Aspect ratio to set the slider by `width:height` ratio |
 | autohideTime | Number | 2500 | The time in *ms* that the controls and index buttons remain visible. If set to `0` they will never disappear |
 | autoplay | Boolean | false | Autoplay images when preload finished |
 | bindKeys | Boolean | false | Binds the arrow keys of keyboard to show next or previous |
