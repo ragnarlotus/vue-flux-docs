@@ -7850,10 +7850,10 @@ vue-cosk@^0.2.4:
   resolved "https://registry.yarnpkg.com/vue-cosk/-/vue-cosk-0.2.4.tgz#0cd565fa8563e29dbb74caa1aebc680efaae4464"
   integrity sha512-gv39AM4nQ0DHGeGZIYsdHzIS2LzvFZ3cxfY/oIIsuiNpi4eFUTp1cXIcwJ40Sc9zK7Rb5Sin0iEfErOe8II9Bg==
 
-vue-flux@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/vue-flux/-/vue-flux-6.0.4.tgz#780c1e62d0410aad4395f0b7a545b123613f840a"
-  integrity sha512-bDDKfPV/p9ZHYHJ3dq2hQvu4aTKaooG/3Bues7nuqgjQaFee3ZX5Ba3ZPRp59huaeTi+6gEBybNB6HMxzomUqw==
+vue-flux@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/vue-flux/-/vue-flux-6.1.1.tgz#e42d94e1728a9ec333602828bf8f5ad8e956d667"
+  integrity sha512-B/JWY3hgREe2ZP1U6B3le2r/M0QLd0ipJP3nQV5q0Tr5oRcHlGeCmK6Ydh2BPwiONoLDKZtPw89DYIdgFPbTEA==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

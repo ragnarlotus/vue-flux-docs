@@ -17,6 +17,10 @@ const msgs = [
 ]
 
 export default {
+  created() {
+    this.$router.push('/demos');
+  },
+
   methods: {
     getMsg () {
       return msgs[Math.floor(Math.random() * msgs.length)]
