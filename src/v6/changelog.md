@@ -3,9 +3,13 @@
 
 # Changelog
 
+# 6.2.0
+
+Add unit tests and a workaround for fixed background in ios so it is 100% compatible to all modern browsers.
+
 ## 6.1.1
 
-Fixes missing CSS for SSR version, due to changes in latest node for setting ENV vars
+Fixes missing CSS for SSR version, due to changes in latest node for setting ENV vars.
 
 ## 6.1.0
 

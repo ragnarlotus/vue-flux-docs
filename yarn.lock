@@ -7845,15 +7845,15 @@ vue-class-component@^7.1.0:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.3.tgz#a5b1abd53513a72ad51098752e2dedd499807cca"
   integrity sha512-oEqYpXKaFN+TaXU+mRLEx8dX0ah85aAJEe61mpdoUrq0Bhe/6sWhyZX1JjMQLhVsHAkncyhedhmCdDVSasUtDw==
 
-vue-cosk@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/vue-cosk/-/vue-cosk-0.2.4.tgz#0cd565fa8563e29dbb74caa1aebc680efaae4464"
-  integrity sha512-gv39AM4nQ0DHGeGZIYsdHzIS2LzvFZ3cxfY/oIIsuiNpi4eFUTp1cXIcwJ40Sc9zK7Rb5Sin0iEfErOe8II9Bg==
+vue-cosk@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/vue-cosk/-/vue-cosk-0.2.5.tgz#d85d1304c364cebb4b08edf278f99d020eeec64d"
+  integrity sha512-kYVjqKn4uCaT8FBt6gowXQ3kgo8z+TrpUL0jkd7FK/KKZqa/+Pssl9SNWPyRqA60BnBXvFkwUW3Ebw1kvKElfA==
 
-vue-flux@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/vue-flux/-/vue-flux-6.1.1.tgz#e42d94e1728a9ec333602828bf8f5ad8e956d667"
-  integrity sha512-B/JWY3hgREe2ZP1U6B3le2r/M0QLd0ipJP3nQV5q0Tr5oRcHlGeCmK6Ydh2BPwiONoLDKZtPw89DYIdgFPbTEA==
+vue-flux@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/vue-flux/-/vue-flux-6.2.0.tgz#bf8bf46c211d562e120845f3cdc5ece7c84f9c5f"
+  integrity sha512-X0ntNv0/7r3DYq+PfZehTkkUIhBNrdvE6pS1pG0IHDdWoVn9XcSmnT1vSamOWw8nVxTT03DPMMAd6i344fMIMA==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
