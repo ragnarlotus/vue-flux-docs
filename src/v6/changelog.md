@@ -3,6 +3,10 @@
 
 # Changelog
 
+# 6.2.1
+
+Update deps, better controls vertical centering and set caption size to border box.
+
 # 6.2.0
 
 Add unit tests and a workaround for fixed background in ios so it is 100% compatible to all modern browsers.

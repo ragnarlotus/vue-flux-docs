@@ -25,12 +25,12 @@
     "help": "vuepress --help"
   },
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.4.0",
-    "node-sass": "^4.13.1",
+    "@vuepress/plugin-google-analytics": "^1.5.2",
+    "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-cosk": "^0.2.5",
-    "vue-flux": "^6.2.0",
-    "vue-slider-component": "^3.1.1",
-    "vuepress": "^1.3.1"
+    "vue-flux": "^6.2.1",
+    "vue-slider-component": "^3.2.2",
+    "vuepress": "^1.5.2"
   }
 }

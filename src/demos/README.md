@@ -1,4 +1,6 @@
 ---
+prev: false
+next: vue-flux/
 ---
 
 # Demos

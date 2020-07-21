@@ -1,4 +1,6 @@
 ---
+prev: ../
+next: flux-caption
 ---
 
 # VueFlux
