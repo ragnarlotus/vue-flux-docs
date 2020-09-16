@@ -3,11 +3,23 @@
 
 # Changelog
 
-# 6.2.1
+## 6.3.0
+
+Add description slot to VueFlux component.
+
+## 6.2.3
+
+Fix image resizing in parallax when smaller than the element.
+
+## 6.2.2
+
+Just some css fixes.
+
+## 6.2.1
 
 Update deps, better controls vertical centering and set caption size to border box.
 
-# 6.2.0
+## 6.2.0
 
 Add unit tests and a workaround for fixed background in ios so it is 100% compatible to all modern browsers.
 

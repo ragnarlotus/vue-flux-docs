@@ -406,6 +406,25 @@ You can use the included [FluxPagination](../complements/flux-pagination) comple
 </vue-flux>
 ```
 
+### description (from v6.3.0)
+
+Defined to display a description or text
+
+#### Example
+
+``` html
+<vue-flux
+   :images="vfImages"
+   :transitions="vfTransitions"
+   :captions="vfCaptions"
+   ref="slider">
+
+   <template v-slot:description>
+      <div>Any text</div>
+   </template>
+</vue-flux>
+```
+
 ## Events
 
 * `created`: fired when the slider component is created.
