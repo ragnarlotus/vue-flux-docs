@@ -3,7 +3,7 @@
 
 ## Description
 
-It is a default component to diplay an index of all images so it is a good resource when the slider contains many images.
+It is a default component to display an index of all images so it is a good resource when the slider contains many images.
 
 You can place it inside the vue-flux component or outside and give it any style you want, meaning horizontal, vertical, with arrows, with scroll, etc. The default style is only applied if located inside and can be easily overwritten.
 

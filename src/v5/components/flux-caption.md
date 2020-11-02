@@ -3,7 +3,7 @@
 
 ## Description
 
-It is a default component to diplay image caption.
+It is a default component to display image caption.
 
 The slot can be overwritten with custom caption.
 

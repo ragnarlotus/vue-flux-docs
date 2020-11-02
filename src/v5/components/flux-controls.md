@@ -3,7 +3,7 @@
 
 ## Description
 
-It is a default component to diplay controls with buttons to display previous, next, play and pause.
+It is a default component to display controls with buttons to display previous, next, play and pause.
 
 The slot can be overwritten with custom controls.
 
