@@ -3,6 +3,10 @@
 
 # Changelog
 
+## 6.3.1
+
+Fix direction problem
+
 ## 6.3.0
 
 Add description slot to VueFlux component.

@@ -29,7 +29,7 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-cosk": "^0.2.5",
-    "vue-flux": "^6.2.1",
+    "vue-flux": "^6.3.1",
     "vue-slider-component": "^3.2.2",
     "vuepress": "^1.5.2"
   }
