@@ -68,7 +68,7 @@ The progress will be returned always as percentage. But you can access other Ima
 * preloading: `Boolean`
 * lazyloading: `Boolean`
 
-Feel free to take a look at the [Images controller](https://github.com/deulos/vue-flux/blob/dev/src/controllers/Images.js).
+Feel free to take a look at the [Images controller](https://github.com/ragnarlotus/vue-flux/blob/dev/src/controllers/Images.js).
 
 #### Custom component
 

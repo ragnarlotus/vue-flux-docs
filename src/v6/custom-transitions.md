@@ -285,6 +285,6 @@ export default {
 
 ::: tip
 
-You can see the [transitions source code](https://github.com/deulos/vue-flux/tree/dev/src/transitions) to get more ideas or examples.
+You can see the [transitions source code](https://github.com/ragnarlotus/vue-flux/tree/dev/src/transitions) to get more ideas or examples.
 
 :::

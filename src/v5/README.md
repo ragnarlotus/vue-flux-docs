@@ -7,12 +7,12 @@ This is an image slider developed with [vue](https://vuejs.org/) 2 which comes w
 ![npm](https://img.shields.io/npm/dt/vue-flux.svg?style=flat-square)
 ![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/vue-flux/previous.svg?style=flat-square)
 ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/vue-flux/previous.svg?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues-raw/deulos/vue-flux.svg?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues-raw/ragnarlotus/vue-flux.svg?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)
 
 ## Demo
 
-You can view a [demo here](https://deulos.github.io/vue-flux/).
+You can view a [demo here](https://ragnarlotus.github.io/vue-flux/).
 
 ## Features
 | Feature | Description |
@@ -104,11 +104,11 @@ Weight is just 111KB so is pretty light having only the essential CSS. It also d
 
 ## Troubleshooting
 
-If you find yourself running into issues during installation or running the slider, please check our [documentation](https://deulos.github.io/vue-flux-docs/v5). If still needs help open an [issue](https://github.com/deulos/vue-flux/issues/new). We would be happy to discuss how they can be solved.
+If you find yourself running into issues during installation or running the slider, please check our [documentation](https://ragnarlotus.github.io/vue-flux-docs/v5). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). We would be happy to discuss how they can be solved.
 
 ## Documentation
 
-You can view the full documentation at the project's [documentation](https://deulos.github.io/vue-flux-docs/v5) with examples and detailed information.
+You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/v5) with examples and detailed information.
 
 ## Changelog
 

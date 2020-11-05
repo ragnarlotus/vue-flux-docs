@@ -5,7 +5,7 @@
   "author": "ragnar lotus",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deulos/vue-flux-docs.git"
+    "url": "git+https://github.com/ragnarlotus/vue-flux-docs.git"
   },
   "keywords": [
     "vue",
@@ -16,8 +16,8 @@
     "documentation"
   ],
   "license": "MIT",
-  "bugs": "https://github.com/deulos/vue-flux-docs/issues",
-  "homepage": "https://deulos.github.io/vue-flux-docs/",
+  "bugs": "https://github.com/ragnarlotus/vue-flux-docs/issues",
+  "homepage": "https://ragnarlotus.github.io/vue-flux-docs/",
   "scripts": {
     "serve": "vuepress dev src",
     "build": "vuepress build src",

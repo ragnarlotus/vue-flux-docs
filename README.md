@@ -1,1 +1,1 @@
-[Documentation](https://deulos.github.io/vue-flux-docs/)
+[Documentation](https://ragnarlotus.github.io/vue-flux-docs/)

@@ -14,7 +14,7 @@ module.exports = {
 				],
 			},
 			{ text: 'Demos', link: '/demos/' },
-			{ text: 'Github', link: 'https://github.com/deulos/vue-flux' },
+			{ text: 'Github', link: 'https://github.com/ragnarlotus/vue-flux' },
 		],
 		sidebar: {
 			'/v5/': [
