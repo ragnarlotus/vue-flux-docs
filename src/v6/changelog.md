@@ -3,9 +3,13 @@
 
 # Changelog
 
+## 6.4.0
+
+Make component FluxIndex take into account aspect ratio from config to display the images.
+
 ## 6.3.1
 
-Fix direction problem
+Fix direction problem.
 
 ## 6.3.0
 
