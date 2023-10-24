@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-70bc4238","path":"/demos/vue-flux/flux-index.html","title":"FluxIndex","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1573358855000},"filePathRelative":"demos/vue-flux/flux-index.md"}');export{e as data};

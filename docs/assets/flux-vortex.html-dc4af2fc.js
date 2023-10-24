@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-17a8227f","path":"/demos/flux-vortex.html","title":"FluxVortex","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1575509958000},"filePathRelative":"demos/flux-vortex.md"}');export{e as data};

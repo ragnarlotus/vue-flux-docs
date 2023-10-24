@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-7a8ca636","path":"/demos/flux-parallax.html","title":"FluxParallax","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1575509958000},"filePathRelative":"demos/flux-parallax.md"}');export{a as data};

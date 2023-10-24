@@ -2,40 +2,33 @@
 ---
 
 <ClientOnly>
-   <demos-home />
+   <DemoHome />
 </ClientOnly>
 
 ## Clarifications
 
-In this documentation you can find tag `attibutes` and component `properties`. I have done this differentiation to indicate which are input parameters and component own parameters. This is basically based because in HTML they are mostly called attributes, meanwhile in javascript they are called properties and I needed to difference them, so **pay attention when I reference to <u>attibutes</u> and <u>properties</u>**.
+In this documentation you can find tag `attibutes` and component `properties and methods`. I have done this differentiation to indicate which are input parameters and component own parameters. This is basically based because in HTML they are mostly called attributes, meanwhile in javascript they are called properties and I needed to difference them, so **pay attention when I reference to <u>attibutes</u> and <u>properties and methods</u>**.
 
 #### Attributes
 
 This refers to attributes the component tag receives.
 
-``` html
-<vue-flux
+```html
+<VueFlux
    :options="vfOptions"
-   :images="vfImages"
+   :rscs="vfResources"
    :transitions="vfTransitions"
-   :captions="vfCaptions">
-</vue-flux>
+/>
 ```
 
-#### Properties
+#### Properties and methods
 
-This refers to data and computed properties.
+This refers to exposed component properties and methods.
 
-``` js
-export default {
-   ...
-   data: () => ({
-      ...
-   }),
-
-   computed: {
-      ...
-   },
-   ...
-}
+```js
+defineExpose({
+   show: player.show,
+   play: player.play,
+   stop: player.stop,
+});
 ```

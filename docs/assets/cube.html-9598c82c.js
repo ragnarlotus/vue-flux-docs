@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-171d2b8a","path":"/demos/transitions/cube.html","title":"Cube","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1573280188000},"filePathRelative":"demos/transitions/cube.md"}');export{e as data};
