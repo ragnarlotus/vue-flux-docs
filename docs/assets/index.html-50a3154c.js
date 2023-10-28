@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-26b59c43","path":"/documentation/v6/complements/","title":"Complements","lang":"en-US","frontmatter":{"prev":"../components/","next":"../transitions/"},"headers":[],"git":{"updatedTime":null},"filePathRelative":"documentation/v6/complements/README.md"}');export{e as data};

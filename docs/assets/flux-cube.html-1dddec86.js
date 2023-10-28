@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1590ec58","path":"/demos/flux-cube.html","title":"FluxCube","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1575487091000},"filePathRelative":"demos/flux-cube.md"}');export{e as data};

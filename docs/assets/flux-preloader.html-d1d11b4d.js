@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-d70d0980","path":"/demos/vue-flux/flux-preloader.html","title":"FluxPreloader","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1575391911000},"filePathRelative":"demos/vue-flux/flux-preloader.md"}');export{e as data};

@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-9629b1b4","path":"/demos/vue-flux/flux-controls.html","title":"FluxControls","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1573358855000},"filePathRelative":"demos/vue-flux/flux-controls.md"}');export{e as data};

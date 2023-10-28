@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-57f98a7b","path":"/demos/flux-button.html","title":"FluxButton","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1573280188000},"filePathRelative":"demos/flux-button.md"}');export{t as data};

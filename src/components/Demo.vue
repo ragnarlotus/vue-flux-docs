@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { computed, Component } from 'vue';
+	import { computed, Component, Ref, ref } from 'vue';
 	import * as Factories from '../factories';
 
 	import {
@@ -10,15 +10,27 @@
 		FluxPagination,
 		FluxIndex,
 		Resource,
-		Options,
 		ResourceWithOptions,
 		TransitionWithOptions,
+	} from 'vue-flux';
+	import type {
+		PlayerResource,
+		PlayerTransition,
+		VueFluxOptions,
 	} from 'vue-flux';
 
 	import 'vue-flux/style.css';
 
+	const emit = defineEmits([
+		'transitionStart',
+		'transitionCancel',
+		'transitionEnd',
+	]);
+
+	const $vf: Ref<null | InstanceType<typeof VueFlux>> = ref(null);
+
 	interface Props {
-		options?: Options;
+		options?: VueFluxOptions;
 		rscs?: (Resource | ResourceWithOptions)[];
 		numRscs?: number;
 		transitions: (Component | TransitionWithOptions)[];
@@ -49,10 +61,38 @@
 
 		return Factories.Images.generate(props.numRscs);
 	});
+
+	function transitionStart(
+		resource: PlayerResource,
+		transition: PlayerTransition
+	) {
+		const name = transition.current!.component['__name'];
+		emit('transitionStart', name);
+	}
+
+	function transitionCancel() {
+		emit('transitionCancel');
+	}
+
+	function transitionEnd() {
+		emit('transitionEnd');
+	}
+
+	defineExpose({
+		$vf,
+	});
 </script>
 
 <template>
-	<VueFlux :options="options" :rscs="rscs" :transitions="transitions">
+	<VueFlux
+		:options="options"
+		:rscs="rscs"
+		:transitions="transitions"
+		@transition-start="transitionStart"
+		@transition-cancel="transitionCancel"
+		@transition-end="transitionEnd"
+		ref="$vf"
+	>
 		<template v-if="complements.preloader" #preloader="preloaderProps">
 			<FluxPreloader v-bind="preloaderProps" />
 		</template>

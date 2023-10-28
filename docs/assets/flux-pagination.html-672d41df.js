@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-49bf3ffc","path":"/demos/vue-flux/flux-pagination.html","title":"FluxPagination","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1573358855000},"filePathRelative":"demos/vue-flux/flux-pagination.md"}');export{e as data};
