@@ -4,5 +4,5 @@
 # Fade
 
 <ClientOnly>
-   <demos-transitions-fade />
+   <demos-transitions-Fade />
 </ClientOnly>

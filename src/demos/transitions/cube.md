@@ -4,5 +4,5 @@
 # Cube
 
 <ClientOnly>
-   <demos-transitions-cube />
+   <demos-transitions-Cube />
 </ClientOnly>

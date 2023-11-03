@@ -4,5 +4,5 @@
 # FluxTransition
 
 <ClientOnly>
-   <demos-flux-transition />
+   <demos-components-FluxTransition />
 </ClientOnly>

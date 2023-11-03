@@ -1,4 +1,6 @@
 ---
+prev: flux-caption
+next: flux-index
 ---
 
 # FluxControls

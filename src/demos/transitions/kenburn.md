@@ -4,5 +4,5 @@
 # Kenburn
 
 <ClientOnly>
-   <demos-transitions-kenburn />
+   <demos-transitions-Kenburn />
 </ClientOnly>

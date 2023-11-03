@@ -1,4 +1,6 @@
 ---
+prev: ../complements/flux-preloader
+next: blinds2d
 ---
 
 # Transitions
@@ -14,6 +16,7 @@ Don't forget to see both directions, because most of the transitions have a diff
 :::
 
 I personally recommend playing with:
+
 - round 2 also has a pretty effect playing with the rotation x value
 - warp in previous direction, because looks like a kaleidoscope, amazing!
 - wave has a great effect and feels even relaxing in slow motion

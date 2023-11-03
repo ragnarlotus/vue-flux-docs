@@ -4,5 +4,5 @@
 # Concentric
 
 <ClientOnly>
-   <demos-transitions-concentric />
+   <demos-transitions-Concentric />
 </ClientOnly>

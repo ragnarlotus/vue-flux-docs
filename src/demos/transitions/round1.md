@@ -5,5 +5,5 @@
 
 
 <ClientOnly>
-   <demos-transitions-round1 />
+   <demos-transitions-Round1 />
 </ClientOnly>

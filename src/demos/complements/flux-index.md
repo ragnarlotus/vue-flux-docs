@@ -1,4 +1,6 @@
 ---
+prev: flux-controls
+next: flux-pagination
 ---
 
 # FluxIndex

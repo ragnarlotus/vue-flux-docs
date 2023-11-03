@@ -4,5 +4,5 @@
 # Fall
 
 <ClientOnly>
-   <demos-transitions-fall />
+   <demos-transitions-Fall />
 </ClientOnly>

@@ -1,6 +1,6 @@
 ---
 prev: false
-next: vue-flux/
+next: components/vue-flux
 ---
 
 # Demos

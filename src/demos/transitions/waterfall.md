@@ -4,5 +4,5 @@
 # Waterfall
 
 <ClientOnly>
-   <demos-transitions-waterfall />
+   <demos-transitions-Waterfall />
 </ClientOnly>

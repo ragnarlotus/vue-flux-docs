@@ -4,5 +4,5 @@
 # Blinds 2D
 
 <ClientOnly>
-   <demos-transitions-blinds2d />
+   <demos-transitions-Blinds2D />
 </ClientOnly>

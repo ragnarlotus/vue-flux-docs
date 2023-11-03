@@ -4,5 +4,5 @@
 # Wave
 
 <ClientOnly>
-   <demos-transitions-wave />
+   <demos-transitions-Wave />
 </ClientOnly>

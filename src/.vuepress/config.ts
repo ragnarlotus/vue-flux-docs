@@ -1,5 +1,6 @@
 import { defineUserConfig, defaultTheme } from 'vuepress';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { palettePlugin } from '@vuepress/plugin-palette';
 import { getDirname, path } from '@vuepress/utils';
 
 const __dirname = getDirname(import.meta.url);
@@ -581,35 +582,72 @@ export default defineUserConfig({
 					link: '/demos/demos',
 				},
 				{
-					text: 'VueFlux',
-					link: '/demos/vue-flux',
+					text: 'Components',
+					link: '/demos/components/vue-flux',
+					collapsible: true,
 					children: [
-						{ text: 'FluxCaption', link: '/demos/vue-flux/flux-caption' },
 						{
-							text: 'FluxControls',
-							link: '/demos/vue-flux/flux-controls',
-						},
-						{ text: 'FluxIndex', link: '/demos/vue-flux/flux-index' },
-						{
-							text: 'FluxPagination',
-							link: '/demos/vue-flux/flux-pagination',
+							text: 'VueFlux',
+							link: '/demos/components/vue-flux',
 						},
 						{
-							text: 'FluxPreloader',
-							link: '/demos/vue-flux/flux-preloader',
+							text: 'FluxButton',
+							link: '/demos/components/flux-button',
+						},
+						{
+							text: 'FluxImage',
+							link: '/demos/components/flux-image',
+						},
+						{
+							text: 'FluxCube',
+							link: '/demos/components/flux-cube',
+						},
+						{
+							text: 'FluxGrid',
+							link: '/demos/components/flux-grid',
+						},
+						{
+							text: 'FluxVortex',
+							link: '/demos/components/flux-vortex',
+						},
+						{
+							text: 'FluxTransition',
+							link: '/demos/components/flux-transition',
+						},
+						{
+							text: 'FluxParallax',
+							link: '/demos/components/flux-parallax',
 						},
 					],
 				},
-				{ text: 'FluxImage', link: '/demos/flux-image' },
-				{ text: 'FluxButton', link: '/demos/flux-button' },
-				{ text: 'FluxCube', link: '/demos/flux-cube' },
-				{ text: 'FluxGrid', link: '/demos/flux-grid' },
-				{ text: 'FluxVortex', link: '/demos/flux-vortex' },
-				{ text: 'FluxTransition', link: '/demos/flux-transition' },
-				{ text: 'FluxParallax', link: '/demos/flux-parallax' },
+				{
+					text: 'Complements',
+					link: '/demos/complements/flux-caption',
+					collapsible: true,
+					children: [
+						{
+							text: 'FluxCaption',
+							link: '/demos/complements/flux-caption',
+						},
+						{
+							text: 'FluxControls',
+							link: '/demos/complements/flux-controls',
+						},
+						{ text: 'FluxIndex', link: '/demos/complements/flux-index' },
+						{
+							text: 'FluxPagination',
+							link: '/demos/complements/flux-pagination',
+						},
+						{
+							text: 'FluxPreloader',
+							link: '/demos/complements/flux-preloader',
+						},
+					],
+				},
 				{
 					text: 'Transitions',
 					link: '/demos/transitions',
+					collapsible: true,
 					children: [
 						{ text: 'Blinds 2D', link: '/demos/transitions/blinds2d' },
 						{ text: 'Blinds 3D', link: '/demos/transitions/blinds3d' },
@@ -643,5 +681,6 @@ export default defineUserConfig({
 		registerComponentsPlugin({
 			componentsDir: srcPath + '/components',
 		}),
+		palettePlugin({ preset: 'sass' }),
 	],
 });

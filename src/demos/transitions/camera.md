@@ -4,5 +4,5 @@
 # Camera
 
 <ClientOnly>
-   <demos-transitions-camera />
+   <demos-transitions-Camera />
 </ClientOnly>

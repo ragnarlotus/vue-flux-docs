@@ -4,5 +4,5 @@
 # Blocks 2
 
 <ClientOnly>
-   <demos-transitions-blocks2 />
+   <demos-transitions-Blocks2 />
 </ClientOnly>

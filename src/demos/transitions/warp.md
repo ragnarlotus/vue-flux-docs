@@ -4,5 +4,5 @@
 # Warp
 
 <ClientOnly>
-   <demos-transitions-warp />
+   <demos-transitions-Warp />
 </ClientOnly>

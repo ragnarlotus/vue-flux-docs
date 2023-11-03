@@ -4,5 +4,5 @@
 # Book
 
 <ClientOnly>
-   <demos-transitions-book />
+   <demos-transitions-Book />
 </ClientOnly>

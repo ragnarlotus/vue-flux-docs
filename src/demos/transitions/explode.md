@@ -4,5 +4,5 @@
 # Explode
 
 <ClientOnly>
-   <demos-transitions-explode />
+   <demos-transitions-Explode />
 </ClientOnly>

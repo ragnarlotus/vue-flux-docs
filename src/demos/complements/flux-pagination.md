@@ -1,4 +1,6 @@
 ---
+prev: flux-index
+next: flux-preloader
 ---
 
 # FluxPagination

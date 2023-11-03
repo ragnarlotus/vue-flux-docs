@@ -4,5 +4,5 @@
 # Slide
 
 <ClientOnly>
-   <demos-transitions-slide />
+   <demos-transitions-Slide />
 </ClientOnly>

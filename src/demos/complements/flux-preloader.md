@@ -1,4 +1,6 @@
 ---
+prev: flux-pagination
+next: ../transitions/blinds2d
 ---
 
 # FluxPreloader
