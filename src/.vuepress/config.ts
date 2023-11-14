@@ -1,6 +1,5 @@
 import { defineUserConfig, defaultTheme } from 'vuepress';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
-import { palettePlugin } from '@vuepress/plugin-palette';
 import { getDirname, path } from '@vuepress/utils';
 
 const __dirname = getDirname(import.meta.url);
@@ -681,6 +680,5 @@ export default defineUserConfig({
 		registerComponentsPlugin({
 			componentsDir: srcPath + '/components',
 		}),
-		palettePlugin({ preset: 'sass' }),
 	],
 });

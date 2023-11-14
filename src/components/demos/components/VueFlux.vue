@@ -1,5 +1,13 @@
 <script setup lang="ts">
-	import { Component, Ref, computed, nextTick, reactive, ref } from 'vue';
+	import {
+		Component,
+		DefineComponent,
+		Ref,
+		computed,
+		nextTick,
+		reactive,
+		ref,
+	} from 'vue';
 	import { withBase } from '@vuepress/client';
 	import Prism from 'prismjs';
 	import {
@@ -88,7 +96,9 @@
 
 		transitionNames.forEach((name) => {
 			if (selectedTransitionNames[name]) {
-				components.push(transitionsComponents[name]);
+				components.push(
+					transitionsComponents[name as keyof typeof transitionsComponents]
+				);
 			}
 		});
 
