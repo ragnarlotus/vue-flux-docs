@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { Ref, computed, ref } from 'vue';
-	import { Size, Position, FluxGrid, Img } from 'vue-flux';
+	import { Size, FluxGrid, Img } from 'vue-flux';
 	import Prism from 'prismjs';
 	import Slider from '@vueform/slider';
 	import { Images } from '../../../factories';
