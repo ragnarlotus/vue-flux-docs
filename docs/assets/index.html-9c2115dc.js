@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-985f8cae","path":"/demos/transitions/","title":"Transitions","lang":"en-US","frontmatter":{"prev":"../complements/flux-preloader","next":"blinds2d"},"headers":[],"git":{},"filePathRelative":"demos/transitions/readme.md"}');export{e as data};

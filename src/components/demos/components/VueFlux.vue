@@ -1,13 +1,5 @@
 <script setup lang="ts">
-	import {
-		Component,
-		DefineComponent,
-		Ref,
-		computed,
-		nextTick,
-		reactive,
-		ref,
-	} from 'vue';
+	import { Component, Ref, computed, nextTick, reactive, ref } from 'vue';
 	import { withBase } from '@vuepress/client';
 	import Prism from 'prismjs';
 	import {

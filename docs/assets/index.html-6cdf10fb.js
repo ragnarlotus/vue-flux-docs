@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-227e5238","path":"/documentation/v6/components/","title":"Components","lang":"en-US","frontmatter":{"prev":"../ssr-with-nuxt","next":"../complements/"},"headers":[],"git":{},"filePathRelative":"documentation/v6/components/readme.md"}');export{e as data};

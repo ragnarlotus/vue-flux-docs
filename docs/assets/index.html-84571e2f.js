@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-f9bd589c","path":"/documentation/v6/transitions/","title":"Transitions","lang":"en-US","frontmatter":{"prev":"../complements/","next":"../custom-transitions","sidebarDepth":0},"headers":[],"git":{},"filePathRelative":"documentation/v6/transitions/readme.md"}');export{t as data};

@@ -24,6 +24,7 @@
 		Explode,
 		Directions,
 	} from 'vue-flux';
+	import DemoButton from '../../DemoButton.vue';
 
 	const $demo: Ref<null | InstanceType<typeof Demo>> = ref(null);
 
@@ -89,7 +90,7 @@
 
 		<p>
 			Transitions:
-			<button
+			<DemoButton
 				v-for="(name, index) in transitionNames"
 				:key="name"
 				type="button"
@@ -97,25 +98,12 @@
 				@click="runTransition(index)"
 			>
 				{{ name }}
-			</button>
+			</DemoButton>
 		</p>
 	</div>
 </template>
 
 <style lang="scss" scoped>
-	button {
-		padding: 6px 6px;
-		border: 1px solid #333;
-		border-radius: 5px;
-		margin: 0 12px 12px 0;
-		cursor: pointer;
-
-		&.active {
-			color: yellow;
-			background-color: #333;
-		}
-	}
-
 	p {
 		margin-bottom: -12px;
 	}

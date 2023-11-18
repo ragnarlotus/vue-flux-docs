@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-b34e2a56","path":"/demos/complements/flux-pagination.html","title":"FluxPagination","lang":"en-US","frontmatter":{"prev":"flux-index","next":"flux-preloader"},"headers":[],"git":{},"filePathRelative":"demos/complements/flux-pagination.md"}');export{e as data};
