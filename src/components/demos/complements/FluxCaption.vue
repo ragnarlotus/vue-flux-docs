@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import { reactive, computed } from 'vue';
+	import { computed } from 'vue';
 	import Prism from 'prismjs';
 	import {
 		Img,
@@ -29,7 +29,6 @@
 		let code = `
 import {
 	Img,
-	Size,
 	FluxPreloader,
 	FluxCaption,
 	FluxControls,
@@ -179,7 +178,6 @@ const transitions = shallowReactive([
 			:transitions="transitions"
 			:numRscs="3"
 			:complements="complements"
-			ref="$demo"
 		/>
 
 		<h3>Source</h3>

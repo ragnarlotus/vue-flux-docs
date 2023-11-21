@@ -6,5 +6,5 @@ next: flux-preloader
 # FluxPagination
 
 <ClientOnly>
-   <demos-vue-flux-flux-pagination />
+   <demos-complements-FluxPagination />
 </ClientOnly>

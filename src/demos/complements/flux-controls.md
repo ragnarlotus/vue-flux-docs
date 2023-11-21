@@ -6,5 +6,5 @@ next: flux-index
 # FluxControls
 
 <ClientOnly>
-   <demos-vue-flux-flux-controls />
+   <demos-complements-FluxControls />
 </ClientOnly>

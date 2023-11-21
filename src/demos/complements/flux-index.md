@@ -6,5 +6,5 @@ next: flux-pagination
 # FluxIndex
 
 <ClientOnly>
-   <demos-vue-flux-flux-index />
+   <demos-complements-FluxIndex />
 </ClientOnly>

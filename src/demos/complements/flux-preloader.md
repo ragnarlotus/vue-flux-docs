@@ -6,5 +6,5 @@ next: ../transitions/blinds2d
 # FluxPreloader
 
 <ClientOnly>
-   <demos-vue-flux-flux-preloader />
+   <demos-complements-FluxPreloader />
 </ClientOnly>
