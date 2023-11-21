@@ -1,5 +1,6 @@
 <script setup lang="ts">
-	import { Ref, ref } from 'vue';
+	import { computed, Ref, ref } from 'vue';
+	import Prism from 'prismjs';
 	import Slider from '@vueform/slider';
 	import { FluxParallax, Img } from 'vue-flux';
 	import Lines from '../../Lines.vue';
@@ -21,6 +22,40 @@
 	const selectedType: Ref<keyof typeof types> = ref(types.relative);
 
 	const offsetFormat = (value: any) => Math.round(value).toString() + '%';
+
+	const sourceJs = computed(() => {
+		let code = `
+import {
+	Img,
+	FluxParallax
+} from 'vue-flux';
+
+const rsc = new Img('image-url');
+const height = ref('${height.value}px');
+const offset = ref('${offset.value}%');`;
+
+		return Prism.highlight(
+			code.trim(),
+			Prism.languages.javascript,
+			'javascript'
+		);
+	});
+
+	const sourceHtml = computed(() => {
+		const code = `
+<FluxParallax
+	:rsc="rsc"
+	type="${selectedType.value}"
+	offset="${offset.value}%"
+	style="height: ${height.value}px"
+/>`;
+
+		return Prism.highlight(
+			code.trim().replaceAll('\t\n', ''),
+			Prism.languages.html,
+			'html'
+		);
+	});
 </script>
 
 <template>
@@ -63,6 +98,16 @@
 				@slide="(newOffset: number) => (offset = newOffset)"
 			/>
 		</label>
+
+		<h3>Source</h3>
+
+		<div class="language-javascript" data-ext="js">
+			<pre v-html="sourceJs" class="language-javascript" />
+		</div>
+
+		<div class="language-html" data-ext="html">
+			<pre v-html="sourceHtml" class="language-html" />
+		</div>
 
 		<Lines v-for="i in 3" :key="i" />
 	</div>

@@ -10,7 +10,7 @@
 
 	const complements = {
 		preloader: true,
-		caption: true,
+		captions: true,
 		controls: true,
 		pagination: true,
 		index: true,

@@ -36,7 +36,7 @@
 		transitions: (Component | TransitionWithOptions)[];
 		complements?: {
 			preloader?: boolean;
-			caption?: boolean;
+			captions?: boolean;
 			controls?: boolean;
 			pagination?: boolean;
 			index?: boolean;
@@ -47,7 +47,7 @@
 		numRscs: 8,
 		complements: () => ({
 			preloader: false,
-			caption: false,
+			captions: false,
 			controls: false,
 			pagination: false,
 			index: false,
@@ -97,7 +97,7 @@
 			<FluxPreloader v-bind="preloaderProps" />
 		</template>
 
-		<template v-if="complements.caption" #caption="captionProps">
+		<template v-if="complements.captions" #caption="captionProps">
 			<FluxCaption v-bind="captionProps" />
 		</template>
 

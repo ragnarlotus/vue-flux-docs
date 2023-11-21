@@ -1,9 +1,8 @@
 <script setup lang="ts">
-	import { Options } from 'vue-flux';
 	import Demo from '../Demo.vue';
 	import { Fade, Cube, Book, Wave, Round2 } from 'vue-flux';
 
-	const options: Options = {
+	const options = {
 		autohideTime: 0,
 		allowFullscreen: true,
 		autoplay: true,
@@ -13,7 +12,7 @@
 
 	const complements = {
 		preloader: true,
-		caption: true,
+		captions: true,
 		controls: true,
 		pagination: true,
 	};
@@ -21,7 +20,6 @@
 
 <template>
 	<Demo
-		ref="slider"
 		:options="options"
 		:transitions="transitions"
 		:complements="complements"

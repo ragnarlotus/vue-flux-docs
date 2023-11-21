@@ -184,7 +184,7 @@ const transitions = shallowReactive([
 
 <template>
 	<div>
-		<demo
+		<Demo
 			v-if="enabled"
 			:options="options"
 			:transitions="selectedTransitionComponents"
