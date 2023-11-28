@@ -1,6 +1,6 @@
 ---
-prev: ../complements/flux-preloader
-next: blinds2d
+prev: complements/flux-preloader
+next: transitions/blinds2d
 ---
 
 # Transitions

@@ -1,4 +1,6 @@
 ---
+prev: cube
+next: fade
 ---
 
 # Explode

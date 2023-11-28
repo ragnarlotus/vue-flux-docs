@@ -1,4 +1,6 @@
 ---
+prev: Blocks2
+next: Camera
 ---
 
 # Book

@@ -1,4 +1,6 @@
 ---
+prev: ../transitions
+next: blinds3d
 ---
 
 # Blinds 2D

@@ -1,4 +1,6 @@
 ---
+prev: fade
+next: kenburn
 ---
 
 # Fall

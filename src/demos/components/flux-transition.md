@@ -1,4 +1,6 @@
 ---
+prev: flux-vortex
+next: flux-parallax
 ---
 
 # FluxTransition

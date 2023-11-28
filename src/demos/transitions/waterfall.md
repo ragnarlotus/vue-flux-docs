@@ -1,4 +1,6 @@
 ---
+prev: warp
+next: wave
 ---
 
 # Waterfall

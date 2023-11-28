@@ -1,4 +1,6 @@
 ---
+prev: blocks1
+next: book
 ---
 
 # Blocks 2

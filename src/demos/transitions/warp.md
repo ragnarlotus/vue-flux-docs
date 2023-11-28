@@ -1,4 +1,6 @@
 ---
+prev: swipe
+next: waterfall
 ---
 
 # Warp

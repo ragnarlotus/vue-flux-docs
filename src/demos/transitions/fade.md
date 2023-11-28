@@ -1,4 +1,6 @@
 ---
+prev: explode
+next: fall
 ---
 
 # Fade

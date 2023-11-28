@@ -1,4 +1,6 @@
 ---
+prev: Book
+next: Concentric
 ---
 
 # Camera

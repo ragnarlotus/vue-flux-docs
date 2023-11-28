@@ -1,4 +1,6 @@
 ---
+prev: waterfall
+next: zip
 ---
 
 # Wave

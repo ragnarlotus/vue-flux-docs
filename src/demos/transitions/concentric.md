@@ -1,4 +1,6 @@
 ---
+prev: camera
+next: cube
 ---
 
 # Concentric

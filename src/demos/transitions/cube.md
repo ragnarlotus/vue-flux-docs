@@ -1,4 +1,6 @@
 ---
+prev: concentric
+next: explode
 ---
 
 # Cube

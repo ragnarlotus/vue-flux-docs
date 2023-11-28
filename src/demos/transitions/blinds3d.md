@@ -1,4 +1,6 @@
 ---
+prev: blinds2d
+next: blocks1
 ---
 
 # Blinds 3D

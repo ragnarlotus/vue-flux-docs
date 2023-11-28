@@ -1,4 +1,6 @@
 ---
+prev: slide
+next: warp
 ---
 
 # Swipe
