@@ -65,7 +65,7 @@ const transitions = shallowReactive([
 		<h3>Options</h3>
 
 		<label>
-			<span>Tile duration:</span>
+			<span>Total duration:</span>
 			<Slider
 				v-model="transitions[0].options.totalDuration"
 				:min="minDuration"
