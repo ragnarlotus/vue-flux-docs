@@ -23,7 +23,7 @@
 				cols: 10,
 				tileDuration: 800,
 				tileDelay: 100,
-				easing: 'ease-in',
+				easing: 'linear',
 			}),
 		},
 	]);
@@ -41,7 +41,7 @@ import {
 
 const transitions = shallowReactive([
 	{
-		component: Blinds3D,
+		component: Blinds2D,
 		options: shallowReactive({
 			cols: ${transitions[0].options.cols},
 			tileDuration: ${transitions[0].options.tileDuration},
@@ -64,7 +64,7 @@ const transitions = shallowReactive([
 		<Demo
 			:options="options"
 			:transitions="transitions"
-			:numRscs="3"
+			:numRscs="12"
 			:complements="complements"
 		/>
 
@@ -86,7 +86,7 @@ const transitions = shallowReactive([
 				v-model="transitions[0].options.tileDuration"
 				:min="minTileDuration"
 				:max="maxTileDuration"
-				@slide="(newDuration: number) => (transitions[0].options.tileDuration = newDuration)"
+				@slide="(newTileDuration: number) => (transitions[0].options.tileDuration = newTileDuration)"
 			/>
 		</label>
 
@@ -96,7 +96,7 @@ const transitions = shallowReactive([
 				v-model="transitions[0].options.tileDelay"
 				:min="minTileDelay"
 				:max="maxTileDelay"
-				@slide="(newDelay: number) => (transitions[0].options.tileDelay = newDelay)"
+				@slide="(newTileDelay: number) => (transitions[0].options.tileDelay = newTileDelay)"
 			/>
 		</label>
 
