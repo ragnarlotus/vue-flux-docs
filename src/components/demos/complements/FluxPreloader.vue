@@ -4,7 +4,6 @@
 	import {
 		VueFlux,
 		FluxPreloader,
-		FluxPagination,
 		FluxControls,
 		Blinds3D,
 		Blocks2,
@@ -17,12 +16,9 @@
 	import Demo from '../../Demo.vue';
 	import { Images } from '../../../factories';
 
-	const options = {
-		autohideTime: 0,
-	};
+	const options = {};
 
 	const complements = {
-		pagination: true,
 		controls: true,
 		preloader: true,
 	};
@@ -42,7 +38,6 @@ import {
 	Img,
 	FluxPreloader,
 	FluxControls,
-	FluxPagination,
 	VueFlux,
 	Blinds3D,
 	Blocks2,
@@ -87,10 +82,6 @@ const transitions = shallowReactive([
 	<template #controls="controlsProps">
 		<FluxControls v-bind="controlsProps" />
 	</template>
-
-	<template #pagination="paginationProps">
-		<FluxPagination v-bind="paginationProps" />
-	</template>
 </VueFlux>`;
 
 		return Prism.highlight(
@@ -100,7 +91,7 @@ const transitions = shallowReactive([
 		);
 	});
 
-	const rscs = Images.generate(3) as Img[];
+	const rscs = Images.generate(30) as Img[];
 
 	const sourceJs2 = computed(() => {
 		let code = `
@@ -108,7 +99,6 @@ import {
 	Img,
 	FluxPreloader,
 	FluxControls,
-	FluxPagination,
 	VueFlux,
 	Blinds3D,
 	Blocks2,
@@ -145,28 +135,19 @@ const transitions = shallowReactive([
 <VueFlux
 	:rscs="rscs"
 	:transitions="transitions"
-	class="flux-custom-pagination"
 >
 	<template #preloader="preloaderProps">
-		<FluxPreloader v-bind="preloaderProps" />
+		<FluxPreloader v-bind="preloaderProps">
+			<template #default="loaderProps">
+				<div v-if="loaderProps.preloading" class="custom-spinner">
+					{{ loaderProps.pct }} %
+				</div>
+			</template>
+		</FluxPreloader>
 	</template>
 
 	<template #controls="controlsProps">
 		<FluxControls v-bind="controlsProps" />
-	</template>
-
-	<template #pagination="paginationProps">
-		<FluxPagination v-bind="paginationProps">
-			<template #default="itemProps">
-				<div
-					:class="itemProps.cssClass"
-					:title="itemProps.title"
-					@click="itemProps.onClick()"
-				>
-					{{ itemProps.index + 1 }}
-				</div>
-			</template>
-		</FluxPagination>
 	</template>
 </VueFlux>`;
 
@@ -179,16 +160,38 @@ const transitions = shallowReactive([
 
 	const sourceScss2 = computed(() => {
 		const code = `
-.flux-custom-pagination .flux-pagination li {
-	color: white;
-	background-color: rgba(0, 0, 0, 0.8);
-	padding: 0 8px 2px 8px;
-	width: auto;
-	height: auto;
-	border-radius: 6px;
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
 
-	.active {
-		color: yellow;
+.custom-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	line-height: 50px;
+	margin-top: -25px;
+	margin-left: -25px;
+	width: 50px;
+	height: 50px;
+	z-index: 14;
+
+	&:before {
+		content: '';
+		box-sizing: border-box;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 50px;
+		height: 50px;
+		margin-top: -25px;
+		margin-left: -25px;
+		border-radius: 50%;
+		border: 1px solid #ccc;
+		border-top-color: #07d;
+		animation: spinner 0.6s linear infinite;
 	}
 }`;
 
@@ -202,13 +205,13 @@ const transitions = shallowReactive([
 
 <template>
 	<div>
-		<h2>Default pagination</h2>
+		<h2>Default preloader</h2>
 
 		<Demo
 			:options="options"
 			:transitions="transitions"
 			:complements="complements"
-			:numRscs="3"
+			:numRscs="30"
 		/>
 
 		<h3>Source</h3>
@@ -223,32 +226,19 @@ const transitions = shallowReactive([
 
 		<h2>Custom pagination</h2>
 
-		<VueFlux
-			:options="options"
-			:rscs="rscs"
-			:transitions="transitions"
-			class="flux-custom-pagination"
-		>
+		<VueFlux :options="options" :rscs="rscs" :transitions="transitions">
 			<template #preloader="preloaderProps">
-				<FluxPreloader v-bind="preloaderProps" />
+				<FluxPreloader v-bind="preloaderProps">
+					<template #default="loaderProps">
+						<div v-if="loaderProps.preloading" class="custom-spinner">
+							{{ loaderProps.pct }} %
+						</div>
+					</template>
+				</FluxPreloader>
 			</template>
 
 			<template #controls="controlsProps">
 				<FluxControls v-bind="controlsProps" />
-			</template>
-
-			<template #pagination="paginationProps">
-				<FluxPagination v-bind="paginationProps">
-					<template #default="itemProps">
-						<div
-							:class="itemProps.cssClass"
-							:title="itemProps.title"
-							@click="itemProps.onClick()"
-						>
-							{{ itemProps.index + 1 }}
-						</div>
-					</template>
-				</FluxPagination>
 			</template>
 		</VueFlux>
 
@@ -269,16 +259,38 @@ const transitions = shallowReactive([
 </template>
 
 <style lang="scss">
-	.flux-custom-pagination .flux-pagination li {
-		color: white;
-		background-color: rgba(0, 0, 0, 0.8);
-		padding: 0 8px 2px 8px;
-		width: auto;
-		height: auto;
-		border-radius: 6px;
+	@keyframes spinner {
+		to {
+			transform: rotate(360deg);
+		}
+	}
 
-		.active {
-			color: yellow;
+	.custom-spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		text-align: center;
+		line-height: 50px;
+		margin-top: -25px;
+		margin-left: -25px;
+		width: 50px;
+		height: 50px;
+		z-index: 14;
+
+		&:before {
+			content: '';
+			box-sizing: border-box;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			margin-left: -25px;
+			border-radius: 50%;
+			border: 1px solid #ccc;
+			border-top-color: #07d;
+			animation: spinner 0.6s linear infinite;
 		}
 	}
 </style>
