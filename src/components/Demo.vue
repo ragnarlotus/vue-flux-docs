@@ -105,12 +105,12 @@
 			<FluxControls v-bind="controlsProps" />
 		</template>
 
-		<template v-if="complements.pagination" #pagination="paginationProps">
-			<FluxPagination v-bind="paginationProps" />
-		</template>
-
 		<template v-if="complements.index" #index="indexProps">
 			<FluxIndex v-bind="indexProps" />
+		</template>
+
+		<template v-if="complements.pagination" #pagination="paginationProps">
+			<FluxPagination v-bind="paginationProps" />
 		</template>
 	</VueFlux>
 </template>

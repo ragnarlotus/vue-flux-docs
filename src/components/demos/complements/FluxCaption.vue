@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import { computed } from 'vue';
+	import { computed, shallowReactive } from 'vue';
 	import Prism from 'prismjs';
 	import {
 		Img,
@@ -17,7 +17,14 @@
 	import Demo from '../../Demo.vue';
 	import { Images } from '../../../factories';
 
-	const transitions = [Blinds3D, Blocks2, Book, Cube, Warp, Wave];
+	const transitions = shallowReactive([
+		Blinds3D,
+		Blocks2,
+		Book,
+		Cube,
+		Warp,
+		Wave,
+	]);
 
 	const complements = {
 		captions: true,

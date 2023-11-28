@@ -632,7 +632,10 @@ export default defineUserConfig({
 							text: 'FluxControls',
 							link: '/demos/complements/flux-controls',
 						},
-						{ text: 'FluxIndex', link: '/demos/complements/flux-index' },
+						{
+							text: 'FluxIndex',
+							link: '/demos/complements/flux-index',
+						},
 						{
 							text: 'FluxPagination',
 							link: '/demos/complements/flux-pagination',

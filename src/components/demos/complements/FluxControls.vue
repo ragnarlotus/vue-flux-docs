@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import { computed } from 'vue';
+	import { computed, shallowReactive } from 'vue';
 	import Prism from 'prismjs';
 	import { Blinds3D, Blocks2, Book, Cube, Warp, Wave } from 'vue-flux';
 	import Demo from '../../Demo.vue';
@@ -8,7 +8,14 @@
 		autohideTime: 0,
 	};
 
-	const transitions = [Blinds3D, Blocks2, Book, Cube, Warp, Wave];
+	const transitions = shallowReactive([
+		Blinds3D,
+		Blocks2,
+		Book,
+		Cube,
+		Warp,
+		Wave,
+	]);
 
 	const complements = {
 		controls: true,
