@@ -1,5 +1,5 @@
 ---
-next: resources/
+next: resources
 ---
 
 # SSR with Nuxt

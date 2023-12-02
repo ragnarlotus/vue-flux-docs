@@ -1,5 +1,5 @@
 ---
-prev: /documentation/v7/ssr-with-nuxt
+prev: /documentation/v7/resources
 next: /documentation/v7/complements/
 ---
 

@@ -24,6 +24,7 @@ New features:
 * **Half size**
 * **TypesScript implemented**
 * **Added resource options**
+* **Added fit type for resizing resource**
 * **Able to use other resources than images, so custom components, videos, or anything**
 
 Other changes:

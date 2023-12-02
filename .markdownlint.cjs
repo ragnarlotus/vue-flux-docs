@@ -1,6 +1,7 @@
 module.exports = {
 	default: true,
 	MD001: false,
+	MD010: false,
 	MD013: false,
 	MD024: false,
 	MD033: false,

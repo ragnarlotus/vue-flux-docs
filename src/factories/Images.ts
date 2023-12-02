@@ -14,6 +14,10 @@ export default class Images {
 		const captions = Captions.generate(num);
 		const images: Resource[] = [];
 
+		if (num > maxImages) {
+			num = maxImages;
+		}
+
 		for (let i = 1; i <= num; i++) {
 			const index = Math.floor(Math.random() * files.length);
 			const src = '/imgs/slides/' + files.splice(index, 1)[0];

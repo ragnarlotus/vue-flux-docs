@@ -5,7 +5,7 @@
 
 ## Description
 
-Component to make grid of image or cube.
+Component to make grid of resource or cube.
 
 ## Attributes
 
@@ -13,7 +13,7 @@ Component to make grid of image or cube.
 
 The number of rows the grid will be made of.
 
-- **Type:** `Number`
+- **Type:** `number`
 - **Required:** `false`
 - **Default:** `1`
 
@@ -21,7 +21,7 @@ The number of rows the grid will be made of.
 
 The number of cols the grid will be made of.
 
-- **Type:** `Number`
+- **Type:** `number`
 - **Required:** `false`
 - **Default:** `1`
 
@@ -31,7 +31,7 @@ Sets the background color.
 
 The values can be any valid CSS color.
 
-- **Type:** `String`
+- **Type:** `string`
 - **Required:** `false`
 
 ### colors
@@ -55,24 +55,24 @@ The values can be any valid CSS color.
 }
 ```
 
-### image
+### rsc
 
-The URL of the image to be displayed.
+The resource to be displayed.
 
 Use this attribute if you want the grid be made of images.
 
-- **Type:** `String`
+- **Type:** `Resource`
 - **Required:** `false`
 
 ::: warning
 
-If you use this attribute but the `images` is also defined, `images` will have preference and this will have no effect.
+If you use this attribute but the `rscs` is also defined, `rscs` will have preference and this will have no effect.
 
 :::
 
-### images
+### rscs
 
-The object having the image URLs of defined sides.
+The object having the resources of defined sides.
 
 Use this attribute if you want the grid to be made of cubes.
 
@@ -82,12 +82,12 @@ Use this attribute if you want the grid to be made of cubes.
 
 ``` js
 {
-   front: String,
-   back: String,
-   top: String,
-   bottom: String,
-   left: String,
-   right: String,
+   front: Resource,
+   back: Resource,
+   top: Resource,
+   bottom: Resource,
+   left: Resource,
+   right: Resource,
 }
 ```
 
@@ -97,37 +97,21 @@ This size is the width and height in pixels that the component will have.
 
 The images received will be scaled and positioned to cover this size.
 
-- **Type:** `Object`
+- **Type:** `Size`
 - **Required:** `true`
-- **Schema:**
-
-``` js
-{
-   width: Number,
-   height: Number,
-}
-```
 
 ### view-size
 
 When received, the component will overwrite the `size` attribute, but maintain the image scaled and position values.
 
-- **Type:** `Object`
+- **Type:** `Size`
 - **Required:** `false`
-- **Schema:**
-
-``` js
-{
-   width: Number,
-   height: Number,
-}
-```
 
 ### depth
 
 Size in pixels for cubes' depth in case the grid is made of cubes
 
-- **Type:** `Number`
+- **Type:** `number`
 - **Required:** `false`
 - **Default:** `0`
 
@@ -147,7 +131,7 @@ Object with CSS styles in camel case to be applied to all tiles.
 
 ## Methods
 
-### setCss(css)
+### setCss(css: CSSProperties): void
 
 Set CSS styles to the grid.
 
@@ -155,7 +139,7 @@ Set CSS styles to the grid.
   - Description: an object with the CSS attributes in **camel case** and values.
   - Type: `Object`
 
-### transform(function)
+### transform(cb: Function): void
 
 Runs a function transform to each tile.
 
@@ -174,10 +158,18 @@ grid.transform((tile, i) => {
 });
 ```
 
-### show()
+### show(): void
 
 Show the grid, setting `visibility` to `visible`.
 
-### hide()
+### hide(): void
 
 Hide the grid, setting `visibility` to `hidden`.
+
+### getRowNumber(tileNumber: number, numCols: number): number
+
+Returns the row number
+
+### getColNumber(tileNumber: number, numCols: number): number
+
+Returns the column number

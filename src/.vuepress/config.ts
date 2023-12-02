@@ -400,8 +400,8 @@ export default defineUserConfig({
 					collapsible: true,
 					children: [
 						{
-							text: 'Image',
-							link: '/documentation/v7/resources/image',
+							text: 'Img',
+							link: '/documentation/v7/resources/img',
 						},
 						{
 							text: 'Video',

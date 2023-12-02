@@ -54,7 +54,7 @@ This is the default options schema:
 
 ### transitions
 
-This is an array that will own the transition components or custom transitions to be used between images.
+This is an array that will own the transition components or custom transitions to be used between resources.
 
 The transitions will be run in the order defined and then will begin again from the first.
 
@@ -95,7 +95,7 @@ In this version there are 20 transitions included.
 
 ::: tip
 
-Check [transitions](../transitions/) to see the list.
+Check [transitions](../transitions) to see the list.
 
 :::
 
@@ -149,11 +149,11 @@ In order to modify the parameters of transitions, you need to do it using an obj
 ``` js
    interface TransitionWithOptions {
       component: Component;
-      options: object;
+      options: Object;
    }
 ```
 
-To know which options the included transions have, go to the transition documentation.
+To know which options the included transitions have, go to the transition documentation.
 
 Following is an example of customizing an included transition and a custom transition.
 
@@ -211,24 +211,6 @@ If resource can not be loaded will be omitted displaying a console warning messa
 
 :::
 
-### captions
-
-Captions are the texts that will be displayed when its image is showed.
-
-Also will be displayed as popover in the components `FluxIndex` and `FluxPagination` when you stop the mouse over an element.
-
-Each caption can be defined as simple string or an object with any data you want **and the property** `text` in it as plain text. Here it is the caption schema as object:
-
-``` js
-{
-   text: String,
-   prop1: Any,
-   prop2: Any,
-}
-```
-
-This way you can customize considerably the [caption's slot](complements/flux-caption/#templating) with any data you need and reach it easily.
-
 ## Size
 
 The slider size is defined the following way:
@@ -243,35 +225,17 @@ If you want to define a size, avoid using `width` and `height` directly in the s
 
 :::
 
-## Properties
-
-### loaded
-
-Indicates if the images have been preloaded and slider is initialized.
-
-- **Type:** `Boolean`
-
-### mouseOver
-
-Indicates whether the mouse has moved recently over the slider. After moving the mouse, the time that this value will remain `true` is defined through the [autohideTime](#options) option.
-
-- **Type:** `Boolean`
-
 ## Methods
 
-### resize()
-
-Call to recalculate the sizes of the slider.
-
-### play(number: `Number | String`, delay: `Number`)
+### play(resourceIndex: number | Direction = Directions.next, delay?: number)
 
 Starts displaying the images by the interval specified with [delay](#options) option.
 
-#### number
+#### resourceIndex
 
 The number is the image number to start with, and can also be 'previous' and 'next'.
 
-- **Type:** `Number | 'previous' | 'next'`
+- **Type:** `number | 'previous' | 'next'`
 - **Required:** `false`
 - **Default:** `'next'`
 
@@ -279,169 +243,136 @@ The number is the image number to start with, and can also be 'previous' and 'ne
 
 The delay is the time in *ms* to start. If not ime specified, the one set in config as `delay` will be used.
 
-- **Type:** `Number`
+- **Type:** `number`
 - **Required:** `false`
 - **Default:** [config.delay](#options)
 
-### stop()
+### stop(cancelTransition: boolean = false)
 
 Stops playing images and remains in the current.
 
-### show(number: `Number`, transition: `String`)
+### show(resourceIndex: number | Direction = Directions.next, transitionIndex: number | Direction = Directions.next)
 
-Displays the image specified by image number (or 'next' or 'previous') and using the specified transition.
+Displays the image specified by image number (or 'next' or 'prev') and using the specified transition.
 
-#### number
+#### resourceIndex
 
 If no number, the next image will be showed.
 
-- **Type:** Number
+- **Type:** number | Direction
 - **Required:** false
+- **Default:** Directions.next
 
-#### transition
+#### transitionIndex
 
 If no number, the next transition will be run.
 
-- **Type:** Number
+- **Type:** number | Direction
 - **Required:** false
+- **Default:** Directions.next
 
 ## Slots
 
-::: warning
-
-I am using the 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
-
-:::
-
 ### preloader
 
-Defined to hold the preloading functionality, which includes the spinner and transition when `images` attribute change.
+Defined to hold the preloading functionality
 
 You can use the included [FluxPreloader](../complements/flux-preloader) complement.
 
 #### Example
 
 ``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
+<VueFlux
+   :rscs="vfRscs"
+   :transitions="vfTransitions">
 
-   <template v-slot:preloader>
-      <flux-preloader />
+   <template #preloader="preloaderProps">
+      <FluxPreloader v-bind="preloaderProps" />
    </template>
-</vue-flux>
+</VueFlux>
 ```
 
 ### caption
 
-Defined to display the images captions.
+Used to display the resources captions.
 
 You can use the included [FluxCaption](../complements/flux-caption) complement.
 
 #### Example
 
 ``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
+<VueFlux
+   :rscs="vfRscs"
+   :transitions="vfTransitions">
 
-   <template v-slot:caption>
-      <flux-caption />
+   <template #caption="captionProps">
+      <FluxCaption v-bind="captionProps" />
    </template>
-</vue-flux>
+</VueFlux>
 ```
 
 ### controls
 
-Defined to display the slider controls.
+Used to display the slider controls.
 
 You can use the included [FluxControls](../complements/flux-controls) complement.
 
 #### Example
 
 ``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
+<VueFlux
+   :rscs="vfRscs"
+   :transitions="vfTransitions">
 
-   <template v-slot:controls>
-      <flux-controls />
+   <template #controls="controlsProps">
+      <FluxControls v-bind="controlsProps" />
    </template>
-</vue-flux>
+</VueFlux>
 ```
 
 ### index
 
-Defined to display an images index.
+Used to display a resources index.
 
 You can use the included [FluxIndex](../complements/flux-index) complement.
 
 #### Example
 
 ``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
+<VueFlux
+   :rscs="vfRscs"
+   :transitions="vfTransitions">
 
-   <template v-slot:index>
-      <flux-index />
+   <template #index="indexProps">
+      <FluxIndex v-bind="indexProps" />
    </template>
-</vue-flux>
+</VueFlux>
 ```
 
 ### pagination
 
-Defined to display the an images pagination.
+Used to display the a resources pagination.
 
 You can use the included [FluxPagination](../complements/flux-pagination) complement.
 
 #### Example
 
 ``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
+<VueFlux
+   :rscs="vfRscs"
+   :transitions="vfTransitions">
 
-   <template v-slot:pagination>
-      <flux-pagination />
+   <template #pagination="paginationProps">
+      <FluxPagination v-bind="paginationProps" />
    </template>
-</vue-flux>
-```
-
-### description (from v6.3.0)
-
-Defined to display a description or text
-
-#### Example
-
-``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
-
-   <template v-slot:description>
-      <div>Any text</div>
-   </template>
-</vue-flux>
+</VueFlux>
 ```
 
 ## Events
 
 - `created`: fired when the slider component is created.
 - `mounted`: fired when the slider component is mounted.
-- `destroyed`: fired when the slider component is destroyed.
+- `unmounted`: fired when the slider component is destroyed.
 - `options-updated`: fired when the options have been updated.
 - `ready`: fired when the slider is ready and will start to display images.
 - `play`: fired when auto playing images.
@@ -449,31 +380,11 @@ Defined to display a description or text
 - `show`: fired when requested to show an image.
 - `fullscreen-enter`: fired when entered in full screen mode.
 - `fullscreen-exit`: fired when exit from full screen.
-- `images-preload-start`: fired when started to preload images.
-- `images-preload-end`: fired when finished to preload images.
-- `images-lazyload-start`: fired when start to lazy loading images.
-- `images-lazyload-end`: fired when finished to lay loading images.
+- `resources-preload-start`: fired when started to preload images.
+- `resources-preload-end`: fired when finished to preload images.
+- `resources-lazyload-start`: fired when start to lazy loading images.
+- `resources-lazyload-end`: fired when finished to lay loading images.
 - `transitions-updated`: fired when transitions updated.
 - `transition-start`: fired when transition begin.
 - `transition-cancel`: fired when transition is running and is being cancelled.
 - `transition-end`: fired when transition finish.
-
-## References
-
-### container
-
-The slider container that wraps everything
-
-- **Type:** `<div>`
-
-### image
-
-The component that shows the image between transitions.
-
-- **Type:** `FluxImage`
-
-### transition
-
-The component that runs the transition between images.
-
-- **Type:** `FluxTransition`
