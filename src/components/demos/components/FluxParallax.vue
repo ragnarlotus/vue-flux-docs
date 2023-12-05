@@ -17,7 +17,7 @@
 	const rsc = Images.generate(1) as Img;
 
 	const height: Ref<number> = ref(250);
-	const offset: Ref<number> = ref(4);
+	const offset: Ref<number> = ref(50);
 
 	const selectedType: Ref<keyof typeof types> = ref(types.relative);
 
