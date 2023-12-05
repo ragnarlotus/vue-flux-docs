@@ -1,0 +1,1 @@
+import{_ as t,o as n,c as o,d as e,e as c}from"./app-7e36012f.js";const a={},s=e("h1",{id:"component",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#component","aria-hidden":"true"},"#"),c(" Component")],-1),d=e("p",null,"To be implemented",-1),r=[s,d];function _(i,l){return n(),o("div",null,r)}const m=t(a,[["render",_],["__file","index.html.vue"]]);export{m as default};
