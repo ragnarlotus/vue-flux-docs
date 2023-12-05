@@ -20,7 +20,7 @@ export default class Images {
 
 		for (let i = 1; i <= num; i++) {
 			const index = Math.floor(Math.random() * files.length);
-			const src = '/imgs/slides/' + files.splice(index, 1)[0];
+			const src = '/vue-flux-docs/imgs/slides/' + files.splice(index, 1)[0];
 			const rsc = new Img(src, captions[i - 1]);
 
 			images.push(rsc);

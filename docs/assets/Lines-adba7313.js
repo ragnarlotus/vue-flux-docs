@@ -1,1 +1,0 @@
-import e from"./VcParagraph-2b65cf50.js";import{f as t,o as a,c as n,a as o,_ as r}from"./app-7e36012f.js";const s=t({__name:"Lines",setup(l){return(p,i)=>(a(),n("div",null,[o(e,{mode:"fill",style:{"margin-top":"24px"}}),o(e,{mode:"fill",style:{"margin-top":"24px"}}),o(e,{mode:"fill",style:{"margin-top":"24px"}})]))}}),_=r(s,[["__file","Lines.vue"]]);export{_ as default};

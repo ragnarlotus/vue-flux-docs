@@ -1,0 +1,1 @@
+import{_ as e,o,c as n,z as _}from"./app-4b2e338b.js";const s={},c={type:"button",class:"demo-button"};function r(t,u){return o(),n("button",c,[_(t.$slots,"default")])}const l=e(s,[["render",r],["__file","DemoButton.vue"]]);export{l as default};
