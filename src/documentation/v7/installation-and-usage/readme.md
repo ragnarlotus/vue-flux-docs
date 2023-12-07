@@ -15,37 +15,37 @@ npm install --save vue-flux@latest
 
 Add the component. This one has all the complements, so you can remove the ones you don't want.
 
+``` js
+import { ref, shallowReactive } from 'vue';
+import {
+   VueFlux,
+   FluxCaption,
+   FluxControls,
+   FluxIndex,
+   FluxPagination,
+   FluxPreloader,
+   Img,
+   Book,
+   Zip,
+} from 'vue-flux';
+import 'vue-flux/style.css';
+
+const $vueFlux = ref();
+
+const vfOptions = shallowReactive({
+   autoplay: true,
+});
+
+const vfRscs = shallowReactive([
+   new Img('URL1' 'img 1'),
+   new Img('URL2' 'img 2'),
+   new Img('URL3' 'img 3'),
+]);
+
+const vfTransitions = shallowReactive([Book, Zip]);
+```
+
 ``` html
-<script setup>
-   import { ref, shallowReactive } from 'vue';
-   import {
-      VueFlux,
-      FluxCaption,
-      FluxControls,
-      FluxIndex,
-      FluxPagination,
-      FluxPreloader,
-      Img,
-      Book,
-      Zip,
-   } from 'vue-flux';
-   import 'vue-flux/style.css';
-
-   const $vueFlux = ref();
-
-   const vfOptions = shallowReactive({
-      autoplay: true,
-   });
-
-   const vfRscs = shallowReactive([
-      new Img('URL1' 'img 1'),
-      new Img('URL2' 'img 2'),
-      new Img('URL3' 'img 3'),
-   ]);
-
-   const vfTransitions = shallowReactive([Book, Zip]);
-</script>
-
 <template>
    <VueFlux
       :options="vfOptions"

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4af8c3c6","path":"/documentation/v7/components/vue-flux/","title":"VueFlux","lang":"en-US","frontmatter":{"prev":false},"headers":[],"git":{},"filePathRelative":"documentation/v7/components/vue-flux/readme.md"}');export{e as data};

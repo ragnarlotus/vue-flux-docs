@@ -2,7 +2,9 @@
 next: false
 ---
 
-# FluxPreloader
+WIP
+
+<!-- # FluxPreloader
 
 ::: warning
 
@@ -110,3 +112,4 @@ This is an example with [Font Awesome](https://fontawesome.com/) spinner.
    </template>
 </vue-flux>
 ```
+ -->

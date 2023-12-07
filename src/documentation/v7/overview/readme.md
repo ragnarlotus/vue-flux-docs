@@ -36,39 +36,47 @@ Install and save the package.
 npm install --save vue-flux@latest
 ```
 
+First you need to decide where to import the slider styles, if you wil use one slider it can be done where the slider is used, otherwise the best practice is in the `main.[ts|js]`. Implementing the styles is as simple as:
+
+``` js
+import 'vue-flux/style.css';
+```
+
+In the following component we add the styles in the component directly.
+
 Add component. This one has all the complements, so you can remove the ones you don't want.
 
+``` js
+import { ref, shallowReactive } from 'vue';
+import {
+   VueFlux,
+   FluxCaption,
+   FluxControls,
+   FluxIndex,
+   FluxPagination,
+   FluxPreloader,
+   Img,
+   Book,
+   Zip,
+} from 'vue-flux';
+import 'vue-flux/style.css';
+
+const $vueFlux = ref();
+
+const vfOptions = shallowReactive({
+   autoplay: true,
+});
+
+const vfRscs = shallowReactive([
+   new Img('URL1' 'img 1'),
+   new Img('URL2' 'img 2'),
+   new Img('URL3' 'img 3'),
+]);
+
+const vfTransitions = shallowReactive([Book, Zip]);
+```
+
 ``` html
-<script setup>
-   import { ref, shallowReactive } from 'vue';
-   import {
-      VueFlux,
-      FluxCaption,
-      FluxControls,
-      FluxIndex,
-      FluxPagination,
-      FluxPreloader,
-      Img,
-      Book,
-      Zip,
-   } from 'vue-flux';
-   import 'vue-flux/style.css';
-
-   const $vueFlux = ref();
-
-   const vfOptions = shallowReactive({
-      autoplay: true,
-   });
-
-   const vfRscs = shallowReactive([
-      new Img('URL1' 'img 1'),
-      new Img('URL2' 'img 2'),
-      new Img('URL3' 'img 3'),
-   ]);
-
-   const vfTransitions = shallowReactive([Book, Zip]);
-</script>
-
 <template>
    <VueFlux
       :options="vfOptions"
@@ -109,41 +117,45 @@ Weight is about 60 KB so is pretty light having only the essential CSS. It also 
 
 #### 2D transitions
 
-* Fade: fades from one image to next.
-* Kenburn: fades, zoom and moves current image to next.
-* Swipe: swipes the image to display next like uncovered with a curtain.
-* Slide: slides the image horizontally revealing the next.
-* Waterfall: divides the image in bars and drops them down in turns.
-* Zip: divides the image in bars and slides them up and down alternately like a zip.
-* Blinds 2D: divides the image in vertical bars that blinds and fades out.
-* Blocks 1: the image is split in blocks that shrink and fade out randomly.
-* Blocks 2: the image is split in blocks that shrink and fade out in wave from a corner to the opposite.
-* Concentric: a concentric effect is performed by rotating the image converted into circles.
-* Warp: a concentric effect is performed by rotating the image converted into circles in alternate direction.
-* Camera: from outside to inside the image is being circled in black like a camera.
+| Name | Description |
+|------|-------------|
+| Fade | Fades from one image to next |
+| Kenburn | Fades, zoom and moves current image to next |
+| Swipe | Swipes the image to display next like uncovered with a curtain |
+| Slide | Slides the image horizontally revealing the next |
+| Waterfall | Divides the image in bars and drops them down in turns |
+| Zip | Divides the image in bars and slides them up and down alternately like a zip |
+| Blinds 2D | Divides the image in vertical bars that blinds and fades out |
+| Blocks 1 | The image is split in blocks that shrink and fade out randomly |
+| Blocks 2 | The image is split in blocks that shrink and fade out in wave from a corner to the opposite |
+| Concentric | a concentric effect is performed by rotating the image converted into circles |
+| Warp | A concentric effect is performed by rotating the image converted into circles in alternate direction|
+| Camera | From outside to inside the image is being circled in black like a camera |
 
 #### 3D transitions
 
-* Cube: turns the image to a side like if place in a cube.
-* Book: makes the effect of turning a page to display next image.
-* Fall: the image falls in front displaying next image.
-* Wave: makes the image 3D and divides it in slices that turn vertically to display the next image.
-* Blinds 3D: divides the image in vertical bars that blinds 180 deg to form the next image.
-* Round 1: the image is split in blocks that turn 180 deg horizontally to form next image.
-* Round 2: panels start to round vertically revealing the next image in upper arrow form leaving trail.
-* Explode: the image starts to explode from the center to outside.
+| Name | Description |
+|------|-------------|
+| Cube | Turns the image to a side like if place in a cube  |
+| Book | Makes the effect of turning a page to display next image |
+| Fall | The image falls in front displaying next image |
+| Wave | Makes the image 3D and divides it in slices that turn vertically to display the next image |
+| Blinds 3D | Divides the image in vertical bars that blinds 180 deg to form the next image |
+| Round 1 | Dhe image is split in blocks that turn 180 deg horizontally to form next image |
+| Round 2 | Panels start to round vertically revealing the next image in upper arrow form leaving trail |
+| Explode | The image starts to explode from the center to outside |
 
 ## Parallax
 
 As simple as this.
 
+``` js
+import { FluxParallax, Img } from 'vue-flux';
+
+const rsc = new Img('URL1' 'img 1');
+```
+
 ``` html
-<script setup>
-   import { FluxParallax, Img } from 'vue-flux';
-
-   const rsc = new Img('URL1' 'img 1');
-</script>
-
 <template>
    <FluxParallax :rsc="rsc" style="height: 300px;">
       <div>CONTENT</div>
@@ -153,15 +165,15 @@ As simple as this.
 
 ## Troubleshooting
 
-If you find yourself running into issues during installation or running the slider, please check our [documentation](https://ragnarlotus.github.io/vue-flux-docs/v7). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). I will be happy to discuss how they can be solved.
+If you find yourself running into issues during installation or running the slider, please check our [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v7/overview). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). I will be happy to discuss how they can be solved.
 
 ## Documentation
 
-You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/v7) with examples and detailed information.
+You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v7/overview) with examples and detailed information.
 
 ## Changelog
 
-Check the [changelog](https://ragnarlotus.github.io/vue-flux-docs/v7/changelog) for update info.
+Check the [changelog](https://ragnarlotus.github.io/vue-flux-docs/documentation/v7/changelog) for update info.
 
 ## Inspiration
 

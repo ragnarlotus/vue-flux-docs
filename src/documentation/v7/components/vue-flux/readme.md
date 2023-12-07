@@ -4,6 +4,10 @@ prev: false
 
 # VueFlux
 
+WIP
+
+<!-- 
+
 ## Description
 
 This is the main component of the slider and will be the frame that displays the resources.
@@ -388,3 +392,4 @@ You can use the included [FluxPagination](../complements/flux-pagination) comple
 - `transition-start`: fired when transition begin.
 - `transition-cancel`: fired when transition is running and is being cancelled.
 - `transition-end`: fired when transition finish.
+ -->

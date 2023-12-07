@@ -1,6 +1,8 @@
 ---
 ---
 
+WIP
+<!-- 
 # FluxPagination
 
 ::: warning
@@ -191,3 +193,4 @@ This is an example with [Font Awesome](https://fontawesome.com/) icons.
    </template>
 </vue-flux>
 ```
+ -->

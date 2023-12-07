@@ -3,6 +3,9 @@
 
 # FluxCube
 
+WIP
+<!-- 
+
 ## Description
 
 Component composed by up to 6 resources that forms a cube.
@@ -106,3 +109,4 @@ Turns the cube to specified side (front, back, top, bottom, left, right).
 - side
   - Type: `string`
   - Values: `'front' | back' | 'top' | 'bottom' | 'left' | 'right'`
+ -->

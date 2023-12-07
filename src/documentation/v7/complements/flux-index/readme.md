@@ -1,7 +1,9 @@
 ---
 ---
 
-# FluxIndex
+WIP
+
+<!-- # FluxIndex
 
 ::: warning
 
@@ -163,3 +165,4 @@ The slider will show the image in that position of the current images array.
 - number
   - Type: `Number`
   - Required: `true`
+ -->

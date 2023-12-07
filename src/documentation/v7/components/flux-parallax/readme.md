@@ -3,6 +3,10 @@
 
 # FluxParallax
 
+WIP
+
+<!--
+
 ## Description
 
 Creates a parallax effect given an image. It can recreate 3 types, relative, visible and fixed.
@@ -85,3 +89,4 @@ Set CSS styles to the parallax.
 - css
   - Description: an object with the CSS attributes in **camel case** and values.
   - Type: `Object`
+ -->

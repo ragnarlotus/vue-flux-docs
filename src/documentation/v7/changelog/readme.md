@@ -7,9 +7,13 @@ This version is currently in alpha version, and although everything looks like w
 
 ::: warning
 
-From this version the styles are not bundled anymore inside the components, so you will have to import the CSS always
+From this version the styles are not bundled anymore inside the components, so you will have to import the CSS always like following way.
 
 :::
+
+``` js
+import 'vue-flux/vue-flux.css';
+```
 
 ## 7.0.0
 

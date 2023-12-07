@@ -3,6 +3,10 @@
 
 # FluxButton
 
+WIP
+
+<!-- 
+
 ## Description
 
 Component to display svg buttons.
@@ -14,3 +18,4 @@ Component to display svg buttons.
 The content of this component will be rendered inside a dark circle.
 
 Only SVG tags should be placed here.
+ -->

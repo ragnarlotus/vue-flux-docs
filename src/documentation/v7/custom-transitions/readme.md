@@ -4,6 +4,8 @@ prev: transitions/
 
 # Custom transitions
 
+WIP
+<!-- 
 Transitions use the mixin `BaseTransition` to perform basic and shared logic.
 
 ## Data
@@ -289,3 +291,4 @@ export default {
 You can see the [transitions source code](https://github.com/ragnarlotus/vue-flux/tree/dev/src/transitions) to get more ideas or examples.
 
 :::
+ -->

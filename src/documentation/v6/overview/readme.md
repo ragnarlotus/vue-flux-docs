@@ -155,7 +155,7 @@ If you find yourself running into issues during installation or running the slid
 
 ## Documentation
 
-You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/v6) with examples and detailed information.
+You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v6) with examples and detailed information.
 
 ## Changelog
 

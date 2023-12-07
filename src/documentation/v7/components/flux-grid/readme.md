@@ -3,6 +3,10 @@
 
 # FluxGrid
 
+WIP
+
+<!-- 
+
 ## Description
 
 Component to make grid of resource or cube.
@@ -173,3 +177,4 @@ Returns the row number
 ### getColNumber(tileNumber: number, numCols: number): number
 
 Returns the column number
+ -->

@@ -3,6 +3,10 @@
 
 # FluxVortex
 
+WIP
+
+<!-- 
+
 ## Description
 
 Image component made of concentric circles.
@@ -80,3 +84,4 @@ Show the image, setting `visibility` to `visible`.
 ### hide()
 
 Hide the image, setting `visibility` to `hidden`.
+ -->

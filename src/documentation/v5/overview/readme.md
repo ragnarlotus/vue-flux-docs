@@ -107,11 +107,11 @@ Weight is just 111KB so is pretty light having only the essential CSS. It also d
 
 ## Troubleshooting
 
-If you find yourself running into issues during installation or running the slider, please check our [documentation](https://ragnarlotus.github.io/vue-flux-docs/v5). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). We would be happy to discuss how they can be solved.
+If you find yourself running into issues during installation or running the slider, please check our [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v5). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). We would be happy to discuss how they can be solved.
 
 ## Documentation
 
-You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/v5) with examples and detailed information.
+You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v5) with examples and detailed information.
 
 ## Changelog
 

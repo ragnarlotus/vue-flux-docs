@@ -3,6 +3,10 @@
 
 # FluxTransition
 
+WIP
+
+<!-- 
+
 ## Description
 
 Component to display a transition between two images.
@@ -93,3 +97,4 @@ This method will call the method `played`of the transition component, starting t
 - `ready`: will be fired when the transition is ready to play because the components are rendered.
 - `start`: will let know when transition has started.
 - `end`: fired when transition ended.
+ -->

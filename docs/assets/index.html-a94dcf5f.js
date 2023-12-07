@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3592ca8a","path":"/documentation/v7/complements/flux-preloader/","title":"","lang":"en-US","frontmatter":{"next":false},"headers":[],"git":{},"filePathRelative":"documentation/v7/complements/flux-preloader/readme.md"}');export{e as data};

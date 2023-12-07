@@ -1,5 +1,6 @@
 import { defineUserConfig, defaultTheme } from 'vuepress';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { getDirname, path } from '@vuepress/utils';
 
 const __dirname = getDirname(import.meta.url);
@@ -682,6 +683,9 @@ export default defineUserConfig({
 	plugins: [
 		registerComponentsPlugin({
 			componentsDir: srcPath + '/components',
+		}),
+		googleAnalyticsPlugin({
+			id: 'G-SCK1WK3Z4N',
 		}),
 	],
 });

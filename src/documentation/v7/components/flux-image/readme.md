@@ -3,6 +3,10 @@
 
 # FluxImage
 
+WIP
+
+<!-- 
+
 ## Description
 
 The FluxImage component represents the lowest component of library and displays an image, part of it or a color.
@@ -106,3 +110,4 @@ Show the image, setting `visibility` to `visible`.
 ### hide()
 
 Hide the image, setting `visibility` to `hidden`.
+ -->

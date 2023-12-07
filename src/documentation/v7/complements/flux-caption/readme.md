@@ -2,6 +2,9 @@
 prev: false
 ---
 
+WIP
+
+<!-- 
 # FluxCaption
 
 ::: warning
@@ -214,3 +217,4 @@ captionProps = {
    </template>
 </vue-flux>
 ```
+ -->
