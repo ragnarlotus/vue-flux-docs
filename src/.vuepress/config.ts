@@ -685,7 +685,7 @@ export default defineUserConfig({
 			componentsDir: srcPath + '/components',
 		}),
 		googleAnalyticsPlugin({
-			id: 'G-SCK1WK3Z4N',
+			id: 'G-Y5ER74KWQV',
 		}),
 	],
 });
