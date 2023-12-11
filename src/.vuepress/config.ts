@@ -13,6 +13,11 @@ export default defineUserConfig({
 	lang: 'en-US',
 	dest: 'docs/',
 	public: srcPath + '/public',
+	markdown: {
+		code: {
+			lineNumbers: false,
+		},
+	},
 	theme: defaultTheme({
 		contributors: false,
 		repo: 'https://github.com/ragnarlotus/vue-flux',

@@ -96,7 +96,7 @@ import {
 } from 'vue-flux';
 
 const from = new Img('image-url');
-const top = new Img('image-url');
+const to = new Img('image-url');
 
 const size = new Size({
 	width: ${size.width.value},

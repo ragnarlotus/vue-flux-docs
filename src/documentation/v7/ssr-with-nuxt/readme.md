@@ -14,7 +14,7 @@ Wrap the `<VueFlux>` where you want to use it with `<ClientOnly>` tags.
 
 Don't forget to import the CSS in the component where you will use the slider, or in any preprocessed CSS file like SASS or Stylus
 
-```js
+``` ts
 import {
   VueFlux,
   FluxControls,

@@ -86,7 +86,7 @@ const transitions = shallowReactive([
 	<div>
 		<Demo
 			:transitions="transitions"
-			:numRscs="3"
+			:numRscs="30"
 			:complements="complements"
 			:options="options"
 		/>

@@ -15,7 +15,7 @@ npm install --save vue-flux@latest
 
 Add the component. This one has all the complements, so you can remove the ones you don't want.
 
-``` js
+``` ts
 import { ref, shallowReactive } from 'vue';
 import {
    VueFlux,
@@ -46,36 +46,34 @@ const vfTransitions = shallowReactive([Book, Zip]);
 ```
 
 ``` html
-<template>
-   <VueFlux
-      :options="vfOptions"
-      :rscs="vfRscs"
-      :transitions="vfTransitions"
-      ref="$vueFlux">
+<VueFlux
+   :options="vfOptions"
+   :rscs="vfRscs"
+   :transitions="vfTransitions"
+   ref="$vueFlux">
 
-      <template #preloader="preloaderProps">
-         <FluxPreloader v-bind="preloaderProps" />
-      </template>
+   <template #preloader="preloaderProps">
+      <FluxPreloader v-bind="preloaderProps" />
+   </template>
 
-      <template #caption="captionProps">
-         <FluxCaption v-bind="captionProps" />
-      </template>
+   <template #caption="captionProps">
+      <FluxCaption v-bind="captionProps" />
+   </template>
 
-      <template #controls="controlsProps">
-         <FluxControls v-bind="controlsProps" />
-      </template>
+   <template #controls="controlsProps">
+      <FluxControls v-bind="controlsProps" />
+   </template>
 
-      <template #pagination="paginationProps">
-         <FluxPagination v-bind="paginationProps" />
-      </template>
+   <template #pagination="paginationProps">
+      <FluxPagination v-bind="paginationProps" />
+   </template>
 
-      <template #index="indexProps">
-         <FluxIndex v-bind="indexProps" />
-      </template>
-   </VueFlux>
+   <template #index="indexProps">
+      <FluxIndex v-bind="indexProps" />
+   </template>
+</VueFlux>
 
-   <button @click="$vueFlux.show('next')">NEXT</button>
-</template>
+<button @click="$vueFlux.show('next')">NEXT</button>
 ```
 
 If you want to see more details about options, check the [VueFlux](components/vue-flux) component documentation.

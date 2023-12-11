@@ -199,7 +199,7 @@ const css = {
 			<pre v-html="sourceJs" class="language-javascript" />
 		</div>
 
-		<div class="language-html extra-class">
+		<div class="language-html extra-class" data-ext="html">
 			<pre v-html="sourceHtml" class="language-html" />
 		</div>
 	</div>

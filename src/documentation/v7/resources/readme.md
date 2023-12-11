@@ -1,19 +1,19 @@
 ---
 prev: ssr-with-nuxt
-next: resources/image
+next: resources/img
 ---
 
 # Resources
 
 This are the resources that the slider supports.
 
-Each resource has 2 component properties, one is used during the transitions, and the other to display. This is done this way because for some resources like videos, can't make transitions, so they use an image for the transition and when it ends it switches the image to the video to be displayed.
+Each resource has two component properties, one is used during the transitions, and the other to display. This is done this way because for some resources like videos, can't make transitions, so they use an image for the transition and when it ends it switches the image to the video to be displayed.
 
 | Name | Description |
 |------|-------------|
-| [Img](img) | Displays an image |
-| [Video](video) | Displays a video |
-| [Component](component) | Displays vue component |
+| [Img](resources/img) | Displays an image |
+| [Video](resources/video) | Displays a video |
+| [Component](resources/component) | Displays vue component |
 
 All this resources inherit the abstract class `Resource`.
 
@@ -21,11 +21,12 @@ All this resources inherit the abstract class `Resource`.
 
 ### Constructor
 
-``` js
+``` ts
 constructor(
 	src: string,
 	caption: string,
-	resizeType: ResizeType = 'fill',
+	resizeType: ResizeType = ResizeTypes.fill,
+	backgroundColor: null | string = null,
 	display: DisplayParameter,
 	transition: TransitionParameter,
 	errorMessage: string
@@ -34,76 +35,64 @@ constructor(
 
 ### Properties
 
-#### src: string
+``` ts
+// The src url of the resource
+src: string;
 
-The src url of the resource
+// Once called to load contains the promise in charge of loading it
+loader: Promise<void> | null = null;
 
-#### loader: Promise\<void\> | null
+// If there where an error loading this will contain the error message
+errorMessage: string;
 
-Once called to load contains the promise in charge of loading it
+// Contains the status of the resource, being one of `notLoaded`, `loading`, `loaded` or `error`
+status: Ref<Statuses> = ref(Statuses.notLoaded);
 
-#### errorMessage: string
+// Natural size of the resource
+realSize: Size = new Size();
 
-If there where an error loading this will contain the error message
+// Size of the display
+displaySize: Size = new Size();
 
-#### status: ResourceStatus
+// The caption that represents the resource
+caption: string = '';
 
-Contains the status of the resource, being one of `notLoaded`, `loading`, `loaded` or `error`
+// The type of desired resize, being `fill` or `fit`
+resizeType: ResizeType;
 
-#### realSize: Size
+// Color that will fill the remaining space to cover the desired size in case the resize type is `fit`
+backgroundColor: null | string = null;
 
-Natural size of the resource
+// The display component is the one that will be shown when not in transition
+display: DisplayParameter;
 
-#### displaySize: Size
+// The component used during the transition
+transition: TransitionParameter;
 
-Size of the display
-
-#### caption: string
-
-The caption that represents the resource
-
-#### resizeType: ResizeType
-
-The type of desired resize, being `fill` or `fit`
-
-#### display: DisplayParameter
-
-The display component is the one that will be shown when not in transition
-
-#### transition: TransitionParameter
-
-The component used during the transition
-
-#### fillProps: Object
-
-The computed properties for resize filling the display
-
-#### fitProps: Object
-
-The computed properties for resize fitting the display
+// The computed properties adapted for the size of display
+resizeProps: computed<{
+	top?: number;
+	left?: number;
+	width?: number;
+	height?: number;
+}>
+```
 
 ### Methods
 
-#### isLoading(): boolean
+``` ts
+// Returns if the resource is being loaded
+isLoading(): boolean
 
-Returns if the resource is being loaded
+// Returns if the resource is already loaded
+isLoaded(): boolean
 
-#### isLoaded(): boolean
+// Returns if the resource has finished loading with an error
+isError(): boolean
 
-Returns if the resource is already loaded
+// Returns the size and position of the given display size
+calcResizeProps(displaySize: Size): Object
 
-#### isError(): boolean
-
-Returns if the resource has finished loading with an error
-
-#### getFillProps(displaySize: Size): Object
-
-Returns the size and position of the given display size to filling it.
-
-#### getFitProps(displaySize: Size): Object
-
-Returns the size and position of the given display size to fit it.
-
-#### getResizeProps(size: Size, offset?: Position): Object
-
-Returns the size and position resizing to given size and optionally an offset.
+// Returns the size and position resizing to given size and optionally an offset.
+getResizeProps(size: Size, offset?: Position): Object
+```

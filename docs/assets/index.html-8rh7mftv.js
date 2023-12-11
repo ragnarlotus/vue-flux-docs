@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-34e38b2f","path":"/documentation/v7/components/flux-cube/","title":"FluxCube","lang":"en-US","frontmatter":{},"headers":[],"git":{},"filePathRelative":"documentation/v7/components/flux-cube/readme.md"}');export{e as data};

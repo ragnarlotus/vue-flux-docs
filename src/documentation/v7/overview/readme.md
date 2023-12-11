@@ -14,7 +14,7 @@ This is an image slider developed with [vue](https://vuejs.org/) 3 which comes w
 
 ## Demo
 
-You can view the [demos here](../demos/)
+You can view the [demos here](../../demos/demos)
 
 ## Features
 
@@ -38,7 +38,7 @@ npm install --save vue-flux@latest
 
 First you need to decide where to import the slider styles, if you wil use one slider it can be done where the slider is used, otherwise the best practice is in the `main.[ts|js]`. Implementing the styles is as simple as:
 
-``` js
+``` ts
 import 'vue-flux/style.css';
 ```
 
@@ -46,7 +46,7 @@ In the following component we add the styles in the component directly.
 
 Add component. This one has all the complements, so you can remove the ones you don't want.
 
-``` js
+``` ts
 import { ref, shallowReactive } from 'vue';
 import {
    VueFlux,
@@ -77,36 +77,34 @@ const vfTransitions = shallowReactive([Book, Zip]);
 ```
 
 ``` html
-<template>
-   <VueFlux
-      :options="vfOptions"
-      :rscs="vfRscs"
-      :transitions="vfTransitions"
-      ref="$vueFlux">
+<VueFlux
+   :options="vfOptions"
+   :rscs="vfRscs"
+   :transitions="vfTransitions"
+   ref="$vueFlux">
 
-      <template #preloader="preloaderProps">
-         <FluxPreloader v-bind="preloaderProps" />
-      </template>
+   <template #preloader="preloaderProps">
+      <FluxPreloader v-bind="preloaderProps" />
+   </template>
 
-      <template #caption="captionProps">
-         <FluxCaption v-bind="captionProps" />
-      </template>
+   <template #caption="captionProps">
+      <FluxCaption v-bind="captionProps" />
+   </template>
 
-      <template #controls="controlsProps">
-         <FluxControls v-bind="controlsProps" />
-      </template>
+   <template #controls="controlsProps">
+      <FluxControls v-bind="controlsProps" />
+   </template>
 
-      <template #pagination="paginationProps">
-         <FluxPagination v-bind="paginationProps" />
-      </template>
+   <template #pagination="paginationProps">
+      <FluxPagination v-bind="paginationProps" />
+   </template>
 
-      <template #index="indexProps">
-         <FluxIndex v-bind="indexProps" />
-      </template>
-   </VueFlux>
+   <template #index="indexProps">
+      <FluxIndex v-bind="indexProps" />
+   </template>
+</VueFlux>
 
-   <button @click="$vueFlux.show('next')">NEXT</button>
-</template>
+<button @click="$vueFlux.show('next')">NEXT</button>
 ```
 
 ## Performance
@@ -149,31 +147,29 @@ Weight is about 60 KB so is pretty light having only the essential CSS. It also 
 
 As simple as this.
 
-``` js
+``` ts
 import { FluxParallax, Img } from 'vue-flux';
 
 const rsc = new Img('URL1' 'img 1');
 ```
 
 ``` html
-<template>
-   <FluxParallax :rsc="rsc" style="height: 300px;">
-      <div>CONTENT</div>
-   </FluxParallax>
-</template>
+<FluxParallax :rsc="rsc" style="height: 300px;">
+   <div>CONTENT</div>
+</FluxParallax>
 ```
 
 ## Troubleshooting
 
-If you find yourself running into issues during installation or running the slider, please check our [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v7/overview). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). I will be happy to discuss how they can be solved.
+If you find yourself running into issues during installation or running the slider, please check our [documentation](overview). If still needs help open an [issue](https://github.com/ragnarlotus/vue-flux/issues/new). I will be happy to discuss how they can be solved.
 
 ## Documentation
 
-You can view the full documentation at the project's [documentation](https://ragnarlotus.github.io/vue-flux-docs/documentation/v7/overview) with examples and detailed information.
+You can view the full documentation at the project's [documentation](overview) with examples and detailed information.
 
 ## Changelog
 
-Check the [changelog](https://ragnarlotus.github.io/vue-flux-docs/documentation/v7/changelog) for update info.
+Check the [changelog](changelog) for update info.
 
 ## Inspiration
 

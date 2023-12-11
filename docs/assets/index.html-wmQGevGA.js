@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-69bcfb8d","path":"/documentation/v7/components/flux-parallax/","title":"FluxParallax","lang":"en-US","frontmatter":{},"headers":[],"git":{},"filePathRelative":"documentation/v7/components/flux-parallax/readme.md"}');export{a as data};

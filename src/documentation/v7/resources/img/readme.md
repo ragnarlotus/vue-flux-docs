@@ -9,7 +9,7 @@ Renders an image
 
 ## Constructor
 
-``` js
+``` ts
 constructor(
 	src: string,
 	caption: string = '',
@@ -19,14 +19,13 @@ constructor(
 
 ## Methods
 
-### load(): Promise\<void\>
+``` ts
+// Called to load the resource returning a promise
+load(): Promise<void>
 
-Called to load the resource returning a promise
+// Called when the resource is loaded successfully
+onLoad(img: HTMLImageElement, resolve: Function): void
 
-### onLoad(img: HTMLImageElement, resolve: Function): void
-
-Called when the resource is loaded successfully
-
-### onError(reject: Function): void
-
-Called when an error occurs when loading the resource
+// Called when an error occurs when loading the resource
+onError(reject: Function): void
+```

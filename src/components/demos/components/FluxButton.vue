@@ -26,7 +26,7 @@
 
 		<h3>Source</h3>
 
-		<div class="language-html">
+		<div class="language-html extra-class" data-ext="html">
 			<pre v-html="sourceHtml" class="language-html" />
 		</div>
 	</div>

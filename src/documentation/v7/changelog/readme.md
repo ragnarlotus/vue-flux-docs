@@ -11,8 +11,8 @@ From this version the styles are not bundled anymore inside the components, so y
 
 :::
 
-``` js
-import 'vue-flux/vue-flux.css';
+``` ts
+import 'vue-flux/style.css';
 ```
 
 ## 7.0.0

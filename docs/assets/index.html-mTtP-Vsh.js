@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-351aa63e","path":"/documentation/v7/components/flux-grid/","title":"FluxGrid","lang":"en-US","frontmatter":{},"headers":[],"git":{},"filePathRelative":"documentation/v7/components/flux-grid/readme.md"}');export{e as data};
