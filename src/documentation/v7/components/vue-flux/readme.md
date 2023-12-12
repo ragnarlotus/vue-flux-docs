@@ -239,20 +239,20 @@ async stop(cancelTransition: boolean = false): void
 
 | Name | Parameters | Description |
 |------|------------|-------------|
-| created | | fired when the slider component is created |
-| mounted | | fired when the slider component is mounted |
-| unmounted | | fired when the slider component is destroyed |
-| play | `resourceIndex: number \| Direction, delay?: number` | fired when auto playing resources |
-| stop | | fired when stopped to auto play resources |
-| show | `resource: PlayerResource, transition: PlayerTransition` | fired when requested to show an image |
-| options-updated | | fired when the options have been updated |
-| transitions-updated | | fired when transitions updated |
-| resources-preload-start | | fired when started to preload images |
-| resources-preload-end | | fired when finished to preload images |
-| resources-lazyload-start | | fired when start to lazy loading images |
-| resources-lazyload-end | | fired when finished to lay loading images |
-| fullscreen-enter | | fired when entered in full screen mode |
-| fullscreen-exit | | fired when exit from full screen |
-| transition-start | `resource: PlayerResource, transition: PlayerTransition` | fired when transition begin |
-| transition-cancel | `resource: PlayerResource, transition: PlayerTransition` | fired when transition is running and is being cancelled |
-| transition-end | `resource: PlayerResource, transition: PlayerTransition` | fired when transition finish |
+| `created` | | fired when the slider component is created |
+| `mounted` | | fired when the slider component is mounted |
+| `unmounted` | | fired when the slider component is destroyed |
+| `play` | `resourceIndex: number \| Direction, delay?: number` | fired when auto playing resources |
+| `stop` | | fired when stopped to auto play resources |
+| `show` | `resource: PlayerResource, transition: PlayerTransition` | fired when requested to show an image |
+| `options-updated` | | fired when the options have been updated |
+| `transitions-updated` | | fired when transitions updated |
+| `resources-preload-start` | | fired when started to preload images |
+| `resources-preload-end` | | fired when finished to preload images |
+| `resources-lazyload-start` | | fired when start to lazy loading images |
+| `resources-lazyload-end` | | fired when finished to lay loading images |
+| `fullscreen-enter` | | fired when entered in full screen mode |
+| `fullscreen-exit` | | fired when exit from full screen |
+| `transition-start` | `resource: PlayerResource, transition: PlayerTransition` | fired when transition begin |
+| `transition-cancel` | `resource: PlayerResource, transition: PlayerTransition` | fired when transition is running and is being cancelled |
+| `transition-end` | `resource: PlayerResource, transition: PlayerTransition` | fired when transition finish |

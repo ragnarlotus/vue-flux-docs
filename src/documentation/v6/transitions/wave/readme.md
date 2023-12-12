@@ -12,8 +12,8 @@ Makes the image 3D and divides it in slices that turn vertically to display the 
 
 | Name | Type | Default |
 |------|------|---------|
-| cols | Number | 8 |
-| tileDuration | Number | 900 |
-| tileDelay | Number | 110 |
-| sideColor | String | #333 |
-| easing | String | cubic-bezier(0.3, -0.3, 0.735, 0.285) |
+| cols | number | 8 |
+| tileDuration | number | 900 |
+| tileDelay | number | 110 |
+| sideColor | string | #333 |
+| easing | string | cubic-bezier(0.3, -0.3, 0.735, 0.285) |

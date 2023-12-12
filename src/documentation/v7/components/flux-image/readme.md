@@ -14,9 +14,9 @@ The FluxImage component represents the lowest component of library and displays 
 ``` ts
 interface FluxImageProps {
 	size: Size;
-	viewSize?: Size = new Size();
+	viewSize?: Size;
 	color?: string;
-	rsc?: Resources;
+	rsc?: Resource;
 	offset:? Position;
 	css?: CSSProperties;
 }

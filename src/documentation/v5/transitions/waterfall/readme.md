@@ -10,7 +10,7 @@ Divides the image in bars and drops them down in turns.
 
 | Name         | Type   | Default |
 | ------------ | ------ | ------- |
-| numCols      | Number |         |
-| tileDuration | Number | 600     |
-| tileDelay    | Number | 80      |
-| easing       | String | ease-in |
+| numCols      | number |         |
+| tileDuration | number | 600     |
+| tileDelay    | number | 80      |
+| easing       | string | ease-in |

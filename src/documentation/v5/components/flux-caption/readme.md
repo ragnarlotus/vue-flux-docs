@@ -26,7 +26,7 @@ This are the component properties that you can access programatically.
 | Name | Type | Description |
 |------|------|-------------|
 | captions | Array | Array of strings for image captions |
-| caption | String | Returns the current image caption or empty string |
+| caption | string | Returns the current image caption or empty string |
 
 #### Example of caption inside vue-flux
 

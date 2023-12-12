@@ -8,9 +8,11 @@ sidebarDepth: 0
 
 Slides the image horizontally revealing the next.
 
+[Demo](../../../demos/transitions/slide)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1400 |
-| easing | String | ease-in-out |
+| totalDuration | number | 1400 |
+| easing | string | ease-in-out |

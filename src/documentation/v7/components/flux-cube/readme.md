@@ -17,7 +17,7 @@ interface FluxCubeProps {
 	viewSize?: Size = new Size();
 	color?: string;
 	colors?: SidesColors = ({});
-	rsc?: Resources;
+	rsc?: Resource;
 	rscs?: SidesResources = ({});
 	offset:? Position;
 	offsets?: SidesOffsets = ({});

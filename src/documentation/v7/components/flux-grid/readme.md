@@ -12,12 +12,12 @@ Component to make grid of resource or cube.
 ## Attributes
 
 ``` ts
-interface FluxCubeProps {
+interface FluxGridProps {
 	size: Size;
-	viewSize?: Size = new Size();
+	viewSize?: Size;
 	color?: string;
 	colors?: SidesColors = ({});
-	rsc?: Resources;
+	rsc?: Resource;
 	rscs?: SidesResources = ({});
 	rows?: number = 1;
 	cols?: number = 1;

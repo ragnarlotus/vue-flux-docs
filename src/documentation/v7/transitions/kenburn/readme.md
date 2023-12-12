@@ -8,9 +8,11 @@ sidebarDepth: 0
 
 Fades, zoom and moves current image to next.
 
+[Demo](../../../demos/transitions/kenburn)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1500 |
-| easing | String | linear |
+| totalDuration | number | 1500 |
+| easing | string | linear |

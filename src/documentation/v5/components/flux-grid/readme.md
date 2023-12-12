@@ -14,8 +14,8 @@ The component can have the following attributes.
 | Attribute | Type | Required | Description |
 |-----------|------|----------|-------------|
 | slider | Object | true | The VueFlux component responsible of this cube |
-| rows | Number | true | The number of rows |
-| cols | Number | true | The number of cols |
+| rows | number | true | The number of rows |
+| cols | number | true | The number of cols |
 | index | Object | true | An object containing the indexes of images to apply to the tile cubes |
 | tileCss | Object | false | Initial tile CSS style |
 

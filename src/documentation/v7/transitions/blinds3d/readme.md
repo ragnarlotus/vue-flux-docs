@@ -8,11 +8,13 @@ sidebarDepth: 0
 
 Divides the image in vertical bars that blinds 180 deg to form the next image.
 
+[Demo](../../../demos/transitions/blinds3d)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| cols | Numeric | 6 |
-| tileDuration | Numeric | 800 |
-| tileDelay | Numeric | 150 |
-| easing | String | ease-out |
+| cols | number | 6 |
+| tileDuration | number | 800 |
+| tileDelay | number | 150 |
+| easing | string | ease-out |

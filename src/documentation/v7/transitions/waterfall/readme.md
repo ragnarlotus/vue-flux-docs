@@ -8,11 +8,13 @@ sidebarDepth: 0
 
 Divides the image in bars and drops them down in turns.
 
+[Demo](../../../demos/transitions/waterfall)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| cols | Number | 10 |
-| tileDuration | Number | 600 |
-| tileDelay | Number | 90 |
-| easing | String | cubic-bezier(0.55, 0.055, 0.675, 0.19) |
+| cols | number | 10 |
+| tileDuration | number | 600 |
+| tileDelay | number | 90 |
+| easing | string | cubic-bezier(0.55, 0.055, 0.675, 0.19) |

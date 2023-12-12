@@ -12,5 +12,5 @@ Makes the effect of turning a page to display next image.
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1200 |
-| easing | String | ease-out |
+| totalDuration | number | 1200 |
+| easing | string | ease-out |

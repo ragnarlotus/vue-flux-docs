@@ -10,5 +10,5 @@ Fades, zoom and moves current image to next.
 
 | Name          | Type    | Default                                  |
 | ------------- | ------- | ---------------------------------------- |
-| totalDuration | Numeric | 6000                                     |
+| totalDuration | number | 6000                                     |
 | easing        | String  | cubic-bezier(0.600, 0.040, 0.780, 0.335) |

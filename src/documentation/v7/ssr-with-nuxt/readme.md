@@ -20,5 +20,5 @@ import {
   FluxControls,
 } from 'vue-flux';
 
-import 'vue-flux/vue-flux.css';
+import 'vue-flux/style.css';
 ```

@@ -12,9 +12,9 @@ Panels start to round vertically revealing the next image in upper arrow form le
 
 | Name | Type | Default |
 |------|------|---------|
-| rows | Numeric | 9 |
-| cols | Numeric | 9 |
-| tileDuration | Numeric | 800 |
-| tileDelay | Numeric | 100 |
-| easing | String | linear |
-| rotateX | String | -540 |
+| rows | number | 9 |
+| cols | number | 9 |
+| tileDuration | number | 800 |
+| tileDelay | number | 100 |
+| easing | string | linear |
+| rotateX | string | -540 |

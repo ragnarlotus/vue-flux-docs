@@ -25,11 +25,11 @@ The component can have the following attributes.
 
 | Attribute | Type | Required | Description |
 |-----------|------|----------|-------------|
-| src | String | true | The image URL to be displayed |
+| src | string | true | The image URL to be displayed |
 | holder | Object | false | Represents the object that should be watched for scrolling. By default is window |
-| type | String | false | Depending on the type the effect will differ. Values can be relative, static and fixed, by default the type is relative |
-| height | String | false | The height the image should have in pixels, by default is auto which means that will auto detect size by content or defined by CSS |
-| offset | String | false | Is the amount of image hidden that will be displayed when scrolling. If set in percentage the amount of pixels will be calculated in reference of height. Default is 60% |
+| type | string | false | Depending on the type the effect will differ. Values can be relative, static and fixed, by default the type is relative |
+| height | string | false | The height the image should have in pixels, by default is auto which means that will auto detect size by content or defined by CSS |
+| offset | string | false | Is the amount of image hidden that will be displayed when scrolling. If set in percentage the amount of pixels will be calculated in reference of height. Default is 60% |
 
 Example:
 

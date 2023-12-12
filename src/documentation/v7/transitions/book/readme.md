@@ -8,9 +8,11 @@ sidebarDepth: 0
 
 Makes the effect of turning a page to display next image.
 
+[Demo](../../../demos/transitions/book)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1200 |
-| easing | String | ease-out |
+| totalDuration | number | 1200 |
+| easing | string | ease-out |

@@ -8,12 +8,14 @@ sidebarDepth: 0
 
 The image is split in blocks that turn 180 deg horizontally to form next image.
 
+[Demo](../../../demos/transitions/round1)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| rows | Numeric | 8 |
-| cols | Numeric | 8 |
-| tileDuration | Numeric | 800 |
-| tileDelay | Numeric | 150 |
-| easing | String | ease-out |
+| rows | number | 8 |
+| cols | number | 8 |
+| tileDuration | number | 800 |
+| tileDelay | number | 150 |
+| easing | string | ease-out |

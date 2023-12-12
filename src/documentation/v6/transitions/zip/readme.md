@@ -13,7 +13,7 @@ Divides the image in bars and slides them up and down alternately like a zip.
 
 | Name | Type | Default |
 |------|------|---------|
-| cols | Numeric | 10 |
-| tileDuration | Numeric | 600 |
-| tileDelay | Numeric | 80 |
-| easing | String | ease-in |
+| cols | number | 10 |
+| tileDuration | number | 600 |
+| tileDelay | number | 80 |
+| easing | string | ease-in |

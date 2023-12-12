@@ -10,8 +10,8 @@ The image is split in blocks that turn 180 deg horizontally to form next image.
 
 | Name         | Type    | Default  |
 | ------------ | ------- | -------- |
-| rows         | Numeric |          |
-| cols         | Numeric |          |
-| tileDuration | Numeric | 800      |
-| tileDelay    | Numeric | 150      |
+| rows         | number |          |
+| cols         | number |          |
+| tileDuration | number | 800      |
+| tileDelay    | number | 150      |
 | easing       | String  | ease-out |

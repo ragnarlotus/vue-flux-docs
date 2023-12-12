@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-396c0147","path":"/documentation/v7/components/flux-wrapper/","title":"FluxWrapper","lang":"en-US","frontmatter":{"next":false},"headers":[],"git":{},"filePathRelative":"documentation/v7/components/flux-wrapper/readme.md"}');export{e as data};

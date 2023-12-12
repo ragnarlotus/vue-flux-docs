@@ -8,9 +8,11 @@ sidebarDepth: 0
 
 Fades from one image to next.
 
+[Demo](../../../demos/transitions/fade)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Number | 1200 |
-| easing | String | ease-in |
+| totalDuration | number | 1200 |
+| easing | string | ease-in |

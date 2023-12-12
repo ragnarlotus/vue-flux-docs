@@ -3,85 +3,80 @@
 
 # FluxVortex
 
-WIP
-
-<!-- 
-
 ## Description
 
-Image component made of concentric circles.
+Resource component made of concentric circles.
+
+[Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-vortex.html)
 
 ## Attributes
 
-### circles
-
-The number of circles the vortex will be made of.
-
-- **Type:** `Number`
-- **Required:** `false`
-- **Default:** `1`
-
-### image
-
-The URL of the image to be displayed.
-
-- **Type:** `String`
-- **Required:** `true`
-
-### size
-
-This size is the width and height in pixels that the component will have.
-
-The image will be scaled and positioned to cover this size.
-
-- **Type:** `Object`
-- **Required:** `true`
-- **Schema:**
-
-``` js
-{
-   width: Number,
-   height: Number,
+``` ts
+interface FluxVortexProps {
+	size: Size;
+	viewSize?: Size;
+	color?: string;
+	rsc: Resource;
+	offset?: Position;
+	css?: CSSProperties;
+	circles?: number = 1;
+	tileCss?: CSSProperties;
 }
 ```
 
-### css
+### `size`
+
+This size is the width and height in pixels that the component will have.
+
+### `view-size`
+
+When received, the component will overwrite the `size` attribute, but maintain the resource scaled and position values.
+
+### `color`
+
+Sets the background color when represented by one side or to all sides.
+
+The values can be any valid CSS color.
+
+### `rsc`
+
+The resource to be displayed.
+
+### `offset`
+
+It's an adjustment of the image position in pixels based on the top and left.
+
+### `css`
 
 Object with CSS styles in camel case to apply to component.
 
-- **Type:** `Object`
-- **Required:** `false`
+### `circles`
 
-### tile-css
+The number of circles the vortex will be made of.
+
+### `tile-css`
 
 Object with CSS styles in camel case to be applied to all tiles.
 
-- **Type:** `Object`
-- **Required:** `false`
-
 ## Methods
 
-### setCss(css)
+``` ts
+// Set CSS styles to the grid
+setCss(css: CSSProperties): void
 
-Set CSS styles to the image.
+// Runs a function transform to each tile
+transform(cb: Function(tile: any, index: number)): void
 
-- css
-  - Description: an object with the CSS attributes in **camel case** and values.
-  - Type: `Object`
+$vortex.transform((tile: any, index: number) => {
+   tile.transform({
+      transition: `all 300ms ease ${i * 100}`,
+      opacity: 0,
+   });
+});
 
-### transform(css)
+// Show the cube, setting `visibility` to `visible`
+show(): void
 
-Sets the CSS styles to be transformed to within a transition.
-
-- css
-  - Description: an object with the CSS attributes in **camel case** and values.
-  - Type: `Object`
-
-### show()
-
-Show the image, setting `visibility` to `visible`.
-
-### hide()
-
-Hide the image, setting `visibility` to `hidden`.
- -->
+// Hide the cube, setting `visibility` to `hidden`
+hide(): void
+```

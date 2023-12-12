@@ -12,7 +12,7 @@ A concentric effect is performed by rotating the image converted into circles in
 
 | Name | Type | Default |
 |------|------|---------|
-| circles | Numeric | 7 |
-| tileDuration | Numeric | 800 |
-| tileDelay | Numeric | 150 |
-| easing | String | linear |
+| circles | number | 7 |
+| tileDuration | number | 800 |
+| tileDelay | number | 150 |
+| easing | string | linear |

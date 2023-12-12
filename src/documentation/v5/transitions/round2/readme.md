@@ -10,8 +10,8 @@ Panels start to round vertically revealing the next image in upper arrow form le
 
 | Name         | Type    | Default |
 | ------------ | ------- | ------- |
-| rows         | Numeric |         |
-| cols         | Numeric |         |
-| tileDuration | Numeric | 800     |
-| tileDelay    | Numeric | 100     |
+| rows         | number |         |
+| cols         | number |         |
+| tileDuration | number | 800     |
+| tileDelay    | number | 100     |
 | easing       | String  | linear  |

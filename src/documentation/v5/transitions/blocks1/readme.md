@@ -10,8 +10,8 @@ The image is split in blocks that shrink and fade out randomly.
 
 | Name         | Type    | Default |
 | ------------ | ------- | ------- |
-| rows         | Numeric |         |
-| cols         | Numeric |         |
-| tileDuration | Numeric | 300     |
-| tileDelay    | Numeric | 1000    |
+| rows         | number |         |
+| cols         | number |         |
+| tileDuration | number | 300     |
+| tileDelay    | number | 1000    |
 | easing       | String  | linear  |

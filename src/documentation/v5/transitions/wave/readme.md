@@ -10,8 +10,8 @@ Makes the image 3D and divides it in slices that turn vertically to display the 
 
 | Name         | Type   | Default  |
 | ------------ | ------ | -------- |
-| numCols      | Number |          |
-| tileDuration | Number | 800      |
-| tileDelay    | Number | 150      |
-| sideColor    | String | #333     |
-| easing       | String | ease-out |
+| numCols      | number |          |
+| tileDuration | number | 800      |
+| tileDelay    | number | 150      |
+| sideColor    | string | #333     |
+| easing       | string | ease-out |

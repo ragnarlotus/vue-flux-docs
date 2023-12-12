@@ -8,12 +8,14 @@ sidebarDepth: 0
 
 The image is split in blocks that shrink and fade out in wave from a corner to the opposite.
 
+[Demo](../../../demos/transitions/blocks2)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| rows | Numeric | 8 |
-| cols | Numeric | 8 |
-| tileDuration | Numeric | 800 |
-| tileDelay | Numeric | 80 |
-| easing | String | ease |
+| rows | number | 8 |
+| cols | number | 8 |
+| tileDuration | number | 800 |
+| tileDelay | number | 80 |
+| easing | string | ease |

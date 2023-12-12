@@ -12,5 +12,5 @@ Fades, zoom and moves current image to next.
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1500 |
-| easing | String | linear |
+| totalDuration | number | 1500 |
+| easing | string | linear |

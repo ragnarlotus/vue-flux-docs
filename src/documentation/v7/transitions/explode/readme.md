@@ -8,12 +8,14 @@ sidebarDepth: 0
 
 The image starts to explode from the center to outside.
 
+[Demo](../../../demos/transitions/explode)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| rows | Numeric | 9 |
-| cols | Numeric | 9 |
-| tileDuration | Numeric | 300 |
-| tileDelay | Numeric | 100 |
-| easing | String | linear |
+| rows | number | 9 |
+| cols | number | 9 |
+| tileDuration | number | 300 |
+| tileDelay | number | 100 |
+| easing | string | linear |

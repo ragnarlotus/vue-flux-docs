@@ -10,7 +10,7 @@ From outside to inside the image is being cropped like in a camera lens.
 
 | Name         | Type    | Default |
 | ------------ | ------- | ------- |
-| numCircles   | Numeric |         |
-| tileDuration | Numeric | 400     |
-| tileDelay    | Numeric | 80      |
+| numCircles   | number |         |
+| tileDuration | number | 400     |
+| tileDelay    | number | 80      |
 | easing       | String  | ease    |

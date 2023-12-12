@@ -10,8 +10,8 @@ The image is split in blocks that shrink and fade out in wave from a corner to t
 
 | Name         | Type    | Default |
 | ------------ | ------- | ------- |
-| rows         | Numeric |         |
-| cols         | Numeric |         |
-| tileDuration | Numeric | 800     |
-| tileDelay    | Numeric | 80      |
+| rows         | number |         |
+| cols         | number |         |
+| tileDuration | number | 800     |
+| tileDelay    | number | 80      |
 | easing       | String  | ease    |

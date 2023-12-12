@@ -25,16 +25,16 @@ This are the available options.
 |--------|------|---------|-------------|
 | allowFullscreen | Boolean | false | Allows the slider to be displayed in full screen |
 | allowToSkipTransition | Boolean | true | If enabled you will be able to skip the running transition, otherwise you need to wait to interact again |
-| aspectRatio | String | 16:9 | Aspect ratio to set the slider by `width:height` ratio |
-| autohideTime | Number | 2500 | The time in *ms* that the controls and index buttons remain visible. If set to `0` they will never disappear |
+| aspectRatio | string | 16:9 | Aspect ratio to set the slider by `width:height` ratio |
+| autohideTime | number | 2500 | The time in *ms* that the controls and index buttons remain visible. If set to `0` they will never disappear |
 | autoplay | Boolean | false | Autoplay images when preload finished |
 | bindKeys | Boolean | false | Binds the arrow keys of keyboard to show next or previous |
-| delay | Number | 5000 | The time in *ms* that an image will be displayed before changing to next |
+| delay | number | 5000 | The time in *ms* that an image will be displayed before changing to next |
 | enableGestures | Boolean | false | Define if in touchable screens should use gestures instead of showing control and index buttons |
 | infinite | Boolean | true | The slider will start over when reaches the last image, otherwise will stop |
 | lazyLoad | Boolean | true | Enables or disables lazy loading of images. If disabled, transitions will not begin until all images have been loaded |
-| lazyLoadAfter | Number | 3 | Indicates how many images have to be loaded before starting to load the rest in background |
-| path | String | | The images common path, which will be prepended to images URL |
+| lazyLoadAfter | number | 3 | Indicates how many images have to be loaded before starting to load the rest in background |
+| path | string | | The images common path, which will be prepended to images URL |
 
 This is the default options schema:
 

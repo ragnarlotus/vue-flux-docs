@@ -8,9 +8,11 @@ sidebarDepth: 0
 
 The image falls in front displaying next image.
 
+[Demo](../../../demos/transitions/fall)
+
 ## Options
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1600 |
-| easing | String | ease-in |
+| totalDuration | number | 1600 |
+| easing | string | ease-in |

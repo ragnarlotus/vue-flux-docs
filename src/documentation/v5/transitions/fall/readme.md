@@ -10,5 +10,5 @@ The image falls in front displaying next image.
 
 | Name          | Type    | Default |
 | ------------- | ------- | ------- |
-| totalDuration | Numeric | 1600    |
+| totalDuration | number | 1600    |
 | easing        | String  | ease-in |

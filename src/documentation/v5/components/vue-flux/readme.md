@@ -20,7 +20,7 @@ The component has the following attributes.
 | options | Object | false | An object containing the slider options |
 | transitions | Object | true | An object defined with the wanted transitions |
 | transitionOptions | Object | false | The options for each transition |
-| path | String | false | Base path of the images |
+| path | string | false | Base path of the images |
 | images | Array | false | An array with the images URL |
 | captions | Array | false | An array with captions to be displayed on each image |
 
@@ -49,8 +49,8 @@ Example:
 | bindKeys | Boolean | false | Binds the arrow keys to show next or previous |
 | delay | Integer | 5000 | The time in ms that an image will be displayed before changing to next |
 | autohideTime | Integer | 1500 | The time in ms that the controls and index button will stay until disappear. If set to 0 they will never disappear |
-| width | String | 100% | Defines the slider width |
-| height | String | auto | Defines the slider height |
+| width | string | 100% | Defines the slider width |
+| height | string | auto | Defines the slider height |
 
 ## Size
 
@@ -126,7 +126,7 @@ This are the component properties that you can access programatically.
 | size | Object | Size in pixels having width and height |
 | loaded | Boolean | Determines if the images have been loaded and slider is initialized |
 | transition | Object | Manages current and last transition |
-| imagesLoaded | Number | Number of images loaded |
+| imagesLoaded | number | Number of images loaded |
 | loaded | Boolean | Indicates when all the images have been preloaded |
 | properties | Array | Array of objects that have the images properties |
 | touchable | Boolean | Returns if the screen is touchable |
@@ -136,9 +136,9 @@ This are the component properties that you can access programatically.
 | pagination | Component | The pagination component |
 | mask | HTML | References the slider mask container where the images are displayed |
 | sizePx | Object | An object having width and height in pixels with the 'px' unit |
-| loadPct | Number | Percentage of images already loaded |
-| nextTransition | String | Name of the next transition |
-| direction | String | By default is 'right', and 'left' when next image is before the current |
+| loadPct | number | Percentage of images already loaded |
+| nextTransition | string | Name of the next transition |
+| direction | string | By default is 'right', and 'left' when next image is before the current |
 
 ## References
 

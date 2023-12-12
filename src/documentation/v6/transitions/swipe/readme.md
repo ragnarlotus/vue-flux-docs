@@ -12,5 +12,5 @@ Swipes the image to display next like uncovered with a curtain.
 
 | Name | Type | Default |
 |------|------|---------|
-| totalDuration | Numeric | 1400 |
-| easing | String | ease-in-out |
+| totalDuration | number | 1400 |
+| easing | string | ease-in-out |
