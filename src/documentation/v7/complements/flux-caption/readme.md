@@ -2,28 +2,20 @@
 prev: false
 ---
 
-WIP
-
-<!-- 
 # FluxCaption
-
-::: warning
-
-I am using here the latest 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
-
-:::
 
 ## Description
 
-The included component to display image captions.
-
-::: tip
-
-Captions are passed to vue-flux component instead of this because they are used in multiple complements and will be available even if this component is not used.
-
-:::
+The included component to display resource captions.
 
 ## Attributes
+
+``` ts
+interface Props {
+	currentResource: null | ResourceIndex;
+	currentTransition: null | TransitionIndex;
+}
+```
 
 ### slider
 
@@ -31,8 +23,6 @@ Is the VueFlux instance component from which to read the captions.
 
 If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
 
-- **Type:** `VueFlux`
-- **Required:** `false`
 
 #### Example of caption inside vue-flux
 
@@ -122,50 +112,6 @@ export default {
 }
 ```
 
-## Properties
-
-### vf
-
-The `VueFlux` instance component.
-
-- **Type:** `VueFlux`
-
-### caption
-
-Is the caption corresponding to the image being displayed at the moment.
-
-This value will be empty string while preloading and while there is a transition running.
-
-- **Type:** `String`
-
-### captions
-
-The array of captions passed originally to the VueFlux component.
-
-- **Type:** `Array`
-
-## Methods
-
-### getCaption(index)
-
-Gets the caption element corresponding to the index captions array.
-
-If no index defined will return the one of current image.
-
-- index
-  - Type: `Number`
-  - Required: `false`
-
-### getCaptionText(index)
-
-Gets the caption text corresponding to the index captions array.
-
-If no index defined will return the one of current image.
-
-- index
-  - Type: `Number`
-  - Required: `false`
-
 ## Templating
 
 You can customize how the captions are displayed. That is because this component has a default slot, so you can pass a custom component or template code.
@@ -217,4 +163,3 @@ captionProps = {
    </template>
 </vue-flux>
 ```
- -->

@@ -1,11 +1,12 @@
 ---
-prev: transitions/
+prev: transitions
 ---
 
 # Custom transitions
 
 WIP
-<!-- 
+
+<!--
 Transitions use the mixin `BaseTransition` to perform basic and shared logic.
 
 ## Data

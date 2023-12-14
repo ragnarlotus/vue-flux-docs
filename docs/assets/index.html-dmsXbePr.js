@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-f06e186a","path":"/documentation/v7/complements/flux-caption/","title":"","lang":"en-US","frontmatter":{"prev":false},"headers":[],"git":{},"filePathRelative":"documentation/v7/complements/flux-caption/readme.md"}');export{e as data};

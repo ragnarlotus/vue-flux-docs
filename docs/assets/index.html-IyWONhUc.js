@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-c154e826","path":"/documentation/v7/custom-transitions/","title":"Custom transitions","lang":"en-US","frontmatter":{"prev":"transitions/"},"headers":[],"git":{},"filePathRelative":"documentation/v7/custom-transitions/readme.md"}');export{t as data};

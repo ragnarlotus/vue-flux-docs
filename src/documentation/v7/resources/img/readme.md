@@ -13,7 +13,10 @@ Renders an image
 constructor(
 	src: string,
 	caption: string = '',
-	resizeType: ResizeType = 'fill'
+	resizeType: ResizeType = 'fill',
+	// Background color is only usefull when the resizeType is fit,
+	// so it fills the gaps of VueFlux size, and does not look odd when a transitions runs
+	backgroundColor: null | string = null
 )
 ```
 

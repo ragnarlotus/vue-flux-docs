@@ -1,9 +1,9 @@
 <script setup lang="ts">
 	import Demo from '../Demo.vue';
-	import { Fade, Cube, Book, Wave, Round2 } from 'vue-flux';
+	import { Fade, Cube, Book, Wave, Round2, VueFluxOptions } from 'vue-flux';
 
-	const options = {
-		autohideTime: 0,
+	const options: VueFluxOptions = {
+		delay: 3000,
 		allowFullscreen: true,
 		autoplay: true,
 	};

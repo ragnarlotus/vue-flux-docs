@@ -397,6 +397,10 @@ export default defineUserConfig({
 					link: '/documentation/v7/installation-and-usage',
 				},
 				{
+					text: 'Options VS Composition',
+					link: '/documentation/v7/options-vs-composition',
+				},
+				{
 					text: 'SSR with Nuxt',
 					link: '/documentation/v7/ssr-with-nuxt',
 				},

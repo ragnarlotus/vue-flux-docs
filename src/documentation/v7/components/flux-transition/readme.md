@@ -11,7 +11,7 @@ Component to display a transition animation between two resources.
 
 ## Attributes
 
-``` ts
+```ts
 interface FluxTransitionProps {
 	size: Size;
 	transition: Object;
@@ -54,18 +54,15 @@ For custom transitions, will apply the same.
 
 ## Methods
 
-``` ts
+```ts
 // This method will call the method `onPlay`of the transition component, starting the transition.
 async start(): void
-
-// the number in *ms* the transition will last.
-duration: number
 ```
 
-## Events
+## Emits
 
-| Name | Parameters | Description |
-|------|------------|-------------|
+| Name    | Parameters                                                                            | Description                                                                            |
+| ------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `ready` | `transition: Object, from: Resource, to: Resource, options: Object, duration: number` | Will be fired when the transition is ready to play because the components are rendered |
-| `start` | `transition: Object, from: Resource, to: Resource, options: Object, duration: number` | Will let know when transition has started |
-| `end` | `transition: Object, from: Resource, to: Resource, options: Object, duration: number` | Fired when transition ended |
+| `start` | `transition: Object, from: Resource, to: Resource, options: Object, duration: number` | Will let know when transition has started                                              |
+| `end`   | `transition: Object, from: Resource, to: Resource, options: Object, duration: number` | Fired when transition ended                                                            |
