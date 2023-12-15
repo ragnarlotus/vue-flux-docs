@@ -9,7 +9,7 @@ Resource component made of concentric circles.
 
 [Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-vortex.html)
 
-## Attributes
+## Props
 
 ``` ts
 interface FluxVortexProps {

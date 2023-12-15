@@ -24,7 +24,7 @@ If you want to define a size, avoid using `width` and `height` directly in the s
 
 :::
 
-## Attributes
+## Props
 
 All the attributes are reactive, so if you change their value at any moment, the slider will be updated automatically.
 
@@ -223,6 +223,9 @@ play(resourceIndex: number | Direction = Directions.next, delay?: number): void
 
 // Stops playing images and remains in the current.
 async stop(cancelTransition: boolean = false): void
+
+// Gets the player controller
+getPlayer(): Player
 ```
 
 ## Slots

@@ -9,7 +9,7 @@ Component composed by up to 6 resources that forms a cube.
 
 [Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-cube.html)
 
-## Attributes
+## Props
 
 ``` ts
 interface FluxCubeProps {

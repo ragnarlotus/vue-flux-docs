@@ -9,7 +9,7 @@ Component to display a transition animation between two resources.
 
 [Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-transition.html)
 
-## Attributes
+## Props
 
 ```ts
 interface FluxTransitionProps {

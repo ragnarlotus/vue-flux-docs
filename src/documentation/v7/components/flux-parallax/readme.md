@@ -15,7 +15,7 @@ Do not forget to set the height with CSS if has no content, otherwise you probab
 
 [Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-parallax.html)
 
-## Attributes
+## Props
 
 ``` ts
 interface FluxParallaxProps {

@@ -9,7 +9,7 @@ The FluxImage component represents the lowest component of library and displays 
 
 [Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-image.html)
 
-## Attributes
+## Props
 
 ``` ts
 interface FluxImageProps {

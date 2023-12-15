@@ -9,7 +9,7 @@ Component to make grid of resource or cube.
 
 [Demo](http://ragnarlotus.github.io/vue-flux-docs/demos/components/flux-grid.html)
 
-## Attributes
+## Props
 
 ``` ts
 interface FluxGridProps {

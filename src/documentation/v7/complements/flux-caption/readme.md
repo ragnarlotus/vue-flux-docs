@@ -8,7 +8,7 @@ prev: false
 
 The included component to display resource captions.
 
-## Attributes
+## Props
 
 ``` ts
 interface Props {
@@ -17,149 +17,112 @@ interface Props {
 }
 ```
 
-### slider
+### currentResource
 
-Is the VueFlux instance component from which to read the captions.
+Is the full (because it has all the details) current resource index having the following schema:
 
-If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
-
-
-#### Example of caption inside vue-flux
-
-``` html
-<vue-flux
-   :options="vfOptions"
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions">
-
-   <template v-slot:caption>
-      <flux-caption />
-   </template>
-</vue-flux>
+``` ts
+interface ResourceIndex {
+	index: number;
+	rsc: Resource;
+	options: {
+		delay?: number;
+		stop?: boolean;
+	};
+}
 ```
 
-``` js
+You can get it through the controller `Player` from [VueFlux](../components/vue-flux#methods)
+
+#### Example of usage
+
+``` ts
+import { ref, shallowReactive } from 'vue';
 import {
    VueFlux,
-   FluxCaption
+   FluxCaption,
+   Img,
+   Book,
+   Zip,
 } from 'vue-flux';
+import 'vue-flux/style.css';
 
-export default {
-   components: {
-      VueFlux,
-      FluxCaption,
-   },
+const vfOptions = shallowReactive({
+   autoplay: true,
+});
 
-   data: () => ({
-      vfOptions: {
-         autoplay: true
-      },
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'slide' ],
-      vfCaptions: [
-         'Image URL1 caption',
-         'Image URL2 caption',
-         'Image URL3 caption'
-      ],
-   }),
-}
+const vfRscs = shallowReactive([
+   new Img('URL1' 'img 1'),
+   new Img('URL2' 'img 2'),
+   new Img('URL3' 'img 3'),
+]);
+
+const vfTransitions = shallowReactive([Book, Zip]);
+```
+
+``` html
+<VueFlux
+   :options="vfOptions"
+   :rscs="vfRscs"
+   :transitions="vfTransitions"
+>
+   <template #caption="captionProps">
+      <FluxCaption v-bind="captionProps" />
+   </template>
+</VueFlux>
 ```
 
 #### Example of caption outside vue-flux
 
-``` html
-<vue-flux
-   :options="vfOptions"
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
-</vue-flux>
-
-<flux-caption v-if="mounted" :slider="$refs.slider" />
-```
-
-``` js
+``` ts
+import { ref, shallowReactive, onMounted } from 'vue';
 import {
    VueFlux,
    FluxCaption,
+   Img,
+   Book,
+   Zip,
 } from 'vue-flux';
+import 'vue-flux/style.css';
 
-export default {
-   components: {
-      VueFlux,
-      FluxCaption,
-   },
+const $vueFlux = ref();
+const playerController = ref(null)
 
-   data: () => ({
-      mounted: false,
-      vfOptions: {
-         autoplay: true,
-      },
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'slide' ],
-      vfCaptions: [
-         'Image URL1 caption',
-         'Image URL2 caption',
-         'Image URL3 caption',
-      ],
-   }),
+const vfOptions = shallowReactive({
+   autoplay: true,
+});
 
-   mounted() {
-      this.mounted = true;
-   },
-}
+const vfRscs = shallowReactive([
+   new Img('URL1' 'img 1'),
+   new Img('URL2' 'img 2'),
+   new Img('URL3' 'img 3'),
+]);
+
+const vfTransitions = shallowReactive([Book, Zip]);
+
+onMounted(() => {
+	playerController.value = $vueFlux.getPlayer();
+});
+```
+
+``` html
+<VueFlux
+   :options="vfOptions"
+   :rscs="vfRscs"
+   :transitions="vfTransitions"
+	ref="$vueFlux"
+>
+</VueFlux>
+
+<FluxCaption
+	v-if="playerController"
+	:currentResource="playerController.resource.current"
+	:currentTransition="playerController.transition.current"
+/>
 ```
 
 ## Templating
 
 You can customize how the captions are displayed. That is because this component has a default slot, so you can pass a custom component or template code.
 
-This slot will receive an object having the following schema:
-
-``` js
-captionProps = {
-   caption: String | Object,
-   text: String,
-}
-```
-
-- caption: is the element of the captions array corresponding to the current image.
-- text: is the caption as text. This is specially useful if you mix captions as `String` and as `Object`.
-
-#### Example using custom component
-
-``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
-
-   <template v-slot:caption>
-      <flux-caption v-slot="captionProps">
-         <custom-caption caption="captionProps" />
-      </flux-caption>
-   </template>
-</vue-flux>
-```
-
-#### Example using custom structure
-
-``` html
-<vue-flux
-   :images="vfImages"
-   :transitions="vfTransitions"
-   :captions="vfCaptions"
-   ref="slider">
-
-   <template v-slot:caption>
-      <flux-caption v-slot="captionProps">
-         <a :href="captionProps.caption.url" class="flux-caption">
-            {{ captionProps.text }}
-         </a>
-      </flux-caption>
-   </template>
-</vue-flux>
-```
+You can see it in the [demo](../../../../demos/complements/flux-caption.md)
