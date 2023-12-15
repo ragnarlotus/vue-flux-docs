@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-934f5092","path":"/documentation/v7/complements/flux-controls/","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"filePathRelative":"documentation/v7/complements/flux-controls/readme.md"}');export{t as data};

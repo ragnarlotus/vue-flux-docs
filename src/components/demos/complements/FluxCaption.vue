@@ -132,7 +132,11 @@ const transitions = shallowReactive([
 	Cube,
 	Warp,
 	Wave,
-]);`;
+]);
+
+function getSearch(caption) {
+	return 'https://www.google.com/search?q='+ caption
+}`;
 
 		return Prism.highlight(
 			code.trim(),
@@ -159,7 +163,7 @@ const transitions = shallowReactive([
 		<FluxControls v-bind="controlsProps">
 			<h3>
 				<a
-					:href="'https://www.google.com/search?q='+ captionProps.currentResource?.rsc.caption"
+					:href="getSearch(captionProps.currentResource?.rsc.caption)"
 					target="_blank"
 				>
 					{{ captionProps.currentResource?.rsc.caption }}

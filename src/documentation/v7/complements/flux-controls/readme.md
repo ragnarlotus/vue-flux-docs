@@ -1,9 +1,6 @@
 ---
 ---
 
-WIP
-
-<!-- 
 # FluxControls
 
 ::: warning
@@ -144,4 +141,3 @@ If no index defined will return the one of current image.
 - index
   - Type: `Number`
   - Required: `false`
- -->

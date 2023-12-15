@@ -116,8 +116,8 @@ onMounted(() => {
 
 <FluxCaption
 	v-if="playerController"
-	:currentResource="playerController.resource.current"
-	:currentTransition="playerController.transition.current"
+	:currentResource="playerController..value.resource.current"
+	:currentTransition="playerController.value.transition.current"
 />
 ```
 
