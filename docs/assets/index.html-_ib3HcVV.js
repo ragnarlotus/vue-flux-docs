@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-a91eea42","path":"/documentation/v7/complements/flux-index/","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"filePathRelative":"documentation/v7/complements/flux-index/readme.md"}');export{e as data};

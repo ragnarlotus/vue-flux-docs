@@ -34,6 +34,22 @@ interface ResourceIndex {
 
 You can get it through the controller `Player` from [VueFlux](../components/vue-flux#methods)
 
+### currentTransition
+
+Is the full (because it has all the details) current resource index having the following schema:
+
+``` ts
+interface TransitionIndex {
+	index: number;
+	component: Component;
+	options: {
+		direction?: Direction;
+	};
+}
+```
+
+You can get it through the controller `Player` from [VueFlux](../components/vue-flux#methods)
+
 #### Example of usage
 
 ``` ts
@@ -47,24 +63,24 @@ import {
 } from 'vue-flux';
 import 'vue-flux/style.css';
 
-const vfOptions = shallowReactive({
+const options = shallowReactive({
    autoplay: true,
 });
 
-const vfRscs = shallowReactive([
+const rscs = shallowReactive([
    new Img('URL1' 'img 1'),
    new Img('URL2' 'img 2'),
    new Img('URL3' 'img 3'),
 ]);
 
-const vfTransitions = shallowReactive([Book, Zip]);
+const transitions = shallowReactive([Book, Zip]);
 ```
 
 ``` html
 <VueFlux
-   :options="vfOptions"
-   :rscs="vfRscs"
-   :transitions="vfTransitions"
+   :options="options"
+   :rscs="rscs"
+   :transitions="transitions"
 >
    <template #caption="captionProps">
       <FluxCaption v-bind="captionProps" />
@@ -72,7 +88,7 @@ const vfTransitions = shallowReactive([Book, Zip]);
 </VueFlux>
 ```
 
-#### Example of caption outside vue-flux
+#### Example of caption outside VueFlux
 
 ``` ts
 import { ref, shallowReactive, onMounted } from 'vue';
@@ -86,38 +102,38 @@ import {
 import 'vue-flux/style.css';
 
 const $vueFlux = ref();
-const playerController = ref(null)
 
-const vfOptions = shallowReactive({
+const options = shallowReactive({
    autoplay: true,
 });
 
-const vfRscs = shallowReactive([
+const rscs = shallowReactive([
    new Img('URL1' 'img 1'),
    new Img('URL2' 'img 2'),
    new Img('URL3' 'img 3'),
 ]);
 
-const vfTransitions = shallowReactive([Book, Zip]);
+const transitions = shallowReactive([Book, Zip]);
+
+const player = ref(null);
 
 onMounted(() => {
-	playerController.value = $vueFlux.getPlayer();
+	player.value = $vueFlux.value.getPlayer();
 });
 ```
 
 ``` html
 <VueFlux
-   :options="vfOptions"
-   :rscs="vfRscs"
-   :transitions="vfTransitions"
 	ref="$vueFlux"
->
-</VueFlux>
+	:options="options"
+	:rscs="rscs"
+	:transitions="transitions"
+/>
 
 <FluxCaption
-	v-if="playerController"
-	:currentResource="playerController..value.resource.current"
-	:currentTransition="playerController.value.transition.current"
+	v-if="player"
+	:currentResource="player.resource.current"
+	:currentTransition="player.transition.current"
 />
 ```
 

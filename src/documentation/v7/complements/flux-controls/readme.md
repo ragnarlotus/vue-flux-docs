@@ -3,141 +3,113 @@
 
 # FluxControls
 
-::: warning
-
-I am using here the latest 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
-
-:::
-
 ## Description
 
 The included component to display controls with the buttons previous, next, play and pause.
 
-## Attributes
+## Props
 
-### slider
+``` ts
+interface Props {
+	mouseOver?: boolean | Ref<boolean>;
+	player: Player;
+	}
+```
 
-Is the VueFlux instance component from which to read the captions.
+### mouseOver
 
-If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
+A reactive parameter to indicate when the mouse is over so it should be displayed.
 
-- **Type:** `VueFlux`
-- **Required:** `false`
+If this parameter is not passed, controls will be displayed constantly.
 
-#### Example of controls inside vue-flux
+### player
+
+The player controller. You can get it from [VueFlux](../components/vue-flux#methods)
+
+#### Example of usage
+
+``` ts
+import { ref, shallowReactive } from 'vue';
+import {
+	VueFlux,
+	FluxControls,
+	Img,
+	Book,
+	Zip,
+} from 'vue-flux';
+import 'vue-flux/style.css';
+
+const options = shallowReactive({
+	autoplay: true,
+});
+
+const rscs = shallowReactive([
+	new Img('URL1' 'img 1'),
+	new Img('URL2' 'img 2'),
+	new Img('URL3' 'img 3'),
+]);
+
+const transitions = shallowReactive([Book, Zip]);
+```
 
 ``` html
-<vue-flux
-   :options="vfOptions"
-   :images="vfImages"
-   :transitions="vfTransitions">
-
-   <template v-slot:controls>
-      <flux-controls />
-   </template>
-</vue-flux>
+<VueFlux
+	:options="options"
+	:rscs="rscs"
+	:transitions="transitions"
+>
+	<template #controls="controlsProps">
+		<FluxControls v-bind="controlsProps" />
+	</template>
+</VueFlux>
 ```
+
+#### Example of controls outside VueFlux
 
 ``` js
+import { ref, shallowReactive, onMounted } from 'vue';
 import {
-   VueFlux,
-   FluxControls
+	VueFlux,
+	FluxControls,
+	Img,
+	Book,
+	Zip,
 } from 'vue-flux';
+import 'vue-flux/style.css';
 
-export default {
-   components: {
-      VueFlux,
-      FluxControls,
-   },
+const $vueFlux = ref();
 
-   data: () => ({
-      vfOptions: {
-         autoplay: true
-      },
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'slide' ],
-   }),
-}
+const options = shallowReactive({
+	autoplay: true,
+});
+
+const rscs = shallowReactive([
+	new Img('URL1' 'img 1'),
+	new Img('URL2' 'img 2'),
+	new Img('URL3' 'img 3'),
+]);
+
+const transitions = shallowReactive([Book, Zip]);
+
+const mounted = ref(false);
+
+onMounted(() => {
+	mounted.value = true;
+});
 ```
-
-#### Example of controls outside vue-flux
 
 ``` html
-<vue-flux
-   :options="fluxOptions"
-   :images="fluxImages"
-   :transitions="fluxTransitions"
-   ref="slider">
-</vue-flux>
+<div>
+	<VueFlux
+		ref="$vueFlux"
+		:options="options"
+		:rscs="rscs"
+		:transitions="transitions"
+	/>
 
-<flux-controls v-if="mounted" :slider="$refs.slider" />
+	<FluxControls
+		v-if="mounted"
+		:player="$vueFlux.getPlayer()"
+	/>
+</div>
 ```
-
-``` js
-import {
-   VueFlux,
-   FluxControls,
-} from 'vue-flux';
-
-export default {
-   components: {
-      VueFlux,
-      FluxControls,
-   },
-
-   data: () => ({
-      mounted: false,
-      vfOptions: {
-         autoplay: true,
-      },
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'slide' ],
-   }),
-
-   mounted() {
-      this.mounted = true;
-   },
-}
-```
-
-## Properties
-
-### vf
-
-The `VueFlux` instance component.
-
-- **Type:** `VueFlux`
-
-### display
-
-Will return `true` if the slider is loaded and mouse moved over.
-
-- **Type:** `Boolean`
-
-### captions
-
-The array of captions passed originally to the VueFlux component.
-
-- **Type:** `Array`
-
-## Methods
-
-### getCaption(index)
-
-Gets the caption element corresponding to the index captions array.
-
-If no index defined will return the one of current image.
-
-- index
-  - Type: `Number`
-  - Required: `false`
-
-### getCaptionText(index)
-
-Gets the caption text corresponding to the index captions array.
-
-If no index defined will return the one of current image.
-
-- index
-  - Type: `Number`
-  - Required: `false`

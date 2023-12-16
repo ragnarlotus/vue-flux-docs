@@ -46,24 +46,24 @@ import 'vue-flux/style.css';
 
 const $vueFlux = ref();
 
-const vfOptions = shallowReactive({
+const options = shallowReactive({
    autoplay: true,
 });
 
-const vfRscs = shallowReactive([
+const rscs = shallowReactive([
    new Img('URL1' 'img 1'),
    new Img('URL2' 'img 2'),
    new Img('URL3' 'img 3'),
 ]);
 
-const vfTransitions = shallowReactive([Book, Zip]);
+const transitions = shallowReactive([Book, Zip]);
 ```
 
 ``` html
 <VueFlux
-   :options="vfOptions"
-   :rscs="vfRscs"
-   :transitions="vfTransitions"
+   :options="options"
+   :rscs="rscs"
+   :transitions="transitions"
    ref="$vueFlux">
 
    <template #preloader="preloaderProps">

@@ -1,15 +1,7 @@
 ---
 ---
 
-WIP
-
-<!-- # FluxIndex
-
-::: warning
-
-I am using here the latest 2.6 vue syntax for slots, but if your Vue version is older check [Named-Slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots) to see how slots are used in previous versions.
-
-:::
+# FluxIndex
 
 ## Description
 
@@ -19,150 +11,115 @@ You can place it inside the vue-flux component or outside and give it any style 
 
 It will display a button when no transition is active nor mouse over.
 
-The index will auto hide after choosing an image with default styles.
+The index will auto hide after choosing an image.
 
 The current image will have class `current`.
 
 Placing the mouse over will display the caption if defined.
 
-## Attributes
+## Props
 
-### slider
-
-Is the VueFlux instance component from which to read the captions.
-
-If you place this complement as a direct child in the VueFlux component you don't need to pass this attribute.
-
-- **Type:** `VueFlux`
-- **Required:** `false`
-
-#### Example of index inside vue-flux
-
-``` html
-<vue-flux
-   :options="vfOptions"
-   :images="vfImages"
-   :transitions="vfTransitions">
-
-   <template v-slot:index>
-      <flux-index />
-   </template>
-</vue-flux>
-```
-
-``` javascript
-import {
-   VueFlux,
-   FluxIndex,
-} from 'vue-flux';
-
-export default {
-   components: {
-      VueFlux,
-      FluxIndex,
-   },
-
-   data: () => ({
-      vfOptions: {
-         autoplay: true,
-      },
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'slide' ],
-   }),
+``` ts
+interface Props {
+	mouseOver?: boolean | Ref<boolean>;
+	displaySize: Size;
+	player: Player;
 }
 ```
 
-#### Example of index outside vue-flux
+### mouseOver
 
-``` html
-<vue-flux
-   :options="vfOptions"
-   :images="vfImages"
-   :transitions="vfTransitions"
-   ref="slider">
-</vue-flux>
+A reactive parameter to indicate when the mouse is over so it should be displayed.
 
-<flux-index v-if="mounted" :slider="$refs.slider" />
+If this parameter is not passed, it will be displayed constantly.
+
+### displaySize
+
+Slider component size from which the thumbs size will be calculated.
+
+### player
+
+The player controller. You can get it from [VueFlux](../components/vue-flux#methods)
+
+#### Example of usage
+
+``` ts
+import { ref, shallowReactive } from 'vue';
+import {
+	VueFlux,
+	FluxIndex,
+	Img,
+	Book,
+	Zip,
+} from 'vue-flux';
+import 'vue-flux/style.css';
+
+const options = shallowReactive({
+	autoplay: true,
+});
+
+const rscs = shallowReactive([
+	new Img('URL1' 'img 1'),
+	new Img('URL2' 'img 2'),
+	new Img('URL3' 'img 3'),
+]);
+
+const transitions = shallowReactive([Book, Zip]);
 ```
 
-``` javascript
+``` html
+<VueFlux
+	:options="options"
+	:rscs="rscs"
+	:transitions="transitions"
+>
+	<template #index="indexProps">
+		<FluxIndex v-bind="indexProps" />
+	</template>
+</VueFlux>
+```
+
+#### Example of index outside VueFlux
+
+``` ts
+import { ref, shallowReactive, onMounted } from 'vue';
 import {
    VueFlux,
    FluxIndex,
+   Img,
+   Book,
+   Zip,
 } from 'vue-flux';
+import 'vue-flux/style.css';
 
-export default {
-   components: {
-      VueFlux,
-      FluxIndex,
-   },
+const $vueFlux = ref();
 
-   data: () => ({
-      mounted: false,
-      vfOptions: {
-         autoplay: true,
-      },
-      vfImages: [ 'URL1', 'URL2', 'URL3' ],
-      vfTransitions: [ 'fade', 'slide' ],
-   }),
+const options = shallowReactive({
+   autoplay: true,
+});
 
-   mounted() {
-      this.mounted = true;
-   },
-}
+const rscs = shallowReactive([
+   new Img('URL1' 'img 1'),
+   new Img('URL2' 'img 2'),
+   new Img('URL3' 'img 3'),
+]);
+
+const transitions = shallowReactive([Book, Zip]);
+
+const player = ref(null);
+
+onMounted(() => {
+	player.value = $vueFlux.value.getPlayer();
+});
 ```
 
-## Properties
+``` html
+<VueFlux
+	ref="$vueFlux"
+	:options="options"
+	:rscs="rscs"
+	:transitions="transitions"
+/>
 
-### vf
-
-The `VueFlux` instance component.
-
-- **Type:** `VueFlux`
-
-### display
-
-Will return `true` if the slider is loaded.
-
-- **Type:** `Boolean`
-
-### displayButton
-
-Will return `true` if the mouse moved over.
-
-- **Type:** `Boolean`
-
-### captions
-
-The array of captions passed originally to the VueFlux component.
-
-- **Type:** `Array`
-
-## Methods
-
-### toggle()
-
-Toggles displaying the index of images.
-
-### show()
-
-Shows the images index.
-
-### hide(number)
-
-Hides the images index.
-
-If number specified, the slider will show the image in that position of the current images array.
-
-- number
-  - Type: `Number`
-  - Required: `false`
-
-### show(number)
-
-The slider will show the image in that position of the current images array.
-
-- number
-  - Type: `Number`
-  - Required: `true`
- -->
+<FluxIndex v-if="player" :displaySize="$vueFlux.size" :player="player" />
+```

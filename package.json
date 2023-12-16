@@ -26,11 +26,11 @@
 	},
 	"dependencies": {
 		"prismjs": "^1.29.0",
-		"vue-flux": "^7.0.0-beta.1"
+		"vue-flux": "^7.0.0-beta.2"
 	},
 	"devDependencies": {
 		"@types/prismjs": "^1.26.3",
-		"@vueform/slider": "^2.1.9",
+		"@vueform/slider": "^2.1.10",
 		"@vuepress/plugin-google-analytics": "^2.0.0-rc.0",
 		"@vuepress/plugin-palette": "^2.0.0-rc.0",
 		"@vuepress/plugin-register-components": "^2.0.0-rc.0",

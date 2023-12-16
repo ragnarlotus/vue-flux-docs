@@ -133,19 +133,19 @@ import 'vue-flux/style.css';
 import CustomTransition1 from 'CustomTransition1.vue';
 import CustomTransition2 from 'CustomTransition2.vue';
 
-const vfRscs = shallowReactive([
+const rscs = shallowReactive([
    new Img('URL1' 'img 1'),
    new Img('URL2' 'img 2'),
    new Img('URL3' 'img 3'),
 ]);
 
-const vfTransitions = shallowReactive([Book, Zip, CustomTransition1, CustomTransition2);
+const transitions = shallowReactive([Book, Zip, CustomTransition1, CustomTransition2);
 ```
 
 ``` html
 <VueFlux
-   :rscs="vfRscs"
-   :transitions="vfTransitions">
+   :rscs="rscs"
+   :transitions="transitions">
 </VueFlux>
 ```
 
@@ -180,13 +180,13 @@ import {
 import 'vue-flux/style.css';
 import CustomTransition from 'CustomTransition.vue';
 
-const vfRscs = shallowReactive([
+const rscs = shallowReactive([
    new Img('URL1' 'img 1'),
    new Img('URL2' 'img 2'),
    new Img('URL3' 'img 3'),
 ]);
 
-const vfTransitions = [{
+const transitions = [{
    component: Blinds2D,
    options: {
       tileDuration: 1000,
@@ -204,12 +204,12 @@ const vfTransitions = [{
 
 ``` html
 <VueFlux
-   :rscs="vfRscs"
-   :transitions="vfTransitions">
+   :rscs="rscs"
+   :transitions="transitions">
 </VueFlux>
 ```
 
-## Methods
+## Props and methods
 
 ``` ts
 // Displays the resource specified by number (or 'next' or 'prev') and using the specified transition.
@@ -226,6 +226,9 @@ async stop(cancelTransition: boolean = false): void
 
 // Gets the player controller
 getPlayer(): Player
+
+// The size of the component
+size: Size
 ```
 
 ## Slots

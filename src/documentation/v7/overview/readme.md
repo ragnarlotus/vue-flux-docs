@@ -53,59 +53,59 @@ This one has all the complements, so you can remove the ones you don't want.
 ``` ts
 import { ref, shallowReactive } from 'vue';
 import {
-   VueFlux,
-   FluxCaption,
-   FluxControls,
-   FluxIndex,
-   FluxPagination,
-   FluxPreloader,
-   Img,
-   Book,
-   Zip,
+	VueFlux,
+	FluxCaption,
+	FluxControls,
+	FluxIndex,
+	FluxPagination,
+	FluxPreloader,
+	Img,
+	Book,
+	Zip,
 } from 'vue-flux';
 import 'vue-flux/style.css';
 
 const $vueFlux = ref();
 
-const vfOptions = shallowReactive({
-   autoplay: true,
+const options = shallowReactive({
+	autoplay: true,
 });
 
-const vfRscs = shallowReactive([
-   new Img('URL1' 'img 1'),
-   new Img('URL2' 'img 2'),
-   new Img('URL3' 'img 3'),
+const rscs = shallowReactive([
+	new Img('URL1' 'img 1'),
+	new Img('URL2' 'img 2'),
+	new Img('URL3' 'img 3'),
 ]);
 
-const vfTransitions = shallowReactive([Book, Zip]);
+const transitions = shallowReactive([Book, Zip]);
 ```
 
 ``` html
 <VueFlux
-   :options="vfOptions"
-   :rscs="vfRscs"
-   :transitions="vfTransitions"
-   ref="$vueFlux">
+	:options="options"
+	:rscs="rscs"
+	:transitions="transitions"
+	ref="$vueFlux">
 
-   <template #preloader="preloaderProps">
-      <FluxPreloader v-bind="preloaderProps" />
-   </template>
+	<template #preloader="preloaderProps">
+		<FluxPreloader v-bind="preloaderProps" />
+	</template>
 
-   <template #caption="captionProps">
-      <FluxCaption v-bind="captionProps" />
-   </template>
+	<template #caption="captionProps">
+		<FluxCaption v-bind="captionProps" />
+	</template>
 
-   <template #controls="controlsProps">
-      <FluxControls v-bind="controlsProps" />
-   </template>
+	<template #controls="controlsProps">
+		<FluxControls v-bind="controlsProps" />
+	</template>
 
-   <template #pagination="paginationProps">
-      <FluxPagination v-bind="paginationProps" />
-   </template>
+	<template #pagination="paginationProps">
+		<FluxPagination v-bind="paginationProps" />
+	</template>
 
-   <template #index="indexProps">
-      <FluxIndex v-bind="indexProps" />
-   </template>
+	<template #index="indexProps">
+		<FluxIndex v-bind="indexProps" />
+	</template>
 </VueFlux>
 
 <button @click="$vueFlux.show('next')">NEXT</button>
@@ -159,7 +159,7 @@ const rsc = new Img('URL1' 'img 1');
 
 ``` html
 <FluxParallax :rsc="rsc" style="height: 300px;">
-   <div>CONTENT</div>
+	<div>CONTENT</div>
 </FluxParallax>
 ```
 
