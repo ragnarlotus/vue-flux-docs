@@ -224,7 +224,7 @@ const transitions = shallowReactive([
 			<pre v-html="sourceHtml1" class="language-html" />
 		</div>
 
-		<h2>Custom pagination</h2>
+		<h2>Custom preloader</h2>
 
 		<VueFlux :options="options" :rscs="rscs" :transitions="transitions">
 			<template #preloader="preloaderProps">

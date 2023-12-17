@@ -39,7 +39,7 @@ Slider component size from which the thumbs size will be calculated.
 
 ### player
 
-The player controller. You can get it from [VueFlux](../components/vue-flux#methods)
+The player controller. You can get it from [VueFlux](../components/vue-flux#props-and-methods)
 
 #### Example of usage
 

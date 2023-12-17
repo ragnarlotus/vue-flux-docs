@@ -157,11 +157,11 @@ const transitions = shallowReactive([
 
 	<template #pagination="paginationProps">
 		<FluxPagination v-bind="paginationProps">
-			<template #default="itemProps">
+			<template v-slot="itemProps">
 				<div
 					:class="itemProps.cssClass"
 					:title="itemProps.title"
-					@click="itemProps.onClick()"
+					@click="paginationProps.player.show(itemProps.index)"
 				>
 					{{ itemProps.index + 1 }}
 				</div>
@@ -239,11 +239,11 @@ const transitions = shallowReactive([
 
 			<template #pagination="paginationProps">
 				<FluxPagination v-bind="paginationProps">
-					<template #default="itemProps">
+					<template v-slot="itemProps">
 						<div
 							:class="itemProps.cssClass"
 							:title="itemProps.title"
-							@click="itemProps.onClick()"
+							@click="paginationProps.player.show(itemProps.index)"
 						>
 							{{ itemProps.index + 1 }}
 						</div>

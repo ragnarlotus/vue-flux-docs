@@ -24,7 +24,7 @@ If this parameter is not passed, controls will be displayed constantly.
 
 ### player
 
-The player controller. You can get it from [VueFlux](../components/vue-flux#methods)
+The player controller. You can get it from [VueFlux](../components/vue-flux#props-and-methods)
 
 #### Example of usage
 

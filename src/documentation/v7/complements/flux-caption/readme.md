@@ -12,43 +12,13 @@ The included component to display resource captions.
 
 ``` ts
 interface Props {
-	currentResource: null | ResourceIndex;
-	currentTransition: null | TransitionIndex;
+	player: Player;
 }
 ```
 
-### currentResource
+### player
 
-Is the full (because it has all the details) current resource index having the following schema:
-
-``` ts
-interface ResourceIndex {
-	index: number;
-	rsc: Resource;
-	options: {
-		delay?: number;
-		stop?: boolean;
-	};
-}
-```
-
-You can get it through the controller `Player` from [VueFlux](../components/vue-flux#methods)
-
-### currentTransition
-
-Is the full (because it has all the details) current resource index having the following schema:
-
-``` ts
-interface TransitionIndex {
-	index: number;
-	component: Component;
-	options: {
-		direction?: Direction;
-	};
-}
-```
-
-You can get it through the controller `Player` from [VueFlux](../components/vue-flux#methods)
+The player controller. You can get it from [VueFlux](../components/vue-flux#props-and-methods)
 
 #### Example of usage
 
@@ -132,8 +102,7 @@ onMounted(() => {
 
 <FluxCaption
 	v-if="player"
-	:currentResource="player.resource.current"
-	:currentTransition="player.transition.current"
+	:player="player"
 />
 ```
 
