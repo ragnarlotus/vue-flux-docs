@@ -156,20 +156,22 @@ function getSearch(caption) {
 	</template>
 
 	<template #caption="captionProps">
-		<FluxCaption v-bind="captionProps" />
+		<FluxCaption v-bind="captionProps">
+			<template v-slot="customCaptionProps">
+				<h3>
+					<a
+						:href="getCaptionLink(customCaptionProps.caption)"
+						target="_blank"
+					>
+						{{ customCaptionProps.caption }}</a
+					>
+				</h3>
+			</template>
+		</FluxCaption>
 	</template>
 
 	<template #controls="controlsProps">
-		<FluxControls v-bind="controlsProps">
-			<h3>
-				<a
-					:href="getSearch(captionProps.currentResource?.rsc.caption)"
-					target="_blank"
-				>
-					{{ captionProps.currentResource?.rsc.caption }}
-				</a>
-			</h3>
-		</FluxControls>
+		<FluxControls v-bind="controlsProps" />
 	</template>
 </VueFlux>`;
 
@@ -210,18 +212,16 @@ function getSearch(caption) {
 
 			<template #caption="captionProps">
 				<FluxCaption v-bind="captionProps">
-					<h3>
-						<a
-							:href="
-								getCaptionLink(
-									captionProps.currentResource?.rsc.caption
-								)
-							"
-							target="_blank"
-						>
-							{{ captionProps.currentResource?.rsc.caption }}</a
-						>
-					</h3>
+					<template v-slot="customCaptionProps">
+						<h3>
+							<a
+								:href="getCaptionLink(customCaptionProps.caption)"
+								target="_blank"
+							>
+								{{ customCaptionProps.caption }}</a
+							>
+						</h3>
+					</template>
 				</FluxCaption>
 			</template>
 

@@ -13,7 +13,7 @@ The included component to display controls with the buttons previous, next, play
 interface Props {
 	mouseOver?: boolean | Ref<boolean>;
 	player: Player;
-	}
+}
 ```
 
 ### mouseOver
