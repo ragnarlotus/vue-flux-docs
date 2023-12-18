@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-089365e2","path":"/documentation/v7/complements/","title":"Complements","lang":"en-US","frontmatter":{"prev":"components","next":"transitions"},"headers":[],"git":{},"filePathRelative":"documentation/v7/complements/readme.md"}');export{e as data};

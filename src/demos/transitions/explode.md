@@ -1,8 +1,10 @@
 ---
+prev: cube
+next: fade
 ---
 
 # Explode
 
 <ClientOnly>
-   <demos-transitions-explode />
+   <demos-transitions-Explode />
 </ClientOnly>

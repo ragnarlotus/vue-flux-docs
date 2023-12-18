@@ -1,8 +1,10 @@
 ---
+prev: waterfall
+next: zip
 ---
 
 # Wave
 
 <ClientOnly>
-   <demos-transitions-wave />
+   <demos-transitions-Wave />
 </ClientOnly>

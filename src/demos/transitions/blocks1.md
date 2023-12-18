@@ -1,8 +1,10 @@
 ---
+prev: blinds3d
+next: Blocks2
 ---
 
 # Blocks 1
 
 <ClientOnly>
-   <demos-transitions-blocks1 />
+   <demos-transitions-Blocks1 />
 </ClientOnly>

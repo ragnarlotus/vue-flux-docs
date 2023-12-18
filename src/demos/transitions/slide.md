@@ -1,8 +1,10 @@
 ---
+prev: round2
+next: swipe
 ---
 
 # Slide
 
 <ClientOnly>
-   <demos-transitions-slide />
+   <demos-transitions-Slide />
 </ClientOnly>

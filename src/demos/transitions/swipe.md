@@ -1,8 +1,10 @@
 ---
+prev: slide
+next: warp
 ---
 
 # Swipe
 
 <ClientOnly>
-   <demos-transitions-swipe />
+   <demos-transitions-Swipe />
 </ClientOnly>

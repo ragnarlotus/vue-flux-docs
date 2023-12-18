@@ -1,8 +1,10 @@
 ---
+prev: Book
+next: Concentric
 ---
 
 # Camera
 
 <ClientOnly>
-   <demos-transitions-camera />
+   <demos-transitions-Camera />
 </ClientOnly>

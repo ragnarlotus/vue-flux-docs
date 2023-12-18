@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-a806c79e","path":"/demos/complements/flux-index.html","title":"FluxIndex","lang":"en-US","frontmatter":{"prev":"flux-controls","next":"flux-pagination"},"headers":[],"git":{},"filePathRelative":"demos/complements/flux-index.md"}');export{e as data};

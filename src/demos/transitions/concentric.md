@@ -1,8 +1,10 @@
 ---
+prev: camera
+next: cube
 ---
 
 # Concentric
 
 <ClientOnly>
-   <demos-transitions-concentric />
+   <demos-transitions-Concentric />
 </ClientOnly>

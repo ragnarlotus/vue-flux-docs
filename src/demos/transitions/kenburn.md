@@ -1,8 +1,10 @@
 ---
+prev: fall
+next: round1
 ---
 
 # Kenburn
 
 <ClientOnly>
-   <demos-transitions-kenburn />
+   <demos-transitions-Kenburn />
 </ClientOnly>

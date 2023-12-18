@@ -1,8 +1,9 @@
 ---
+prev: wave
 ---
 
 # Zip
 
 <ClientOnly>
-   <demos-transitions-zip />
+   <demos-transitions-Zip />
 </ClientOnly>

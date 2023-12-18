@@ -1,8 +1,10 @@
 ---
+prev: fade
+next: kenburn
 ---
 
 # Fall
 
 <ClientOnly>
-   <demos-transitions-fall />
+   <demos-transitions-Fall />
 </ClientOnly>

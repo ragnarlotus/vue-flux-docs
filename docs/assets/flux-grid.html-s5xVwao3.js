@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-31fdfa10","path":"/demos/components/flux-grid.html","title":"FluxGrid","lang":"en-US","frontmatter":{"prev":"flux-cube","next":"flux-vortex"},"headers":[],"git":{},"filePathRelative":"demos/components/flux-grid.md"}');export{e as data};

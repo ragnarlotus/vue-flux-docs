@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-c79f278a","path":"/documentation/v7/changelog/","title":"Changelog","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"7.0.0","slug":"_7-0-0","link":"#_7-0-0","children":[]}],"git":{},"filePathRelative":"documentation/v7/changelog/readme.md"}');export{e as data};

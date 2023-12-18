@@ -1,8 +1,10 @@
 ---
+prev: warp
+next: wave
 ---
 
 # Waterfall
 
 <ClientOnly>
-   <demos-transitions-waterfall />
+   <demos-transitions-Waterfall />
 </ClientOnly>

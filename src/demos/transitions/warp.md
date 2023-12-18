@@ -1,8 +1,10 @@
 ---
+prev: swipe
+next: waterfall
 ---
 
 # Warp
 
 <ClientOnly>
-   <demos-transitions-warp />
+   <demos-transitions-Warp />
 </ClientOnly>

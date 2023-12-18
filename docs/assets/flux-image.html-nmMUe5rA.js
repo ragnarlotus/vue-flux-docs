@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6969b17e","path":"/demos/components/flux-image.html","title":"FluxImage","lang":"en-US","frontmatter":{"prev":"flux-button","next":"flux-cube"},"headers":[],"git":{},"filePathRelative":"demos/components/flux-image.md"}');export{e as data};

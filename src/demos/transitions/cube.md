@@ -1,8 +1,10 @@
 ---
+prev: concentric
+next: explode
 ---
 
 # Cube
 
 <ClientOnly>
-   <demos-transitions-cube />
+   <demos-transitions-Cube />
 </ClientOnly>

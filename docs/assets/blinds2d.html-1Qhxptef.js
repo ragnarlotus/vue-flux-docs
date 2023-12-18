@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-ada6b5c0","path":"/demos/transitions/blinds2d.html","title":"Blinds 2D","lang":"en-US","frontmatter":{"prev":"../transitions","next":"blinds3d"},"headers":[],"git":{},"filePathRelative":"demos/transitions/blinds2d.md"}');export{t as data};

@@ -1,9 +1,11 @@
 ---
+prev: kenburn
+next: round2
 ---
 
 # Round 1
 
 
 <ClientOnly>
-   <demos-transitions-round1 />
+   <demos-transitions-Round1 />
 </ClientOnly>

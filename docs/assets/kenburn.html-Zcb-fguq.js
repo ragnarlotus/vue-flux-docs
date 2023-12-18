@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-da480682","path":"/demos/transitions/kenburn.html","title":"Kenburn","lang":"en-US","frontmatter":{"prev":"fall","next":"round1"},"headers":[],"git":{},"filePathRelative":"demos/transitions/kenburn.md"}');export{e as data};
