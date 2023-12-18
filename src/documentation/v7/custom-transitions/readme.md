@@ -4,292 +4,138 @@ prev: transitions
 
 # Custom transitions
 
-WIP
+## Configuration
 
-<!--
-Transitions use the mixin `BaseTransition` to perform basic and shared logic.
+The basic configuration of a transition consists in the following variables;
 
-## Data
+``` ts
+interface TransitionConf {
+	totalDuration?: number;
+	easing: string;
+	direction?: Direction;
+}
+```
 
 ### totalDuration
 
 Represents the transition duration in ms.
 
-- **Type:** `Number`
-- **Required:** `true`
+### easing
 
-::: warning
+The animation easing for the transition. You can take a look at [easings.net](https://easings.net/) for a visual examples.
 
-You must specify this in data to let the slider know when transition ends.
+Its value can be any accepted by [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)
 
-:::
+### direction
 
-::: tip
+Some transitions can have a different effect depending if you go to a later or previous resource.
 
-If the duration depends on transition options, you can set its value in the `created` hook, but don't forget to initialize it.
+## Props
 
-:::
-
-## Properties
+``` ts
+interface TransitionProps {
+	size: Size;
+	from: Resource;
+	to?: Resource;
+	options?: any;
+	maskStyle: CSSProperties;
+	displayComponent: any;
+}
+```
 
 ### size
 
 This size is the width and height of the slider.
 
-- **Type:** `Object`
-- **Schema:**
-
-``` js
-{
-   width: Number,
-   height: Number,
-}
-```
-
 ### from
 
-The origin image which is currently being displayed.
-
-- **Type:** `String`
-- **Required:** `true`
+The origin resource which is currently being displayed.
 
 ### to
 
-The destination image to be displayed.
-
-- **Type:** `String`
+The destination resource to be displayed.
 
 ### options
 
-Is an object with attributes and values that will be assigned to the transition data.
-
-- **Type:** `Object`
+Is an object with attributes and values that will be assigned to the transition parameters.
 
 ### mask
 
-Is the mask CSS that wraps the transitions. This way you can control whether hide overflow, perspective, or any other relevant style.
+Is the Object CSS that wraps the transitions. This way you can control whether hide overflow, change perspective, or any other relevant style.
 
-- **Type:** `Object`
+### displayComponent
 
-::: tip
+Refers to the component resource that is being displayed at the moment. Sometimes you may want to `hide()` it for your transition.
 
-Remember that all the properties of this object are and must be canel case.
+After the transition is finished, it will be shown automatically, since it is the component that renders the resource for displaying when no transition is running.
 
-:::
+## Composable
 
-### current
+Transitions use the composable `useTransition` to perform basic and shared logic, like overwriting the default configuration with the options received from `props`.
 
-Refers to the image that is being displayed.
-
-- **Type:** `FluxImage`
-
-## Hooks
-
-### created
-
-You can initialize data, modify mask or any other preparative task on component in the `created` hook.
-
-### mounted
-
-The transition will run on `mounted` hook.
-
-### played
-
-Run when transition is called to play
-
-### beforeDestroy
-
-You can also use the `beforeDestroy` hook to run anything you need when transition ends.
+``` ts
+function useTransition(conf: TransitionConf, options?: object): void
+```
 
 ## Methods
 
-The `BaseTransition` mixin implements a couple of method helpers for the case the transition has different effect the going to prev or next.
+``` ts
+// All transitions must have this method, and is the one that will run the transition.
+onPlay(): void
+```
 
-### setupPrev()
+## Exposed elements
 
-If defined, this method will be run after the component have been created and the direction is `prev`.
+::: danger
 
-### setupNext()
+Don't miss the this section to make your transition work
 
-If defined, this method will be run after the component have been created and the direction is `next`.
+:::
 
-### playPrev()
+You must [expose](https://vuejs.org/api/sfc-script-setup.html#defineexpose) the following data and method.
 
-If defined, this method will be run after the component have been played and the direction is `prev`.
+``` ts
+totalDuration?: number;
+onPlay(): void
+```
 
-### playNext()
+## Using them
 
-If defined, this method will be run after the component have been played and the direction is `next`.
+To use a custom transition, we need to import it and include it in the transitions array, that is all :wink:
 
-### getDelay(data)
+Example:
 
-This method will call the defined methods `getDelayPrev` or `getDelayNext` depending on the direction.
+``` ts
+import { shallowReactive } from 'vue';
+import {
+   VueFlux,
+   Img,
+   Book,
+   Zip,
+} from 'vue-flux';
+import 'vue-flux/style.css';
 
-Those methods will receive the same data parameter that you pass.
+import CustomTransition1 from 'CustomTransition1.vue';
+import CustomTransition2 from 'CustomTransition2.vue';
 
-This is just a handy shortcut to get delay. If case the effect doesn't change by direction you can just define you method `getDelay` overwriting the mixin method.
+const rscs = shallowReactive([
+   new Img('URL1' 'img 1'),
+   new Img('URL2' 'img 2'),
+   new Img('URL3' 'img 3'),
+]);
 
-## Using it
-
-To know how to add your custom transition to the slider read the [VueFlux custom transitions section](/v6/components/vue-flux#custom-transitions).
-
-## Example 1 - Waterfall
+const transitions = shallowReactive([Book, Zip, CustomTransition1, CustomTransition2);
+```
 
 ``` html
-<flux-grid
-   ref="grid"
-   :rows="rows"
-   :cols="cols"
-   :size="size"
-   :image="from"
-/>
-```
-
-``` js
-import BaseTransition from '@/mixins/BaseTransition.js';
-import FluxGrid from '@/components/FluxGrid.vue';
-
-export default {
-   name: 'TransitionWaterfall',
-
-   components: {
-      FluxGrid,
-   },
-
-   mixins: [
-      BaseTransition,
-   ],
-
-   data: () => ({
-      rows: 1,
-      cols: 10,
-      tileDuration: 600,
-      totalDuration: 0,
-      easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
-      tileDelay: 90,
-   }),
-
-   created() {
-      this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
-   },
-
-   played() {
-      this.$refs.grid.transform((tile, i) => {
-         tile.transform({
-            transition: `all ${this.tileDuration}ms ${this.easing} ${this.getDelay(i)}ms`,
-            opacity: '0.1',
-            transform: `translateY(100%)`,
-         });
-      });
-   },
-
-   methods: {
-      getDelayPrev(i) {
-         return (this.cols - i - 1) * this.tileDelay;
-      },
-
-      getDelayNext(i) {
-         return i * this.tileDelay;
-      },
-   },
-};
-```
-
-## Example 2 - Wave
-
-``` html
-<flux-grid
-   ref="grid"
-   :rows="rows"
-   :cols="cols"
-   :size="size"
-   :images="images"
-   :colors="colors"
-   :depth="size.height"
-   :css="gridCss"
-/>
-```
-
-``` js
-import BaseTransition from '@/mixins/BaseTransition.js';
-import FluxGrid from '@/components/FluxGrid.vue';
-
-export default {
-   name: 'TransitionWave',
-
-   components: {
-      FluxGrid,
-   },
-
-   mixins: [
-      BaseTransition,
-   ],
-
-   data: () => ({
-      rows: 1,
-      cols: 8,
-      tileDuration: 900,
-      totalDuration: 0,
-      easing: 'cubic-bezier(0.3, -0.3, 0.735, 0.285)',
-      tileDelay: 110,
-      sideColor: '#333',
-      gridCss: {
-         overflow: 'visible',
-         perspective: '1200px',
-      },
-      images: {},
-      colors: {},
-   }),
-
-   created() {
-      this.mask.overflow = 'visible';
-
-      this.totalDuration = this.tileDelay * this.cols + this.tileDuration;
-
-      this.images = {
-         front: this.from,
-         top: this.to,
-      };
-   },
-
-   played() {
-      if (this.current)
-         this.current.hide();
-
-      this.colors = {
-         left: this.sideColor,
-         right: this.sideColor,
-      };
-
-      this.$refs.grid.transform((tile, i) => {
-         tile.setCss({
-            transition: `all ${this.tileDuration}ms ${this.easing} ${this.getDelay(i)}ms`,
-         });
-
-         tile.turnBottom();
-      });
-   },
-
-   beforeDestroy() {
-      if (this.current)
-         this.current.show();
-   },
-
-   methods: {
-      getDelayPrev(i) {
-         return (this.cols - i - 1) * this.tileDelay;
-      },
-
-      getDelayNext(i) {
-         return i * this.tileDelay;
-      },
-   },
-};
+<VueFlux
+   :rscs="rscs"
+   :transitions="transitions">
+</VueFlux>
 ```
 
 ::: tip
 
-You can see the [transitions source code](https://github.com/ragnarlotus/vue-flux/tree/dev/src/transitions) to get more ideas or examples.
+You can see the [transitions source code](https://github.com/ragnarlotus/vue-flux/tree/main/src/transitions) to get more ideas or examples.
 
 :::
- -->

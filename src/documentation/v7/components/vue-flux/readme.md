@@ -114,41 +114,6 @@ Check [transitions](../transitions) to see the list.
 
 :::
 
-#### Custom transitions
-
-To use a custom transition, we need to import it and include it in the transitions array
-
-Example:
-
-``` ts
-import { shallowReactive } from 'vue';
-import {
-   VueFlux,
-   Img,
-   Book,
-   Zip,
-} from 'vue-flux';
-import 'vue-flux/style.css';
-
-import CustomTransition1 from 'CustomTransition1.vue';
-import CustomTransition2 from 'CustomTransition2.vue';
-
-const rscs = shallowReactive([
-   new Img('URL1' 'img 1'),
-   new Img('URL2' 'img 2'),
-   new Img('URL3' 'img 3'),
-]);
-
-const transitions = shallowReactive([Book, Zip, CustomTransition1, CustomTransition2);
-```
-
-``` html
-<VueFlux
-   :rscs="rscs"
-   :transitions="transitions">
-</VueFlux>
-```
-
 ::: tip
 
 Check [custom transitions](../custom-transitions) to know more about how to create custom transitions.
