@@ -2,7 +2,6 @@ import { defineUserConfig } from 'vuepress';
 import { defaultTheme } from '@vuepress/theme-default';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
-import { prismjsPlugin } from '@vuepress/plugin-prismjs';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { getDirname, path } from '@vuepress/utils';
 
@@ -688,14 +687,10 @@ export default defineUserConfig({
 			],
 		},
 		themePlugins: {
-			prismjs: false,
 			activeHeaderLinks: false,
 		},
 	}),
 	plugins: [
-		prismjsPlugin({
-			lineNumbers: false,
-		}),
 		registerComponentsPlugin({
 			componentsDir: srcPath + '/components',
 		}),

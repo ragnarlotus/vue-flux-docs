@@ -25,7 +25,7 @@
 		"help": "vuepress --help"
 	},
 	"dependencies": {
-		"prismjs": "^1.29.0",
+		"prismjs": "^1.30.0",
 		"vue-flux": "^7.1.1"
 	},
 	"devDependencies": {
@@ -34,7 +34,6 @@
 		"@vuepress/bundler-vite": "^2.0.0-rc.26",
 		"@vuepress/plugin-google-analytics": "2.0.0-rc.118",
 		"@vuepress/plugin-palette": "2.0.0-rc.118",
-		"@vuepress/plugin-prismjs": "^2.0.0-rc.118",
 		"@vuepress/plugin-register-components": "2.0.0-rc.118",
 		"@vuepress/theme-default": "2.0.0-rc.118",
 		"sass": "^1.94.2",

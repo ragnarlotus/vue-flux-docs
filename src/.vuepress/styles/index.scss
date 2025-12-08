@@ -41,3 +41,9 @@
 .theme-default-content h2 {
 	margin-bottom: 1rem;
 }
+
+.theme-default-content pre[class*="language-"],
+pre[class*="language-"] {
+  background: #000 !important;
+  background-image: none !important;
+}
