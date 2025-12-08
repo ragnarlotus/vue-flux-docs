@@ -1,6 +1,6 @@
 ---
-previous: ../image
-next: component
+previous: ../image/
+next: ../component/
 ---
 
 # Video

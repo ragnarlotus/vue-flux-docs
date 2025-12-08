@@ -1,6 +1,6 @@
 ---
 prev: blinds3d
-next: Blocks2
+next: blocks2
 ---
 
 # Blocks 1

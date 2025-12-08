@@ -1,6 +1,6 @@
 ---
-prev: video
-next: ../components
+prev: ../video/
+next: ../../components/
 ---
 
 # Component

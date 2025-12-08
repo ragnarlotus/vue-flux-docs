@@ -1,5 +1,5 @@
 ---
-next: components/
+next: ../components/
 ---
 
 # SSR with Nuxt

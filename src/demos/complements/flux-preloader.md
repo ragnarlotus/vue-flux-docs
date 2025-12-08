@@ -1,6 +1,6 @@
 ---
 prev: flux-pagination
-next: ../transitions
+next: ../transitions/
 ---
 
 # FluxPreloader

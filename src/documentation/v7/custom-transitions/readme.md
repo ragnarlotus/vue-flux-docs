@@ -1,5 +1,5 @@
 ---
-prev: transitions
+prev: ../transitions/
 ---
 
 # Custom transitions

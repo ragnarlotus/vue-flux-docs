@@ -1,6 +1,6 @@
 ---
-prev: ../resources
-next: video
+prev: ../../resources/
+next: ../video/
 ---
 
 # Img

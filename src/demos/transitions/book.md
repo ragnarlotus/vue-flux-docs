@@ -1,6 +1,6 @@
 ---
-prev: Blocks2
-next: Camera
+prev: blocks2
+next: camera
 ---
 
 # Book

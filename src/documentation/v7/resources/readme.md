@@ -1,6 +1,6 @@
 ---
-prev: ssr-with-nuxt
-next: resources/img
+prev: ../ssr-with-nuxt/
+next: ../resources/img/
 ---
 
 # Resources

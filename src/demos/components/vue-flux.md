@@ -1,5 +1,5 @@
 ---
-prev: ../demos
+prev: ../demos/
 next: flux-button
 ---
 

@@ -1,6 +1,6 @@
 ---
-prev: Book
-next: Concentric
+prev: book
+next: concentric
 ---
 
 # Camera

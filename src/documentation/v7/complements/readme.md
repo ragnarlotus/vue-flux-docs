@@ -1,6 +1,6 @@
 ---
-prev: components
-next: transitions
+prev: ../components/
+next: ../transitions/
 ---
 
 # Complements
@@ -9,8 +9,8 @@ This components are complements because extend the functionality of `VueFlux` co
 
 | Name                                          | Description                                                      |
 | --------------------------------------------- | ---------------------------------------------------------------- |
-| [FluxCaption](complements/flux-caption)       | Displays a caption corresponding to an resource                  |
-| [FluxControls](complements/flux-controls)     | Displays previous, play / pause and next buttons                 |
-| [FluxIndex](complements/flux-index)           | Displays a button that once pressed opens an index of all images |
-| [FluxPagination](complements/flux-pagination) | Displays an item pagination to navigate through the resources    |
-| [FluxPreloader](complements/flux-preloader)   | Displays a spinner while resources are being preloaded           |
+| [FluxCaption](flux-caption/)       | Displays a caption corresponding to an resource                  |
+| [FluxControls](flux-controls/)     | Displays previous, play / pause and next buttons                 |
+| [FluxIndex](flux-index/)           | Displays a button that once pressed opens an index of all images |
+| [FluxPagination](flux-pagination/) | Displays an item pagination to navigate through the resources    |
+| [FluxPreloader](flux-preloader/)   | Displays a spinner while resources are being preloaded           |
