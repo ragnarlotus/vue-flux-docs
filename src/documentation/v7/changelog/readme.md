@@ -3,17 +3,9 @@
 
 # Changelog
 
-This version is currently in alpha version, and although everything looks like working properly keep an eye on it if you decide to use it.
+## 7.1.1
 
-::: warning
-
-From this version the styles are not bundled anymore inside the components, so you will have to import the CSS always like following way.
-
-:::
-
-``` ts
-import 'vue-flux/style.css';
-```
+Not really added new functionality but improved all referent to TS, dependencies, small fixes, updated versions, etc. Soon demos and documentation with different resources!!
 
 ## 7.0.0
 
