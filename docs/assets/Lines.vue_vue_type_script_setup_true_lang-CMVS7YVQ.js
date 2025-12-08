@@ -1,1 +1,0 @@
-import{_ as e}from"./VcParagraph.vue_vue_type_style_index_0_lang-C_PKb89e.js";import{f as t,c as a,o as n,a as o}from"./app-MTV9PqO7.js";const i=t({__name:"Lines",setup(m){return(r,s)=>(n(),a("div",null,[o(e,{mode:"fill",style:{"margin-top":"24px"}}),o(e,{mode:"fill",style:{"margin-top":"24px"}}),o(e,{mode:"fill",style:{"margin-top":"24px"}})]))}});export{i as _};
