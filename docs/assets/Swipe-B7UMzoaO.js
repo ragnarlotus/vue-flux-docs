@@ -1,0 +1,14 @@
+import{f,G as r,h as c,c as e,o as i,a as u,b as n,u as o,H as v,J as D,F as w,q as x,t as S}from"./app-MTV9PqO7.js";import{P as p}from"./prism-CBfTwKG-.js";import{m as V}from"./slider-l2pfGRmo.js";import{_ as j}from"./vue-flux-D0xQKYPf.js";import{_}from"./Demo.vue_vue_type_script_setup_true_lang-CtBj1C7x.js";import{d as R,f as T,e as b}from"./constants-Di4rOZRF.js";import"./Images-D3tRVO8F.js";const k={class:"demo"},B={class:"language-javascript","data-ext":"js"},H=["innerHTML"],P=f({__name:"Swipe",setup(L){const m={autohideTime:0},s=r([{component:j,options:r({totalDuration:1400,easing:"ease-in-out"})}]),d={preloader:!0,controls:!0},g=c(()=>{let l=`
+import {
+	Swipe,
+} from 'vue-flux';
+
+const transitions = shallowReactive([
+	{
+		component: Swipe,
+		options: shallowReactive({
+			totalDuration: ${s[0].options.totalDuration},
+			easing: '${s[0].options.easing}',
+		}),
+	},
+]);`;return p.highlight(l.trim(),p.languages.javascript,"javascript")});return(l,t)=>(i(),e("div",k,[u(_,{options:m,transitions:o(s),numRscs:12,complements:d},null,8,["transitions"]),t[5]||(t[5]=n("h3",null,"Options",-1)),n("label",null,[t[3]||(t[3]=n("span",null,"Total duration:",-1)),u(o(V),{modelValue:o(s)[0].options.totalDuration,"onUpdate:modelValue":t[0]||(t[0]=a=>o(s)[0].options.totalDuration=a),min:o(T),max:o(R),onSlide:t[1]||(t[1]=a=>o(s)[0].options.totalDuration=a)},null,8,["modelValue","min","max"])]),n("label",null,[t[4]||(t[4]=n("span",null,"Easing:",-1)),v(n("select",{"onUpdate:modelValue":t[2]||(t[2]=a=>o(s)[0].options.easing=a)},[(i(!0),e(w,null,x(o(b),a=>(i(),e("option",{key:a},S(a),1))),128))],512),[[D,o(s)[0].options.easing]])]),t[6]||(t[6]=n("h3",null,"Source",-1)),n("div",B,[n("pre",{innerHTML:g.value,class:"language-javascript"},null,8,H)])]))}});export{P as default};

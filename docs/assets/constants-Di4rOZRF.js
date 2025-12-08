@@ -1,0 +1,1 @@
+const t=["ease","linear","ease-in","ease-out","ease-in-out"],e={auto:void 0,lt:"left top",lc:"left center",lb:"left bottom",ct:"center top",cc:"center center",cb:"center bottom",rt:"right top",rc:"right center",rb:"right bottom"},o=50,n=4e3,a=10,s=3e3,c=100,i=4e3;export{o as a,s as b,a as c,i as d,t as e,c as f,n as m,e as o};

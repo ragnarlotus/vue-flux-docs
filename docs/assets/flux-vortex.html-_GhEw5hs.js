@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-9f576330","path":"/demos/components/flux-vortex.html","title":"FluxVortex","lang":"en-US","frontmatter":{"prev":"flux-grid","next":"flux-transition"},"headers":[],"git":{},"filePathRelative":"demos/components/flux-vortex.md"}');export{t as data};

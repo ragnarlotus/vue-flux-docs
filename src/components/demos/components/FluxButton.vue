@@ -1,9 +1,9 @@
 <script setup lang="ts">
-	import { computed } from 'vue';
+	import { computed, ref, type Ref } from 'vue';
 	import Prism from 'prismjs';
 	import { FluxButton } from 'vue-flux';
 
-	const svg = '<polyline points="32,12 82,50 32,88" />';
+	const svg: Ref<string> = ref('<polyline points="32,12 82,50 32,88" />');
 
 	const sourceHtml = computed(() => {
 		const code = `<FluxButton>
