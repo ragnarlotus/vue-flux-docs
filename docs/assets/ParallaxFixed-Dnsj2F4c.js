@@ -1,1 +1,0 @@
-import{I as a}from"./Images-D_w33Wdw.js";import{z as s}from"./vue-flux-D_UAZJ8S.js";import{f as t,i as o,o as n,u as e}from"./app-BI9tC47I.js";const _=t({__name:"ParallaxFixed",setup(c){const r=a.generate();return(p,m)=>(n(),o(e(s),{rsc:e(r),type:"fixed",style:{height:"250px"}},null,8,["rsc"]))}});export{_ as default};

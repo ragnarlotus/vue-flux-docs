@@ -43,7 +43,16 @@
 }
 
 .theme-default-content pre[class*="language-"],
+div[class*=language-] pre code,
 pre[class*="language-"] {
   background: #000 !important;
   background-image: none !important;
+}
+
+div.line-numbers {
+	display: none !important;
+}
+
+pre[copy-code] {
+	margin-left: 0 !important;
 }

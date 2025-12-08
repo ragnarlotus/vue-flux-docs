@@ -12,7 +12,7 @@ This is an image slider developed with [vue](https://vuejs.org/) 2 which comes w
 
 ## Demo
 
-You can view a [demo here](https://ragnarlotus.github.io/vue-flux/).
+You can view a [demo here](https://ragnarlotus.github.io/vue-flux-docs/).
 
 ## Features
 

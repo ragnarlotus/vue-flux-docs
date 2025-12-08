@@ -14,7 +14,7 @@ This is an image slider developed with [vue](https://vuejs.org/) 3 which comes w
 
 ## Demo
 
-You can view the [demos here](../../demos/demos)
+You can view the [demos here](../../../demos/demos/)
 
 ## Features
 
